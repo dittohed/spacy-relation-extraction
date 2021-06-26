@@ -1,7 +1,7 @@
 Names taken into account when designing rules are marked with 'x'.
 Non-relevant or repeating terms along with references were discarded.
 
-Abdominal Aortic Aneurysm
+x Abdominal Aortic Aneurysm
 x Acanthamoeba Infection
 x ACE (Adverse Childhood Experiences)
 x Acinetobacter Infection
@@ -10,7 +10,7 @@ x Acute Flaccid Myelitis (AFM)
 x Adenovirus Infection
 x ADHD [Attention Deficit/Hyperactivity Disorder]
 AFib, AF (Atrial fibrillation)
-AFM
+x AFM
 x African Trypanosomiasis
 x AHF (Alkhurma hemorrhagic fever)
 x ALS [Amyotrophic Lateral Sclerosis]
@@ -21,7 +21,7 @@ x Anaplasmosis, Human
 x Ancylostoma duodenale Infection, Necator americanus Infection
 x Angiostrongylus Infection
 x Anisakiasis
-Anthrax [Bacillus anthracis Infection]
+Anthrax
 X Aortic Aneurysm
 X Arenavirus Infections
 X Arthritis
@@ -56,7 +56,7 @@ x Cat Scratch Disease (CSD) [Bartonella henselae Infection]
 x Trench fever [Bartonella quintana Infection]
 x Bartonella Quintana Infection
 x Baylisascaris Infection
-Bilharzia — see Schistosomiasis
+x Bilharzia
 x Bird Flu
 Black Lung [Coal Workers' Pneumoconioses]
 x Blastocystis hominis Infection — see Blastocystis Infection
@@ -77,7 +77,7 @@ x Brucella Infection [Brucellosis]
 x BSE (Mad Cow Disease)
 x Bunyavirus Infections
 x Burkholderia cepacia Infection (B. cepacia infection)
-Burkholderia mallei — see Glanders
+Burkholderia mallei
 x Burkholderia pseudomallei Infection — see Melioidosis
 x BV (Bacterial Vaginosis)
 x B virus Infection [Herpes B virus]
@@ -114,11 +114,10 @@ x CHHF (Chapare Hemorrhagic Fever)
 x Chickenpox [Varicella Disease]
 x Chikungunya Fever (CHIKV)
 x Childhood Arthritis
-Childhood Overweight and Obesity
 x Chlamydia pneumoniae Infection
 x Chlamydia psittaci Infection
 x Chlamydia trachomatis Disease
-Chlamydia [Chlamydia trachomatis Disease]
+x Chlamydia [Chlamydia trachomatis Disease]
 Cholera [Vibrio cholerae Infection]
 x Chronic Fatigue Syndrome — see Myalgic Encephalomyelitis/ Chronic Fatigue Syndrome
 x Chronic Kidney Disease (CKD)
@@ -139,14 +138,14 @@ x Clostridium perfringens infection
 x Clostridium tetani Infection — see Tetanus Disease
 x Clotting Disorders
 x CMV (Cytomegalovirus Infection)
-Coal Workers' Pneumoconioses — see Black Lung
+Coal Workers' Pneumoconioses
 x Coccidioidomycosis — see Valley Fever
 x Colorado Tick Fever (CTF)
 x Colorectal (Colon) Cancer
 Congenital Hearing Loss
 x Congenital Heart Defects
 x Conjunctivitis
-Cooley's Anemia
+x Cooley's Anemia
 x COPD (Chronic Obstructive Pulmonary Disease)
 x Coronavirus Disease 2019 [COVID-19]
 x Corynebacterium diphtheriae Infection
@@ -162,10 +161,26 @@ x Cryptococcosis, C. gattii. — see C. gattii cryptococcosis
 x Cryptococcosis, C. neoformans — see C. neoformans cryptococcosis
 x Cryptosporidiosis — see Cryptosporidium Infection
 x Cryptosporidium Infection [Cryptosporidiosis]
-CTE [Chronic Traumatic Encephalopathy]
+x CTE [Chronic Traumatic Encephalopathy]
 x cyanobacterial algal bloom-associated illness
 x Cyclospora Infection [Cyclosporiasis]
 x Cysticercosis
 x Cystoisospora Infection [Cystoisosporiasis]
 x Cystoisosporiasis
 x Cytomegalovirus Infection (CMV)
+
+x Deep Vein Thrombosis (DVT)
+x Dementia
+Dengue
+x Dermatophyte Infection
+Diabetes
+x Dientamoeba fragilis Infection
+x Diphtheria
+x Diphyllobothriasis
+x Diphyllobothrium Infection [Diphyllobothriasis]
+x Dipylidium Infection
+x Dirofilariasis
+x Down Syndrome
+x DPHSWD
+x Dracunculiasis
+x DVT (Deep Vein Thrombosis)
