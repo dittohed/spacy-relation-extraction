@@ -4,11 +4,10 @@ from spacy import displacy
 
 # --- display dependency tree example ---
 nlp = spacy.load('en_core_web_trf')
-doc = nlp('''
-bloom-associated ilness, Bartonella henselae Infection, Bird Flu, C. neoformans cryptococcosis, Crimean-Congo hemorrhagic fever
-''')
+doc = nlp('AIDS and ALS are among most dangerous diseases discovered by Apple and UN users')
+print(doc.ents)
 
-displacy.serve(doc, style='dep')
+displacy.serve(doc, style='ent')
 
 # ---- display tokens' lemmas ---
 # print([token.dep_ for token in doc])
