@@ -1,5 +1,8 @@
-# TODO: separate modules, optimization, more thorough selection in regards to regexp
-# for now, the text is scanned 7 times (each pass for each pattern)
+# TODO:
+# - exclude keywords_regexp most common words (longer than 4), add to stop_words.txt
+# - EV-D68 regexp bug???
+# - separate modules/files
+# - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
 
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher
@@ -12,7 +15,9 @@ nlp = spacy.load('en_core_web_trf')
 matcher = Matcher(nlp.vocab)
 matcher_dep = DependencyMatcher(nlp.vocab)
 
-# --- initialisms
+MIN_LEN = 5 # minimum lenght of disease names matched by keywords_regexp
+
+# --- initialisms ---
 initialisms_pattern = [{'TEXT': {'REGEX': '^[A-Z0-9]+-?[A-Z0-9]+$'}}]
 
 # --- keywords ---
@@ -89,7 +94,7 @@ pattern4 = [
     modmodifier # modifier's modifiers specification
 ]
 
-# standalones
+# --- standalones ---
 standalones_patterns = [
     [{'LOWER': {'REGEX': keywords_regexp}}],
     [{'LOWER': {'IN': keywords}}]
@@ -132,7 +137,7 @@ def add_disease_ent_dep(matcher, doc, i, matches):
         pass # Span simply won't be added
 
 s = '''
-Furthermore, two other chronic diseases, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis
+Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
 '''
 
 # s = s.translate(s.maketrans('', '', string.punctuation))

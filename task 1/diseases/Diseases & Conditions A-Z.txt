@@ -26,7 +26,7 @@ X Aortic Aneurysm
 X Arenavirus Infections
 X Arthritis
 X Childhood Arthritis
-Fibromyalgia
+x Fibromyalgia
 Gout
 X Osteoarthritis (OA)
 X Rheumatoid Arthritis (RA)
@@ -184,3 +184,32 @@ x Down Syndrome
 x DPHSWD
 x Dracunculiasis
 x DVT (Deep Vein Thrombosis)
+
+x E. coli Infection [Escherichia coli Infection]
+x Ear Infection [Otitis Media]
+x Eastern Equine Encephalitis (EEE)
+x Ebola Virus Disease (EVD)
+x EBV Infection (Epstein-Barr Virus Infection)
+x Echinococcosis
+x EEE (Eastern Equine Encephalitis)
+x Ehrlichiosis, Human
+x Elephantiasis
+x Elizabethkingia Infection
+x Emerging Infectious Diseases
+x Endophthalmitis, Fungal
+x Entamoeba histolytica infection
+x Enterobius vermicularis Infection
+x Enterovirus D68
+x Enterovirus Infections (Non-Polio)
+x Epidemic Typhus
+Epilepsy
+x Epstein-Barr Virus Infection (EBV Infection)
+x Ergonomic and Musculoskeletal Disorders
+x Escherichia coli Infection
+x Esophageal Candidiasis
+EV-D68 — see Enterovirus D68
+x EVD (Ebola Virus Disease)
+Exserohilum rostratum (Other Pathogenic Fungi)
+Extensively Drug-Resistant TB (XDR TB)
+x Extreme Cold [Hypothermia]
+Extreme Heat [Hyperthermia]
