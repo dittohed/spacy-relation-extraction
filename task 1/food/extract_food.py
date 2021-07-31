@@ -1,4 +1,4 @@
-import spacy
+    import spacy
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
 from spacy import displacy
@@ -22,7 +22,7 @@ pattern1 = [
         'RIGHT_ID': 'object of preposition',
         'RIGHT_ATTRS': {'DEP': 'pobj'}}
     },
-    
+
 ]
 
 doc = nlp('daily servings of fruit and vegetables, and fish')
