@@ -1,0 +1,400 @@
+
+==== Front
+Int J Behav Nutr Phys ActInt J Behav Nutr Phys ActThe International Journal of Behavioral Nutrition and Physical Activity1479-5868BioMed Central London 56710.1186/s12966-017-0567-yResearchFrequency of eating home cooked meals and potential benefits for diet and health: cross-sectional analysis of a population-based cohort study Mills Susanna +44 (0)191 208 7045susanna.mills@newcastle.ac.uk 1Brown Heather heather.brown@newcastle.ac.uk 1Wrieden Wendy wendy.wrieden@newcastle.ac.uk 2White Martin martin.white@mrc-epid.cam.ac.uk 13Adams Jean jma79@medschl.cam.ac.uk 31 0000 0001 0462 7212grid.1006.7Institute of Health & Society, Newcastle University, Baddiley-Clark Building, Richardson Road, Newcastle upon Tyne, NE2 4AX UK 2 0000 0001 0462 7212grid.1006.7Human Nutrition Research Centre, Institute of Health & Society, Newcastle University, M1.151 William Leech Building, Medical School, Framlington Place, Newcastle upon Tyne, NE2 4HH UK 3 0000000121885934grid.5335.0Centre for Diet and Activity Research (CEDAR), MRC Epidemiology Unit, School of Clinical Medicine, University of Cambridge, Box 285 Biomedical Campus, Cambridge, CB2 0QQ UK 17 8 2017 17 8 2017 2017 14 10915 5 2017 9 8 2017 © The Author(s). 2017
+Open AccessThis article is distributed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver (http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.Background
+Reported associations between preparing and eating home cooked food, and both diet and health, are inconsistent. Most previous research has focused on preparing, rather than eating, home cooked food; used small, non-population based samples; and studied markers of nutrient intake, rather than overall diet quality or health. We aimed to assess whether frequency of consuming home cooked meals was cross-sectionally associated with diet quality and cardio-metabolic health.
+
+Methods
+We used baseline data from a United Kingdom population-based cohort study of adults aged 29 to 64 years (n = 11,396). Participants self-reported frequency of consuming home cooked main meals. Diet quality was assessed using the Mediterranean Diet Score, Dietary Approaches to Stop Hypertension (DASH) score, fruit and vegetable intake calculated from a 130-item food frequency questionnaire, and plasma vitamin C. Markers of cardio-metabolic health were researcher-measured body mass index (BMI), percentage body fat, haemoglobin A1c (HbA1c), cholesterol and hypertension. Differences across the three exposure categories were assessed using linear regression (diet variables) and logistic regression (health variables).
+
+Results
+Eating home cooked meals more frequently was associated with greater adherence to DASH and Mediterranean diets, greater fruit and vegetable intakes and higher plasma vitamin C, in adjusted models. Those eating home cooked meals more than five times, compared with less than three times per week, consumed 62.3 g more fruit (99% CI 43.2 to 81.5) and 97.8 g more vegetables (99% CI 84.4 to 111.2) daily. More frequent consumption of home cooked meals was associated with greater likelihood of having normal range BMI and normal percentage body fat. Associations with HbA1c, cholesterol and hypertension were not significant in adjusted models. Those consuming home cooked meals more than five times, compared with less than three times per week, were 28% less likely to have overweight BMI (99% CI 8 to 43%), and 24% less likely to have excess percentage body fat (99% CI 5 to 40%).
+
+Conclusions
+In a large population-based cohort study, eating home cooked meals more frequently was associated with better dietary quality and lower adiposity. Further prospective research is required to identify whether consumption of home cooked meals has causal effects on diet and health.
+
+Electronic supplementary material
+The online version of this article (doi:10.1186/s12966-017-0567-y) contains supplementary material, which is available to authorized users.
+
+Keywords
+Home cookingDietCardio-metabolic healthhttp://dx.doi.org/10.13039/501100000272National Institute for Health ResearchDRF-2014-07-020issue-copyright-statement© The Author(s) 2017
+==== Body
+Background
+The prevalence of obesity and diet-related non-communicable diseases (NCDs), such as type II diabetes, hypertension, and certain cancers, have been increasing steadily worldwide [1]. These changes have been accompanied by a decrease in the time spent cooking at home in the majority of developed countries [2, 3]. Concern has been expressed by policy makers, practitioners and researchers in the field of food and nutrition regarding a perceived decline in cooking skills, which has been hypothesised to be linked to the increase in diet-related NCDs [4–6].
+
+Certain studies, primarily cross-sectional in design, have indicated that a higher frequency of cooking and preparing food at home may be associated with consuming a healthier diet [7–9] and benefits to health and longevity [10–12]. In contrast, other cross-sectional research has suggested that home food preparation and cooking may be associated with diets lower in fibre and higher in fat, saturated fat, sugar, and salt [13, 14] and could potentially be detrimental to health [15, 16]. Adding to this confusion, the majority of research to date has used cooking and food preparation practices as an exposure, rather than the consumption of home cooked food itself. Since eating food is more proximal to potential diet and health outcomes, focusing on behaviour upstream may be more likely to introduce confounding, for example regarding gender – given that more women than men engage in food preparation [3], and women tend to have healthier diets [17]. Of key primary interest therefore is establishing whether consuming home cooked meals is associated with benefits to diet and health, and subsequently investigating who eats home cooked meals, and then who prepares these meals and why.
+
+To date, research investigating the potential advantages and disadvantages for diet and health of cooking and preparing food at home has generally focused on specific dietary indicators, rather than overall diet quality or health, and assessed measures cross-sectionally or after a brief follow-up period [18]. Most studies have been small in size, with associated limited scope to identify significant associations [8]; limited to a specific geographical area [19]; and/or restricted to population subgroups by for example age [10, 20] or ethnicity [11].
+
+Despite the fact that the evidence base for relationships between cooking and both diet and NCDs is mixed and inconclusive, the promotion of home cooking forms part of public health strategies to improve diets and reduce obesity and diet-related NCDs internationally [21]. Further research is therefore crucial, to investigate on a large scale the potential associations between consumption of home cooked meals and diet and health outcomes.
+
+In this study we aimed to assess whether the consumption frequency of home cooked meals was cross-sectionally associated with indicators of diet and cardio-metabolic status. In view of the current evidence base, we hypothesised that eating home cooked meals more frequently would be associated with markers of a healthier diet and improved cardio-metabolic health.
+
+Methods
+Data source
+The Fenland Study is a population-based cohort study investigating interactions between genetic and lifestyle factors in determining obesity and diabetes. The study recruited adults born between 1950 and 1975 from general practice lists in Cambridgeshire, United Kingdom (UK), between 2005 and 2015 [22]. Participants were invited to attend one of three clinical sites in Cambridgeshire to take part in a detailed assessment. A total of 12,434 participants undertook baseline assessment (approximate response rate 27%), which involved a range of clinical, biological and anthropometric measurements, and completion of questionnaires. The data collection tools are available online [23].
+
+Study exclusion criteria included previously diagnosed diabetes, psychosis, terminal illness, pregnancy, and inability to walk unaided. The Fenland study was approved by the Health Research Authority National Research Ethics Service Committee – East of England Cambridge Central – and performed in accordance with the Declaration of Helsinki. All participants provided written informed consent to participate in the study.
+
+Frequency of consumption of home cooked meals
+Exposure was derived from an item in the participant questionnaire: ‘When eating your main meal at home, how often do you usually eat home cooked meals?’ Response categories were: never or rarely; one to two times per week; three to five times per week; or more than five times per week. The first two response categories were collapsed to yield appropriate numbers for statistical analysis, as previously [24], giving a three category variable: less than three times per week, three to five times per week, and more than five times per week.
+
+Indicators of diet quality
+We assessed a range of dietary outcome variables, namely Mediterranean Diet Score (MDS) [25], Dietary Approaches to Stop Hypertension (DASH) score [26], plasma vitamin C, and fruit and vegetable intakes. Participants completed a 130-item, semi-quantitative food frequency questionnaire (FFQ) for their food intake over the previous year [27], which has been shown to yield valid and reproducible food intake assessments, and has been validated previously in dietary data collection in the European Prospective Investigation into Cancer and Nutrition (EPIC) studies [28]. The FFQ EPIC Tool for Analysis was used to convert food intake frequency to energy, nutrient and food intakes [29]. Total daily intake was provided in grams for carbohydrate, fibre, fat, saturated fat, sugar, protein, fruit, vegetables and alcohol. Total daily sodium intake was measured in milligrams, and total daily energy intake in kilojoules. Dietary intake values were winsorized at 1st and 99th percentiles, by replacing the smallest and largest percentage values in the distribution with the observations closest to them [30]. This was undertaken to account for their positively skewed distribution, and the limitations of the FFQ as a tool to collect precise data on dietary intake [31, 32]. Data on dietary supplements were not collected.
+
+The consumption of a more DASH accordant diet is associated with positive health indicators and lowered cardio-metabolic risk [33–35]. The DASH diet assumes that beneficial impact is derived from the overall diet, rather than individual foods or nutrients playing important roles [36]. A DASH score was computed from each participant’s dietary intake using the method developed by Fung et al. [26]. This index includes eight components (one nutrient and seven food groups) based on eating guidance from the United States (US) National Heart, Lung and Blood Institute [37]. Scoring is established through quintile rankings, on the basis of relative comparisons to the rest of the sample, with men and women classified separately. Participants are allocated a score from one (lowest quintile) to five (highest quintile) for energy-adjusted intake of: low-fat dairy products; whole grains; nuts, seeds and legumes; fruit (includes fruit juice); and vegetables (excludes potatoes). In contrast, for intakes of red and processed meat; sodium; and sugar-sweetened beverages, participants are allocated a score from one (highest quintile) to five (lowest quintile). Scores are then combined to give a total DASH score, ranging from a minimum of eight to a maximum of 40 points. In this study, DASH scores were standardised using the z-score, to yield a semi-continuous measure of participants’ relative standing.
+
+The Mediterranean diet is generally considered to be low in consumption of red meats, moderate in consumption of fish, poultry, fermented dairy products and wine, and high in consumption of fruits, legumes, cereals and olive oil [38, 39]. Concordance with the Mediterranean diet has been linked with positive health outcomes, in particular the primary prevention of cardiovascular disease [40]. A Mediterranean diet score (MDS) was calculated from each participant’s dietary intake using sex-specific tertiles, according to relative comparisons with the rest of the sample. Scores of zero, one or two were allocated for each of nine dietary components, including legumes; fruit and nuts; vegetables; ratio of monounsaturated and polyunsaturated fatty acids to saturated fatty acids; fish; meat products; dairy products; cereals; and alcohol [25]. In order to appraise quality of diet independent of quantity, dietary intakes were adjusted to a 2000 kcal/day diet using the residual method. This also aimed to help reduce measurement errors, since energy intake is partially associated with over-reporting and under-reporting of dietary intake [41]. MDS scores were then standardised using the z-score.
+
+Plasma vitamin C (μmol/l) provides an objective biomarker of fruit and vegetable consumption [42] and fruit and vegetable intake is promoted in dietary guidelines [43, 44]. Fasting venous blood samples drawn into heparin-containing tubes and stabilised using metaphosphoric acid (10%) were measured for plasma vitamin C levels by fluorometric assay within two months, as undertaken previously [45].
+
+Markers of cardio-metabolic health
+We used body mass index (BMI), percentage body fat, haemoglobin A1c (HbA1c), cholesterol and hypertension as indicators of cardio-metabolic health. Elevated total cholesterol and low levels of high density lipoprotein cholesterol (HDL) are associated with increased risk of cardiovascular disease [46], and the derived ratio of total cholesterol to HDL is used in the QRISK2 model to estimate risk of cardiovascular disease over the next ten years [47]. HDL and total cholesterol were measured in mmol/l in fasting venous blood samples, and the ratio of total cholesterol to HDL calculated for analysis. In line with UK guidance, a ratio of 4.0 or greater was used to indicate higher risks to cardio-metabolic health [48].
+
+Excess body fat and raised BMI have been associated with increased risk of various NCDs [49]. Height and weight were measured at the clinical sites by trained observers, with participants wearing light clothing and barefoot. Height was measured to the nearest 0.1 cm using a wall-mounted calibrated stadiometer (SECA 240, Birmingham, UK). Weight was measured to the nearest 0.1 kg with a calibrated electronic scale (TANITA, BC-418MA, Tokyo, Japan). BMI was derived as weight (kg) divided by height (m2). Dual-energy X-ray absorptiometry (DEXA; Lunar prodigy advanced fan beam scanner (GE Healthcare)) was used to assess body composition, and has been described in detail elsewhere [22]. A three-compartment model (fat mass, fat-free mass and bone mineral mass) was used to estimate percentage total body fat. In line with international guidance, overweight was defined as BMI 25 kg/m2 and above [50] and excess percentage body fat as 25% and over for males and 38% and over for females [51].
+
+Haemoglobin A1c (HbA1c) has previously been used to assess risk of developing type II diabetes [52]. Participants’ HbA1c was measured on entry to the study from fasting venous blood samples, in either mmol/mol or as a percentage. A conversion algorithm was used to convert all measurements to mmol/mol, and in accordance with international guidance [52], a level of 42.00 mmol/mol (6.0%) or higher was used to indicate increased risk of type II diabetes.
+
+Hypertension is associated with an elevated risk of developing cardiovascular disease [53]. Using an upper arm cuff and automated oscillometric device, three sets of diastolic and systolic blood pressure measurements were performed on each participant. The first readings were discarded and the lowest systolic and lowest diastolic readings from the last two readings were used for assessment. In adherence to UK guidance [54], readings of at least 90 mmHg diastolic and 140 mmHg systolic were considered indicative of hypertension. Participants currently taking hypotensive medication, or self-reporting a diagnosis of hypertension from a clinician, were also classified as hypertensive.
+
+Covariates
+In view of the current evidence base regarding factors influencing dietary intake [55], a self-administered questionnaire was used to collect demographic and behavioural variables including sex, age, smoking status (current/ex-smoker or never smoker), and first degree family history of relevant diseases such as type II diabetes. Participants were asked whether or not they had been employed in the past four weeks, and those answering yes were identified as currently working. Participants reporting more than 48 h working in any one week were identified as working overtime. Socioeconomic status was assessed using age at leaving full time education, which was divided into three categories: education up to age 16 years (compulsory education); over 16 and up to 18 years (post-compulsory school education); and over 18 years (higher education).
+
+Physical activity was measured objectively using an integrated movement and heart rate sensor (Actiheart; CamNtech, Cambridge, UK) attached to the chest via two standard ECG electrodes and worn during free-living over six days [56]. A ramped treadmill protocol test was used to individually calibrate heart rate, as undertaken previously [57]. Monitoring data were cleaned for measurement issues and sensor wear time was specified as at least 48 h, although data were not necessarily spread over a full 24 period. Periods of non-wear were inferred from the combination of non-physiological heart rate and prolonged periods of inactivity, which were taken into account to minimise diurnal information bias when summarising the intensity time-series. Data were processed [58] and a branched equation framework [59] used for modelling to estimate intensity time series. These were collated over time to yield daily physical activity energy expenditure (kJ/kg per day).
+
+Statistical analysis
+All analyses were on a complete case basis. Thus, participants with missing data on any of the variables described were excluded (n = 1038), leaving 11,396 participants (91.7% total cohort) in the analysis. The outcome variable with the greatest missingness was vitamin C (missing for 350 participants) and the covariate with the greatest missingness was physical activity (missing for 227 participants). Differences in the characteristics of Fenland study participants included and excluded from the analytic sample were tested using the Mann–Whitney test for continuous variables and Pearson Chi squared test for categorical variables.
+
+Differences in covariates and markers of diet and cardio-metabolic health across the three frequency categories of consuming home cooked meals were assessed using descriptive statistics (Kruskal-Wallis test and Pearson Chi squared test). Separate analyses were then run for each outcome variable, using linear regression for continuous diet variables and logistic regression for binary health variables. Analyses were adjusted for covariates: sex, age, alcohol intake, smoking status, age at leaving full-time education, physical activity, working status, and overtime working, with supplementary adjustment for family history of diabetes for the outcome of HbA1c. The analyses for markers of cardio-metabolic status were additionally adjusted for dietary variables (MDS, DASH score, plasma vitamin C, fruit and vegetable intakes) to assess the potential health benefits of consuming home cooked meals independent of dietary improvements.
+
+All analyses were conducted using Stata (version 14; Stata Corp.) and in view of the large number of comparisons, 99% confidence intervals were used to determine if variables were statistically significant (see Additional file 1 for details of the participant sample).
+
+Results
+Participant distribution is summarised in Additional file 2. A slight majority of the included sample was female (53.3%), with median age 48.9 years. Most participants were non-smoking (88.2%), with no family history of diabetes (76.1%), median alcohol intake of 5.47 g/day and physical activity expenditure of 51.0 kJ/kg/day. Most participants had left full time education by 18 years of age (62.2%), were currently in work (82.8%), and did not work overtime (88.8%). There were significant differences between the included and excluded participants in terms of sex, age, smoking status, physical activity expenditure, working status, and frequency of consuming home cooked meals.
+
+Table 1 shows that 6.2% of included participants consumed home cooked meals as their main meal less than three times per week, 32.4% consumed these three to five times per week, and 61.5% consumed these more than five times per week. Participants who ate home cooked meals more frequently tended to be female, older, non-smokers, not currently in work, working fewer hours and not working overtime, older at leaving full time education, with greater daily alcohol intake. These associations were all statistically significant at p < 0.01. Participants who consumed home cooked meals more frequently generally had higher plasma vitamin C, higher fruit and vegetable intakes, and higher MDS and DASH score. They were also less likely to have an overweight BMI, excess percentage body fat, high risk cholesterol ratio, or to be at risk of developing diabetes according to HbA1c level.Table 1 Characteristics of participants overall and by frequency of consuming home cooked meals
+
+Covariatea
+	Consumption of home cooked main meals	
+Total	<3×/week	3-5×/week	>5×/week	
+
+n = 11,396 (100.00%)	
+n = 704 (6.18%)	
+n = 3688 (32.36%)	
+n = 7004 (61.46%)	
+Sex	Male	5321	389 (7.31)	1914 (35.97)	3018 (56.72)	
+Female	6075	315 (5.19)	1774 (29.20)	3986 (65.61)	
+Age (years)	Median (IQR)	48.9 (42.7, 54.8)	47.1 (41.7, 53.3)	48.3 (42.2, 53.9)	49.5 (43.1, 55.3)	
+Alcohol (grams/day)	Median (IQR)	5.47 (1.27, 10.72)	3.90 (0.76, 9.56)	5.47 (1.30, 10.56)	5.47 (1.27, 10.88)	
+Age at leaving full-time education (years)	≤16	4570	351 (7.68)	1709 (37.40)	2510 (54.92)	
+>16 to ≤18	2521	148 (5.87)	839 (33.28)	1534 (60.85)	
+>18	4305	205 (4.76)	1140 (26.48)	2960 (68.76)	
+Smoker	No	10,045	569 (5.66)	3133 (31.19)	6343 (63.15)	
+Yes	1351	135 (9.99)	555 (41.08)	661 (48.93)	
+Family History of diabetesb
+	No	8677	535 (6.17)	2796 (32.22)	5346 (61.61)	
+Yes	2719	169 (6.22)	892 (32.81)	1658 (60.98)	
+Physical activity (kJc/kgd/day)	Median (IQR)	51.00 (37.84, 66.75)	49.64 (35.82, 65.82)	51.57 (38.22, 67.64)	50.89 (37.88, 66.27)	
+Working in past 4 weeks	No	1959	118 (6.02)	563 (28.74)	1278 (65.24)	
+Yes	9437	586 (6.21)	3125 (33.11)	5726 (60.68)	
+Working hours	Median (IQR)	33.0 (14.0, 40.0)	37.0 (20.0, 43.7)	35.0 (17.5, 41.0)	30.0 (12.0, 40.0)	
+Overtime work (>48 h/week)	No	10,116	592 (5.85)	3243 (32.06)	6281 (62.09)	
+Yes	1280	112 (8.75)	445 (34.77)	723 (56.48)	
+Outcomei
+		
+Vitamin C (umol/le)	Median (IQR)	69.40 (56.00, 82.00)	63.15 (44.73, 77.38)	66.80 (52.70, 80.10)	71.1 (58.5, 83.4)	
+Fruit intake (grams/day)	Median (IQR)	207.10 (111.61, 329.50)	142.53 (60.08, 264.19)	180.53 (93.10, 293.10)	226.83 (131.16, 353.04)	
+Vegetable intake (grams/day)	Median (IQR)	258.95 (188.89, 348.56)	174.41 (111.92, 257.26)	234.59 (172.55, 310.33)	280.56 (209.53, 375.83)	
+DASH scoref
+	Median (IQR)	24 (21, 27)	22 (19, 25)	23 (20, 26)	25 (22, 28)	
+MDSg
+	Median (IQR)	9 (7,11)	7 (6, 10)	8 (6, 10)	10 (7, 11)	
+Excess body fat (≥25% men; ≥38% women)	No	4831	246 (5.09)	1399 (28.96)	3186 (65.95)	
+Yes	6565	458 (6.98)	2289 (34.87)	3818 (58.16)	
+Overweight BMIh (≥25.0)	No	4384	211 (4.81)	1290 (29.43)	2883 (65.76)	
+Yes	7012	493 (7.03)	2398 (34.20)	4121 (58.77)	
+High cholesterol ratio (≥4.0)	No	7234	400 (5.53)	2209 (30.54)	4625 (63.93)	
+Yes	4162	304 (7.30)	1479 (35.54)	2379 (57.16)	
+High HbA1c
+i(≥42.00)	No	10,207	608 (5.96)	3265 (31.99)	6334 (62.06)	
+Yes	1189	96 (8.07)	423 (35.58)	670 (56.35)	
+Hypertension	No	8561	516 (6.03)	2761 (32.25)	5283 (61.72)	
+Yes	2836	188 (6.63)	927 (32.69)	1721 (60.68)	
+
+aResults shown as number (row percentage). Median (inter-quartile range) shown for: age, alcohol, physical activity, average working hours, vitamin C, fruit intake, vegetable intake, DASH score, MDS
+
+
+bHistory of diabetes in first degree relative
+
+
+ckj = kilojoules
+
+
+dkg = kilograms
+
+
+eumol/l = micromole/l
+
+
+fDASH = Dietary Approaches to Stop Hypertension
+
+
+gMDS = Mediterranean Diet Score
+
+
+hBMI = body mass index
+
+
+iHbA1c = Haemoglobin A1c
+
+
+
+
+
+Multivariate associations between the frequency of consuming home cooked meals and indicators of diet quality and cardio-metabolic status are shown in Table 2. In all cases, consuming home cooked meals more frequently was significantly associated with indicators of a healthier diet, as measured by higher MDS, DASH score, plasma vitamin C, and fruit and vegetable intakes. These associations were present for both consuming home cooked meals three to five times per week, and more than five times per week, compared with the reference of less than three times per week, and remained robust to adjustment for sociodemographic and behavioural covariates. In particular, those who consumed home cooked meals more than five times per week consumed 62.3 g more fruit (99% CI 43.2 to 81.5) and 97.8 g more vegetables (99% CI 84.4 to 111.2) daily than those who consumed home cooked meals less than three times per week. This equates to more than three-quarters of a portion of fruit, and almost one and a quarter portions of vegetables, or approximately two extra portions of fruit and vegetables per day.Table 2 Associations between frequency of consuming home cooked meals and markers of diet and cardio-metabolic status
+
+Outcomes	Home cooked mealsa
+	Unadjusted value (99% CIb)	Adjusted value, model 1c (99% CIb)	Adjusted value, model 2d (99% CIb)	
+Regression coefficients for dietary indicators	
+DASH scoree
+	3-5×/week	0.23 (0.13, 0.34)	0.18 (0.08, 0.28)	NA	
+>5×/week	0.61 (0.51, 0.71)	0.44 (0.35, 0.54)	NA	
+MDSf
+	3-5×/week	0.27 (0.17, 0.38)	0.23 (0.13, 0.33)	NA	
+>5×/week	0.64 (0.54, 0.74)	0.52 (0.42, 0.61)	NA	
+Vitamin C (μmol/lg)	3-5×/week	4.50 (2.28, 6.73)	3.29 (1.18, 5.39)	NA	
+>5×/week	8.95 (6.81, 11.09)	5.35 (3.31, 7.39)	NA	
+Fruit intake (grams/day)	3-5×/week	32.29 (12.14, 52.44)	27.17 (7.43, 46.92)	NA	
+>5×/week	79.06 (59.69, 98.43)	62.33 (43.19, 81.46)	NA	
+Vegetable intake (grams/day)	3-5×/week	54.22 (40.06, 68.39)	50.54 (36.61, 64.29)	NA	
+>5×/week	107.43 (93.81, 121.05)	97.83 (84.42, 111.24)	NA	
+Odds ratios for markers of cardio-metabolic status	
+Cholesterol binary (high vs low risk)	3-5×/week	0.88 (0.71, 1.09)	0.96 (0.76, 1.21)	0.99 (0.78, 1.25)	
+>5×/week	0.68 (0.55, 0.83)	0.87 (0.70, 1.09)	0.93 (0.74, 1.17)	
+BMIh binary (over- vs normal weight)	3-5×/week	0.80 (0.63, 1.00)	0.81 (0.64, 1.02)	0.82 (0.65, 1.05)	
+>5×/week	0.61 (0.49, 0.76)	0.70 (0.55, 0.88)	0.72 (0.57, 0.92)	
+Body fat binary (excess vs normal)	3-5×/week	0.88 (0.70, 1.10)	0.89 (0.71, 1.13)	0.92 (0.73, 1.17)	
+>5×/week	0.64 (0.52, 0.80)	0.71 (0.57, 0.89)	0.76 (0.60, 0.95)	
+HbA1c
+i binary (high vs low risk)	3-5×/week	0.82 (0.60, 1.12)	0.83 (0.60, 1.15)	0.86 (0.62, 1.19)	
+>5×/week	0.67 (0.50, 0.91)	0.68 (0.49, 0.93)	0.73 (0.53, 1.01)	
+Hypertension binary (yes vs no)	3-5×/week	0.92 (0.72, 1.17)	0.88 (0.69, 1.13)	0.89 (0.69, 1.14)	
+>5×/week	0.89 (0.71, 1.13)	0.84 (0.67, 1.07)	0.86 (0.67, 1.09)	
+
+aConsumption of home cooked meals as main meal at home: comparisons with low consumption (<3×/week, reference), for medium consumption (3-5×/week), and high consumption (>5×/week)
+
+
+bCI = 99% confidence interval
+
+
+cAdjusted for age, sex, alcohol intake, smoking, physical activity, working status, working overtime, years of full time education (+ family history diabetes for HbA1c outcome)
+
+
+dAdjusted for age, sex, alcohol intake, smoking, physical activity, working status, working overtime, years of full time education, DASH score, MDS, vitamin C, fruit intake, vegetable intake (+ family history diabetes for HbA1c outcome)
+
+
+eDASH = Dietary Approaches to Stop Hypertension
+
+
+fMDS = Mediterranean Diet Score
+
+
+gumol/l = micromole/l
+
+
+hBMI = Body Mass Index
+
+
+iHbA1c = Haemoglobin A1c
+
+
+
+
+
+In terms of cardio-metabolic status, consuming home cooked meals more than five times per week compared with the reference of less than three times per week was significantly associated with all markers except hypertension in the unadjusted models. After adjustment for sociodemographic and behavioural covariates (model 1), the association between consuming home cooked meals more than five times per week and high risk cholesterol ratio was extinguished. After further adjustment for dietary variables (model 2), only the associations with having a normal range BMI and lower percentage body fat remained significant. Such associations indicated that consuming home cooked meals more than five times per week compared with the reference was associated with improved adiposity, independent of the effects due to diet. Those consuming home cooked meals more than five times per week were 28% less likely to have a BMI in the overweight range (99% CI 8 to 43%), and 24% less likely to have excess percentage body fat (99% CI 5 to 40%), compared with those who consumed home cooked meals less than three times per week. Overall, a higher frequency of consuming home cooked meals was associated with markers of improved cardio-metabolic health, including lower risk cholesterol ratio, normal range BMI, lower percentage body fat, and lower risk of diabetes according to HbA1c level.
+
+Discussion
+Statement of principal findings
+In accordance with our hypothesis, a higher frequency of consuming home cooked main meals was significantly associated with indicators of a healthier diet, namely DASH score, MDS, plasma vitamin C, fruit intake and vegetable intake. Similarly, eating home cooked meals more frequently was significantly associated with several markers of cardio-metabolic health, including lower likelihood of having an overweight BMI, and lower likelihood of excess percentage body fat. Associations between frequency of home cooked meal consumption and markers of cardio-metabolic health were strongest at the highest consumption frequency of eating meals more than five times per week.
+
+To our knowledge, this is the first large scale, population-based study to address associations between the frequency of consuming home cooked meals and indicators of both diet quality and cardio-metabolic status. The study has been reported according to the STROBE-nut guidelines [60] (see Additional file 3).
+
+Strengths and weaknesses of the study
+The Fenland study is a large cohort, with detailed sociodemographic data, objective physical measurements and samples, and comprehensive dietary measures. Participants in this study were from the county of Cambridgeshire, which is representative of the wider population in England in terms of adult obesity and several lifestyle variables, such as smoking and levels of physical activity [61].
+
+Overall diet quality was assessed using two composite diet scores, DASH and MDS. Using two composite scores provided robust evidence in support of potential associations between consuming home cooked meals more frequently and higher diet quality. These results were supported by similar associations with higher fruit and vegetable intakes, measured by both FFQ, and plasma vitamin C as a biomarker. We used consumption, rather than preparation, of home cooked meals as our exposure, which is likely to be closer on the potential causal pathway to diet and health outcomes. The use of objective measurements for determining cholesterol ratio, BMI, percentage body fat, HbA1c level and hypertension is likely to increase the validity of these markers of cardio-metabolic status, and the confidence in conclusions drawn from resultant analyses.
+
+This research is also subject to some limitations. The cross-sectional nature of the data means that direction of cause and effect cannot be established, although follow-up data collection in the Fenland study is currently underway, which will enable future longitudinal analysis. Participants were recruited between the ages of 29 and 64 years, and are therefore not representative of the full UK population age range. Given that food preparation practices vary with age [62], our results may not be generalizable to younger populations. We excluded participants with missing data on any of the analytic variables, and excluded participants were systematically different from the rest of the cohort in terms of certain characteristics (see Additional file 2). Furthermore, differences in cooking and food culture internationally may mean that the relationships between consuming home cooked meals, diet quality, and cardio-metabolic health, vary between countries. Therefore, our findings may not necessarily be generalizable to other populations.
+
+The fruit and vegetable intakes and DASH and MDS dietary scores were derived from FFQ data, which although validated, may be subject to error and biases [31, 32]. The composite scores assessed diet quality relative to other participants, rather than establishing absolute values, and ranking groups may constitute a broad range. The exposure variable for consumption of home cooked meals was derived from a questionnaire item, and given the absence of consensus on home cooking terminology [63, 64], participants may have interpreted this question differently. We collected data specifically on home cooked meals eaten at home and not those eaten elsewhere, such as packed lunches taken to work or place of study. The self-reported nature of several sociodemographic and behavioural variables, such as smoking, may have led to variables being correlated with each other, with associated risk of type II analytical errors.
+
+Although we adjusted for a number of relevant potential confounders in our analyses, residual confounding remains possible. If people who consume home cooked meals more frequently are also more likely to engage in other health promoting behaviours, this could artificially strengthen associations between increased consumption of home cooked meals and markers of cardio-metabolic health.
+
+Interpretation of findings in the context of existing research
+Our findings reflect those of others that found associations between home food preparation and cooking and higher quality diets. A recent systematic review [18] identified that potential benefits included intake from healthier food groups [19, 65, 66]; greater fruit and vegetable preference and healthy eating self-efficacy [67]; enhanced nutrient intake [7, 68]; higher Diet Quality Index-International score and intake from healthier food groups [20]; trend towards higher Healthy Eating Index score [69]; consumption of a healthful dietary pattern [70]; and improved adherence to: Healthy People 2010 dietary intake objectives [8], Balance of Good Health (now Eatwell Guide) criteria [71], and a Mediterranean diet using the KIDMED index [72]. A greater frequency of home cooked meals has also been associated with higher Healthy Eating Index scores [24]. However, the majority of this research has been cross-sectional and therefore unable to conclusively indicate direction of causation. Most studies have also employed self-reported measures, which are vulnerable to bias [73], and have used food preparation practices as an exposure, rather than the consumption of home cooked food itself.
+
+Our results also support previous studies that identified associations between home food preparation and cooking and potential advantages to health. Greater home cooking frequency has been linked with longer lifespan [10] and more frequent consumption of meals prepared at home has been associated with reduced risk of developing type II diabetes [12]. Amongst adolescents, healthier home cooking by a caregiver was linked with lowered risk of having an overweight or obese BMI [11]. However, our findings conflict with a US study that reported more time spent on home food preparation and associated clean-up at baseline, or increased involvement over time, was linked with an adverse cardio-metabolic profile [16]. Possible reasons for this discrepancy include that the US study used time spent preparing meals, rather than meal consumption, as the exposure, and the exposure included clean-up time, which may have a differential impact on cardio-metabolic health. Since food preparation activities are strongly patterned by gender [18, 74], this may also confound observed associations with health.
+
+Meaning of the study: possible mechanisms and implications for clinicians and policymakers
+Our findings indicate that an increased frequency of consuming home cooked meals is associated cross-sectionally with markers of a healthier diet, and indicators of improved cardio-metabolic health, particularly in terms of adiposity, cholesterol and diabetes risk. Links between more frequent consumption of home cooked meals and dietary benefits could be attributable to healthier food preparation methods, increased dietary variety and/or consumption of healthier food groups. Such links may also be due to decreased intake of convenience foods, which tend to prioritise ingredients such as fat, sugar and salt to increase palatability and preservation, over those for optimising health [75].
+
+The association between a higher frequency of consuming home cooked meals and potential benefits for health in terms of hypertension was not significant in the unadjusted model, and in terms of cholesterol was no longer significant after adjustment for sociodemographic and behavioural variables. This may be because the hypertension variable was poorly ascertained, since in addition to blood pressure measurement, participants were required to report on any previous diagnoses of hypertension, and receipt of hypotensive medication. However, we conducted a sensitivity analysis for the relationship between frequency of consuming home cooked meals and hypertension, with the inclusion and the exclusion of participants diagnosed with hypertension by a doctor and/or receiving hypotensive medication. Regardless of whether or not these participants were excluded, the relationship was not significant. Cholesterol is strongly genetically determined [76], and the impact of home cooked meal consumption may not have been sufficient to result in statistically significant changes.
+
+The cross-sectional association between higher frequency of consuming home cooked meals and lower adiposity was robust to adjustment for sociodemographic, lifestyle, and dietary covariates, whilst the association with lower likelihood of being classified as at risk of diabetes according to HbA1c level was borderline significant. Although the direction of causation cannot be established, this indicates that home cooking potentially confers benefits to health, beyond those mediated through dietary changes. Such benefits from eating home cooked meals might be attributable to consumption of smaller portion sizes [77]; moderated snacking behaviour [78]; more structured mealtimes and the time of day at which meals are consumed [79]. Increased social cohesion has been linked with potential health benefits [80], and it is plausible that higher social capital may be associated with more sociable eating patterns. Given the potential time and effort involved in home cooking, home cooked meals may be more likely to be shared together than meals from other sources, and a range of benefits to diet, health and wellbeing derived from shared mealtimes have been identified [81, 82].
+
+Our results support previous research indicating putative benefits from home cooked meals, suggesting that public health promotional messages should advocate for cooking at home as a positive approach for improving diet and health. Strategies could also be considered for supporting people to learn to cook healthy meals, and to use their skills often, for example using digital technology and social media to provide shopping list generators, food preparation teaching videos, and nutritional information. Regularity is particularly important, given that our findings indicated the greatest potential advantages from consuming home cooked meals were experienced at the highest frequencies of consumption. Infrequent home cooking, such as a weekly Sunday lunch, is unlikely to be of benefit to population health, and cooking habits should be adopted as part of the daily routine. This is in accordance with research suggesting that routinized home cooking behaviour is more likely to be maintained and prioritised over time [83].
+
+Unanswered questions and future research
+The evidence base for associations between home cooking, dietary indicators and cardio-metabolic status requires further longitudinal studies to establish causal relationships. This could be facilitated by incorporating questions on home cooking into current large scale national longitudinal surveys, particularly those with more detailed existing dietary components. Additional analyses, for example using structural equation modelling, could be employed to explore causal pathways more fully in future. It will also be insightful to identify who eats home cooked meals and why, and then who prepares these meals and why. Other questions include exploring further the potential benefits of home cooking beyond those mediated through diet, and determining the most effective approaches to encourage home cooking, which may require a combination of tailored interventions.
+
+Conclusion
+In a cross-sectional population-based study, consuming home cooked main meals more frequently was associated with a range of indicators of a healthier diet, and several markers of cardio-metabolic health including adiposity, cholesterol and diabetes risk. Strongest associations were observed for the highest frequency of consuming home cooked meals, more than five times per week. These findings suggest that regularly eating home cooked meals may confer benefits to diet and health, and that home cooking promotion and skill development should form part of future public health initiatives. Further research regarding causal relationships between home cooking, diet and health; the wider social aspects of home food preparation; and evaluation of interventions to promote home cooking, is required.
+
+Additional files
+
+Additional file 1: This file provides requested information regarding how the sample was recruited, how representative the sample was of the target group, how the analysed sample differed from the recruited sample, and how missing data were handled. (DOCX 17 kb)
+
+ 
+Additional file 2: Characteristics of Fenland study participants included and excluded from the analytic sample. This table compares the characteristics of participants in the Fenland study who were included in the current study analytic sample, and those who were excluded. (DOCX 24 kb)
+
+ 
+Additional file 3: STROBE-nut: An extension of the STROBE statement for nutritional epidemiology. This table provides a checklist, reporting adherence of the current study to the STROBE-nut guidelines. (DOCX 34 kb)
+
+ 
+
+
+Abbreviations
+BMIBody mass index
+
+DASHDietary Approaches to Stop Hypertension
+
+EPICEuropean Prospective Investigation into Cancer and Nutrition
+
+FFQFood Frequency Questionnaire
+
+HbA1cHaemoglobin A1c
+
+
+HDLHigh density lipoprotein
+
+MDSMediterranean Diet Score
+
+NCDsNon-communicable diseases
+
+UKUnited Kingdom
+
+USUnited States
+
+Electronic supplementary material
+
+The online version of this article (doi:10.1186/s12966-017-0567-y) contains supplementary material, which is available to authorized users.
+
+Acknowledgements
+The authors would like to thank all the volunteers who participated in the Fenland study, as well as the Fenland Study Coordination, Field Epidemiology, and Data Cleaning teams.
+
+Funding
+The Fenland Study is funded by the Wellcome Trust and the Medical Research Council. Support from Medical Research Council programmes MC_UU_12015/1 and MC_UU_12015/5 is acknowledged. This report is independent research arising from a Doctoral Research Fellowship Grant DRF-2014-07-020 for the lead author (SM), supported by the National Institute for Health Research. JA and MW received funding from the Centre for Diet and Activity Research (CEDAR), a UK Clinical Research Collaboration (UKCRC) Public Health Research Centre of Excellence. HB and SM are members of Fuse, also a UKCRC Public Health Research Centre of Excellence. Grant reference number is MR/K02325X/1. Funding for CEDAR and for Fuse from the British Heart Foundation, Cancer Research UK, Economic and Social Research Council, Medical Research Council, the National Institute for Health Research and the Wellcome Trust, under the auspices of the UKCRC, is gratefully acknowledged. The views expressed in this publication are those of the authors and not necessarily those of the National Health Service, the Department of Health, the funders or UKCRC. The funders had no role in the study design; in the collection, analysis and interpretation of data; nor in the writing of the report and the decision to submit for publication.
+
+Availability of data and materials
+The data that support the findings of this study are available from the MRC Epidemiology Unit, under restrictions according to the MRC Policy and Guidance on Sharing of Research Data from Population and Patient Studies. Data are available upon reasonable request, with permission sought from datasharing@mrc-epid.cam.ac.uk
+
+Authors’ contributions
+SM, HB, WW, MW and JA designed the study. SM led the data analyses, supported by JA and HB. SM drafted the manuscript. All authors contributed to the interpretation of results and critically reviewed the manuscript. All authors read and approved the final manuscript.
+
+Ethics approval and consent to participate
+The Fenland study was approved by the Health Research Authority National Research Ethics Service Committee – East of England Cambridge Central – and performed in accordance with the Declaration of Helsinki. All participants provided written informed consent to participate in the study.
+
+Consent for publication
+Not applicable.
+
+Competing interests
+The authors declare that they have no competing interests.
+
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+==== Refs
+References
+1. Lim SS  Vos T  Flaxman AD  Danaei G  Shibuya K  Adair-Rohani H    A comparative risk assessment of burden of disease and injury attributable to 67 risk factors and risk factor clusters in 21 regions, 1990–2010: a systematic analysis for the Global Burden of Disease Study 2010 Lancet 2012 380 2224 2260 10.1016/S0140-6736(12)61766-8 23245609 
+2. Möser A   Food preparation patterns in German family households. An econometric approach with time budget data Appetite 2010 55 99 107 10.1016/j.appet.2010.04.008 20420870 
+3. Smith L  Ng S  Popkin B   Trends in US home food preparation and consumption: analysis of national nutrition surveys and time use studies from 1965–1966 to 2007–2008 Nutr J 2013 12 45 10.1186/1475-2891-12-45 23577692 
+4. Michaud P  Condrasky M  Griffin S   Review and application of current literature related to culinary programmes for nutrition educators Top Clin Nutr 2007 22 336 348 10.1097/01.TIN.0000308470.95060.06 
+5. Short F   Domestic cooking skills: what are they? J Home Econ Inst Aust 2003 10 13 22 
+6. Condrasky MD  Hegler M   How culinary nutrition can save the health of a nation J Ext 2010 48 1 6 
+7. Wolfson JA  Bleich SN   Is cooking at home associated with better diet quality or weight-loss intention? Public Health Nutr 2015 18 1397 1406 10.1017/S1368980014001943 25399031 
+8. Larson N  Perry C  Story M  Neumark-Sztainer D   Food preparation by young adults is associated with better diet quality J Am Diet Assoc 2006 106 2001 2007 10.1016/j.jada.2006.09.008 17126631 
+9. Smith K  McNaughton S  Gall S  Blizzard L  Dwyer T  Venn A   Involvement of young Australian adults in meal preparation: cross-sectional associations with sociodemographic factors and diet quality J Am Diet Assoc 2010 110 1363 1367 10.1016/j.jada.2010.06.011 20800130 
+10. Chen R  Lee M  Chang Y  Wahlqvist M   Cooking frequency may enhance survival in Taiwanese elderly Public Health Nutr 2012 15 1142 1149 10.1017/S136898001200136X 22578892 
+11. Kramer RF  Coutinho AJ  Vaeth E  Christiansen K  Suratkar S  Gittelsohn J   Healthier home food preparation methods and youth and caregiver psychosocial factors are associated with lower BMI in African American youth J Nutr 2012 142 948 954 10.3945/jn.111.156380 22457390 
+12. Zong G, Eisenberg DM, Hu FB, Sun Q. Consumption of Meals Prepared at Home and Risk of Type 2 Diabetes: An Analysis of Two Prospective Cohort Studies. PLoS Med. 2016;13.
+13. Jones M  Freeth EC  Hennessy-Priest K  Costa RJ   A systematic cross-sectional analysis of British based celebrity chefs’ recipes: is there cause for public health concern? Food Public Health 2013 3 100 110 
+14. Howard S  Adams J  White M   Nutritional content of supermarket ready meals and recipes by television chefs in the United Kingdom: cross-sectional study BMJ 2012 345 10.1136/bmj.e7607 23247976 
+15. Pope L  Latimer L  Wansink B   Viewers vs. Doers. The relationship between watching food television and BMI Appetite 2015 90 131 135 10.1016/j.appet.2015.02.035 25747286 
+16. Appelhans BM  Segawa E  Janssen I  Nackers LM  Kazlauskaite R  Baylin A    Meal preparation and cleanup time and cardiometabolic risk over 14 years in the Study of Women’s Health Across the Nation (SWAN) Prev Med 2015 71 1 6 10.1016/j.ypmed.2014.11.025 25490602 
+17. Imamura F  Micha R  Khatibzadeh S  Fahimi S  Shi P  Powles J    Dietary quality among men and women in 187 countries in 1990 and 2010: a systematic assessment Lancet Glob Health. 2015 3 e132 42 10.1016/S2214-109X(14)70381-X 25701991 
+18. Mills S  White M  Brown H  Wrieden W  Kwasnicka D  Halligan J    Health and social determinants and outcomes of home cooking: A systematic review of observational studies Appetite 2017 111 116 134 10.1016/j.appet.2016.12.022 28024883 
+19. Monsivais P  Aggarwal A  Drewnowski A   Time spent on home food preparation and indicators of healthy eating Am J Prev Med 2014 47 796 802 10.1016/j.amepre.2014.07.033 25245799 
+20. Chu YL  Storey KE  Veugelers PJ   Involvement in meal preparation at home is associated with better diet quality among Canadian children J Nutr Educ Behav 2014 46 304 308 10.1016/j.jneb.2013.10.003 24238908 
+21. World Health Organization  Report of the commission on ending childhood obesity 2016 Geneva World Health Organization 
+22. de Lucia RE  Loos RJF  Druet C  Stolk RP  Ekelund U  Griffin SJ    Association between birth weight and visceral fat in adults Am J Clin Nutr 2010 92 347 352 10.3945/ajcn.2010.29247 20519560 
+23. MRC Epidemiology Unit. Fenland Study. 2014. http://epi-meta.medschl.cam.ac.uk/includes/fenland/fenland.html. Accessed 13 Aug 2017.
+24. Tiwari A  Aggarwal A  Tang W  Drewnowski A   Cooking at Home: A Strategy to Comply With U.S. Dietary Guidelines at No Extra Cost Am J Prev Med 2017 52 616 624 10.1016/j.amepre.2017.01.017 28256283 
+25. InterAct Consortium  Mediterranean Diet and Type 2 Diabetes Risk in the European Prospective Investigation Into Cancer and Nutrition (EPIC) Study Diabetes Care 2011 34 1913 1918 10.2337/dc11-0891 21788627 
+26. Fung TT  Chiuve SE  McCullough ML  Rexrode KM  Logroscino G  Hu FB   Adherence to a dash-style diet and risk of coronary heart disease and stroke in women Arch Intern Med 2008 168 713 720 10.1001/archinte.168.7.713 18413553 
+27. Bingham S  Welch A  McTaggart A  Mulligan A  Runswick S  Luben R    Nutritional methods in the European Prospective Investigation of Cancer in Norfolk Public Health Nutr 2001 4 847 858 10.1079/PHN2000102 11415493 
+28. Bingham SA  Gill C  Welch A  Cassidy A  Runswick SA  Oakes S    Validation of dietary assessment methods in the UK arm of EPIC using weighed records, and 24-hour urinary nitrogen and potassium and serum vitamin C and carotenoids as biomarkers Int J Epidemiol 1997 26 S137 10.1093/ije/26.suppl_1.S137 9126542 
+29. Mulligan AA, Luben RN, Bhaniani A, Parry-Smith DJ, O'Connor L, Khawaja AP, et al. A new tool for converting food frequency questionnaire data into nutrient and food group values: FETA research methods and availability. BMJ Open. 2014;4.
+30. Hastings C, Mosteller F, Tukey JW, Winsor CP. Low Moments for Small Samples: A Comparative Study of Order Statistics. Ann Math Statist. 1947;8(3): 413–26. doi:10.1214/aoms/1177730388.
+31. Drewnowski A   Diet image: A new perspective on the food-frequency questionnaire Nutr Rev 2001 59 370 372 11720342 
+32. Willett W   Nutritional Epidemiology 1998 3 New York Oxford University Press 
+33. de Koning L  Chiuve SE  Fung TT  Willett WC  Rimm EB  Hu FB   Diet-Quality Scores and the Risk of Type 2 Diabetes in Men Diabetes Care 2011 34 1150 1156 10.2337/dc10-2352 21464460 
+34. Berz JB  Singer MR  Guo X  Daniels SR  Moore LL   Use of a dash food group score to predict excess weight gain in adolescent girls in the national growth and health study Arch Pediatr Adolesc Med 2011 165 540 546 10.1001/archpediatrics.2011.71 21646587 
+35. Folsom AR  Parker ED  Harnack LJ   Degree of Concordance With DASH Diet Guidelines and Incidence of Hypertension and Fatal Cardiovascular Disease Am J Hypertens 2007 20 225 232 10.1016/j.amjhyper.2006.09.003 17324731 
+36. Karanja N  Erlinger T  Pao-Hwa L  Miller E  Bray G   The DASH diet for high blood pressure: from clinical trial to dinner table Cleve Clin J Med 2004 71 745 753 10.3949/ccjm.71.9.745 15478706 
+37. United States Department of Health and Human Services, National Heart Lung and Blood Institute. Healthy Eating Plan. https://www.nhlbi.nih.gov/health/educational/lose_wt/eat/calories.htm. Accessed 13 Aug 2017.
+38. Willett WC  Sacks F  Trichopoulou A  Drescher G  Ferro-Luzzi A  Helsing E    Mediterranean diet pyramid: a cultural model for healthy eating Am J Clin Nutr 1995 61 1402S 1406S 7754995 
+39. Bach-Faig A  Berry EM  Lairon D  Reguant J  Trichopoulou A  Dernini S    Mediterranean diet pyramid today. Science and cultural updates Public Health Nutr 2011 14 2274 2284 10.1017/S1368980011002515 22166184 
+40. Estruch R  Ros E  Salas-Salvadó J  Covas M-I  Corella D  Arós F    Primary Prevention of Cardiovascular Disease with a Mediterranean Diet N Engl J Med 2013 368 1279 1290 10.1056/NEJMoa1200303 23432189 
+41. Hu FB  Stampfer MJ  Rimm E  Ascherio A  Rosner BA  Spiegelman D    Dietary Fat and Coronary Heart Disease: A Comparison of Approaches for Adjusting for Total Energy Intake and Modeling Repeated Dietary Measurements Am J Epidemiol 1999 149 531 540 10.1093/oxfordjournals.aje.a009849 10084242 
+42. Dehghan M, Akhtar-Danesh N, McMillan CR, Thabane L. Is plasma vitamin C an appropriate biomarker of vitamin C intake? A systematic review and meta-analysis. Nutr J. 2007;6:41–1.
+43. World Health Organization, Food and Agriculture Organization  Diet, nutrition and the prevention of chronic diseases: Report of the joint WHO/FAO expert consultation 2003 Geneva World Health Organization 
+44. Public Health England. The Eatwell Guide. 2016. https://www.gov.uk/government/publications/the-eatwell-guide. Accessed 13 Aug 2017.
+45. O’Connor L  Brage S  Griffin SJ  Wareham NJ  Forouhi NG   The cross-sectional association between snacking behaviour and measures of adiposity: the Fenland Study, UK Br J Nutr 2015 114 1286 1293 10.1017/S000711451500269X 26343512 
+46. Pencina MJ  D'Agostino RB  Larson MG  Massaro JM  Vasan RS   Predicting the Thirty-year Risk of Cardiovascular Disease: The Framingham Heart Study Circulation 2009 119 3078 3084 10.1161/CIRCULATIONAHA.108.816694 19506114 
+47. Collins GS, Altman DG. Predicting the 10 year risk of cardiovascular disease in the United Kingdom: independent and external validation of an updated version of QRISK2. Br Med J. 2012;344.
+48. NHS Choices. High cholesterol. 2015. http://www.nhs.uk/conditions/cholesterol/Pages/Introduction.aspx. Accessed 13 Aug 2017.
+49. Baumgartner RN  Heymsfield SB  Roche AF   Human Body Composition and the Epidemiology of Chronic Disease Obes Res 1995 3 73 95 10.1002/j.1550-8528.1995.tb00124.x 7712363 
+50. World Health Organization. Body mass index - BMI. 2017. http://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi. Accessed 13 Aug 2017.
+51. Gallagher D  Heymsfield SB  Heo M  Jebb SA  Murgatroyd PR  Sakamoto Y   Healthy percentage body fat ranges: an approach for developing guidelines based on body mass index Am J Clin Nutr 2000 72 694 701 10966886 
+52. John WG  on behalf of the UKDoHACoD  Use of HbA1c in the diagnosis of diabetes mellitus in the UK. The implementation of World Health Organization guidance 2011 Diabet Med 2012 29 1350 1357 10.1111/j.1464-5491.2012.03762.x 22957983 
+53. Franklin SS  Wong ND   Hypertension and Cardiovascular Disease: Contributions of the Framingham Heart Study Glob Heart. 2013 8 49 57 10.1016/j.gheart.2012.12.004 25690263 
+54. National Institute for Health and Care Excellence. Hypertension in adults: diagnosis and management. 2016. https://www.nice.org.uk/guidance/CG127/chapter/1-Guidance#diagnosing-hypertension-2. Accessed 13 Aug 2017.
+55. McGowan L  Pot GK  Stephen AM  Lavelle F  Spence M  Raats M    The influence of socio-demographic, psychological and knowledge-related variables alongside perceived cooking and food skills abilities in the prediction of diet quality in adults: a nationally representative cross-sectional study Int J Behav Nutr Phys Act 2016 13 111 10.1186/s12966-016-0440-4 27782841 
+56. Brage S  Brage N  Franks PW  Ekelund U  Wareham NJ   Reliability and validity of the combined heart rate and movement sensor Actiheart Eur J Clin Nutr 2005 59 561 570 10.1038/sj.ejcn.1602118 15714212 
+57. Brage S  Ekelund U  Brage N  Hennings MA  Froberg K  Franks PW    Hierarchy of individual calibration levels for heart rate and accelerometry to measure physical activity J Appl Physiol 2007 103 682 692 10.1152/japplphysiol.00092.2006 17463305 
+58. Stegle O  Fallert S  MacKay D  Brage S   Gaussian Process Robust Regression for Noisy Heart Rate Data IEEE Trans Biomed Eng 2008 55 2143 2151 10.1109/TBME.2008.923118 18713683 
+59. Brage S  Brage N  Franks PW  Ekelund U  Wong M-Y  Andersen LB    Branched equation modeling of simultaneous accelerometry and heart rate monitoring improves estimate of directly measured physical activity energy expenditure J Appl Physiol 2004 96 343 351 10.1152/japplphysiol.00703.2003 12972441 
+60. Lachat C  Hawwash D  Ocké MC  Berg C  Forsum E  Hörnell A    Strengthening the Reporting of Observational Studies in Epidemiology—Nutritional Epidemiology (STROBE-nut): An Extension of the STROBE Statement PLoS Med 2016 13 e1002036 10.1371/journal.pmed.1002036 27270749 
+61. Public Health England. Health Profile Cambridgeshire. 2016. http://fingertipsreports.phe.org.uk/health-profiles/2016/e10000003.pdf&time_period=2016. Accessed 13 Aug 2017.
+62. Lavelle F  Spence M  Hollywood L  McGowan L  Surgenor D  McCloat A    Learning cooking skills at different ages: a cross-sectional study Int J Behav Nutr Phys Act 2016 13 119 10.1186/s12966-016-0446-y 27842556 
+63. Short F   Kitchen secrets: the meaning of cookery in everyday life 2006 Oxford Berg 
+64. Wolfson JA  Bleich SN  Smith KC  Frattaroli S   What does cooking mean to you?: Perceptions of cooking and factors related to cooking behavior Appetite 2016 97 146 154 10.1016/j.appet.2015.11.030 26654888 
+65. Laska MN  Larson NI  Neumark-Sztainer D  Story M   Does involvement in food preparation track from adolescence to young adulthood and is it associated with better dietary quality? Findings from a 10-year longitudinal study Public Health Nutr 2012 15 1150 1158 10.1017/S1368980011003004 22124458 
+66. Smith KJ  McNaughton SA  Gall SL  Blizzard L  Dwyer T  Venn AJ   Involvement of young Australian adults in meal preparation: cross-sectional associations with sociodemographic factors and diet quality J Am Diet Assoc 2010 110 1363 1367 10.1016/j.jada.2010.06.011 20800130 
+67. Chu YL  Farmer A  Fung C  Kuhle S  Storey KE  Veugelers PJ   Involvement in home meal preparation is associated with food preference and self-efficacy among Canadian children Public Health Nutr 2012 16 108 112 10.1017/S1368980012001218 22578854 
+68. Larson NI  Story M  Eisenberg ME  Neumark-Sztainer D   Food preparation and purchasing roles among adolescents: associations with sociodemographic characteristics and diet quality J Am Diet Assoc 2006 106 211 218 10.1016/j.jada.2005.10.029 16442868 
+69. Blake CE  Wethington E  Farrell TJ  Bisogni CA  Devine CM   Behavioral contexts, food-choice coping strategies, and dietary quality of a multiethnic sample of employed parents J Am Diet Assoc 2011 111 401 407 10.1016/j.jada.2010.11.012 21338739 
+70. Leech RM  McNaughton SA  Crawford DA  Campbell KJ  Pearson N  Timperio A   Family food involvement and frequency of family dinner meals among Australian children aged 10-12years. Cross-sectional and longitudinal associations with dietary patterns Appetite 2014 75 64 70 10.1016/j.appet.2013.12.021 24389242 
+71. Swanson V, Power KG, Crombie IK, Irvine L, Kiezebrink K, Wrieden W, et al. Maternal feeding behaviour and young children’s dietary quality: A cross-sectional study of socially disadvantaged mothers of two-year old children using the Theory of Planned Behaviour. Int J Behav Nutr Phys Act. 2011;8.
+72. Da Rocha Leal FM  De Oliveira BMPM  Pereira SSR   Relationship between cooking habits and skills and Mediterranean diet in a sample of Portuguese adolescents Perspect Public Health 2011 131 283 287 10.1177/1757913911419909 
+73. Black AE  Cole TJ   Biased Over- Or Under-Reporting is Characteristic of Individuals Whether Over Time or by Different Assessment Methods J Am Diet Assoc 2001 101 70 80 10.1016/S0002-8223(01)00018-9 11209588 
+74. Adams J  Goffe L  Adamson AJ  Halligan J  O’Brien N  Purves R    Prevalence and socio-demographic correlates of cooking skills in UK adults: cross-sectional analysis of data from the UK National Diet and Nutrition Survey Int J Behav Nutr Phys Act 2015 12 1 13 10.1186/s12966-014-0159-z 25592201 
+75. Jaworowska A  Blackham T  Stevenson L  Davies IG   Determination of salt content in hot takeaway meals in the United Kingdom Appetite 2012 59 517 522 10.1016/j.appet.2012.06.018 22772043 
+76. Humphries SE  Peacock RE  Talmud PJ   The genetic determinants of plasma cholesterol and response to diet Bailliere Clin Endocrinol Metab 1995 9 797 823 10.1016/S0950-351X(95)80161-8 
+77. Benton D   Portion Size: What We Know and What We Need to Know Crit Rev Food Sci Nutr 2015 55 988 1004 10.1080/10408398.2012.679980 24915353 
+78. Miller R  Benelam B  Stanner SA  Buttriss JL   Is snacking good or bad for health: An overview Nutr Bull 2013 38 302 322 10.1111/nbu.12042 
+79. St-Onge MP, Ard J, Baskin ML, Chiuve SE, Johnson HM, Kris-Etherton P, et al. Meal Timing and Frequency: Implications for Cardiovascular Disease Prevention: A Scientific Statement From the American Heart Association. Circulation. 2017. doi:10.1161/cir.0000000000000476.
+80. Walsh D  McCartney G  McCullough S  van der Pol M  Buchanan D  Jones R   Comparing levels of social capital in three northern post-industrial UK cities Public Health 2015 129 629 638 10.1016/j.puhe.2015.02.024 25823706 
+81. Hammons AJ  Fiese BH   Is Frequency of Shared Family Meals Related to the Nutritional Health of Children and Adolescents? Pediatrics 2011 127 e1565 e1574 10.1542/peds.2010-1440 21536618 
+82. Fiese BH, Schwartz M. Reclaiming the family table: mealtimes and child health and wellbeing. Soc Policy Rep. 2008;22.
+83. Gatley A  Caraher M  Lang T   A qualitative, cross cultural examination of attitudes and behaviour in relation to cooking habits in France and Britain Appetite 2014 75 71 81 10.1016/j.appet.2013.12.014 24370356
+

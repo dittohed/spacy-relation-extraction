@@ -1,0 +1,803 @@
+
+==== Front
+Public Health NutrPublic Health NutrPHNPublic Health Nutrition1368-98001475-2727Cambridge University Press Cambridge, UK 10.1017/S1368980018001179S136898001800117900117Research PaperBehavioural NutritionDiet quality and depressive symptoms in adolescence: no cross-sectional or prospective associations following adjustment for covariates EM Winpenny et al.Diet quality and depression in adolescenceWinpenny Eleanor M 1van Harmelen Anne-Laura 2White Martin 1van Sluijs Esther MF 1Goodyer Ian M 2
+1 
+MRC Epidemiology Unit and Centre for Diet and Activity Research, School of Clinical Medicine, University of Cambridge, Addenbrooke’s Hospital, Box 285, Hills Road, Cambridge CB2 0QQ, UK
+
+2 
+Developmental Psychiatry, Department of Psychiatry, University of Cambridge, Cambridge, UK
+* Corresponding author: Email ew470@cam.ac.uk16 5 2018 9 2018 21 13 2376 2384 10 11 2017 16 3 2018 03 4 2018 © The Authors 20182018The AuthorsThis is an Open Access article, distributed under the terms of the Creative Commons Attribution licence (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted re-use, distribution, and reproduction in any medium, provided the original work is properly cited.Objective
+Adolescence is a critical period for development of depression and understanding of behavioural risk factors is needed to support appropriate preventive strategies. We examined associations between adolescent diet quality and depressive symptoms, cross-sectionally and prospectively, in a large community cohort, adjusting for behavioural and psychosocial covariates.
+
+Design
+Prospective community-based cohort study (ROOTS).
+
+Setting
+Secondary schools in Cambridgeshire and Suffolk, UK.
+
+Subjects
+Study participants (n 603) who completed 4 d diet diaries at age 14 years and reported depressive symptoms (Moods and Feelings Questionnaire (MFQ)) at 14 and 17 years of age.
+
+Results
+Diet data were processed to derive a Mediterranean diet score (MDS) and daily servings of fruit and vegetables, and fish. At age 14 years, a negative association between fruit and vegetable intake and MFQ score was seen in the unadjusted cross-sectional regression model (β=−0·40; 95 % CI −0·71,−0·10), but adjustment for behavioural covariates, including smoking and alcohol consumption, attenuated this association. Fish intake and MDS were not cross-sectionally associated with MFQ score. No prospective associations were found between MDS, fruit and vegetable intake or fish intake and later MFQ score.
+
+Conclusions
+Diet quality was not associated with depressive symptoms in mid-adolescence. Previously reported associations in this age range may be due to confounding. Further longitudinal studies are needed that investigate associations between adolescent diet and depression across different time frames and populations, ensuring appropriate adjustment for covariates.
+
+Keywords
+DietDepressionAdolescenceFishFruitsVegetablesMediterranean diet scoreProspective
+==== Body
+Adolescence is a critical period for development of depression, with estimated 1-year prevalence increasing from less than 1 % in childhood to 4–5 % by mid- to late adolescence(
+
+1
+
+). Adolescent depression is a risk factor for depression recurrence later in life(
+
+2
+
+), as well as for a wide range of other mental health disorders in adulthood, for example anxiety disorders, substance-related disorders and bipolar disorder(
+
+1
+
+). As mental disorders are the number one global contributor to loss of disability-adjusted life years in those aged 15–49 years(
+
+3
+
+), there is an urgent need to formulate appropriate preventive strategies. Childhood and adolescence are periods of crucial importance for understanding the development of depressive illness and the contribution of behavioural risk.
+
+Diet quality is one behavioural risk factor that has been associated with depression. Reviews and meta-analyses of published evidence from cross-sectional and prospective studies in adults have concluded that a healthy diet in adulthood is associated with a reduced risk of depression(
+
+4
+
+). In particular, adherence to a Mediterranean diet (characterized by higher intakes of fruits, vegetables, legumes, nuts, whole grains, fish and monounsaturated fats, and lower intakes of red and processed meats and alcohol)(
+
+5
+
+), fruit and vegetable intake(
+
+6
+
+) and fish intake(
+
+7
+
+) have all been associated with reduced risk of depression in adults. Putative mechanisms for such associations include decreases in adiposity and inflammation. Increased adiposity, frequently associated with poor quality of diet, has been associated with increased risk of depression(
+
+8
+
+–
+
+10
+
+). Such an association between adiposity and depression may be mediated by inflammation: adipose tissue is known to release inflammatory cytokines and certain inflammatory markers have been associated with increased risk of depression(
+
+11
+
+,
+
+12
+
+). In addition, higher diet quality has been directly associated with lower concentrations of inflammatory markers after adjustment for adiposity(
+
+13
+
+), allowing the possibility of a more direct pathway between diet quality and depression.
+
+Studies of associations between diet and depression in adolescence are more limited. Two recent systematic reviews addressed the relationship between diet and depression in adolescents(
+
+14
+
+,
+
+15
+
+), reporting support for an association between a healthy diet and lower levels of depression, but based on limited evidence. Across these reviews only three prospective studies were identified, two of which reported negative associations between diet quality and measures of mental health related to depression(
+
+16
+
+–
+
+18
+
+). Each of these prospective studies had limitations in dietary assessment or covariate adjustment. Only one study(
+
+17
+
+) used a comprehensive measure of dietary intake, which aimed to assess all foods and drinks consumed over a defined period (by an FFQ) and adjusted associations for total energy intake, while the remaining two studies assessed diet based on a limited number of questionnaire items. Additionally, the studies showed limitations in covariate adjustment, with only one study including a range of health behaviours (physical activity, smoking, drinking and drug use) and psychosocial factors (parental conflict and social support) as covariates(
+
+18
+
+).
+
+In the present study we analysed data on a cohort of adolescents (the ROOTS study(
+
+19
+
+,
+
+20
+
+)) to gain a better understanding of the associations between diet and depression in adolescence. The ROOTS study included a comprehensive dietary assessment at age 14 years, a validated measure of depressive symptoms at ages 14 and 17 years(
+
+21
+
+,
+
+22
+
+), and included a wide range of additional measures allowing adjustment for sociodemographic, anthropometric, behavioural and psychological factors in longitudinal analyses. Based on associations seen in adults, we characterized diet quality using a Mediterranean diet score (MDS)(
+
+5
+
+), as well as studying independent associations of intake of fruit and vegetables(
+
+6
+
+) and intake of fish(
+
+7
+
+) with depressive symptoms in this cohort. The MDS is well established and validated as a measure of overall diet quality in US and European populations(
+
+23
+
+–
+
+25
+
+) and has been shown to perform comparably to other diet quality scores in US populations(
+
+24
+
+). Our aim in the present study was to explore cross-sectional and prospective associations between diet and depressive symptoms, to address our main question: What is the association between diet quality (MDS, fruit and vegetables, fish) at age 14 years and development of depressive symptoms from 14 to 17 years of age?
+
+Methods
+Study population and design
+The ROOTS study is a longitudinal cohort study of adolescent development, focusing on the risk patterns and processes for the emergence of psychopathology during adolescence(
+
+19
+
+,
+
+20
+
+). Participants (n 1238) were recruited at age 14 years through secondary schools in Cambridgeshire and Suffolk, UK, from 2005 to 2007. At mean age 14·5 years (sd 3·5 months), participants completed self-reported demographic and psychosocial measures. Six months later, participants were invited to take part in a sub-study focusing on diet, physical activity and body composition, and 932 (75·3 %) participants completed a diet diary. These data collection periods are collectively referred to as ‘baseline’ in the present analyses. The cohort was followed for 3 years from study entry to mean age 17·5 years (sd 4·1 months).
+
+Dietary measurement and assessment of diet quality
+Participants were asked to complete a 4 d diet diary, including two weekdays and two weekend days, reporting estimated portion sizes in terms of small, medium or large, household measures or as individual items. Training was provided, involving practice diary completion and feedback from the research team, and on return of completed diary and physical activity monitor, participants received a £30 voucher. Diets were coded at the Medical Research Council (MRC) Human Nutrition Research Unit (Cambridge, UK) using the Diet-In-Nutrients-Out (DINO) system(
+
+26
+
+). Portion weights were approximated using published values for children(
+
+27
+
+–
+
+29
+
+).
+
+Participants with three or more days of diet diary data available were included in the analysis. Extreme misreporters, those reporting an energy intake of <2092 kJ/d (<500 kcal/d) or >14 644 kJ/d (>3500 kcal/d), were excluded(
+
+30
+
+). Diet data were processed to give a measure of diet quality, known as the alternative Mediterranean diet score (hereafter referred to as MDS)(
+
+13
+
+). Median and interquartile range of each of the variables making up the MDS were calculated and are reported to give an indication of the distribution of intakes. Median and interquartile range are reported, rather than mean and standard deviation, due to the skewed distribution of these variables. To create the MDS score, data were first adjusted to an energy intake of 7531 kJ/d (1800 kcal/d) using the residual method(
+
+23
+
+,
+
+31
+
+) and individuals were then scored as described previously(
+
+13
+
+), based on their intake of nine food items (vegetables, legumes, fruit, nuts, whole grains, red and processed meat, fish, ratio of monounsaturated to saturated fat, ethanol) in comparison with the population median. We included a minor adaptation for adolescents, following van de Laar et al.(
+
+25
+
+), such that ethanol intake was scored as 1 point for no intake and 0 for any other level of intake. Our assessment of whole grains included wholegrain breakfast cereals and breads only, since information on all whole grains consumed was not available. Average daily intakes of fruit and vegetables, fish and total energy were calculated and data on fruit and vegetables and fish converted into daily servings, using a serving size of 80 g for fruit and vegetables and 140 g for fish(
+
+32
+
+).
+
+Depressive symptoms
+At baseline and follow-up, participants completed the Moods and Feelings Questionnaire (MFQ)(
+
+33
+
+), a thirty-three-item self-report measure of depressive symptoms, including factors such as low mood, loss of appetite, anhedonia, irritability and restlessness. Against each item, participants reported their mood over the previous two weeks on a three-point scale (mostly/sometimes/never), giving an overall score ranging from 0 to 66. Higher summed MFQ scores indicate more depressive symptoms. The MFQ has moderate to high criterion validity as a screen for adolescents with unipolar depression, with an optimal cut-point of ≥20 on the MFQ suggested to discriminate participants with any mood disorder from those with no mood disorder and an optimal cut-point of ≥29 on the MFQ suggested to discriminate participants having current major depressive episodes(
+
+21
+
+).
+
+Covariates
+A wide range of covariates were included to adjust for confounding of associations by variables likely to be associated with both diet and depression, as well as to increase the precision of estimates by adjustment for covariates strongly associated with the outcome variable. Based on associations reported in published literature, covariates included sociodemographic factors (sex, socio-economic status (SES))(
+
+1
+
+,
+
+34
+
+,
+
+35
+
+), behavioural factors (smoking level, level of alcohol consumption, physical activity, sleep)(
+
+36
+
+–
+
+41
+
+), psychosocial factors (friendship quality, self-esteem, family functioning)(
+
+42
+
+,
+
+43
+
+), anthropometric factors (percentage body fat)(
+
+9
+
+,
+
+44
+
+), medication use and total energy intake(
+
+45
+
+). Adjustment for total energy intake as a covariate was not included in associations between MDS and depressive symptoms, since adjustment for total energy was already included in the MDS.
+
+Data on all covariates were collected at baseline. Participants self-reported their sex. Neighbourhood-level SES was assessed using the ACORN index to categorize UK postcodes into five categories(
+
+46
+
+). These categories were further collapsed to give three categories: high (categories 1/2), middle (category 3) and low SES (categories 4/5).
+
+Cigarette smoking (cigarettes smoked per day) and level of alcohol consumption (total number of days when alcohol was consumed, across four categories) were assessed by questionnaire. The level of alcohol consumption was adopted as a covariate in addition to inclusion of alcohol in the MDS, since alcohol in the MDS was only a binary variable assessing any consumption v. no consumption, whereas as a covariate we adjusted for the level of consumption. Physical activity was recorded using a combined heart rate and movement sensor (Actiheart, CamNtech Ltd, Papworth, UK) for four consecutive days, as reported previously(
+
+47
+
+). Valid Actiheart monitor wear was defined as ≥48 h of data, including at least 8 h of data from all quadrants of a 24 h day (≥8 h from morning (03.00–09.00 hours), noon (09.00–15.00 hours), afternoon (15.00–21.00 hours) and night (21.00–03.00 hours) time periods)(
+
+47
+
+). Moderate-to-vigorous physical activity was defined as time spent above 4 MET (metabolic equivalents of task). Sleep data combined data from self-report, using the validated Sleep Habits Survey for Adolescents(
+
+48
+
+), with Actiheart data, as described previously(
+
+47
+
+).
+
+Family functioning was reported by participants using the twelve-item general functioning subscale of the McMaster Family Assessment Device(
+
+49
+
+,
+
+50
+
+). Friendship quality was rated by participants using an eight-item questionnaire which assesses the availability, adequacy and intimacy of current friendships(
+
+51
+
+). Self-esteem was measured using the Rosenberg self-esteem scale(
+
+52
+
+,
+
+53
+
+).
+
+Height (in metres), weight (in kilograms) and body-tissue impedance (in ohms; Tanita TBF-300 MA, Tokyo, Japan) were measured during school visits by trained research assistants following standard protocols. Fat-free mass, fat mass and body fat percentage were predicted based on impedance measurements using a pooled estimation approach, as described previously(
+
+47
+
+). For descriptive purposes, overweight and obesity status were computed based on International Obesity Task Force BMI cut-offs(
+
+54
+
+). Information regarding participants’ medication use was obtained from parents. Total energy intake was derived from the diet data, described above.
+
+Statistical analyses
+All analyses were performed using the statistical software package Stata version 14. Student’s t tests and χ
+2 tests were used to assess differences in sociodemographic and anthropometric variables between those included and excluded from the current analysis.
+
+Multivariable linear regression models were used to test associations between dietary variables and depressive symptoms. Since adolescents were recruited through schools we tested whether school-level intraclass correlation coefficients might suggest use of multilevel analysis to adjust for clustering by school. However, intraclass correlation coefficients were low, which, together with a maximum cluster size of 50, suggests little impact of clustering on these analyses (intraclass correlation coefficient of 0·022 for baseline MFQ and <0·001 for follow-up MFQ)(
+
+55
+
+); therefore adjustment for school-level clustering was not included.
+
+In cross-sectional models, regression of the MFQ score at baseline v. (i) MDS, (ii) fruit and vegetable intake and (iii) fish intake was performed, adjusting for covariates. In prospective models, regression of the MFQ score at follow-up v. (i) MDS, (ii) fruit and vegetable intake and (iii) fish intake at baseline was performed, adjusting for MFQ score at baseline and covariates. Covariates were added to the models in stages, to understand the effects of covariate adjustment on model outputs. We explored the impact of order of addition of covariates. In the reported analyses, model 1 included only sociodemographic covariates, behavioural covariates were added in model 2, and psychosocial and anthropometric covariates were added in model 3, along with data on medication use and adjustment for total energy intake. Due to differences in mood (MFQ score) and diet quality (MDS) by sex, our final model (model 3) was also analysed stratified by sex.
+
+Our primary analysis was a complete case analysis including those participants with data available on predictor and outcome variables and all covariates. We also conducted a secondary analysis of all participants for whom data on predictor and outcome variables were available (n 804), with imputation of missing covariate data (under the missing at random assumption), following recommendations from White et al.(
+
+56
+
+).
+
+Results
+Descriptive characteristics
+Of 926 participants who completed the dietary sub-study, 804 (87 %) had data on depressive symptoms at both baseline and follow-up. Further participants were dropped due to missing data on covariates (n 199) or misreporting of total energy intake (n 2), leaving 603 participants (65 % of dietary sub-study participants) contributing to these analyses. Those included in the analysis (n 603) did not differ from those excluded (n 323) by mean age (14·5 (sd 0·27) v. 14·5 (sd 0·28) years; P=0·54) or percentage body fat (21·7 v. 21·5 %; P=0·70). However, included participants were more likely to be female (included v. excluded: 60·0 v. 49·2 %; P=0·002) and from higher SES groups (included: 64·0 % high, 24·9 % medium, 11·1 % low SES; excluded: 58·1 % high, 22·7 % medium, 19·3 % low SES; P=0·003). Those included had a lower baseline MFQ score than those excluded (14·3 (sd 9·88) v. 16·2 (sd 10·2); P=0·008).
+
+
+Table 1 presents descriptive characteristics of the study participants, as well as descriptive data on exposure and outcome variables. Both dietary variables and MFQ scores showed differences by sex. While total energy intake was higher among boys, the MDS was higher among girls, indicating better diet quality. MFQ scores were also higher among girls, indicating more depressive symptoms among girls than boys at baseline and follow-up.Table 1 Characteristics of included study participants: adolescents recruited at age 14 years through secondary schools in Cambridgeshire and Suffolk, UK, from 2005 to 2007, and followed up at age 17 years (ROOTS study)
+
+			Sex	
+	All participants (n 603)	Male (n 241, 40·0 %)	Female (n 362, 60·0 %)	
+	Mean	
+sd
+	Mean	
+sd
+	Mean	
+sd
+	
+Descriptive characteristics of the sample	
+ Age (years)	14·5	0·3	14·5	0·3	14·5	0·3	
+ Socio-economic status (%)	
+ Low	11·1	13·3	9·7	
+ Medium	24·9	23·2	26·0	
+ High	64·0	63·5	64·4	
+ Weight status (%)	
+ Normal weight/underweight	81·8	82·6	81·2	
+ Overweight/obese	18·2	17·4	18·8	
+Exposure and outcome variables	
+ Diet, baseline	
+ MDS	4·88	1·78	4·54	1·57	5·11***	1·87	
+ Fruit and vegetable intake (servings/d)	3·34	2·51	3·43	2·69	3·28	2·39	
+ Fish intake (servings/d)	0·12	0·20	0·14	0·23	0·10*	0·18	
+ Energy intake (kJ/d)	7589·4	2128·8	8516·1	2185·3	6972·2	1851·4	
+ Energy intake (kcal/d)	1813·9	508·8	2035·4	522·3	1666·4***	442·5	
+ Depressive symptoms	
+ MFQ score, baseline	14·3	9·7	11·5	8·1	16·2***	10·2	
+ MFQ score, 3-year follow-up	13·2	9·6	10·7	8·3	14·9***	10·0	
+MDS, Mediterranean diet score; MFQ, Moods and Feelings Questionnaire.
+
+Mean value was significantly different compared with males: *P<0·05, **P<0·01, ***P<0·001.
+
+
+
+
+
+Table 2 presents further details on intake of dietary components of the MDS, by sex. Females had lower intakes of whole grains and red and processed meats compared with male participants.Table 2 Intake of components of the Mediterranean diet, by sex, among adolescents recruited at age 14 years through secondary schools in Cambridgeshire and Suffolk, UK, from 2005 to 2007, and followed up at age 17 years (ROOTS study)
+
+	All participants (n 603)	Male (n 241)	Female (n 362)		
+	Median	IQR	Median	IQR	Median	IQR	
+P value†
+	
+Vegetable intake (g/d)	58·57	26·43–101·96	61·29	25·57–96·79	55·60	27·14–105·00	0·80	
+Legume intake (g/d)	0·00	0·00–19·29	0·00	0·00–19·29	0·00	0·00–13·21	0·93	
+Fruit intake (g/d)	155·00	57·14–280·48	165·00	53·33–293·29	152·64	58·57–272·86	0·36	
+Nut intake (g/d)	0·00	0·00–0·46	0·00	0·00–1·43	0·00	0·00–0·00	0·18	
+Whole grains intake (g/d)	14·29	0·00–45·00	17·14	0·00–53·57	11·43	0·00–42·50	
+0·02
+	
+Red and processed meat intake (g/d)	67·14	27·14–117·14	86·43	44·43–147·86	49·36	20·29–99·75	
+<0·001
+	
+Fish intake (g/d)	0·00	0·00–24·29	0·00	0·00–28·43	0·00	0·00–21·67	
+0·04
+	
+Ratio of monounsaturated to saturated fat	0·85	0·75–0·98	0·86	0·76–0·98	0·84	0·75–0·98	0·67	
+Alcohol (% consuming)	86·24	–	86·72	–	85·91	–	0·78	
+IQR, interquartile range.
+
+† 
+P value for the difference between males and females; statistically significant values (P<0·05) indicated in bold font.
+
+
+
+
+Associations between diet and depressive symptoms
+Cross-sectional and prospective associations between MDS, fruit and vegetable intake and fish intake and depressive symptoms are shown in Table 3. There were no significant associations between diet quality (MDS), fruit and vegetable intake or fish intake and depressive symptoms at baseline, nor between baseline MDS, fruit and vegetable intake or fish intake and depressive symptoms at 3-year follow-up, after controlling for covariates. R
+2 values indicated that for each explanatory variable, the final model (model 3) explained about 61 % of the variance in cross-sectional models and 26 % of the variance in prospective models.Table 3 Cross-sectional and prospective associations between dietary variables and depressive symptoms among adolescents recruited at age 14 years through secondary schools in Cambridgeshire and Suffolk, UK, from 2005 to 2007, and followed up at age 17 years (ROOTS study)
+
+	Unadjusted	Model 1: adjusted for demographic covariates	Model 2: additionally adjusted for behavioural covariates	Model 3: additionally adjusted for all other potential covariates	Model 3 (male)	Model 3 (female)	
+	
+β
+	95 % CI	
+β
+	95 % CI	
+β
+	95 % CI	
+β
+	95 % CI	
+β
+	95 % CI	
+β
+	95 % CI	
+Cross-sectional associations	
+ MDS	0·15	−0·28, 0·58	−0·03	−0·46, 0·40	−0·02	−0·44, 0·39	−0·03	−0·31, 0·26	0·00	−0·47, 0·48	−0·08	−0·45, 0·29	
+ Fruit and vegetables (servings/d)	
+−0·40
+	
+−0·71, −0·10
+	
+−0·35
+	
+−0·65, −0·05
+	−0·22	−0·51, 0·08	−0·07	−0·28, 0·14	−0·19	−0·47, 0·10	0·03	−0·28, 0·33	
+ Fish (servings/d)	−2·99	−6·85, 0·88	−2·12	−5·91, 1·68	−1·88	−5·54, 1·78	0·52	−2·03, 3·06	2·07	−1·21, 5·35	−1·94	−5·88, 2·00	
+Prospective associations	
+ MDS	0·35	−0·03, 0·73	0·34	−0·04, 0·72	0·34	−0·05, 0·72	0·35	−0·04, 0·74	0·07	−0·58, 0·69	0·45	−0·07, 0·96	
+ Fruit and vegetables (servings/d)	0·11	−0·16, 0·38	0·17	−0·10, 0·45	0·16	−0·12, 0·43	0·14	−0·15, 0·43	0·06	−0·32, 0·44	0·21	−0·22, 0·64	
+ Fish (servings/d)	1·84	−1·56, 5·25	2·57	−0·83, 5·96	2·47	−0·95, 5·88	2·34	−1·15, 5·83	−0·09	−4·44, 4·27	4·20	−1·32, 9·72	
+MDS, Mediterranean diet score.
+
+Cross-sectional models perform the regression of MFQ score at baseline v. diet variables at baseline. Prospective models perform the regression of MFQ score at follow-up v. diet variables at baseline, with MFQ score at baseline included in all prospective models as a covariate.
+
+Model 1 includes baseline covariates: sex and socio-economic status.
+
+Model 2 includes baseline covariates: sex and socio-economic status, plus smoking level, alcohol consumption, physical activity and sleep.
+
+Model 3 includes the same covariates as model 2, as well as friendship quality, self-esteem, family functioning, medication use, percentage body fat and total energy intake (except MDS associations).
+
+One serving of fruit and vegetables=80 g; one serving of fish=140 g.
+
+Statistically significant associations (P<0·05) indicated in bold font.
+
+
+
+
+Cross-sectional associations between fruit and vegetable consumption and depressive symptoms were seen in the unadjusted and minimally adjusted model (model 1) but were attenuated to below significance following adjustment for behavioural covariates (model 2). In particular, smoking and alcohol consumption contributed to attenuation of the association seen, while adjustment for physical activity and sleep had little impact on the model coefficient. Alternative model build-ups showed that addition of baseline energy intake as a covariate to model 1 also reduced observed associations to levels below significance (β=−0·27; 95 % CI −0·59, 0·04). Secondary analyses on imputed data sets did not alter the overall findings (see online supplementary material, Table S1).
+
+Discussion
+Summary of main findings
+We found no prospective associations between MDS, fruit and vegetable intake or fish intake at age 14 years and depressive symptoms at age 17 years, adjusted for baseline depressive symptoms. At age 14 years, a negative cross-sectional association between fruit and vegetable intake and depressive symptoms was seen, but this was attenuated following adjustment for behavioural covariates (smoking and alcohol intake) or energy intake. No cross-sectional associations were found between MDS or fish intake and depressive symptoms.
+
+Strengths and limitations
+The present study represents the strongest analysis of prospective associations between adolescent diet and depression to date. Its strengths lie in the detailed nature of the data, including high-quality measures of exposure and outcome, the data on a wide range of covariates and the longitudinal follow-up, allowing testing of prospective associations. The available evidence suggests that multi-day diet diaries are one of the most robust methods of collecting dietary data from adolescents(
+
+57
+
+). One disadvantage of this method is in collection of data on infrequently consumed items (e.g. fish, legumes), which may not be consumed within the collection period, leading to loss of precision in estimation of usual intake of these items. We do not expect this to lead to any bias in our analyses, since among the population some members may record more, and some less, of their usual weekly consumption during the measurement period. Our outcome variable, the MFQ score, is a well-established and validated method of assessing depressive symptoms in this age group(
+
+21
+
+). As a self-report measure the MFQ is subject to reporting biases. However, validation against clinician-led diagnostic interviews has shown moderate to high criterion validity and favourable comparison with other self-report measures(
+
+21
+
+). In the present study, use of the same instrument at baseline and follow-up will ameliorate the impact of any time-invariant biases on prospective associations. Study data on a wide range of behavioural and social covariates allowed us to adjust for many putative confounders.
+
+The ROOTS study population was not designed to be representative, but rather to sample a broad range of adolescents from the counties of Cambridgeshire and Suffolk. Compared with national UK data, the ROOTS cohort includes a higher proportion of participants from higher SES categories(
+
+19
+
+). As such, the results are not generalizable to a national population, instead reflecting properties of a more wealthy, healthy and female population of teenagers. The current analysis included 603 adolescents, a comparatively large sample in this research area, particularly given the high-quality data on diet and covariates. Although the null associations observed could be due to type II error, the narrow confidence intervals for associations of MDS and fruit and vegetable servings with MFQ indicate that this is unlikely in these analyses. Wider confidence intervals for fish consumption suggest that our findings here are less certain, and further research in larger samples may be warranted. A further limitation is that we can only study associations at times when diet and depressive symptoms were measured in this cohort. The MFQ asks about symptoms of depression over the past two weeks, so cannot capture changes in mood which may have occurred across a longer time frame.
+
+Comparison with previous evidence and implications of the findings
+In the present study, using an MDS which incorporated adjustment for total energy intake, we found no associations between MDS and depressive symptoms. Previous evidence on associations between diet and depression in adolescence has been mixed. Two recent reviews support associations between healthy dietary patterns or higher quality diet and lower levels of depression in adolescence. However, many of the included studies show limitations in measures used and in adjustment for confounding(
+
+14
+
+,
+
+15
+
+). Many previous studies assessing relationships between diet and depression have not used comprehensive measures of dietary intake, meaning that measures of diet quality could not incorporate adjustment for misreporting or adjust for confounding by reported energy intake, as recommended(
+
+45
+
+). We suggest that previously reported associations may have been driven in part by the inability to adjust for energy intake and dietary misreporting; under-reporting of energy intake is higher in specific population groups, such as obese individuals, with some limited evidence for higher under-reporting among depressed individuals(
+
+58
+
+).
+
+In the current study, we did see a small negative cross-sectional association between intake of fruit and vegetables and depressive symptoms in the unadjusted model. This association persisted following adjustment for gender and SES, but was attenuated following adjustment for behavioural covariates, particularly smoking and level of alcohol consumption. Previous studies have shown associations of both smoking and alcohol consumption with depression in adolescents(
+
+39
+
+,
+
+59
+
+–
+
+61
+
+) and there is substantial evidence reporting clustering of diet with other health-related behaviours(
+
+40
+
+,
+
+41
+
+). Therefore, it is likely that these behaviours may act as confounders which drive observed associations between diet and depression. Other studies that have reported associations between fruit and vegetables or fish and depression have typically neglected to control for such behavioural covariates(
+
+15
+
+).
+
+We did not see any prospective associations between baseline MDS and MFQ at follow-up, after adjusting for baseline MFQ, suggesting that diet quality at age 14 years does not influence development of depressive symptoms between 14 and 17 years of age. To our knowledge, only three previous studies have assessed prospective associations between measures of diet quality and depression in adolescence. Two studies found no prospective associations between healthy diet scores with depression after adjustment for confounders(
+
+17
+
+,
+
+18
+
+), while one study found prospective associations of healthy and unhealthy diet scores with a measure of depressive symptoms, but after adjustment for a more limited range of confounders(
+
+16
+
+). Again, it may be that residual confounding by behavioural covariates is implicated in the reported associations.
+
+Intakes of fruit and vegetables and fish among our sample were on average below those recommended for a healthy diet. The WHO dietary guidelines recommend consumption of at least five portions of fruit and vegetables daily(
+
+62
+
+), while UK guidelines additionally recommend consumption of at least two portions of fish per week(
+
+32
+
+). The median consumption in our sample was 59 g (0·7 servings) of vegetables, 155 g (1·9 servings) of fruit and 0 g (0 servings) of fish daily, with those at the 75th percentiles of consumption also below stated recommendations, suggesting that the majority of this population does not consume a diet in line with healthy guidelines.
+
+Despite finding no prospective associations in the present study, we cannot say conclusively that there are no associations between diet quality and prospective development of depressive symptomology among adolescents. Our findings here are constrained by the age range of this cohort; a greater predictive effect of diet might be seen at younger ages or with a shorter or longer follow-up time than 3 years. Alternatively, it may be that diet is part of a ‘chains of risk’ model(
+
+63
+
+) but does not itself directly induce depressive symptomology. Finally, in the current study we have looked at population-level associations; however, diet may show stronger associations in vulnerable population subgroups. Further longitudinal studies are needed to investigate associations between diet and depression in adolescents over different time periods, as well as how multiple health behaviours may interact and influence the development of depressive symptomology.
+
+Conclusions
+Diet quality, intake of fruit and vegetables and intake of fish were not associated with depressive symptoms in our population, after adjustment for covariates. These findings suggest that during adolescence, a better diet quality may not contribute to reduced risk of current or future depressive symptoms. Further longitudinal studies are needed which investigate associations between adolescent diet and depression across different time frames and populations, always ensuring appropriate adjustment for confounders.
+
+Acknowledgements
+
+Acknowledgements: The authors would like to thank the physical activity technical team at the MRC Epidemiology Unit for processing the activity data and Stephen Sharp of the MRC Epidemiology Unit, University of Cambridge who provided statistical advice. Financial support: The ROOTS study was funded by the Wellcome Trust (grant number 074296) and the NIHR Collaboration for Leadership in Applied Research and Care East of England; data collection was additionally supported by the MRC (http://www.mrc.ac.uk/) (Unit Programme number MC_UU_12015/3). The work on this manuscript was undertaken at the Centre for Diet and Activity Research (CEDAR), a UKCRC Public Health Research Centre of Excellence. Funding from the British Heart Foundation, Cancer Research UK, the Economic and Social Research Council, the MRC, the National Institute for Health Research (NIHR) and the Wellcome Trust, under the auspices of the UK Clinical Research Collaboration (UKCRC) (http://www.ukcrc.org/), is gratefully acknowledged (E.M.W., M.W., E.M.F.v.S., grant numbers 087636/Z/08/Z, ES/G007462/1 and MR/K023187/1). This work was additionally supported by the MRC (E.M.W., E.M.F.v.S., Unit Programme number MC_UU_12015/7). A.-L.v.H. is supported by a Dorothy Hodgkin Fellowship from the Royal Society (grant number DH150176). The funders had no role in study design, data collection and analysis, interpretation of data, or preparation of the manuscript. Conflict of interest: I.M.G. declares fees as a consultant to Lundbeck, a pharmaceutical company. The remaining authors declare that they have no financial disclosures. Authorship: I.M.G. led the data collection. E.M.W. and A.-L.v.H. designed the analysis and all other authors commented on the analysis protocol. E.M.W. conducted the analysis and drafted the manuscript. All authors contributed to the interpretation of the data, reviewed the manuscript and approved the final manuscript. Ethics of human subject participation: This study was conducted according to the guidelines laid down in the Declaration of Helsinki and all procedures involving human subjects were approved by the Cambridge University Research Ethics Committee. Written informed consent was obtained from all participants and their parents/legal guardians.
+
+Supplementary material
+For supplementary material accompanying this paper visit http://dx.doi.org/10.1017/S1368980018001179.
+
+click here to view supplementary material
+==== Refs
+References
+1. 
+Thapar A , Collishaw S , Pine DS 
+et al (2012 ) Depression in adolescence . Lancet 
+379 , 1056 –1067 .22305766 
+2. 
+Birmaher B , Williamson DE , Dahl RE 
+et al (2004 ) Clinical presentation and course of depression in youth: does onset in childhood differ from onset in adolescence? 
+J Am Acad Child Adolesc Psychiatry 
+43 , 63 –70 .14691361 
+3. 
+Whiteford HA , Degenhardt L , Rehm J 
+et al (2013 ) Global burden of disease attributable to mental and substance use disorders: findings from the Global Burden of Disease Study 2010 . Lancet 
+382 , 1575 –1586 .23993280 
+4. 
+Lai J , Hiles S , Bisquera A 
+et al (2014 ) A systematic review and meta-analysis of dietary patterns and depression in community-dwelling adults . Am J Clin Nutr 
+99 , 181 –197 .24196402 
+5. 
+Psaltopoulou T , Sergentanis TN , Panagiotakos DB 
+et al (2013 ) Mediterranean diet, stroke, cognitive impairment, and depression: a meta-analysis . Ann Neurol 
+74 , 580 –591 .23720230 
+6. 
+Liu X , Yan Y , Li F 
+et al (2016 ) Fruit and vegetable consumption and the risk of depression: a meta-analysis . Nutrition 
+32 , 296 –302 .26691768 
+7. 
+Li F , Liu X  & Zhang D  (2016 ) Fish consumption and risk of depression: a meta-analysis . J Epidemiol Community Health 
+70 , 299 –304 .26359502 
+8. 
+Miller GE , Freedland KE , Carney RM 
+et al (2003 ) Pathways linking depression, adiposity, and inflammatory markers in healthy young adults . Brain Behav Immun 
+17 , 276 –285 .12831830 
+9. 
+Luppino F , de Wit L , Bouvy P 
+et al (2016 ) Overweight, obesity, and depression: a systematic review and meta-analysis of longitudinal studies . Arch Gen Psychiatry 
+67 , 220 –229 .
+10. 
+Quek Y-H , Tam WWS , Zhang MWB 
+et al (2017 ) Exploring the association between childhood and adolescent obesity and depression: a meta-analysis . Obes Rev 
+18 , 742 –754 .28401646 
+11. 
+Khandaker G , Pearson R , Zammit S 
+et al (2014 ) Association of serum interleukin 6 and C-reactive protein in childhood with depression and psychosis in young adult life . JAMA Psychiatry 
+71 , 1121 –1128 .25133871 
+12. 
+Haapakoski R , Mathieu J , Ebmeier KP 
+et al (2015 ) Cumulative meta-analysis of interleukins 6 and 1β, tumour necrosis factor α and C-reactive protein in patients with major depressive disorder . Brain Behav Immun 
+49 , 206 –215 .26065825 
+13. 
+Fung TT , McCullough ML , Newby PK 
+et al (2005 ) Diet-quality scores and plasma concentrations of markers of inflammation and endothelial dysfunction . Am J Clin Nutr 
+82 , 163 –173 .16002815 
+14. 
+O’Neil A , Quirk SE , Housden S 
+et al (2014 ) Relationship between diet and mental health in children and adolescents: a systematic review . Am J Public Health 
+104 , e31 –e42 .
+15. 
+Khalid S , Williams CM  & Reynolds SA  (2016 ) Is there an association between diet and depression in children and adolescents? A systematic review . Br J Nutr 
+116 , 2097 –2108 .28093091 
+16. 
+Jacka FN , Kremer PJ , Berk M 
+et al (2011 ) A prospective study of diet quality and mental health in adolescents . PLoS One 
+6 , e24805 .21957462 
+17. 
+McMartin SE , Kuhle S , Colman I 
+et al (2012 ) Diet quality and mental health in subsequent years among Canadian youth . Public Health Nutr 
+15 , 2253 –2258 .22414240 
+18. 
+Jacka FN , Rothon C , Taylor S 
+et al (2013 ) Diet quality and mental health problems in adolescents from East London: a prospective study . Soc Psychiatry Psychiatr Epidemiol 
+48 , 1297 –1306 .23160714 
+19. 
+Goodyer IM , Croudace T , Dunn V 
+et al (2010 ) Cohort Profile: Risk patterns and processes for psychopathology emerging during adolescence: the ROOTS project . Int J Epidemiol 
+39 , 361 –369 .19359258 
+20. 
+Lewis G , Jones PB  & Goodyer IM  (2016 ) The ROOTS study: a 10-year review of findings on adolescent depression, and recommendations for future longitudinal research . Soc Psychiatry Psychiatr Epidemiol 
+51 , 161 –170 .26646820 
+21. 
+Burleson Daviss W , Birmaher B , Melhem NA 
+et al (2006 ) Criterion validity of the Mood and Feelings Questionnaire for depressive episodes in clinic and non-clinic subjects . J Child Psychol Psychiatry Allied Discip 
+47 , 927 –934 .
+22. 
+Costello EJ  & Angold A  (1988 ) Scales to assess child and adolescent depression: checklists, screens, and nets . J Am Acad Child Adolesc Psychiatry 
+27 , 726 –737 .3058677 
+23. 
+Tong TYN , Wareham NJ , Khaw K-T 
+et al (2016 ) Prospective association of the Mediterranean diet with cardiovascular disease incidence and mortality and its population impact in a non-Mediterranean population: the EPIC-Norfolk study . BMC Med 
+14 , 135 .27679997 
+24. 
+Liese AD , Krebs-Smith SM , Subar AF 
+et al (2015 ) The Dietary Patterns Methods Project: synthesis of findings across cohorts and relevance to dietary guidance . J Nutr 
+145 , 393 –402 .25733454 
+25. 
+van de Laar RJJ , Stehouwer CDA , van Bussel BCT 
+et al (2013 ) Adherence to a Mediterranean dietary pattern in early life is associated with lower arterial stiffness in adulthood: the Amsterdam Growth and Health Longitudinal Study . J Intern Med 
+273 , 79 –93 .22809371 
+26. 
+Fitt E , Cole D , Ziauddeen N 
+et al (2015 ) DINO (Diet In Nutrients Out) – an integrated dietary assessment system . Public Health Nutr 
+18 , 234 –241 .24674815 
+27. 
+Crawley H  (2002 ) Food Portion Sizes , 3rd ed 
+London : The Stationery Office .
+28. 
+Davies OH , Suleiman S , Nicholas J 
+et al (2008 ) Food portion weights in primary and secondary school lunches in England . J Hum Nutr Diet 
+21 , 46 –62 .18184394 
+29. 
+Wrieden WL , Longbottom PJ , Adamson AJ 
+et al (2008 ) Estimation of typical food portion sizes for children of different ages in Great Britain . Br J Nutr 
+99 , 1344 –1353 .18031591 
+30. 
+Rhee JJ , Sampson L , Cho E 
+et al (2015 ) Comparison of methods to account for implausible reporting of energy intake in epidemiologic studies . Am J Epidemiol 
+181 , 225 –233 .25656533 
+31. 
+Willett W  (2013 ) Nutritional Epidemiology , 3rd ed 
+New York : Oxford University Press .
+32. 
+NHS Choices  (2015 ) Fish and shellfish in your diet. http://www.nhs.uk/Livewell/Goodfood/Pages/fish-shellfish.aspx (accessed April 2017).
+33. 
+Angold A , Costello EJ , Messer SC 
+et al (1995 ) Development of a short questionnaire for use in epidemiological studies of depression in children and adolescents . Int J Methods Psychiatr Res 
+5 , 237 –249 .
+34. 
+Rai D , Zitko P , Jones K 
+et al (2013 ) Country- and individual-level socioeconomic determinants of depression: multilevel cross-national comparison . Br J Psychiatry 
+202 , 195 –203 .23349294 
+35. 
+World Health Organization  (2017 ) Adolescent Obesity and Related Behaviours: Trends and Inequalities in the WHO European Region . Copenhagen : WHO Regional Office for Europe .
+36. 
+Audrain-McGovern J , Rodriguez D  & Kassel JD  (2009 ) Adolescent smoking and depression: evidence for self-medication and peer smoking mediation . Addiction 
+104 , 1743 –1756 .19549056 
+37. 
+Toseeb U , Brage S , Corder K 
+et al (2014 ) Exercise and depressive symptoms in adolescents: a longitudinal cohort study . JAMA Pediatr 
+168 , 1093 –1100 .25317674 
+38. 
+Ivanenko A , McLaughlin Crabtree V  & Gozal D  (2005 ) Sleep and depression in children and adolescents . Sleep Med Rev 
+9 , 115 –129 .15737790 
+39. 
+Pedrelli P , Shapero B , Archibald A 
+et al (2016 ) Alcohol use and depression during adolescence and young adulthood: a summary and interpretation of mixed findings . Curr Addict Rep 
+3 , 91 –97 .27162708 
+40. 
+Alamian A  & Paradis G  (2009 ) Clustering of chronic disease behavioral risk factors in Canadian children and adolescents . Prev Med 
+48 , 493 –499 .19254742 
+41. 
+Dumith SC , Muniz LC , Tassitano RM 
+et al (2012 ) Clustering of risk factors for chronic diseases among adolescents from Southern Brazil . Prev Med 
+54 , 393 –396 .22484392 
+42. 
+van Harmelen A-L , Gibson JL St, Clair MC 
+et al (2016 ) Friendships and family support reduce subsequent depressive symptoms in at-risk adolescents . PLoS One 
+11 , e0153715 .27144447 
+43. 
+MacPhee AR  & Andrews JJW  (2006 ) Risk factors for depression in adolescence . Adolescence 
+41 , 435 –466 .17225661 
+44. 
+Ambrosini GL , Emmett PM , Northstone K 
+et al (2012 ) Identification of a dietary pattern prospectively associated with increased adiposity during childhood and adolescence . Int J Obes (Lond) 
+36 , 1299 –1305 .22868831 
+45. 
+Willett WC , Howe GR  & Kushi LH  (1997 ) Adjustment for total energy intake in epidemiologic studies . Am J Clin Nutr 
+65 , 4 Suppl. , 1220S –1228S .9094926 
+46. 
+CACI  (2017 ) Acorn – The Smarter Consumer Classification. http://www.acorn.caci.co.uk/ (accessed March 2017).
+47. 
+Collings PJ , Wijndaele K , Corder K 
+et al (2015 ) Magnitude and determinants of change in objectively-measured physical activity, sedentary time and sleep duration from ages 15 to 17.5y in UK adolescents: the ROOTS study . Int J Behav Nutr Phys Act 
+12 , 61 .25971606 
+48. 
+Wolfson AR , Carskadon MA , Acebo C 
+et al (2003 ) Evidence for the validity of a sleep habits survey for adolescents . Sleep 
+26 , 213 –216 .12683482 
+49. 
+Miller IW , Epstein NB , Bishop DS 
+et al (1985 ) The McMaster Family Assessment Device . J Marital Fam Ther 
+11 , 345 –356 .
+50. 
+Epstein NB , Baldwin LM  & Bishop DS  (1983 ) The McMaster Family Assessment Device: reliability and validity . J Marital Fam Ther 
+9 , 171 –180 .
+51. 
+Goodyer IM , Wright C  & Altham PM  (1989 ) Recent friendships in anxious and depressed school age children . Psychol Med 
+19 , 165 –174 .2727204 
+52. 
+Rosenberg M  (1965 ) Society and the Adolescent Self-Image . Princeton, NJ : Princeton University Press .
+53. 
+Sinclair SJ , Blais MA , Gansler DA 
+et al (2010 ) Psychometric properties of the Rosenberg Self-Esteem Scale: overall and across demographic groups living within the United States . Eval Health Prof 
+33 , 56 –80 .20164106 
+54. 
+Cole TJ , Freeman JV  & Preece MA  (1998 ) British 1990 growth reference centiles for weight, height, body mass index and head circumference fitted by maximum penalized likelihood . Stat Med 
+17 , 407 –429 .9496720 
+55. 
+Lai MHC  & Kwok O  (2015 ) Examining the rule of thumb of not using multilevel modeling: the ‘Design Effect Smaller Than Two’ rule . J Exp Educ 
+83 , 423 –438 .
+56. 
+White IR , Royston P  & Wood AM  (2011 ) Multiple imputation using chained equations: issues and guidance for practice . Stat Med 
+30 , 377 –399 .21225900 
+57. 
+Burrows TL , Martin RJ  & Collins CE  (2010 ) A systematic review of the validity of dietary assessment methods in children when compared with the method of doubly labeled water . J Am Diet Assoc 
+110 , 1501 –1510 .20869489 
+58. 
+Maurer J , Taren DL , Teixeira PJ 
+et al (2006 ) The psychosocial and behavioral characteristics related to energy misreporting . Nutr Rev 
+64 , 53 –66 .16536182 
+59. 
+Chaiton MO , Cohen JE , O’Loughlin J 
+et al (2009 ) A systematic review of longitudinal studies on the association between depression and smoking in adolescents . BMC Public Health 
+9 , 356 .19772635 
+60. 
+Merikangas K , Jian-ping H , Burstein M 
+et al (2011 ) Lifetime prevalence of mental disorders in US adolescents: results from the National Comorbidity Study–Adolescent Supplement . J Am Acad Child Adolesc Psychiatry 
+49 , 980 –989 .
+61. 
+Skogen JC , Knudsen AK , Hysing M 
+et al (2016 ) Trajectories of alcohol use and association with symptoms of depression from early to late adolescence: the Norwegian Longitudinal Health Behaviour Study . Drug Alcohol Rev 
+35 , 307 –316 .26494431 
+62. 
+World Health Organization  (2015 ) Healthy diet. http://www.who.int/mediacentre/factsheets/fs394/en/ (accessed April 2017).
+63. 
+Kuh D , Ben-Shlomo Y , Lynch J 
+et al (2003 ) A glossary for life course epidemiology . J Epidemiol Community Health 
+57 , 778 –783 .14573579
+

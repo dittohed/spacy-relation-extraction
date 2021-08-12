@@ -1,4 +1,4 @@
-    import spacy
+import spacy
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
 from spacy import displacy
