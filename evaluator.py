@@ -1,3 +1,16 @@
+# cel:
+# puścić regexpa, żeby znalazł wszystkie true labele
+# usunięcie znaczników + puścić nasze narzędzie NER
+# porównać spany
+# wyświetlić statystyki oraz wizualizację
+
+# potrzeba:
+# oznaczyć jakoś prawdziwe choroby w tekście (możliwe wiele tokenów na jedną nazwę)
+# zapisać Spany (tekst, początek i koniec, ale tak, żeby dało się to porównać z tekstem bez oznaczeń)
+# - możliwe, że tutaj nie muszą w ogóle tworzyć żadnego doca
+# przepuścić tekst przez nasze narzędzie NER
+# porównać Spany
+
 import glob
 import re
 
@@ -9,7 +22,7 @@ DIR_PATH = './articles/diseases'
 GENERATE = True # whether to save results to HTML using displacy for each article
 
 # token of interest should be denoted with enclosing semi-colons exactly this way ;;<token>;;
-toi_expression = ';;.*;;'
+toi_expression = ';;.*?;;' # non-greedy
 
 nlp = spacy.load('en_core_web_trf')
 
@@ -22,20 +35,30 @@ for article in articles:
 
         lines = file.readlines()
         text = ' '.join(lines)
+        text = 'asdasd, ;;aa sasa;;, ;;b;; ...'
 
-        doc = nlp('asdasd, ;;aa sasa;;, ...')
-
-        # for sent in doc.sents:
-        for match in re.finditer(toi_expression, doc.text):
+        toi_found = 0
+        toi_positions = []
+        for match in re.finditer(toi_expression, text): # matches are returned in left-to-right order
             start, end = match.span()
+            print(f'Matched text: {text[start : end]}')
 
-            entity = doc.char_span(start, end, label='DIS_TRUE')
-            print(f'Matched text: {entity.text}')
+            toi_positions.append((start-(toi_found+1)*2, end-(toi_found+1)*3))
+            toi_found += 1
 
-            try:
-                doc.ents += (entity,)
-            except ValueError:
-                pass
+        print(toi_positions)
+        print(text.replace(';;', ''))
+
+        doc = nlp(text.replace(';;', ''))
+
+        toi_ents = (doc.char_span(start, end, label='DIS_TRUE') for (start, end) in toi_positions)
+        doc.ents = toi_ents
+
+        print('Ents:')
+        print([(ent.text, ent.start, ent.end) for ent in list(doc.ents)])
+
+        for tok in doc:
+            print(tok)
 
         if GENERATE:
             html = displacy.render(doc, style='ent', page=True, options={'ents': ['DIS_TRUE']})

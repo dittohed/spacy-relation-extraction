@@ -1,7 +1,6 @@
 # TODO:
 # - exclude keywords_regexp most common words (longer than 4), add to stop_words.txt
-# - EV-D68 regexp bug???
-# - separate modules/files
+# - separate modules/files (config file)
 # - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
 
 import spacy
@@ -9,16 +8,15 @@ from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
 from spacy import displacy
 
+import re
 import string
 
 nlp = spacy.load('en_core_web_trf')
 matcher = Matcher(nlp.vocab)
 matcher_dep = DependencyMatcher(nlp.vocab)
 
-MIN_LEN = 5 # minimum lenght of disease names matched by keywords_regexp
-
 # --- initialisms ---
-initialisms_pattern = [{'TEXT': {'REGEX': '^[A-Z0-9]+-?[A-Z0-9]+$'}}]
+initialisms_regexp = r'\b[A-Z0-9]+-?[A-Z0-9]+\b' # TODO: fix numbers only
 
 # --- keywords ---
 keywords = [
@@ -97,13 +95,34 @@ pattern4 = [
 # --- standalones ---
 standalones_patterns = [
     [{'LOWER': {'REGEX': keywords_regexp}}],
-    [{'LOWER': {'IN': keywords}}]
+    [{'LOWER': {'IN': ['flu', 'diarrhea', 'cold']}}]
 ]
 
-initialisms_ents = tuple()
+def match_initialisms(initialisms_regexp, doc):
+    '''
+    Using a separate function on account tokenizing issues with -.
+    '''
+
+    initialisms_ents = tuple()
+    for match in re.finditer(initialisms_regexp, doc.text):
+        start, end = match.span()
+    print(text)
+        entity = doc.char_span(start, end, label='DIS')
+        print(f'Matched text: {entity.text}')
+
+        try:
+            print('Adding...')
+            doc.ents += (entity,)
+        except ValueError: # actually, it's probably an organization
+            print('Nope.')
+        else:
+            initialisms_ents += (entity,)
+
+    return initialisms_ents
+
 def add_disease_ent(matcher, doc, i, matches):
     '''
-    Creates entity label for current match resulting from matching initialism.
+    Creates entity label for current match resulting from matching standalones.
     '''
 
     global initialisms_ents
@@ -114,10 +133,8 @@ def add_disease_ent(matcher, doc, i, matches):
 
     try:
         doc.ents += (entity,)
-    except ValueError: # actually, it's probably an organization
+    except ValueError:
         pass
-    else:
-        initialisms_ents += (entity,)
 
 def add_disease_ent_dep(matcher, doc, i, matches):
     '''
@@ -136,30 +153,31 @@ def add_disease_ent_dep(matcher, doc, i, matches):
     except ValueError:
         pass # Span simply won't be added
 
-s = '''
-Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
-'''
+# read file
+with open('./PMC5363789_true.txt', 'r') as file:
+    # lines = file.readlines()
+    # text = ' '.join(lines)
 
-# s = s.translate(s.maketrans('', '', string.punctuation))
-# s = s.lower()
+    s = '''
+    Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
+    '''
 
-doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
+    doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
 
-matcher.add('initialisms', [initialisms_pattern],
-            on_match=add_disease_ent)
-matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
-             # one tuple is match_id, match start and match end
-doc.ents = initialisms_ents
+    # doc.ents += match_initialisms(initialisms_regexp, doc)
 
-# patterns order in patterns list does matter
-matcher_dep.add('dependecies', [pattern2, pattern4,  pattern1, pattern3],
-            on_match=add_disease_ent_dep)
-matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                 # one tuple is match_id and tokens indices
+    # patterns order in patterns list does matter
+    matcher_dep.add('dependencies', [pattern2, pattern4,  pattern1, pattern3],
+                on_match=add_disease_ent_dep)
+    matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
+                     # one tuple is match_id and tokens indices
 
-matcher.remove('initialisms')
-matcher.add('standalones', standalones_patterns,
-            on_match=add_disease_ent)
-matcher(doc)
+    matcher.add('standalones', standalones_patterns,
+                on_match=add_disease_ent)
+    matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
+                 # one tuple is match_id, match start and match end
 
-displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
+    for tok in doc:
+        print(tok)
+
+    displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
