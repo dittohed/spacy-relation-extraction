@@ -11,13 +11,6 @@ from spacy import displacy
 import re
 import string
 
-nlp = spacy.load('en_core_web_trf')
-matcher = Matcher(nlp.vocab)
-matcher_dep = DependencyMatcher(nlp.vocab)
-
-# --- initialisms ---
-initialisms_regexp = r'\b[A-Z0-9]+-?[A-Z0-9]+\b' # TODO: fix numbers only
-
 # --- keywords ---
 keywords = [
     'infection',
@@ -92,26 +85,37 @@ pattern4 = [
     modmodifier # modifier's modifiers specification
 ]
 
+dependencies_patterns = [
+    pattern2,
+    pattern4,
+    pattern1,
+    pattern3
+]
+
 # --- standalones ---
 standalones_patterns = [
     [{'LOWER': {'REGEX': keywords_regexp}}],
     [{'LOWER': {'IN': ['flu', 'diarrhea', 'cold']}}]
 ]
 
-def match_initialisms(initialisms_regexp, doc):
+def match_initialisms(doc):
     '''
     Using a separate function on account tokenizing issues with -.
     '''
 
+    initialisms_regexp = r'\b[A-Z0-9]+-?[A-Z0-9]+\b'
+    num_regexp = r'\b[0-9]+-?[0-9]+\b'
+
     initialisms_ents = tuple()
     for match in re.finditer(initialisms_regexp, doc.text):
         start, end = match.span()
-    print(text)
+        if re.compile(num_regexp).search(doc.text[start : end]):
+            continue # e.g. 4343 or 323-1233 was found
+
         entity = doc.char_span(start, end, label='DIS')
         print(f'Matched text: {entity.text}')
 
         try:
-            print('Adding...')
             doc.ents += (entity,)
         except ValueError: # actually, it's probably an organization
             print('Nope.')
@@ -153,31 +157,36 @@ def add_disease_ent_dep(matcher, doc, i, matches):
     except ValueError:
         pass # Span simply won't be added
 
-# read file
-with open('./PMC5363789_true.txt', 'r') as file:
-    # lines = file.readlines()
-    # text = ' '.join(lines)
+if __name__ == '__main__':
+    nlp = spacy.load('en_core_web_trf')
+    matcher = Matcher(nlp.vocab)
+    matcher_dep = DependencyMatcher(nlp.vocab)
 
-    s = '''
-    Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
-    '''
+    # read file
+    with open('./articles/diseases/PMC5363789_true.txt', 'r') as file:
+        # lines = file.readlines()
+        # text = ' '.join(lines)
 
-    doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
+        s = '''
+        Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
+        '''
 
-    # doc.ents += match_initialisms(initialisms_regexp, doc)
+        doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
 
-    # patterns order in patterns list does matter
-    matcher_dep.add('dependencies', [pattern2, pattern4,  pattern1, pattern3],
-                on_match=add_disease_ent_dep)
-    matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                     # one tuple is match_id and tokens indices
+        doc.ents += match_initialisms(doc)
 
-    matcher.add('standalones', standalones_patterns,
-                on_match=add_disease_ent)
-    matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
-                 # one tuple is match_id, match start and match end
+        # patterns order in patterns list does matter
+        matcher_dep.add('dependencies', dependencies_patterns,
+                    on_match=add_disease_ent_dep)
+        matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
+                         # one tuple is match_id and tokens indices
 
-    for tok in doc:
-        print(tok)
+        matcher.add('standalones', standalones_patterns,
+                    on_match=add_disease_ent)
+        matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
+                     # one tuple is match_id, match start and match end
 
-    displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
+        for tok in doc:
+            print(tok)
+
+        displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
