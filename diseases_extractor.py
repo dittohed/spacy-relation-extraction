@@ -1,7 +1,7 @@
 # TODO:
 # - exclude keywords_regexp most common words (longer than 4), add to stop_words.txt
-# - separate modules/files (config file)
 # - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
+# - del ifmain
 
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher

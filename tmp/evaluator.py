@@ -1,7 +1,3 @@
-# potrzeba:
-# porównać Spany
-# wyświetlić wynik
-
 import glob
 import re
 
@@ -22,6 +18,10 @@ DIR_PATH = './articles/diseases'
 generate_html = True # whether to save results to HTML using displacy for each article
 
 nlp = spacy.load('en_core_web_trf')
+
+tp = 0 # true positive
+fp = 0 # false positive
+fn = 0 # false negative
 
 articles = glob.glob(f'{DIR_PATH}/*_test.txt')
 for article in articles:
@@ -44,20 +44,17 @@ for article in articles:
 
             tl_positions.append((start-(tl_found)*4, end-(tl_found+1)*4))
             tl_found += 1
-        print(f'Found {tl_found} true labels (entities)...')
-
-        print(tl_positions)
-        print(text.replace(';;', ''))
+        # print(f'Found {tl_found} true labels (entities)...')
+        #
+        # print(tl_positions)
+        # print(text.replace(';;', ''))
         doc = nlp(text.replace(';;', ''))
 
-        tl_ents = tuple([doc.char_span(start, end, label='DIS_TRUE') for (start, end) in tl_positions])
-        for span in tl_ents:
-            print(span.text)
+        tl_spans = tuple([doc.char_span(start, end, label='DIS') for (start, end) in tl_positions])
 
-        # --- predicting labels ---
+        # --- extracting labels ---
         doc.ents += ed.match_initialisms(doc)
 
-        # patterns order in patterns list does matter
         matcher_dep.add('dependencies', ed.dependencies_patterns,
                     on_match=ed.add_disease_ent_dep)
         matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
@@ -68,18 +65,40 @@ for article in articles:
         matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
                      # one tuple is match_id, match start and match end
 
-        # get extracted labels positions in order to compare it with tl_positions
-        el_positions = []
+        # get extracted labels spans in order to compare it with true label spans
+        el_spans = doc.ents
 
         # --- comparing results ---
-        # compare tl_positions and el_positions
-        # (contain tuples of (start, end) by characters)
-        # https://stackoverflow.com/questions/6105777/how-to-compare-a-list-of-lists-sets-in-python
-        # https://www.programiz.com/python-programming/methods/set/symmetric_difference
+        tl_spans = set([(span.start, span.end) for span in tl_spans])
+        el_spans = set([(span.start, span.end) for span in el_spans if span.label_ == 'DIS'])
 
+        doc.ents = tuple() # reset entities
+        for tl_span in tl_spans:
+            if tl_span in el_spans:
+                entity = Span(doc, tl_span[0], tl_span[1], label='TP')
+                tp +=1
+            else:
+                entity = Span(doc, tl_span[0], tl_span[1], label='FN')
+                fn += 1
+
+            doc.ents += (entity,)
+
+        for el_span in el_spans:
+            entity = Span(doc, el_span[0], el_span[1], label='FP')
+            try:
+                doc.ents += (entity,)
+            except ValueError:
+                pass # that wasn't a FP
+            else:
+                fp += 1
 
         if generate_html:
-            html = displacy.render(doc, style='ent', page=True, options={'ents': ['DIS']})
+            html = displacy.render(doc, style='ent', page=True,
+                                 options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF'}})
             with open(f'./displacy/{article_id}.html', 'w') as html_file:
                 print(f'Saving a generated file to {article_id}.html')
                 html_file.write(html)
+
+precision = tp / (tp + fp)
+recall = tp / (tp + fn)
+print(f'Precision = {precision}, Recall = {recall}')
