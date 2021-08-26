@@ -1,13 +1,24 @@
-# displays dependency tree for a given sentence
+# displays dependency tree for given file,
+# where 2 first lines specify metadata
+# (skips empty lines, see below)
+
 import spacy
 from spacy import displacy
 
-# TODO: ładować plik linijka po linijce i tylko zmieniać indeks
+FILEPATH = './task 1/food/food - article 1'
 
 nlp = spacy.load('en_core_web_trf')
-doc = nlp('study investigating interactions between genetic and lifestyle factors')
-# print(doc.ents)
-# for word in doc:
-#     print(word.text, word.lemma_)
-displacy.serve(doc, style='dep')
-# print([token.dep_ for token in doc])
+with open(FILEPATH, 'r') as file:
+    lines = file.readlines()
+
+    for line in lines[3:]:
+        if line == '\n':
+            continue
+
+        doc = nlp(line)
+        displacy.serve(doc, style='dep') # press ctrl+C to terminate and go to the next phrase
+
+        # print(doc.ents)
+        # for word in doc:
+        #     print(word.text, word.lemma_)
+        # print([token.dep_ for token in doc])
