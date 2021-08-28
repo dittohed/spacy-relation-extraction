@@ -5,7 +5,7 @@
 import spacy
 from spacy import displacy
 
-FILEPATH = './task 1/food/food - article 1'
+FILEPATH = './task 1/food/food - article 5'
 
 nlp = spacy.load('en_core_web_trf')
 with open(FILEPATH, 'r') as file:

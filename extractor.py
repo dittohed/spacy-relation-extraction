@@ -21,11 +21,12 @@ class Extractor:
     # ;;<token1> ... <tokenN>;;
     TL_EXPRESSION = ';;.*?;;' # non-greedy regexp for identifying true labels
 
-    def __init__(self, task, domain, datapath, nohtml):
+    def __init__(self, task, domain, datapath, nohtml, nolabeling):
         self.task = task
         self.domain = domain
         self.datapath = datapath
         self.nohtml = nohtml
+        self.nolabeling = nolabeling
 
         self.nlp = spacy.load('en_core_web_trf')
 
@@ -34,6 +35,56 @@ class Extractor:
             self.evaluate()
         else:
             self.predict()
+
+    def extract_labels(self, doc):
+        """
+        Extract labels using a proper extractor.
+        """
+
+        matcher = Matcher(self.nlp.vocab)
+        matcher_dep = DependencyMatcher(self.nlp.vocab)
+
+        if self.domain == 'diseases':
+            doc.ents += dis.match_initialisms(doc)
+
+            matcher_dep.add('dependencies', dis.dependencies_patterns,
+                        on_match=dis.add_disease_ent_dep)
+            matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
+                             # one tuple is match_id and tokens indices
+
+            matcher.add('standalones', dis.standalones_patterns,
+                        on_match=dis.add_disease_ent)
+            matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
+                         # one tuple is match_id, match start and match end
+        elif self.domain == 'food':
+            pass
+        else:
+            pass
+
+    def predict(self):
+        """
+        Predicts entities and optionally labels them in a new *_pred.txt file.
+        """
+
+        articles = glob.glob(f'{self.datapath}/*_true.txt')
+
+        for article in articles:
+            with open(article, 'r') as file:
+                article_id = article.split('/')[-1].split('.')[0]
+                print(f'Handling article {article_id}...')
+
+                lines = file.readlines()
+                text = ' '.join(lines)
+
+                doc = self.nlp(text)
+                self.extract_labels(doc)
+
+                if not self.nohtml:
+                    self.generate_html(doc, f'./displacy/{article_id}_pred.html')
+
+                if not self.nolabeling:
+                    pass
+                    # TODO: add :: to read file
 
     def evaluate(self):
         """
@@ -68,26 +119,7 @@ class Extractor:
                 doc = self.nlp(text.replace(';;', '')) # labels not necessary anymore
                 tl_spans = tuple([doc.char_span(start, end, label='DIS') for (start, end) in tl_positions])
 
-                # extracting labels using a proper extractor
-                matcher = Matcher(self.nlp.vocab)
-                matcher_dep = DependencyMatcher(self.nlp.vocab)
-
-                if self.domain == 'diseases':
-                    doc.ents += dis.match_initialisms(doc)
-
-                    matcher_dep.add('dependencies', dis.dependencies_patterns,
-                                on_match=dis.add_disease_ent_dep)
-                    matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                                     # one tuple is match_id and tokens indices
-
-                    matcher.add('standalones', dis.standalones_patterns,
-                                on_match=dis.add_disease_ent)
-                    matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
-                                 # one tuple is match_id, match start and match end
-                elif self.domain == 'food':
-                    pass
-                else:
-                    pass
+                self.extract_labels(doc)
 
                 el_spans = doc.ents # extracted labels (Span objects)
 
@@ -116,7 +148,7 @@ class Extractor:
                         fp += 1
 
                 if not self.nohtml:
-                    self.generate_html(doc, f'./displacy/{article_id}.html')
+                    self.generate_html(doc, f'./displacy/{article_id}_eval.html')
 
         precision = tp / (tp + fp)
         recall = tp / (tp + fn)
@@ -127,8 +159,14 @@ class Extractor:
         Generates an html file for visualizing entities in a proccessed document (.txt file).
         """
 
+        if self.domain == 'diseases':
+            ents = 'DIS'
+        elif self.domain == 'food':
+            ents = 'FOOD'
+
         html = displacy.render(doc, style='ent', page=True,
-                             options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF'}})
+                             options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF'},
+                             'ents': [ents]})
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
             html_file.write(html)
@@ -140,7 +178,9 @@ if __name__ == '__main__':
     parser.add_argument('datapath', help='Specifies a path to directory containing .txt files.')
     parser.add_argument('--nohtml', help='Use NOHTML=1 to disable generating html files with entities highlighted.',
                         default=0, type=int)
+    parser.add_argument('--nolabeling', help='Use NOLABELING=1 to disable generating *_pred.txt files with labeled entities \
+                        as a result of prediction', default=0, type=int)
     args = parser.parse_args()
 
-    e = Extractor(args.task, args.domain, args.datapath, args.nohtml)
+    e = Extractor(args.task, args.domain, args.datapath, args.nohtml, args.nolabeling)
     e.run()
