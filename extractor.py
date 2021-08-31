@@ -1,6 +1,8 @@
 # evaluates or predicts using specified extractor
 # example of use: python extractor.py evaluate diseases ./articles/diseases --no-html 1
 
+# TODO: przetestować food_extractor, połączyć food z disease + final eval
+
 import argparse
 import glob
 import re
@@ -11,7 +13,7 @@ from spacy.matcher import Matcher, DependencyMatcher
 from spacy import displacy
 
 import diseases_extractor as dis
-# import food_extractor as food
+import food_extractor as food
 # import relations_extractor as rel
 
 class Extractor:
@@ -49,14 +51,22 @@ class Extractor:
 
             matcher_dep.add('dependencies', dis.dependencies_patterns,
                         on_match=dis.add_disease_ent_dep)
-            matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                             # one tuple is match_id and tokens indices
+            matcher_dep(doc)
 
             matcher.add('standalones', dis.standalones_patterns,
                         on_match=dis.add_disease_ent)
-            matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
-                         # one tuple is match_id, match start and match end
+            matcher(doc)
+
         elif self.domain == 'food':
+            doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
+
+            matcher_dep.add('dependencies', food.dependencies_patterns,
+                        on_match=food.add_food_dep)
+            matcher_dep(doc)
+
+            food.merge_entities(doc)
+
+        elif self.domain == 'both':
             pass
         else:
             pass

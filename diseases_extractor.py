@@ -164,14 +164,14 @@ if __name__ == '__main__':
 
     # read file
     with open('./articles/diseases/PMC5363789_true.txt', 'r') as file:
-        # lines = file.readlines()
-        # text = ' '.join(lines)
+        lines = file.readlines()
+        text = ' '.join(lines)
 
         s = '''
         Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
         '''
 
-        doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
+        doc = nlp(text) # doc is a list of tokens, e.g. doc[0] is 'horrible'
 
         doc.ents += match_initialisms(doc)
 
@@ -189,4 +189,5 @@ if __name__ == '__main__':
         for tok in doc:
             print(tok)
 
-        displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
+        # displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
+        displacy.serve(doc, style='ent', page=True)
