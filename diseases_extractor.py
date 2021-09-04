@@ -1,7 +1,7 @@
 # TODO:
 # - exclude keywords_regexp most common words (longer than 4), add to stop_words.txt
 # - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
-# - del ifmain
+# - remove if main
 
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher
@@ -113,12 +113,13 @@ def match_initialisms(doc):
             continue # e.g. 4343 or 323-1233 was found
 
         entity = doc.char_span(start, end, label='DIS')
-        print(f'Matched text: {entity.text}')
+        # print(f'Matched text: {entity.text}')
 
         try:
             doc.ents += (entity,)
-        except ValueError: # actually, it's probably an organization
-            print('Nope.')
+        except ValueError:
+            # print('Nope.')
+            pass # actually, it's probably an organization
         else:
             initialisms_ents += (entity,)
 
@@ -133,7 +134,7 @@ def add_disease_ent(matcher, doc, i, matches):
 
     match_id, start, end = matches[i]
     entity = Span(doc, start, end, label='DIS')
-    print(f'Matched text: {entity.text}')
+    # print(f'Matched text: {entity.text}')
 
     try:
         doc.ents += (entity,)
@@ -150,7 +151,7 @@ def add_disease_ent_dep(matcher, doc, i, matches):
     end = max(token_ids) + 1
 
     entity = Span(doc, start, end, label='DIS')
-    print(f'Matched text: {entity.text}')
+    # print(f'Matched text: {entity.text}')
 
     try:
         doc.ents += (entity,)

@@ -1,4 +1,4 @@
-# TODO: merge patternów, zmienić pos na tag
+# TODO: remove if main
 
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher
@@ -128,28 +128,24 @@ def add_food_dep(matcher, doc, i, matches):
     """
 
     match_id, token_ids = matches[i]
-    print(f'Matched tokens: {[(doc[token_id].text, doc[token_id].pos_) for token_id in token_ids]}')
+    # print(f'Matched tokens: {[(doc[token_id].text, doc[token_id].pos_) for token_id in token_ids]}')
 
     start = min(token_ids)
     end = max(token_ids) + 1
-    print(f'Matched span: {doc[start : end]}')
-
-    # entity = Span(doc, start, end, label='FOOD')
-    # dla złożonych jedzeń:
-    # znajdź modyfikator, znajdź rodzica, zrób Span
+    # print(f'Matched span: {doc[start : end]}')
 
     for token_id in token_ids:
         if doc[token_id].pos_ in ('NOUN', 'ADJ', 'VERB') \
         and doc[token_id].lemma_ not in anchors \
         and doc[token_id].tag_ not in ['JJR']:
-            # użyć tag zamiast pos_ i wykluczyć JJ, JJR (more, fewer) itd. gramy
             entity = Span(doc, token_id, token_id+1, label='FOOD')
-            print(f'Matched text: {entity.text}')
+            # print(f'Matched text: {entity.text}')
 
             try:
                 doc.ents += (entity,)
             except ValueError:
-                print(f'Nope...') # Span simply won't be added
+                # print(f'Nope...')
+                pass # Span simply won't be added
 
 def merge_entities(doc):
     """
@@ -164,11 +160,12 @@ def merge_entities(doc):
         if i + 1 < len(spans_start) and spans_start[i + 1] == id + 1:
             behind_to_merge += 1
         else:
-            print(f'Merging {doc[id - behind_to_merge : id + 1]}')
+            # print(f'Merging {doc[id - behind_to_merge : id + 1]}')
             entities += (Span(doc, id - behind_to_merge, id + 1, label='FOOD'),)
             behind_to_merge = 0
 
-    doc.ents = entities
+    doc.ents = tuple([span for span in doc.ents if span.label_ != 'FOOD']) # removing food entities
+    doc.ents += entities
 
 if __name__ == '__main__':
     nlp = spacy.load('en_core_web_trf')

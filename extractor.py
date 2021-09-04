@@ -1,7 +1,7 @@
 # evaluates or predicts using specified extractor
-# example of use: python extractor.py evaluate diseases ./articles/diseases --no-html 1
+# example of usage: python extractor.py evaluate diseases ./articles/diseases --no-html 1
 
-# TODO: przetestować food_extractor, połączyć food z disease + final eval
+# TODO: exporting predicted entities, final evaluation of extractors (need labeled .txt files)
 
 import argparse
 import glob
@@ -67,7 +67,20 @@ class Extractor:
             food.merge_entities(doc)
 
         elif self.domain == 'both':
-            pass
+            doc.ents += dis.match_initialisms(doc)
+
+            matcher_dep.add('dependencies_dis', dis.dependencies_patterns,
+                        on_match=dis.add_disease_ent_dep)
+            matcher_dep.add('dependencies_food', food.dependencies_patterns,
+                        on_match=food.add_food_dep)
+            matcher_dep(doc)
+
+            matcher.add('standalones', dis.standalones_patterns,
+                        on_match=dis.add_disease_ent)
+            matcher(doc)
+
+            food.merge_entities(doc)
+
         else:
             pass
 
@@ -109,6 +122,13 @@ class Extractor:
 
         articles = glob.glob(f'{self.datapath}/*_test.txt')
 
+        if self.domain == 'diseases':
+            label = 'DIS'
+        elif self.domain == 'food':
+            label = 'FOOD'
+        else:
+            pass
+
         for article in articles:
             with open(article, 'r') as file:
                 article_id = article.split('/')[-1].split('.')[0]
@@ -127,7 +147,7 @@ class Extractor:
                     tl_found += 1
 
                 doc = self.nlp(text.replace(';;', '')) # labels not necessary anymore
-                tl_spans = tuple([doc.char_span(start, end, label='DIS') for (start, end) in tl_positions])
+                tl_spans = tuple([doc.char_span(start, end, label=label) for (start, end) in tl_positions])
 
                 self.extract_labels(doc)
 
@@ -135,7 +155,7 @@ class Extractor:
 
                 # comparing true labels with extracted labels
                 tl_spans = set([(span.start, span.end) for span in tl_spans])
-                el_spans = set([(span.start, span.end) for span in el_spans if span.label_ == 'DIS'])
+                el_spans = set([(span.start, span.end) for span in el_spans if span.label_ == label])
 
                 doc.ents = tuple() # reset entities (setting new ones w.r.t. error type)
                 for tl_span in tl_spans:
@@ -169,14 +189,21 @@ class Extractor:
         Generates an html file for visualizing entities in a proccessed document (.txt file).
         """
 
-        if self.domain == 'diseases':
-            ents = 'DIS'
+        if self.task == 'evaluate':
+            ents = ['TP', 'FN', 'FP']
+        elif self.domain == 'diseases':
+            ents = ['DIS']
         elif self.domain == 'food':
-            ents = 'FOOD'
+            ents = ['FOOD']
+        elif self.domain == 'both':
+            ents = ['DIS', 'FOOD']
+        else:
+            pass
 
         html = displacy.render(doc, style='ent', page=True,
-                             options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF'},
-                             'ents': [ents]})
+                             options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF',
+                                                 'DIS': '#909090', 'FOOD': '#19D9FF'},
+                             'ents': ents})
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
             html_file.write(html)
