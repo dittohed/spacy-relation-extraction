@@ -4,6 +4,12 @@
 
 import spacy
 from spacy import displacy
+import numpy as np
+
+nlp = spacy.load('en_core_web_trf')
+doc = nlp('I like apples and oranges.')
+print(np.allclose(
+    (doc[0].vector_norm + doc[1].vector_norm + doc[2].vector_norm) / 3, doc[0 : 3].vector_norm))
 
 FILEPATH = './task 1/food/food - article 5'
 
