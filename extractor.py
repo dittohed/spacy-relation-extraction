@@ -84,6 +84,8 @@ class Extractor:
         else:
             pass
 
+        self.doc = doc
+
     def predict(self):
         """
         Predicts entities and optionally labels them in a new *_pred.txt file.
@@ -221,3 +223,4 @@ if __name__ == '__main__':
 
     e = Extractor(args.task, args.domain, args.datapath, args.nohtml, args.nolabeling)
     e.run()
+    # you can use e.doc after calling e.run()
