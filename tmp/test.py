@@ -8,7 +8,7 @@ from spacy import displacy
 FILEPATH = './task 1/food/food - article 5'
 
 nlp = spacy.load('en_core_web_trf')
-with open(FILEPATH, 'r') as file:
+with open(FILEPATH, 'r', encoding="utf-8") as file:
     lines = file.readlines()
 
     for line in lines[3:]:
