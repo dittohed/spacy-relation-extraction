@@ -25,7 +25,8 @@ keywords = [
     'cold',
     'poisoning',
     'defect',
-    'ilness'
+    'ilness',
+    'symptoms'
 ]
 
 keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia)$'
@@ -95,7 +96,7 @@ dependencies_patterns = [
 # --- standalones ---
 standalones_patterns = [
     [{'LOWER': {'REGEX': keywords_regexp}}],
-    [{'LOWER': {'IN': ['flu', 'diarrhea', 'cold']}}]
+    [{'LOWER': {'IN': ['flu', 'diarrhea', 'cold', 'depression']}}]
 ]
 
 def match_initialisms(doc):
@@ -117,7 +118,7 @@ def match_initialisms(doc):
 
         try:
             doc.ents += (entity,)
-        except ValueError:
+        except Exception as e:
             # print('Nope.')
             pass # actually, it's probably an organization
         else:
