@@ -14,7 +14,7 @@ from spacy import displacy
 
 import diseases_extractor as dis
 import food_extractor as food
-# import relations_extractor as rel
+import relations_extractor as rel
 
 class Extractor:
     # true labels should be denoted with enclosing semi-colons exactly this way
@@ -75,9 +75,26 @@ class Extractor:
                         on_match=food.add_food_dep)
             matcher_dep(doc)
 
+        elif self.domain == 'relations': 
+            doc.ents += dis.match_initialisms(doc)
+
+            matcher_dep.add('dependencies_dis', dis.dependencies_patterns,
+                        on_match=dis.add_disease_ent_dep)
+            matcher_dep.add('dependencies_food', food.dependencies_patterns,
+                        on_match=food.add_food_dep)
+
+            matcher_dep(doc)
+
             matcher.add('standalones', dis.standalones_patterns,
-                        on_match=dis.add_disease_ent)
+            on_match=dis.add_disease_ent)
             matcher(doc)
+
+            matcher_dep.remove('dependencies_dis')
+            matcher_dep.remove('dependencies_food')
+
+            matcher_dep.add('dependencies_rel', rel.relations_patterns,
+                        on_match=rel.add_relations_ent_dep)
+            matcher_dep(doc)
 
             food.merge_entities(doc)
 
@@ -91,7 +108,9 @@ class Extractor:
         Predicts entities and optionally labels them in a new *_pred.txt file.
         """
 
-        articles = glob.glob(f'{self.datapath}/*_true.txt')
+        # default behavior below, now accepts every file in given path
+        # articles = glob.glob(f'{self.datapath}/*_true.txt')
+        articles = glob.glob(f'{self.datapath}/*')
 
         for article in articles:
             with open(article, 'r') as file:
@@ -199,12 +218,14 @@ class Extractor:
             ents = ['FOOD']
         elif self.domain == 'both':
             ents = ['DIS', 'FOOD']
+        elif self.domain == 'relations':
+            ents = ['REL']
         else:
             pass
 
         html = displacy.render(doc, style='ent', page=True,
                              options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF',
-                                                 'DIS': '#909090', 'FOOD': '#19D9FF'},
+                                                 'DIS': '#909090', 'FOOD': '#19D9FF', 'REL': '#0064FF'},
                              'ents': ents})
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
@@ -213,7 +234,7 @@ class Extractor:
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('task', help='Specifies the task to perform (possible options: predict, evaluate).')
-    parser.add_argument('domain', help='Specifies what to extract (possible options: diseases, food, relations).')
+    parser.add_argument('domain', help='Specifies what to extract (possible options: diseases, food, both, relations).')
     parser.add_argument('datapath', help='Specifies a path to directory containing .txt files.')
     parser.add_argument('--nohtml', help='Use NOHTML=1 to disable generating html files with entities highlighted.',
                         default=0, type=int)
