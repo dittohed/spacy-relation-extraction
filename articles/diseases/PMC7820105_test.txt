@@ -112,7 +112,7 @@ Table 2 Classification of diseases and diagnoses in priority groups, according t
 Very high priority	High priority	Medium priority	Low priority	Very low priority
 Score ≥ 36.8	≥30.0 and < 36.8	≥22.0 and < 30.0	≥17.0 and < 22.0	Score < 17.0
 ;;Pertussis;;	;;Rotavirus disease;;	;;Invasive pneumococcal disease;; (children)	;;Campylobacteriosis;;	;;Echinococcosis;;
-;;HIV-infection;;;;	Burkholderia cepacia complex;;	;;Haemophilus influenzae;; (Hib)	;;Tick-borne encephalitis;;	;;Yersinia enterocolitica;; and ;;pseudotuberculosis;;
+;;HIV-infection;; ;;Burkholderia cepacia complex;;	;;Haemophilus influenzae;; (Hib)	;;Tick-borne encephalitis;;	;;Yersinia enterocolitica;; and ;;pseudotuberculosis;;
 ;;Hepatitis C;;	;;Measles;;	;;Clostridium botulinum;;	;;Chlamydia pneumoniae;;	;;Vibrio cholerae and parahaemolyticus;;
 ;;Hepatitis B;;	;;Legionellosis;;	;;Helicobacter pylori;;	;;Zikavirus disease;;	;;West Nile virus disease;;
 ;;Rubella disease;; (congenital)	;;Adenovirus disease;;	;;Invasive Enterococci;;	;;Human Papillomavirus;; (;;HPV;;) infection	;;Parrot fever;;

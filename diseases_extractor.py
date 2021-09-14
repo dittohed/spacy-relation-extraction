@@ -1,7 +1,3 @@
-# TODO:
-# - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
-# - remove if main
-
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
@@ -10,7 +6,8 @@ from spacy import displacy
 import re
 import string
 
-# --- keywords ---
+# list of "base" words to build on
+# for example this might be sole "fever" or "yellow fever"
 keywords = [
     'infection',
     'syndrome',
@@ -34,11 +31,16 @@ keywords = [
     'symptoms'
 ]
 
+# regexp for identifying "base" words to build on
+# for example this might be sole virus or Coronavirus
 keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia|cocci|ae)$'
+
+# words to exclude from regexp above
 ex_regexp = (
     'this',
     'various',
     'prognosis',
+    'hypothesis'
     'analysis',
     'diagnosis',
     'status',
@@ -55,8 +57,10 @@ ex_regexp = (
     'via',
     'continuous',
     'analogous',
-    'cholera')
+    'criteria',
+    'consensus')
 
+# most commonly occuring initiliasms (in medical articles) to exclude
 ex_initialisms = (
     'AND',
     'OR',
@@ -67,9 +71,12 @@ ex_initialisms = (
     '3D',
     'MP4',
     'USA',
-    'DNA')
+    'DNA',
+    'MDS',
+    'DASH',
+    'NFI')
 
-# --- modifiers ---
+# modifiers modify "base" words
 modifier = {
     'LEFT_ID': 'anchor',
     'REL_OP': '>',
@@ -84,29 +91,28 @@ modmodifier = {
     'RIGHT_ATTRS': {'DEP': {'IN': ['amod', 'compound', 'poss', 'nmod', 'npadvmod']}}
 }
 
-# --- patterns ---
+# patterns for rule-based matching
 pattern1 = [
-    # anchor specification
+    # for example matches "heavy depression"
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
     },
-    # modifier specification
     modifier
 ]
 
 pattern2 = [
-    # anchor specification
+    # for example matches "bloom- associated illness"
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
     },
-    modifier, # modifier specification
-    modmodifier # modifier's modifiers specification
+    modifier,
+    modmodifier
 ]
 
 pattern3 = [
-    # anchor specification
+    # for example matches "Aortic Aneurysm"
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
@@ -115,15 +121,16 @@ pattern3 = [
 ]
 
 pattern4 = [
-    # anchor specification
+    # for example matches "Acute Flaccid Myelitis"
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
     },
-    modifier, # modifier specification
-    modmodifier # modifier's modifiers specification
+    modifier,
+    modmodifier
 ]
 
+# order does matter
 dependencies_patterns = [
     pattern2,
     pattern4,
@@ -131,16 +138,17 @@ dependencies_patterns = [
     pattern3
 ]
 
-# --- standalones ---
+# "base" words with no modifiers
 standalones_patterns = [
+    # for example matches "diarrhea"
     [{'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}],
-    [{'LEMMA': {'IN': ['flu', 'diarrhea', 'cold']}}]
+    [{'LEMMA': {'IN': keywords}}]
 ]
 
 def match_initialisms(doc):
-    '''
+    """
     Using a separate function on account tokenizing issues with -.
-    '''
+    """
 
     initialisms_regexp = r'\b[A-Z0-9]+-?[A-Z0-9]+\b'
     num_regexp = r'\b[0-9]+-?[0-9]+\b'
@@ -149,15 +157,13 @@ def match_initialisms(doc):
     for match in re.finditer(initialisms_regexp, doc.text):
         start, end = match.span()
         if re.compile(num_regexp).search(doc.text[start : end]) or doc.text[start : end] in ex_initialisms:
-            continue # e.g. 4343 or 323-1233 was found
+            continue # e.g. 4343 or 323-1233 or API was found
 
         entity = doc.char_span(start, end, label='DIS', alignment_mode='expand')
-        # print(f'Matched text: {entity.text}')
 
         try:
             doc.ents += (entity,)
         except Exception as e:
-            # print('Nope.')
             pass # actually, it's probably an organization
         else:
             initialisms_ents += (entity,)
@@ -165,15 +171,14 @@ def match_initialisms(doc):
     return initialisms_ents
 
 def add_disease_ent(matcher, doc, i, matches):
-    '''
+    """
     Creates entity label for current match resulting from matching standalones.
-    '''
+    """
 
     global initialisms_ents
 
     match_id, start, end = matches[i]
     entity = Span(doc, start, end, label='DIS')
-    # print(f'Matched text: {entity.text}')
 
     try:
         doc.ents += (entity,)
@@ -181,54 +186,17 @@ def add_disease_ent(matcher, doc, i, matches):
         pass
 
 def add_disease_ent_dep(matcher, doc, i, matches):
-    '''
+    """
     Creates entity label for current match resulting from dependecy tree.
-    '''
+    """
 
     match_id, token_ids = matches[i]
     start = min(token_ids)
     end = max(token_ids) + 1
 
     entity = Span(doc, start, end, label='DIS')
-    # print(f'Matched text: {entity.text}')
 
     try:
         doc.ents += (entity,)
     except ValueError:
         pass # Span simply won't be added
-
-if __name__ == '__main__':
-    nlp = spacy.load('en_core_web_trf')
-    matcher = Matcher(nlp.vocab)
-    matcher_dep = DependencyMatcher(nlp.vocab)
-
-    # read file
-    with open('./articles/diseases/PMC5363789_curr.txt', 'r') as file:
-        lines = file.readlines()
-        text = ' '.join(lines)
-
-        s = '''
-        This DIS is the first report to perform follow-up survival analysis DIS across various DIS common diseases.
-        Among the 32 diseases, dyslipidemia DIS was the most common disease DIS (n = 37,478), while gallbladder/cholangiocarcinoma were the least common (n = 366) (Table 1).
-        '''
-
-        doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
-
-        doc.ents += match_initialisms(doc)
-
-        # patterns order in patterns list does matter
-        matcher_dep.add('dependencies', dependencies_patterns,
-                    on_match=add_disease_ent_dep)
-        matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                         # one tuple is match_id and tokens indices
-
-        matcher.add('standalones', standalones_patterns,
-                    on_match=add_disease_ent)
-        matcher(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [23, 24)]
-                     # one tuple is match_id, match start and match end
-
-        for tok in doc:
-            print(tok, tok.pos_, tok.tag_)
-
-        # displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
-        displacy.serve(doc, style='ent', page=True)

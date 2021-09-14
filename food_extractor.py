@@ -1,5 +1,3 @@
-# TODO: remove if main
-
 import spacy
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
@@ -139,23 +137,19 @@ def add_food_dep(matcher, doc, i, matches):
     """
 
     match_id, token_ids = matches[i]
-    # print(f'Matched tokens: {[(doc[token_id].text, doc[token_id].pos_) for token_id in token_ids]}')
 
     start = min(token_ids)
     end = max(token_ids) + 1
-    # print(f'Matched span: {doc[start : end]}')
 
     for token_id in token_ids:
         if doc[token_id].pos_ in ('NOUN', 'ADJ', 'VERB') \
         and doc[token_id].lemma_ not in anchors \
         and doc[token_id].tag_ not in ['JJR']:
             entity = Span(doc, token_id, token_id+1, label='FOOD')
-            # print(f'Matched text: {entity.text}')
 
             try:
                 doc.ents += (entity,)
             except ValueError:
-                # print(f'Nope...')
                 pass # Span simply won't be added
 
 def merge_entities(doc):
@@ -171,31 +165,8 @@ def merge_entities(doc):
         if i + 1 < len(spans_start) and spans_start[i + 1] == id + 1:
             behind_to_merge += 1
         else:
-            # print(f'Merging {doc[id - behind_to_merge : id + 1]}')
             entities += (Span(doc, id - behind_to_merge, id + 1, label='FOOD'),)
             behind_to_merge = 0
 
     doc.ents = tuple([span for span in doc.ents if span.label_ != 'FOOD']) # removing food entities
     doc.ents += entities
-
-if __name__ == '__main__':
-    nlp = spacy.load('en_core_web_trf')
-    matcher = Matcher(nlp.vocab)
-    matcher_dep = DependencyMatcher(nlp.vocab)
-
-    doc = nlp('consumed 62.3 g more fruit (99% CI 43.2 to 81.5) and 97.8 g more vegetables (99% CI 84.4 to 111.2) daily.')
-    doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
-
-    # patterns order in patterns list does matter
-    matcher_dep.add('dependencies', dependencies_patterns,
-                on_match=add_food_dep)
-    matcher_dep(doc) # matches is a list of tuples, e.g. [(4851363122962674176, [6, 0, 10, 9])]
-                     # one tuple is match_id and tokens indices
-
-    for tok in doc:
-        print(tok.text, tok.pos_, tok.dep_, tok.tag_, tok.lemma_)
-
-    merge_entities(doc)
-
-    # displacy.serve(doc, style='dep')
-    displacy.serve(doc, style='ent', page=True)
