@@ -30,7 +30,8 @@ keywords = [
     'diabetes',
     'depression',
     'neoplasm',
-    'asthma'
+    'asthma',
+    'symptoms'
 ]
 
 keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia|cocci|ae)$'
@@ -155,7 +156,7 @@ def match_initialisms(doc):
 
         try:
             doc.ents += (entity,)
-        except ValueError:
+        except Exception as e:
             # print('Nope.')
             pass # actually, it's probably an organization
         else:

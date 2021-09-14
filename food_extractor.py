@@ -8,8 +8,8 @@ from spacy import displacy
 import string
 
 # dodać MDS, DASH, NFI
-anchors = ['consumption', 'intake', 'serving', 'consume', 'consuming',
-           'eat', 'eating', 'portion', 'cup', 'diet', 'health', 'participant', 'item']
+anchors = ['consumption', 'intake', 'serving', 'consume', 'eat', 'portion', 'cup']
+keywords = ['food', 'diet', 'vegetable', 'fruit']
 
 def add_modifier(left_id):
     """
@@ -101,6 +101,13 @@ pattern_base3 = [
     }
 ]
 
+pattern_keywords = [
+    {
+        'RIGHT_ID': 'keyword',
+        'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
+    }
+]
+
 dependencies_patterns = [
     pattern_base1+[add_modifier('object of preposition')],
     pattern_base1,
@@ -121,7 +128,9 @@ dependencies_patterns = [
     pattern_base3+[add_conj('dobj'), add_modifier('conj')],
     pattern_base3+[add_conj('dobj')],
     pattern_base3+[add_appos('dobj'), add_modifier('appos')],
-    pattern_base3+[add_appos('dobj')]
+    pattern_base3+[add_appos('dobj')],
+
+    pattern_keywords
 ]
 
 def add_food_dep(matcher, doc, i, matches):
