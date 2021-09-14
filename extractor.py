@@ -6,11 +6,13 @@ import os
 import argparse
 import glob
 import re
+import copy
 
 import spacy
 from spacy.tokens import Span
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy import displacy
+from spacy.util import filter_spans
 
 import diseases_extractor as dis
 import food_extractor as food
@@ -89,7 +91,13 @@ class Extractor:
 
             matcher.add('standalones', dis.standalones_patterns,
                         on_match=dis.add_disease_ent)
+
+            matcher.add('associations', rel.association_patterns,
+                        on_match=rel.add_associations_ent)
+
             matcher(doc)
+
+            temp_doc = copy.deepcopy(doc)
 
             matcher_dep.remove('dependencies_dis')
             matcher_dep.remove('dependencies_food')
@@ -99,6 +107,8 @@ class Extractor:
             matcher_dep(doc)
 
             food.merge_entities(doc)
+
+            self.relations_data = rel.extract_relations_data(temp_doc, doc)
 
         self.doc = doc
 
@@ -129,6 +139,10 @@ class Extractor:
 
                 if not self.nohtml:
                     self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_pred.html')
+
+                if self.domain == 'relations':
+                    print(self.relations_data)
+                    self.save_relations_data(f'./relations_data/{article_id}.txt')
 
     def evaluate(self):
         """
@@ -235,6 +249,11 @@ class Extractor:
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
             html_file.write(html)
+
+    def save_relations_data(self, filepath):
+        with open(filepath, 'w') as relations_file:
+            print(f'Saving relations data to {filepath}')
+            relations_file.write(self.relations_data)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
