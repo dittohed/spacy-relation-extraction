@@ -1,7 +1,7 @@
 # evaluates or predicts using specified extractor
 # example of usage: python extractor.py evaluate diseases ./articles/diseases --no-html 1
 
-# TODO: exporting predicted entities, final evaluation of extractors (need labeled .txt files)
+# TODO: fix disease prediction bug, evaluate disease extractor
 
 import argparse
 import glob
@@ -91,7 +91,7 @@ class Extractor:
         Predicts entities and optionally labels them in a new *_pred.txt file.
         """
 
-        articles = glob.glob(f'{self.datapath}/*_true.txt')
+        articles = glob.glob(f'{self.datapath}/*_curr.txt')
 
         for article in articles:
             with open(article, 'r') as file:
@@ -116,6 +116,7 @@ class Extractor:
         Evaluates extraction method by comparing labeled (TL_EXPRESSION) .txt files
         and extracted labels.
         Prints out precision and recall.
+        WARNING: takes files ending with _test in account only!
         """
 
         tp = 0 # true positive

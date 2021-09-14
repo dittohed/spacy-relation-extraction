@@ -37,7 +37,7 @@ X Aspergillosis
 X Aspergillus Infection [Aspergillosis]
 Asthma
 X Autism
-Avian Influenza
+X Avian Influenza
 
 X B. cepacia infection (Burkholderia cepacia Infection)
 X Babesiosis [Babesia Infection]
@@ -118,7 +118,7 @@ x Chlamydia pneumoniae Infection
 x Chlamydia psittaci Infection
 x Chlamydia trachomatis Disease
 x Chlamydia [Chlamydia trachomatis Disease]
-Cholera [Vibrio cholerae Infection]
+X Cholera [Vibrio cholerae Infection]
 x Chronic Fatigue Syndrome — see Myalgic Encephalomyelitis/ Chronic Fatigue Syndrome
 x Chronic Kidney Disease (CKD)
 x Chronic Obstructive Pulmonary Disease (COPD)
@@ -173,7 +173,7 @@ x Deep Vein Thrombosis (DVT)
 x Dementia
 Dengue
 x Dermatophyte Infection
-Diabetes
+X Diabetes
 x Dientamoeba fragilis Infection
 x Diphtheria
 x Diphyllobothriasis

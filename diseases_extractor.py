@@ -1,5 +1,4 @@
 # TODO:
-# - exclude keywords_regexp most common words (longer than 4), add to stop_words.txt
 # - optimization; for now, the text is scanned 7 times (each pass for each pattern)?
 # - remove if main
 
@@ -25,10 +24,49 @@ keywords = [
     'cold',
     'poisoning',
     'defect',
-    'ilness'
+    'ilness',
+    'influenza',
+    'cholera',
+    'diabetes',
+    'depression',
+    'neoplasm',
+    'asthma'
 ]
 
-keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia)$'
+keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia|cocci|ae)$'
+ex_regexp = (
+    'this',
+    'various',
+    'prognosis',
+    'analysis',
+    'diagnosis',
+    'status',
+    'previous',
+    'ambiguous',
+    'his',
+    'focus',
+    'mechanism',
+    'organism',
+    'microorganism',
+    'thus',
+    'emphasis',
+    'homeostasis',
+    'via',
+    'continuous',
+    'analogous',
+    'cholera')
+
+ex_initialisms = (
+    'AND',
+    'OR',
+    'OWL',
+    'API',
+    'SPARQL',
+    'RDF',
+    '3D',
+    'MP4',
+    'USA',
+    'DNA')
 
 # --- modifiers ---
 modifier = {
@@ -50,7 +88,7 @@ pattern1 = [
     # anchor specification
     {
         'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LOWER': {'IN': keywords}}
+        'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
     },
     # modifier specification
     modifier
@@ -60,7 +98,7 @@ pattern2 = [
     # anchor specification
     {
         'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LOWER': {'IN': keywords}}
+        'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
     },
     modifier, # modifier specification
     modmodifier # modifier's modifiers specification
@@ -70,7 +108,7 @@ pattern3 = [
     # anchor specification
     {
         'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LOWER': {'REGEX': keywords_regexp}}
+        'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
     },
     modifier
 ]
@@ -79,7 +117,7 @@ pattern4 = [
     # anchor specification
     {
         'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LOWER': {'REGEX': keywords_regexp}}
+        'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
     },
     modifier, # modifier specification
     modmodifier # modifier's modifiers specification
@@ -94,8 +132,8 @@ dependencies_patterns = [
 
 # --- standalones ---
 standalones_patterns = [
-    [{'LOWER': {'REGEX': keywords_regexp}}],
-    [{'LOWER': {'IN': ['flu', 'diarrhea', 'cold']}}]
+    [{'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}],
+    [{'LEMMA': {'IN': ['flu', 'diarrhea', 'cold']}}]
 ]
 
 def match_initialisms(doc):
@@ -109,10 +147,10 @@ def match_initialisms(doc):
     initialisms_ents = tuple()
     for match in re.finditer(initialisms_regexp, doc.text):
         start, end = match.span()
-        if re.compile(num_regexp).search(doc.text[start : end]):
+        if re.compile(num_regexp).search(doc.text[start : end]) or doc.text[start : end] in ex_initialisms:
             continue # e.g. 4343 or 323-1233 was found
 
-        entity = doc.char_span(start, end, label='DIS')
+        entity = doc.char_span(start, end, label='DIS', alignment_mode='expand')
         # print(f'Matched text: {entity.text}')
 
         try:
@@ -164,15 +202,16 @@ if __name__ == '__main__':
     matcher_dep = DependencyMatcher(nlp.vocab)
 
     # read file
-    with open('./articles/diseases/PMC5363789_true.txt', 'r') as file:
+    with open('./articles/diseases/PMC5363789_curr.txt', 'r') as file:
         lines = file.readlines()
         text = ' '.join(lines)
 
         s = '''
-        Furthermore, two other chronic diseases, EV-D68, USA, COVID-19, liver cirrhosis and interstitial lung disease/lungfibrosis, were also associated with a poor prognosis.
+        This DIS is the first report to perform follow-up survival analysis DIS across various DIS common diseases.
+        Among the 32 diseases, dyslipidemia DIS was the most common disease DIS (n = 37,478), while gallbladder/cholangiocarcinoma were the least common (n = 366) (Table 1).
         '''
 
-        doc = nlp(text) # doc is a list of tokens, e.g. doc[0] is 'horrible'
+        doc = nlp(s) # doc is a list of tokens, e.g. doc[0] is 'horrible'
 
         doc.ents += match_initialisms(doc)
 
@@ -188,7 +227,7 @@ if __name__ == '__main__':
                      # one tuple is match_id, match start and match end
 
         for tok in doc:
-            print(tok)
+            print(tok, tok.pos_, tok.tag_)
 
         # displacy.serve(doc, style='ent', page=True, options={'ents': ['DIS']})
         displacy.serve(doc, style='ent', page=True)

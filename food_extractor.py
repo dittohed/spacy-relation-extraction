@@ -7,7 +7,9 @@ from spacy import displacy
 
 import string
 
-anchors = ['consumption', 'intake', 'serving', 'consume', 'eat', 'portion', 'cup']
+# dodać MDS, DASH, NFI
+anchors = ['consumption', 'intake', 'serving', 'consume', 'consuming',
+           'eat', 'eating', 'portion', 'cup', 'diet', 'health', 'participant', 'item']
 
 def add_modifier(left_id):
     """
@@ -16,7 +18,7 @@ def add_modifier(left_id):
 
     modifier = {
         'LEFT_ID': left_id,
-        'REL_OP': '>',
+        'REL_OP': '>>',
         'RIGHT_ID': 'modifier',
         'RIGHT_ATTRS': {'DEP': {'IN': ['amod', 'compound', 'poss', 'nmod', 'npadvmod']}}
     }
@@ -89,7 +91,7 @@ pattern_base3 = [
     # such pattern matches eat/consume [FOOD]
     {
         'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LEMMA': {'IN': ['consume', 'eat']}}
+        'RIGHT_ATTRS': {'LEMMA': {'IN': ['consume', 'consuming', 'eat', 'eating']}}
     },
     {
         'LEFT_ID': 'anchor',
@@ -172,7 +174,7 @@ if __name__ == '__main__':
     matcher = Matcher(nlp.vocab)
     matcher_dep = DependencyMatcher(nlp.vocab)
 
-    doc = nlp('Among the 4630 students, 86.5% (n = 4007) had less than optimal fruit and vegetable consumption')
+    doc = nlp('consumed 62.3 g more fruit (99% CI 43.2 to 81.5) and 97.8 g more vegetables (99% CI 84.4 to 111.2) daily.')
     doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
 
     # patterns order in patterns list does matter

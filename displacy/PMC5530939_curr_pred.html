@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>displaCy</title>
+    </head>
+
+    <body style="font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 4rem 2rem; direction: ltr">
+<figure style="margin-bottom: 6rem">
+<div class="entities" style="line-height: 2.5; direction: ltr"></br> ==== Front</br> J Biomed SemanticsJ Biomed SemanticsJournal of Biomedical Semantics2041-1480BioMed Central London 13410.1186/s13326-017-0134-0ResearchTowards a more molecular taxonomy of disease http://orcid.org/0000-0002-3077-1979Park Jisoo jisoo.park@tufts.edu 1Hescott Benjamin J. hescott@cs.tufts.edu 1Slonim Donna K. slonim@cs.tufts.edu 121 0000 0004 1936 7531grid.429997.8Department of Computer Science, Tufts University, 161 College Avenue, Medford, 02155 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    USA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 2 0000 0000 8934 4045grid.67033.31Department of Integrative Physiology and Pathobiology, Tufts University School of Medicine, 145 Harrison Avenue, Boston, 02111 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    USA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 27 7 2017 27 7 2017 2017 8 258 11 2016 17 7 2017 © The Author(s) 2017</br> Open Access This article is distributed under the terms of the Creative Commons Attribution 4.0 International License(http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver(http://creativecommons.org/publicdomain/zero/1.0/) applies to the data made available in this article, unless otherwise stated.Background</br> Disease taxonomies have been designed for many applications, but they tend not to fully incorporate the growing amount of molecular-level knowledge of disease processes, inhibiting research efforts. Understanding the degree to which we can infer disease relationships from molecular data alone may yield insights into how to ultimately construct more modern taxonomies that integrate both physiological and molecular information.</br> </br> Results</br> We introduce a new technique we call Parent Promotion to infer hierarchical relationships between disease terms using disease-gene data. We compare this technique with both an established ontology inference method (CliXO) and a minimum weight spanning tree approach. Because there is no gold standard 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    molecular disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ taxonomy available, we compare our inferred hierarchies to both the Medical Subject Headings (MeSH) category C forest of diseases and to subnetworks of the Disease Ontology (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+). This comparison provides insights about the inference algorithms, choices of evaluation metrics, and the existing molecular content of various subnetworks of MeSH and the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Our results suggest that the Parent Promotion method performs well in most cases. Performance across MeSH trees is also correlated between inference methods. Specifically, inferred relationships are more consistent with those in smaller MeSH disease trees than larger ones, but there are some notable exceptions that may correlate with higher molecular content in MeSH.</br> </br> Conclusions</br> Our experiments provide insights about learning relationships between diseases from disease genes alone. Future work should explore the prospect of disease term discovery from molecular data and how best to integrate molecular data with anatomical and clinical knowledge. This study nonetheless suggests that disease gene information has the potential to form an important part of the foundation for future representations of the disease landscape.</br> </br> Electronic supplementary material</br> The online version of this article (doi:10.1186/s13326-017-0134-0) contains supplementary material, which is available to authorized users.</br> </br> Keywords</br> Disease Ontology inferenceDisease tree inferencePairwise disease similarityDisease gene associationMedical Subject Headings treeDisease OntologyHierarchical clusteringParent PromotionNational Institutes of Health (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    US)R01HD076140issue
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+-copyright-statement© The Author(s) 2017</br> ==== Body</br> Background</br> The recent growth in availability of genomic and clinical data allows for the discovery of new molecular-level mechanistic models of disease. However, existing disease taxonomies and ontologies are often focused on either physiological characterizations of disease, sometimes using decades-old criteria, or on the organizational and billing needs of hospitals. Automatically inferring common molecular links between 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    related diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is made more difficult by the limited molecular representation in current taxonomies [1], leading some researchers to manually group 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    related disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ for individual projects (for example, PheWAS analysis [2] or network-based disease gene prioritization [3]). Yet such manual efforts limit consistency and reproducibility. To further advance such research and biomedical knowledge in the genomic era, a recent National Academy of Sciences working group has called for the development of new disease taxonomies better suited to incorporate molecular information [4].</br> </br> A truly modern taxonomy would presumably combine clinical, physiological, and molecular data. The question we address here is the degree to which we can infer a meaningful disease taxonomy simply using disease gene information. In this, we were inspired by efforts by Trey Ideker’s group to infer a version of the Gene Ontology using pairwise similarity scores between genes [5, 6]. Their CliXO algorithm, for example, sorts gene pairs by a pairwise similarity score and incrementally uses these scores to group together cliques of similar genes. The resulting ontology forms a Directed Acyclic Graph (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) of sets of genes. As in that work, here we are not arguing that we should ultimately construct a disease hierarchy automatically in this way. However, learning how we can discover the relationships in existing disease taxonomies from disease gene data is a first step towards developing new hierarchies of disease that integrate the clinical information used in today’s taxonomies with genomic data. Such integrated taxonomies are needed to better support research in molecular medicine [7].</br> </br> To infer a disease taxonomy, we would like to simply cluster diseases hierarchically based on associated genes from a large 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    gene-disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ database. However, if the items we are clustering are diseases, the internal nodes of any hierarchical clustering method will correspond to unnamed sets of diseases. While some of these may be informative, identifying them is a challenge. We therefore introduce here an algorithm called Parent Promotion, based on hierarchical clustering, that addresses this problem.</br> </br> We acknowledge that we are deliberately blurring the distinction here between an ontology of disease [8] and a disease taxonomy [9]. In this manuscript, we focus on learning a hierarchical characterization of disease using existing disease terminology, yet incorporating molecular relationships. Such a description may be able to better identify novel relationships between disorders that do not appear clinically similar but that arise from similar underlying genotypes. Yet we are not expecting here to comprehensively infer disease relationships as in most ontologies, in part because the current project ignores the clinical and anatomical characteristics built into many existing taxonomies. Accordingly, we frequently use the term “disease hierarchy” to encompass our inferred hierarchies as well as those to which we compare.</br> </br> One important question is how to evaluate our inferred hierarchies of disease when there is no existing gold standard. However, there are a handful of existing taxonomies and disease ontologies that are somewhat suitable for molecular analyses and comparisons [4]. Medical Subject Headings (MeSH) is a hierarchical structure of controlled biological vocabularies used to index articles in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MEDLINE
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ [10]. MeSH includes many medical concepts beyond diseases, but here we refer to MeSH category C, a comprehensive set of 26 trees that represent relationships between diseases. SNOMED-CT provides an organized terminology for clinical terms [11]; this is one of the most detailed terminologies available, but there are restrictions on its distribution. The Unified Medical Language System (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    UMLS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    metathesaurus
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ includes disease terms from multiple taxonomies; while it is not intended to be an ontology, its semantic network can identify some relationships between terms [12]. The Disease Ontology (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) also integrates the knowledge and relationships from several taxonomies, including MeSH, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    SNOMED-CT
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    ICD
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ [13].</br> </br> Initially, because of the high coverage and availability of MeSH and its simple structure, we chose to compare our inferred hierarchies to the MeSH forest of disease terms. Although it is not necessarily a gold standard for the problem we are trying to solve, we can use such a comparison to identify the strengths and limitations of different inference methods. In addition, identifying individual 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ trees that are more consistent with the hierarchies inferred from disease-gene data helps in assessing the molecular content of existing domains in MeSH. We have also extended our assessments by comparison to the Disease Ontology, which is a more complex process for reasons detailed below.</br> </br> Even after fixing a “reference” hierarchy for comparison, the question of how to assess correctness remains. Many of the standard network and graph comparison metrics are inappropriate for our problem. One that does make sense is a strict variant of Edge Correctness [14] that asks how many parent-child relationships we get right. We therefore use Edge Correctness as one measure of accuracy.</br> </br> One limitation of Edge Correctness, however, is that the distances between pairs of terms are not uniform [15]. That is, two diseases that are separated by more than one taxonomic link may be more closely related to each other than two 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    other diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ in a direct parent-child relationship. We therefore also introduce the notion of Ancestor Correctness, a feature-based similarity measurement [16] that assesses our ability to properly identify ancestry without concern about distances.</br> </br> Finally, neither Edge Correctness nor Ancestor Correctness penalizes an algorithm for false positives (inferred edges not in the reference hierarchy). This is fine for inference methods like Parent Promotion that build trees, which all have the same number of edges for a fixed set of disease nodes, but not for comparison to ontology-learning approaches that can add arbitrary numbers of edges. Accordingly, we also compute a variation of hierarchical precision and recall [17], 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    analagous
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ to Ancestor Correctness, that accounts for both false positives and false negatives.</br> </br> Methods</br> Reference taxonomies</br> To quantify performance of various disease hierarchy inference methods, we compare our inferred taxonomies to the 2016 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Medical Subject Headings (MeSH) disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ trees [10] and the Disease Ontology (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) [18], downloaded on August 5, 2016. From both datasets, we exclude diseases for which we cannot find any associated genes, because our methods would then have no way to learn about how they relate to 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    other diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. However, excluding diseases can disconnect our reference hierarchies. To reconnect them, we therefore add edges from a deleted node’s parents to all of its closest descendants that do have associated genes.</br> </br> We note that the MeSH trees allow repeated disease names, resulting in multiple nodes with the same name in different parts of the tree. We treat these terms as if they were the same node, effectively matching against the corresponding 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. However, given that the original structure is a tree, most of these DAGs end up being fairly tree-like.</br> </br> Because the Disease Ontology is substantially larger than any of the individual MeSH trees, we extracted smaller DAGs from the full 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ to facilitate algorithm comparison. To find these smaller DAGs, we searched through the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ starting at the most general term. A term became a root of a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subnetwork if its name approximately corresponded to the name of the root of one of the 26 MeSH trees and if it had at least 100 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms as descendants. This approach identified four new DAGs that can be described as covering mostly “Cardiovasular Disease,” ”
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Gastrointestinal Disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Musculoskeletal Disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” and “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Nervous
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ System Disease”.</br> </br> Table 1 reports the sizes and topology of these four subnetworks of the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. All are fairly tree-like; only small numbers of nodes have more than one parent, and the total number of edges is not that much larger than the number of nodes. We note that it is not necessarily the case that all disease nodes in the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ labeled Musculoskeletal Disease, for example, actually correspond to 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    musculoskeletal disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, because the Disease Ontology and MeSH are organized according to different principles. We therefore acknowledge that each subnetwork of the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ may contain terms that map to several different MeSH disease trees. Nonetheless, we use these labels as shorthand ways to refer to the chosen 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subnetworks.</br> Table 1 Subnetworks of the Disease Ontology</br> </br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Root disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	#Diseases (nodes)	#Edges	#Nodes with 1 parent	#Nodes with 2 parents	#Nodes with 3 parents	</br> Disease	2,039	2,095	1,982	55	1	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Cardiovascular disease	141	141	139	1	0	
+ Gastrointestinal disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	115	118	110	4	0	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Musculoskeletal disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	133	135	129	3	0	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Nervous System disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	308	324	291	15	1	</br> The entire Disease Ontology (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    root = “Disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+”) and four subnetworks of various sizes extracted from it. The original 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and its subnetworks are tree-like: 1) the numbers of edges are close to n−1, where n is the number of nodes and 2) only a small fraction of nodes have 2 or more parents</br> </br> </br> </br> </br> Withheld MeSH subtrees for method development</br> We selected four small subtrees from MeSH that we used for refining our computational methods. These are the MeSH subtrees rooted at the terms “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Infant Premature Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Dementia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Respiration Disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” and “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Eye Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” giving us a range of subtrees of different sizes and complexity (Table 2). Note that the MeSH tree rooted at “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Eye Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+” includes 149 disease terms and 178 edges, indicating that several terms appear multiple times, although we allow a node with a given name to appear only once in each inferred hierarchy.</br> Table 2 Four MeSH subtrees of various sizes used for method development</br> </br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Root disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    #Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (nodes)	#Edges	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Infant, Premature, Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	6	5	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Dementia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	13	12	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Respiration disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	23	22	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Eye diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	149	178	</br> </br> </br> </br> Although we show the performance of the inference methods on these subtrees separately in Additional file 1, we did not think it fair to include them in our overall MeSH results because we used them to tune our methods. Accordingly, we removed the subtrees rooted at these nodes from the relevant disease trees in MeSH before evaluating the different methods’ performance. Only one whole disease tree, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C11
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (“
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Eye Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+”), was removed, because the entire 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C11
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ tree was used for method development.</br> </br> There are two other MeSH disease trees that were also removed before evaluation: 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C21
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, “Diseases of Environmental Origin,” which included only 3 diseases with associated genes, and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C22
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Animal Diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” which contained no diseases with associated genes. We therefore report averaged MeSH results over the remaining 23 MeSH disease categories.</br> </br> Disease genes</br> We use disease genes to calculate pairwise similarity of diseases. For our comparison to MeSH, we gathered disease-gene associations from the Online Mendelian Inheritance in Man (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) database [19] and the Genopedia compendium in the HuGE database of Human Genetic Epidemiology [20], both downloaded on February 3rd, 2016. OMIM contains human genes, phenotypes (typically 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    specific diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), and information about relationships between them. In particular, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ phenotypes include 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Mendelian disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, whose associated genes are either known or not yet known, as well as mutations that increase susceptibility to infection, cancer, or drugs [21]. 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Genopedia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ includes links to articles on epidemiological studies that identify 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    gene-disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ interactions. The majority of these are discovered through association studies; linkage mapping and animal studies are specifically excluded [20]. We combined disease-gene associations from the two databases as in our previous work [1], using the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MEDIC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ merged disease vocabulary (downloaded from the Comparative Toxicogenomics Database [22] on February 3rd, 2016). This combined data set contains 2755 diseases and 12,873 genes.</br> </br> To infer hierarchies based on 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms with this disease-gene data, however, required converting the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms to 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms. The 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ obo file provides synonym information for this conversion. However, because not every MeSH term has a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ equivalent, nor vice-versa, the mapped disease gene data set included 1790 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms with 12,230 associated genes. The Disease Ontology actually includes 6932 disease nodes, so the resulting 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ of diseases with associated genes was largely disconnected.</br> </br> For the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ analysis, we therefore augmented the disease gene data with disease-gene associations from the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DISEASES
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ database [23] (downloaded on August 5th, 2016) which directly uses 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms. We used the filtered version of the DISEASES database which provides non-redundant disease-gene association pairs, and selected only associations derived from experiments or database curation (“knowledge”), which we expect to be of relatively high confidence. The 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DISEASES
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data included 772 disease terms and 13,059 genes. When combined with the mapped data from the MeSH comparison, the total yielded 2039 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms with 16,404 associated genes, producing a sufficiently connected ontology for our purposes.</br> </br> Although this number of disease genes seems high, note that our “genes” are really referring to entities with distinct 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HGNC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ “official gene symbols,” as reported in the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    NCBI
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Gene database and associated with some disease term in the databases described. Some 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HGNC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ symbols refer to distinct subunits of genes, while a few (under 3.5%) refer to non-coding sequences that have either been shown to play a regulatory role in disease, or that are locations of SNPs linked to disease in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    GWAS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ studies. At most 250 such non-coding entities are implicated in more than one disease and might therefore potentially play a role in our analyses.</br> </br> Measuring pairwise similarity</br> For our inference algorithms we need methods to measure similarities both between pairs of diseases and between pairs of genes. To calculate pairwise similarity between diseases A and B, disease_sim(A,B), let G</br> A be the set of associated genes for disease A and G</br> B the set of associated genes for disease B. We then use the Jaccard Index [24] to represent the similarity between the disease gene sets as follows: </br>  disease_sim(A,
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    B)=Jaccard(GA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    GB)=|GA∩GB||GA∪GB|
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ </br> </br> </br> To calculate pairwise similarity between genes g</br> 1 and g</br> 2, gene_sim(g</br> 1,g</br> 2), we do the opposite, as we are interested in measuring the similarity of diseases with respect to their associated genes: </br>  gene_sim(g1,g2)=Jaccard(Dg1,Dg2)=|Dg1∩Dg2||Dg1∪Dg2|  where Dg1 is the set of diseases associated with gene g</br> 1 and Dg2 is the set of diseases associated with gene g</br> 2.</br> </br> Note that no information about the relationships between 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    diseases other
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ than this measure of overlapping disease genes is incorporated into this similarity matrix or used by our inference algorithms.</br> </br> Inference strategies</br> Clique Extracted Ontology (CliXO)</br> To use CliXO to generate disease ontologies, we begin by creating a matrix containing the Jaccard similarity score between genes as defined above. CliXO uses this similarity matrix as input. It also relies on two parameters: α, which represents the amount of noise allowed in forming cliques, and β, which represents missing data. The algorithm is demonstrated to be relatively robust to variation in β, so we set β=0.5 as done by the CliXO team [5]. Variation in α has higher impact on the results, so tuning it to the data set is suggested. We chose α=0.05 because it produced reasonable-sized output graphs in our initial experiments on the four MeSH subtrees in Table 2.</br> </br> Initially, CliXO returns a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ whose internal nodes correspond to sets of genes, not to specific disease terms in the reference ontology. We then used the ontology alignment technique of [6] to align the resulting ontology to the MeSH reference or to the Disease Ontology, in order to identify disease terms in the output 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Accordingly, some of the disease terms may not be represented in the CliXO output, because they fail to map to any node. (Fig. 1 demonstrates the topological difference for a small example; note that the CliXO output on the right maps only 5 of the 6 disease nodes.)</br> Fig. 1 Topological difference between MeSH and the corresponding inferred ontology using CliXO. a A MeSH subtree containing prematurity complications. b Corresponding Disease Ontology inferred using CliXO and ontology alignment. Drawn in Cytoscape v. 3.3.0 [30]</br> </br> </br> </br> </br> Parent Promotion</br> We introduce a new technique we call Parent Promotion that focuses on similarities in disease genes. The idea is to group diseases by their similarity scores and use hierarchical clustering to form subgroups. Parent-child relations are then created from these subgroups by counting citation frequency in PubMed.</br> </br> Specifically, we transform the pairwise similarity score into a distance by subtracting it from 1. We then perform complete-linkage hierarchical clustering on the disease terms using the hclust function in R with these distances. Internal nodes in this dendrogram correspond to sets of diseases. To convert the resulting dendrogram to a hierarchy with a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    single disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ at each node, we identify the number of disease-related articles in PubMed for each disease in a cluster using the NCBI’s E-utilities (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    http://www.ncbi.nlm.nih.gov/books/NBK25501/
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+).</br> </br> Working up from the bottom of the dendrogram, the disease term with the most citations is promoted to become the parent, with all 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    other diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ in the cluster left as its children. Once defined as a child, a disease does not have another chance to be promoted. That is, we only consider the most recently 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    promoted disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and its siblings in a cluster when deciding the next parent. Figure 2 shows an example of how the dendrogram guides the Parent Promotion process.</br> Fig. 2 How the Parent Promotion method transforms a dendrogram created by hierarchical clustering. a Dendrogram for diseases of infants born preterm. Hierarchical clustering builds a tree whose internal nodes are hard to interpret. b Parent Promotion finds the most general disease term from each cluster and promotes it as an internal node. An internal node becomes the parent of all other nodes in the same cluster. Disease term 3 has the most citations and keeps being selected for promotion until it becomes the root. Disease term 6 has more citations than 5 and is promoted as the parent of 5. However, it later becomes a child of 3 because it has fewer citations than 3. c Final tree built by Parent Promotion</br> </br> </br> </br> </br> Notice that the inferred tree created by the Parent Promotion technique always has the same number of diseases (nodes) as the reference. However, the number of edges may differ from that of the reference, which may be either implicitly or explicitly a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. In either case, Parent Promotion may therefore produce a result with fewer edges.</br> </br> Minimum weight spanning tree</br> We also compared our new Parent Promotion method to the standard technique of finding a Minimum Weight Spanning Tree (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) [25] over the complete network of disease terms, with pairwise similarity scores between diseases as edge weights. The idea behind this is that a representation of the relationships between diseases that connects all the disease terms by their highest disease gene similarity represents a minimum-length description of the data that seems likely to capture real disease relationships. The 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is unrooted, so we choose the disease with the most related PubMED articles as the root.</br> </br> Evalution metrics</br> Comparing the inference methods remains challenging due to the topological differences of the output. In particular, both Parent Promotion and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ produce trees whose n nodes are exactly those of the reference hierarchy. In contrast, the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ output by the CliXO method may be much larger (as in Fig. 1). We use multiple methods to quantify and compare performance despite these differences.</br> </br> Edge Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+)</br> Inspired by the notion of Edge Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) used in network alignment [14] we measure the number of edges that are identical to those in the reference hierarchy. Unlike in the network alignment problem, which uses Edge Correctness as a proxy for node correctness, for this problem we know the node correctness and wish to measure correctly inferred edges. We count edges as correctly matched if and only if the parent child relations (both the edges and the directions of the edges) are preserved. To create an overall score we calculate the percentage of edges in the reference that also appear in the inferred ontology.</br> </br> Ancestor Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+)</br> While Edge Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) can measure how well two networks are aligned, it may not be the best method for evaluating disease taxonomies. In particular, diseases separated by multiple taxonomic links may still be closely related to each other, so EC can underestimate performance by ignoring the ancestor-descendant relationship. EC also rewards successfully matched edges with no penalty for incorrect ones. This property may favor CliXO, which tends to produce DAGs with many edges.</br> </br> To address the first shortcoming, we introduce the notion of Ancestor Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+). For a disease x, let x</br> ref be a node representing x in the reference ontology and x</br> inf be a node representing x in our inferred hierarchy. Also let A(x) be the set of all ancestors of x in the appropriate hierarchy. Then for a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    specific disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ x</br> inf in the inferred taxonomy we can measure how well it matches the reference by calculating Ancestor Jaccard = Jaccard(A(x</br> ref),A(x</br> inf)). We can then apply Ancestor Jaccard globally by averaging across all diseases in the inferred network. We report this average as our 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ score for the inferred network. Note that we only consider diseases existing in both hierarchies. However, we exclude diseases that are roots in both because they do not have any ancestors.</br> </br> Ancestor Precision and Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+)</br> Ancestor Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) provides a good estimate of topological similarity in terms of the number of preserved ancestors of mapped nodes. However, it still does not penalize false positives.</br> </br> To address this problem, we adapt the Hierarchical Precision (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) and Hierarchical Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) measurements from Verspoor et al. [17]. These measurements compare the sets of all ancestors of a disease in the inferred hierarchy to the ancestors of the same term in the reference. Informally, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is the fraction of x’s ancestors in the inferred hierarchy that are correct, while 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is the fraction of true ancestors of x that are also predicted by an inference method to be ancestors of x.</br> </br> More specifically, for a disease x, let x</br> ref be the node in the reference and x</br> inf be the node in the inferred ontology. Then our 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ are calculated as follows: </br>  1 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP(xref
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,xinf)=|A(xref)∩A(xinf)||A(xinf)| </br> </br> </br> </br>  2 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR(xref
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,xinf)=|A(xref)∩A(xinf)||A(xref)| </br> </br> </br> We also calculate an F score using 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ as: </br>  3 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    F(x)=2×HP(x)×HR(x)HP(x)+HR(x
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) </br> </br> </br> Finally, we define Ancestor Precision (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) and Ancestor Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) to be the average of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ across all diseases in our reference hierarchy.</br> </br> Results</br> Comparison to MeSH</br> We ran all three algorithms on the disease gene data and disease terms from each of the 23 MeSH trees. Table 3 reports the averaged performance across all 23 trees for each method and the different evaluation criteria. Across this data set, we see that Parent Promotion on average outperforms CliXO and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ for almost all evaluation measures. The only exception is Ancestor Recall, for which 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ slightly edges out Parent Promotion. Detailed performance on each 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ tree is shown in Additional file 1; in most cases the methods’ relative performance is similar to that in Table 3. The detailed table also shows that, for each evaluation criterion, performance of the different methods is highly correlated across the 23 disease trees, suggesting that some trees are more consistent with the disease gene data than others.</br> Table 3 Average performance of inference methods across the MeSH trees</br> </br> Method	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (± stdev)	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (± stdev)	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (± stdev)	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ (± stdev)	F (± stdev)	</br> Parent Promotion	</br> 0.13 (±0.06)	</br> 0.30 (±0.10)	</br> 0.46 (±0.16)	0.47 (± 0.14)	</br> 0.47 (±0.15)	</br> CliXO	0.12 (± 0.10)	0.22 (± 0.12)	0.30 (± 0.14)	0.38 (± 0.17)	0.33 (± 0.15)	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	0.07 (± 0.04)	0.11 (± 0.07)	0.13 (± 0.08)	</br> 0.48 (±0.18)	0.21 (± 0.11)	</br> Average Edge Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Precision (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) and F-score across the different trees in the MeSH forest. Standard deviation is shown in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    parentheses
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Best performance across different inference techniques is highlighted in italic</br> </br> </br> </br> </br> Comparison to the Disease Ontology</br> We first attempted to reconstruct all of the Disease Ontology reflected in our disease-gene data set (2095 edges connecting 2039 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms). However, we could not compare the performance of all three inference methods on this full data set because running CliXO, which has at its core the computationally hard problem of finding cliques, was infeasible on a data set this large and complex. Nonetheless, we found that Parent Promotion consistently outperformed MWST on this large data set. Specifically, Parent Promotion had an 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ of 0.07 compared to MWST’s 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ of 0.05, an 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ of 0.23 compared to MWST’s 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ of 0.04, and an F score of 0.40 compared to MWST’s 0.08.</br> </br> We used the subnetworks of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ listed in Table 1 to compare all three methods. Table 4 shows the results of all three methods on these subnetworks of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. We again see that in most cases Parent Promotion outperforms CliXO and MWST for each evaluation measure, with the exception of “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Musculosketal Disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+,” where CliXO outperforms Parent Promotion and MWST. Again, MWST often has good Ancestor Recall despite unimpressive performance on most other metrics.</br> Table 4 Evaluation results for four 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subnetworks</br> </br> 	Edge Correctness	Ancestor Correctness	F-score (Ancestor precision, ancestor recall)	</br> 	Parent			Parent			Parent			</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Root disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	Promotion	CliXO	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	Promotion	CliXO	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	Promotion	CliXO	
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Cardiovascular disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	0.06	</br> 0.09</br> 	0.07	</br> 0.32</br> 	0.18	0.11	</br> 0.50</br> 	0.27	0.21	</br> 							(0.57, 0.44)	(0.24, 0.30)	(0.13, 0.48)	
+ Gastrointestinal disease	
+ 0.17
+ 	0.13	0.03	</br> 0.37</br> 	0.26	0.14	</br> 0.55</br> 	0.39	0.26	</br> 							(0.56, 0.53)	(0.36, 0.42)	(0.18, 0.48)	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Musculoskeletal disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	</br> 0.16</br> 	0.08	0.10	0.15	</br> 0.26</br> 	0.09	0.26	</br> 0.41</br> 	0.17	</br> 							(0.44, 0.18)	(0.42, 0.40)	(0.16, 0.19)	</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Nervous System disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+	</br> 0.13</br> 	0.07	0.09	</br> 0.29</br> 	0.17	0.10	</br> 0.46</br> 	0.30	0.19	</br> 							(0.70, 0.34)	(0.26, 0.34)	(0.13, 0.34)	</br> Average Edge Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Correctness (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Precision (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Ancestor Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) and F-score across four 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subnetworks. Standard deviation is shown in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    parentheses
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Best performance across different inference techniques is highlighted as italic</br> </br> </br> </br> </br> Figure 3 shows an example of one of the larger connected components inferred by Parent Promotion using the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data. All edges in the figure occur in both the Disease Ontology and the inferred tree. Although the inferred tree is relatively flat, the figure demonstrates that inference method is capturing some logical relationships between diseases.</br> Fig. 3 Parent Promotion tree using 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data. Subtree of the disease tree built by Parent Promotion on 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    musculoskeletal system disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+” data that is an exact match to nodes and edges in the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+</br> </br> </br> </br> </br> Data sources and quantity matter</br> We investigated the influence of the type and amount of data using Parent Promotion on the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ trees. First, we tried using data from just 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ or just Genopedia. OMIM has a higher percentage of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    monogenic diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ identified using classical methods such as positional cloning, while Genopedia has a higher percentage of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    GWAS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data. On the other hand, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ includes much less data, containing just 2434 genes linked to 1173 disorders, whereas Genopedia contains 12,527 genes implicated in 2499 disorders. Therefore, it is not surprising that performance on the Genopedia data exceeds that on the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data, nearly across the board. The exception, interestingly, is 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C16
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, “Congenital, Hereditary, and Neonatal Diseases and Abnormalities,” where the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+-only version outperforms 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Genopedia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+-only by the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, and F measures. This seems likely to be because this MeSH tree includes 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    many hereditary disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ whose genes are particularly likely to be included in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Detailed results for this comparison appear in Additional file 2. (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is omitted because it is uninformative for many of the smaller data sets.)</br> </br> In most cases, furthermore, the combination of the two data sources is better than either alone. There are a few cases where performance declines slightly with both compared to just Genopedia, but in those cases the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ data actually adds just a handful of genes that aren’t already in the Genopedia data, and the changes in performance are small, consistent with small random perturbations.</br> </br> To further explore the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    hypothesis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ that more data produces better results, we also ran an experiment where we randomly removed 25% or 50% of the disease-gene associations from each MeSH tree, and again tried to infer trees via Parent Promotion. On average, performance on all measures improved with more data, although the effects on most individual trees were modest (results are in Additional file 3).</br> </br> Discussion</br> Overall, these experiments have provided some important insights into what can and cannot be learned about disease relationships from disease genes alone.</br> </br> The correlations observed across the MeSH trees suggest that disease relationships in some MeSH categories are easier to learn than others. Correctness appears to be higher for smaller trees, perhaps simply because there are fewer possibilities. However, there are some large disease subtrees with higher 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ scores, especially Endocrine System Diseases (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C19
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), Nutritional and Metabolic Diseases (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C18
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+), and Respiratory Tract Diseases (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C08
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+).</br> </br> It is possible that the MeSH hierarchy in these areas is better defined by molecular data, or that there are simply more disease genes known in these areas than in some others. One observation is that these categories include 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    several well-studied complex diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ with high public health impact. For example, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C19
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ includes diabetes and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    ovarian and pancreatic cancer
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+; 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C18
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ also includes diabetes, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    plus
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ obesity and related conditions; and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    C08
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ features asthma, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    COPD
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, and several types of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    lung cancer
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. Which exact properties of a set of diseases contribute most to the success of inference algorithms is an important question for future work.</br> </br> On the “Musculoskeletal Disease” 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subnetwork, CliXO outperforms Parent Promotion by several criteria. Parent Promotion struggles with this region of the Disease Ontology, in part because the term “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Musculosketal Disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+” has fewer PubMed citations than the less general term “Bone Disease.” The latter is therefore promoted incorrectly to become the root, while the former remains low in the inferred tree.</br> </br> We also notice that despite its relatively poor performance overall, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ seems to have good Ancestor Recall in many cases, sometimes even beating other methods. This may be because MWST tends to infer tall, thin trees rather than short and broad ones. Figure 4 illustrates this tendency. A node has more ancestors in tall, thin trees than in broad trees, and as a result, is more likely to share ancestors with the reference.</br> Fig. 4 A MeSH tree rooted at “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Respiration Disorder
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+” and corresponding inferred disease trees. a The MeSH tree containing “
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Respiration Disorder
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+” and its descendants. b The disease tree inferred by Parent Promotion on data from the tree in a). c The disease tree inferred by MWST from the same data. MWST builds a taller and slimmer tree. As a result, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    most diseases
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ have more ancestors in c) than in a) or b). This leads MWST to have good performance with respect to Ancestor Recall (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+)</br> </br> </br> </br> </br> By attempting to infer relationships for each 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ category separately, or within specific subnetworks of the Disease Ontology, most of the work described here has only a limited ability to detect novel molecular connections across diseases currently thought to be unrelated. However, we can begin to address the question of whether such discovery is possible with these methods by looking at the performance of Parent Promotion on data from the full Disease Ontology, and by examining inferred edges connecting pairs of disease terms that are not directly connected in the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+.</br> </br> We found 1900 such pairs. Most of these make unsurprising connections. For example, progressive muscular atrophy was, in our inferred hierarchy, directly connected to spinal muscular atrophy because they share 34 genes (all of those associated with the first disease term). Other pairs may span different medical domains and tissues yet have well-known commonalities that are already described in existing hierarchies (e.g. 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    rheumatoid arthritis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    type I diabetes mellitus
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, both of which are listed as 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    autoimmune disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ in MeSH).</br> </br> However, there are other inferred edges whose relationships are plausible but not currently characterized. For example, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    liver cirrhosis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and pre-
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    eclampsia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ share an edge in our inferred hierarchy because they have large and highly overlapping sets of associated genes. These disorders initially appear to affect very different anotomical systems and processes; both the Disease Ontology and MeSH categorize pre-
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    eclampsia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ under 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    cardiovascular disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+/hypertension (MeSH also lists it as a pregnancy complication), while 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    cirrhosis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is represented primarily as a 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    liver disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ in both hierarchies. Yet there is evidence that 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    cirrhosis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ elevates the risk of pre-
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    eclampsia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ during pregnancy [26]. There are also specific cases (e.g. 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HELLP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ syndrome, characterized by 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    hemolysis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, elevated liver enzymes, and low platelet count) that link liver dysfunction with increased pre-
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    eclampsia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ risk [27]. As another example, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    fatty liver disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ is also surprisingly linked to pterygium or “surfer’s eye,” characterized by fleshy growths of the eye that are linked to sunlight exposure. Molecular markers associated with pterygium appear to be associated with cell migration or involved with epithelial-to-mesenchymal transition (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EMT
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+) [28], a class of genes also thought to play a role in how the liver responds to injury such as that caused by 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    fatty liver disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ [29]. Future work exploring the implication of such potential connections may be warranted.</br> </br> Conclusions</br> We have demonstrated that it is possible to recover much of the structure of both 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MeSH disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ trees and the 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ from molecular data alone. However, this work is a preliminary analysis, and there is much more to learn.</br> </br> Although our aim in this project has been only to infer gene-based relationships between disease terms in existing taxonomic systems, one ultimate goal for a 21st-century disease taxonomy is the inference of new disease terms based on molecular information [4, 7]. Classification of cancer or 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    autism
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ subtypes based on underlying genetic contributions, for example, might be possible in such a system.</br> </br> The examples in the previous section of discovering links across apparently disparate disease types raise the possibility that novel connections in the inferred hierarchies for the full Disease Ontology data may correspond to novel disease subtypes with common molecular causes. Thus the discovery of new disease terms could arise from future work based on such analyses. Of the methods described here, CliXO is the only one that might directly address this problem, by inferring internal nodes corresponding to sets of genes and then by finding new methods to map these gene sets into plausible disease classes. Further exploration of its abilities to do so, or extension of clustering-based methods 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    analogous
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ to Parent Promotion to incorporate comparable possibilities, is warranted.</br> </br> Taxonomy inference using data from diseases across organ systems and tissues, such as that in the full Disease Ontology data set, may also lead to improved categorization of disease processes. Subgraphs of the inferred hierarchies may represent disease groups specific to certain anatomical systems, and investigation of disease genes associated with such a subgraph might provide some insights into anatomical expression and relevance of disease genes. However, to identify inferred subgraphs representing specific anatomical systems we would need a comprehensive mapping between 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ terms and these systems. The development of such a mapping and further interpretation of the substructure in such broad inferred hierarchies remains an interesting open question.</br> </br> Future work may also include exploring the incorporation of tissue specific gene expression to integrate relevant tissues and organs with the molecular level data, and to look more broadly at ways to combine clinical and molecular data. We also have not yet fully explored the range of relevant tree- and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DAG
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+-inference methods from the machine-learning community. However, the current results leave us optimistic that by including molecular information, it will be possible to construct integrated disease taxonomies that better support medical research in the genomic era.</br> </br> Additional files</br> </br> Additional file 1 Performance of three disease hierarchy inference algorithms (Parent Promotion, CliXO, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MWST
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+): Edge Correctness, Ancestor Correctness, Ancestor Precision/Recall and F-score for 23 MeSH trees. (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PDF
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 78 kb)</br> </br>  </br> </br> </br> </br> Additional file 2 Performance of Parent Promotion using disease-gene association information in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Genopedia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and combination of two: Ancestor Correctness, Ancestor Precision/Recall and F-score for 23 MeSH trees. (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PDF
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 61 kb)</br> </br>  </br> </br> </br> </br> Additional file 3 Change in performance of Parent Promotion depending on the size of disease-gene association information: Edge Correctness, Ancestor Correctness, Ancestor Precision/Recall and F-score for 23 MeSH trees. (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PDF
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 53 kb)</br> </br>  </br> </br> </br> Abbreviations</br> ACAncestor Correctness</br> </br> APAncestor precision</br> </br> ARAncestor recall</br> </br> CliXOClique Extracted Ontology</br> </br> DAGDirected acyclic graph</br> </br> DODisease Ontology</br> </br> ECEdge Correctness</br> </br> HPHierarchical precision</br> </br> HRHierarchical recall</br> </br> HuGE databaseHuman genome epidemiology database</br> </br> ICDInternational classification of diseases</br> </br> MeSHMedical subject heading</br> </br> MWSTMinimum weight spanning tree</br> </br> NCBINational Center for Biotechnology Information</br> </br> OMIMOnline Mendelian inheritance in man</br> </br> PheWASPhenome wide association studies</br> </br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    SNOMED
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ CTSystematized nomenclature of medicine, clinical terms</br> </br> UMLSUnified medical language system</br> </br> Electronic supplementary material</br> </br> The online version of this article (doi:10.1186/s13326-017-0134-0) contains supplementary material, which is available to authorized users.</br> </br> Acknowledgements</br> We thank Karin Verspoor for suggesting hierarchical precision and recall, Stephan Schürer for recommending the DISEASES database, Trey Ideker and Michael Kramer for providing the CliXO code and thoughtful advice, Inbar Fried for comments about measurement for network alignment, and members of the Tufts Bioinformatics and Computational Biology group for helpful feedback and comments.</br> </br> Funding</br> Research reported in this publication was supported by NIH award R01HD076140. The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.</br> </br> Availability of data and materials</br> Not applicable.</br> </br> Authors’ contributions</br> 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DKS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, BJH, and JP conceived and designed the overall research strategy, analyzed the experimental results and wrote the manuscript. JP implemented the Parent Promotion method and ran the experiments. All authors read and approved the final manuscript.</br> </br> Ethics approval and consent to participate</br> Not applicable.</br> </br> Consent for publication</br> All authors read and approved the final version of the manuscript.</br> </br> Competing interests</br> The authors declare that they have no competing interests.</br> </br> Publisher’s Note</br> Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</br> ==== Refs</br> References</br> 1 Park J  Wick 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Kee 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DE
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Noto K  Maron 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JL
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Slonim 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DK
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Finding novel molecular connections between developmental processes and disease PLoS Comput Biol 2014 10 5 1003578 10.1371/journal.pcbi.1003578 </br> 2 Denny JC  Ritchie 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MD
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Basford 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Pulley 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Bastarache L  Brown-Gentry K  Wang D  Masys 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DR
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Roden 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Crawford 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   PheWAS: demonstrating the feasibility of a phenome-wide scan to discover 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    gene-disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ associations Bioinformatics 2010 26 9 1205 10 10.1093/bioinformatics/btq126 20335276 </br> 3 Kohler S  Bauer S  Horn D  Robinson 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PN
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Walking the interactome for prioritization of candidate disease genes Am J Hum Genet 2008 82 4 949 58 10.1016/j.ajhg.2008.02.013 18371930 </br> 4 Desmond-Hellmann S, Sawyers 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CL
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, et al. Toward precision medicine: Building a knowledge network for biomedical research and a new taxonomy of disease. Technical report, National Research Council. 2011.</br> 5 Kramer M  Dutkowski J  Yu M  Bafna V  Ideker T   Inferring gene ontologies from pairwise similarity data Bioinformatics 2014 30 34 42 10.1093/bioinformatics/btu282 </br> 6 Dutkowski J  Kramer M  Surma 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Balakrishnan R  Cherry 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Krogan 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    NJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Ideker T   A gene ontology inferred from molecular networks Nat Biotechnol 2013 31 34 5 10.1038/nbt.2476 23302932 </br> 7 Kola I  Bell J   A call to reform the taxonomy of 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    human disease
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Nat Rev Drug Discov 2011 10 9 641 2 10.1038/nrd3534 21878965 </br> 8 Smith B  Ashburner M  Rosse C  Bard J  Bug W  Ceusters W  Goldberg 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    LJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Eilbeck K  Ireland A  Mungall 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Leontis N  Rocca-Serra P  Ruttenberg A  Sansone 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    SA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Scheuermann 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    RH
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Shah N  Whetzel 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PL
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Lewis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ S   The OBO Foundry: coordinated evolution of ontologies to support biomedical data integration Nat Biotechnol 2007 25 11 1251 5 10.1038/nbt1346 17989687 </br> 9 Lambe P   Organising Knowledge: Taxonomies, Knowledge and Organisational Effectiveness 2007 Oxford Chandos Publishing </br> 10 Lowe 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Barnett 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    GO
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Understanding and using the medical subject headings (mesh) vocabulary to perform literature searches 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JAMA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 1994 271 14 1103 8 10.1001/jama.1994.03510380059038 8151853 </br> 11 Wang AY, Sable 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JH
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, Spackman 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    KA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+. The snomed clinical terms development process: Refinement and analysis of content. In: Proc 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AMIA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Symp. American Medical Informatics Association: 2002. p. 845–9.</br> 12 Bodenreider O   The Unified Medical Language System (
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    UMLS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+): integrating biomedical terminology Nucleic Acids Res 2004 32 Database issue 267 70 10.1093/nar/gkh061 </br> 13 Schriml 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    LM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Arze C  Nadendla S  Chang 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Y-WW
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Mazaitis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ M  Felix V  Feng G  Kibbe 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    WA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Disease Ontology: a backbone for disease semantic integration Nucleic Acids Res 2011 40 940 6 10.1093/nar/gkr972 </br> 14 Singh R  Xu J  Berger B   Global alignment of multiple protein interaction networks with application to functional orthology detection 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    PNAS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 2008 105 35 12763 68 10.1073/pnas.0806627105 18725631 </br> 15 Sanchez D  Batet M  Isern D  Valls A   Ontology-based semantic similarity: A new feature-based approach Expert Syst Appl 2012 39 9 7718 28 10.1016/j.eswa.2012.01.082 </br> 16 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Petrakis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    EGM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Varelas G  Hliaoutakis A  Raftopoulou P   X-similarity: Computing semantic similarity between concepts from different ontologies J Digit Inf Manag 2006 4 233 7 </br> 17 Verspoor K  Cohn J  Susan Mniszewski CJ   A categorization approach to automated ontological function annotation Protein Sci 2006 15 1544 9 10.1110/ps.062184006 16672243 </br> 18 Schriml 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    LM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Arze C  Nadendla S  Chang 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Y-WW
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Mazaitis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ M  Felix V  Feng G  Kibbe 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    WA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Disease Ontology: a backbone for disease semantic integration Nucleic Acids Res 2011 40 Database issue 940 6 </br> 19 Online Mendelian Inheritance in Man, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    OMIM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+Ⓡ. Baltimore: McKusick-Nathans Institute of Genetic Medicine, Johns Hopkins University. https://omim.org/. Accessed 3 Feb 2016.</br> 20 Lin BK  Clyne M  Walsh M  Gomez O  Yu W  Gwinn M  Khoury 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Tracking the epidemiology of human genes in the literature: the HuGE published literature database Am J Epidemiol 2006 164 1 1 4 10.1093/aje/kwj175 16641305 </br> 21 Amberger J  Bocchini C  Schiettecatte F  Scott A  Hamosh A   Omim.org: Online mendelian inheritance in man (omimⓇ), an online catalog of human genes and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    genetic disorders
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Nucleic Acids Res 2015 43(Database issue) 789 98 10.1093/nar/gku1205 </br> 22 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Davis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Grondin 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Lennon-Hopkins K  Saraceni-Richards C  Sciaky D  King 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    BL
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Wiegers 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    TC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Mattingly 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   The Comparative Toxicogenomics Database’s 10th year anniversary: update 2015 Nucleic Acids Res 2014 pii 1 935 </br> 23 Pletscher-Frankild Sune Pallejà A  Tsafou K  Binder 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JX
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Jensen 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    LJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Diseases: text mining and data integration of disease-gene associations Methods 2015 74 83 9 10.1016/j.ymeth.2014.11.020 25484339 </br> 24 Jaccard P   Distribution de la flore alpine dans le bassin des drouces et dans quelques regions voisines Bulletin de la Société Vaudoise des Sciences Naturelles 1901 37 140 241 72 </br> 25 Cormen 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    TH
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Leiserson 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CE
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Rivest 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    RL
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Stein C   Introduction to Algorithms, Third Edition 2009 Cambridge, 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ The MIT Press </br> 26 Rasheed SM  Abdel Monem 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Abd Ellah AH    Prognosis and determinants of pregnancy outcome among patients with 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    post-hepatitis liver cirrhosis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Int J Gynaecol Obstet 2013 121 3 247 51 10.1016/j.ijgo.2012.12.020 23518137 </br> 27 Munoz-Hernandez R  Medrano-Campillo P  Miranda 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    ML
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Macher 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HC
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Praena-Fernandez JM  Vallejo-Vaz AJ  Dominguez-Simeon 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Moreno-Luna R  Stiefel P   Total and Fetal Circulating Cell-Free 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    DNA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+, Angiogenic, and Antiangiogenic Factors in 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Preeclampsia
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ and 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    HELLP
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ Syndrome Am J Hypertens 2017 30 7 673 82 10.1093/ajh/hpx024 28338787 </br> 28 Jaworski 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CJ
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Aryankalayil-John M  Campos 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    MM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Fariss 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    RN
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Rowsey J  Agarwalla N  Reid 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    TW
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Dushku N  Cox 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    CA
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Carper D  Wistow G   Expression analysis of human pterygium shows a predominance of conjunctival and limbal markers and genes associated with cell migration 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    Mol Vis
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+ 2009 15 2421 34 19956562 </br> 29 Choi 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    SS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Diehl 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    AM
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+   Epithelial-to-mesenchymal transitions in the liver Hepatology 2009 50 6 2007 13 10.1002/hep.23196 19824076 </br> 30 Shannon P  Markiel A  Ozier O  Baliga 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    NS
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Wang 
+<mark class="entity" style="background: #909090; padding: 0.45em 0.6em; margin: 0 0.25em; line-height: 1; border-radius: 0.35em;">
+    JT
+    <span style="font-size: 0.8em; font-weight: bold; line-height: 1; border-radius: 0.35em; vertical-align: middle; margin-left: 0.5rem">DIS</span>
+</mark>
+  Ramage D  Amin N  Schwikowski B  Ideker T   Cytoscape: A software environment for integrated models of biomolecular interaction networks Genome Res 2003 13 11 2498 504 10.1101/gr.1239303 14597658</br> </br></div>
+</figure>
+</body>
+</html>
