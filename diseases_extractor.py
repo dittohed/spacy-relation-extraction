@@ -8,7 +8,7 @@ import string
 
 # TODO: analysis, zahardcode'ować initiliasmy i dodać regexp z bacter
 # Unstable angina
-# Esophageal cancer 
+# Esophageal cancer
 
 # list of "base" words to build on
 # for example this might be sole "fever" or "yellow fever"
@@ -146,21 +146,6 @@ def match_initialisms(doc):
             initialisms_ents += (entity,)
 
     return initialisms_ents
-
-# def add_disease_ent(matcher, doc, i, matches):
-#     """
-#     Creates entity label for current match resulting from matching standalones.
-#     """
-#
-#     global initialisms_ents
-#
-#     match_id, start, end = matches[i]
-#     entity = Span(doc, start, end, label='DIS')
-#
-#     try:
-#         doc.ents += (entity,)
-#     except ValueError:
-#         pass
 
 def add_disease_ent_dep(matcher, doc, i, matches):
     """

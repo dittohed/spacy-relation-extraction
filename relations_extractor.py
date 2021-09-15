@@ -106,6 +106,9 @@ relations_patterns = [
     pattern2_inverse
 ]
 
+association_patterns = [
+    [{'LEMMA': {'IN': [*association_keywords, *association_verb_keywords]}}]
+]
 
 def add_relations_ent_dep(matcher, doc, i, matches):
     '''
@@ -130,3 +133,24 @@ def add_relations_ent_dep(matcher, doc, i, matches):
         #doc.ents += (entity,)
     except Exception as e:
         pass
+
+def add_associations_ent(matcher, doc, i, matches):
+
+    match_id, start, end = matches[i]
+    entity = Span(doc, start, end, label='ASSOC')
+
+    try:
+        doc.ents += (entity,)
+    except Exception as e:
+        pass
+
+def extract_relations_data(doc, rel_doc):
+    relations_data = ''
+
+    for ent in rel_doc.ents:
+        if ent.label_ == 'REL':
+            span = doc[ent.start : ent.end]
+            relations_data += ' | '.join([s.lemma_ for s in span.ents])
+            relations_data += '\n'
+
+    return relations_data
