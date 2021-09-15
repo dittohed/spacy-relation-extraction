@@ -35,7 +35,7 @@ class Extractor:
         self.nohtml = nohtml
 
         self.nlp = spacy.load('en_core_web_lg')
-        self.doc = None
+        self.docs = [] # list of docs of processed articles (for snowball)
 
     def run(self):
         if self.to_evaluate:
@@ -127,8 +127,8 @@ class Extractor:
                 text = ' '.join(lines)
 
                 doc = self.nlp(text)
-                self.doc = doc
                 self.extract_labels(doc)
+                self.docs.append(doc)
 
                 if not self.nohtml:
                     self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_pred.html')

@@ -5,130 +5,85 @@ import spacy
 
 from extractor import Extractor
 
-class Pattern:
+class Cluster:
     """
-    Represents a pattern (or cluster of patterns), where each pattern consists of:
+    Represents a pattern or cluster of patterns, where each pattern consists of:
     - left context embedding vector (average of word embeddings left to the left-most entity);
     - left-most entity label (FOOD / DIS);
     - middle context embedding vector (average of word embeddings between entities);
     - right-most entity label (FOOD / DIS);
-    - right context embedding vector (average of word embeddings right to the right-most entity);
-    - list of text representations of contributing patterns.
+    - right context embedding vector (average of word embeddings right to the right-most entity).
     """
 
-    def __init__(self, left, l_entity, middle, r_entity, right, text_rep):
+    def __init__(self, left, entity1, middle, entity2, right, text_rep):
         self.left = left
-        self.l_entity = l_entity
+        self.entity1 = entity1
         self.middle = middle
-        self.r_entity = r_entity
+        self.entity2 = entity2
         self.right = right
-        self.contribs = text_rep
+        self.components = text_rep
 
-    # def __str__(self):
-    #     return f"Whole context: ({self.left} || {self.l_entity} || {self.middle} || {self.r_entity} || {self.right})"
+    def __str__(self):
+        return f"Whole context: ({self.left} || {self.entity1} || {self.middle} || {self.entity2} || {self.right})"
 
-    def is_entity_order_same(self, to_compare):
-        """
-        Returns True if both patterns have the same left-most entity label.
-        """
+    def print_vectors(self):
+        print("Left vector : ", self.left.vector)
+        print("Middle vector : ", self.middle.vector)
+        print("Right vector : ", self.right.vector)
 
-        return self.l_entity == to_compare.l_entity
+    def is_entity_order_the_same(self, to_compare):
+        if self.entity1 == to_compare.entity1 \
+                and self.entity2 == to_compare.entity2:
+            return True
+        return False
 
-    def similarity(self, to_compare):
-        if self.is_entity_order_same(to_compare):
+    def compute_similarity(self, to_compare):
+        if self.is_entity_order_the_same(to_compare):
             l_dot = np.dot(self.left, to_compare.left)
+
             m_dot = np.dot(self.middle, to_compare.middle)
+
             r_dot = np.dot(self.right, to_compare.right)
 
-            similarity = l_dot + 2 * m_dot + r_dot
+            summed_similarity = l_dot + 2 * m_dot + r_dot
 
+            print("Summed up similarity: ", summed_similarity)
+
+            return summed_similarity
         else:
-            similarity = 0
-
-        # print("Weighted similarity: ", similarity)
-        return similarity
+            print("Summed up similarity: ", 0)
+            return 0
 
     def merge(self, to_merge):
-        """
-        Adds a new pattern to a cluster using cumulative moving average to
-        limit the impact of the new pattern.
-        """
+        self.left = self.left + to_merge.left / 2
+        self.middle = self.middle + to_merge.middle / 2
+        self.right = self.right + to_merge.right / 2
+        self.components.append(to_merge.components)
 
-        n = len(self.contribs) # no. of patterns in the cluster so far
-
-        self.left = (n*self.left + to_merge.left) / (n+1)
-        self.middle = (n*self.middle + to_merge.middle) / (n+1)
-        self.right = (n*self.right + to_merge.right) / (n+1)
-        self.contribs.append(to_merge.contribs)
 
 class Snowball:
-    def __init__(self, tuples, datapath, n_iterations=1, w_size=3,
-                 tau_cl=2, tau_supp=1, tau_sim=3.5, tau_t=0.5, alpha=0.5,
-                 export_sents=False):
-        """
-        TODO
-        """
-
-        self.nlp = spacy.load("en_core_web_lg")
-
-        self.seed_tuples = tuples # most common <DIS, FOOD> tuples extracted using relations_extractor
-        self.tuples = tuples # ???
-
+    def __init__(self, tuples, datapath, number_of_iterations=1, tau_sim=3.5):
+        self.large_nlp = spacy.load("en_core_web_lg")
+        self.seed_tuples = tuples  # manually created seed tuples (DIS, FOOD)
+        self.tuples = tuples
+        self.rules = []  # list of contexts with rules and entities
         self.datapath = datapath
-
-        self.patterns = [] # list of Pattern objects
-        self.matches = [] # ???
-
+        self.matches = []
+        self.tagged_doc = self.tag_entities()
         self.number_of_iterations = number_of_iterations
-        self.w_size = w_size
-        self.tau_cl = tau_cl
-        self.tau_supp = tau_supp
         self.tau_sim = tau_sim
-        self.tau_t = tau_t
-        self.alpha = alpha
 
-        self.sents = self.get_sents_crops()
-
-    def get_sents_crops(self):
-        """
-        Returns a list of crops with corresponding windows size (w_size)
-        of sentences only for sentences with both DIS and FOOD.
-        """
-
+    def tag_entities(self):
+        # method used to tag important entities
         e = Extractor('both', self.datapath, 0, 1)
         e.run()
-
-        sents = []
-
-        for doc in e.docs:
-            for sent in doc.sents:
-                has_food = False
-                has_disease = False
-
-                for entity in sent.ents:
-                    if entity.label_ == 'FOOD':
-                        has_food = True
-                    if entity.label_ == 'DIS':
-                        has_disease = True
-
-                if has_food and has_disease:
-                    sents.append(sent)
-                    continue
-
-        if self.export_sents:
-            html = displacy.render(doc, style='ent', page=True,
-                            options={'colors': {'DIS': '#909090', 'FOOD': '#19D9FF'}, 'ents': ['DIS', 'FOOD']})
-
-            with open('./snowball_data/sents.html', 'w') as html_file:
-                print('Saving extracted sents to snowball_data/sents.html')
-                html_file.write(html)
+        return e.doc
 
     def run(self):
         # actual snowball algorithm
         # First analyze all sentences, find all containing both DIS(disease) and FOOD
         # Check if entities in sentence match any tuple, if yes extract context and the rule
         # If not check if context around matches any existing rule, if yes, extract new seed tuple
-
         while self.number_of_iterations > 0:
             self.number_of_iterations -= 1
             for sent in self.tagged_doc.sents:
@@ -200,7 +155,6 @@ class Snowball:
 
             self.single_pass_clustering()
             self.drop_insufficient_clusters()
-
             for sent in self.tagged_doc:
                 disease = None
                 food = None
@@ -260,28 +214,17 @@ class Snowball:
                             break
 
     def single_pass_clustering(self):
-        new_patterns = []
-
-        for pattern in self.patterns:
-            if len(new_patterns) == 0:
-                new_patterns.append(pattern)
+        new_rules = []
+        for cluster in self.rules:
+            if len(new_rules) == 0:
+                new_rules.append(cluster)
                 continue
-
-            max_sim = 0
-            max_sim_pattern = 0
-            for i, new_pattern in enumerate(new_patterns):
-                sim = pattern.similarity(new_pattern)
-
-                if sim > max_sim:
-                    max_sim = sim
-                    max_sim_pattern = i
-
-            if max_sim > self.tau_cl:
-                new_patterns[max_sim_pattern].merge(pattern)
-            else:
-                new_patterns.append(pattern)
-
-        self.pattern = new_patterns
+            for i, new_cluster in enumerate(new_rules):
+                if cluster.compute_similarity(new_cluster) < TAU_CL:
+                    new_rules.append(cluster)
+                else:
+                    new_rules[i].merge(cluster)
+        self.rules = new_rules
 
     def remove_entities_from_middle_context(self, mid):
         extracted_mid = []
@@ -308,7 +251,7 @@ class Snowball:
         return True
 
     def drop_insufficient_clusters(self):
-        self.patterns = [pattern for pattern in self.patterns if len(rule.contribs) < self.tau_supp]
+        self.rules = [cluster for cluster in self.rules if len(rule.components) < TAU_SUPP]
 
 
 if __name__ == "__main__":
