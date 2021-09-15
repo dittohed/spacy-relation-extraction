@@ -1,39 +1,44 @@
 # evaluates or predicts using specified extractor
-# example of usage: python extractor.py evaluate diseases ./articles/diseases --no-html 1
+# example of usage: python extractor.py diseases ./articles/diseases --evaluate 1
 
-# TODO: exporting predicted entities, final evaluation of extractors (need labeled .txt files)
+import os
 
 import argparse
 import glob
 import re
+import copy
 
 import spacy
 from spacy.tokens import Span
 from spacy.matcher import Matcher, DependencyMatcher
 from spacy import displacy
+from spacy.util import filter_spans
 
 import diseases_extractor as dis
 import food_extractor as food
-# import relations_extractor as rel
+import relations_extractor as rel
 
 class Extractor:
-    # true labels should be denoted with enclosing semi-colons exactly this way
-    # ;;<token>;;
-    # or (in case of N tokens entity)
-    # ;;<token1> ... <tokenN>;;
+    """
+    True labels should be denoted with enclosing semi-colons exactly this way:
+    ;;<token>;;
+    or (in case of multiple-token entity):
+    ;;<token1> ... <tokenN>;;
+    """
+
     TL_EXPRESSION = ';;.*?;;' # non-greedy regexp for identifying true labels
 
-    def __init__(self, task, domain, datapath, nohtml, nolabeling):
-        self.task = task
+    def __init__(self, domain, datapath, to_evaluate, nohtml):
         self.domain = domain
         self.datapath = datapath
+        self.to_evaluate = to_evaluate
         self.nohtml = nohtml
-        self.nolabeling = nolabeling
 
-        self.nlp = spacy.load('en_core_web_trf')
+        self.nlp = spacy.load('en_core_web_lg')
+        self.doc = None
 
     def run(self):
-        if self.task == 'evaluate':
+        if self.to_evaluate:
             self.evaluate()
         else:
             self.predict()
@@ -53,10 +58,6 @@ class Extractor:
                         on_match=dis.add_disease_ent_dep)
             matcher_dep(doc)
 
-            matcher.add('standalones', dis.standalones_patterns,
-                        on_match=dis.add_disease_ent)
-            matcher(doc)
-
         elif self.domain == 'food':
             doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
 
@@ -75,47 +76,75 @@ class Extractor:
                         on_match=food.add_food_dep)
             matcher_dep(doc)
 
-            matcher.add('standalones', dis.standalones_patterns,
-                        on_match=dis.add_disease_ent)
+        else:
+            doc.ents += dis.match_initialisms(doc)
+
+            matcher_dep.add('dependencies_dis', dis.dependencies_patterns,
+                        on_match=dis.add_disease_ent_dep)
+            matcher_dep.add('dependencies_food', food.dependencies_patterns,
+                        on_match=food.add_food_dep)
+
+            matcher_dep(doc)
+
+            matcher.add('associations', rel.association_patterns,
+                        on_match=rel.add_associations_ent)
+
             matcher(doc)
+
+            temp_doc = copy.deepcopy(doc)
+
+            matcher_dep.remove('dependencies_dis')
+            matcher_dep.remove('dependencies_food')
+
+            matcher_dep.add('dependencies_rel', rel.relations_patterns,
+                        on_match=rel.add_relations_ent_dep)
+            matcher_dep(doc)
 
             food.merge_entities(doc)
 
-        else:
-            pass
-
-        self.doc = doc
+            self.relations_data = rel.extract_relations_data(temp_doc, doc)
 
     def predict(self):
         """
-        Predicts entities and optionally labels them in a new *_pred.txt file.
+        Predicts entities.
         """
 
-        articles = glob.glob(f'{self.datapath}/*_true.txt')
+        articles = glob.glob(f'{self.datapath}/*_curr.txt')
 
         for article in articles:
+            if 'test' in article:
+                continue
+
             with open(article, 'r') as file:
                 article_id = article.split('/')[-1].split('.')[0]
                 print(f'Handling article {article_id}...')
+
+                if os.path.exists(f'./displacy/{self.domain}/{article_id}_pred.html'):
+                    print(f'{article_id} already predicted...')
+                    continue
 
                 lines = file.readlines()
                 text = ' '.join(lines)
 
                 doc = self.nlp(text)
+                self.doc = doc
                 self.extract_labels(doc)
 
                 if not self.nohtml:
-                    self.generate_html(doc, f'./displacy/{article_id}_pred.html')
+                    self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_pred.html')
 
-                if not self.nolabeling:
-                    pass
-                    # TODO: add :: to read file
+                if self.domain == 'relations':
+                    print('--- EXTRACTED RELIATIONS: ---')
+                    print(self.relations_data)
+
+                    self.save_relations_data(f'./relations_data/{article_id}.txt')
 
     def evaluate(self):
         """
         Evaluates extraction method by comparing labeled (TL_EXPRESSION) .txt files
         and extracted labels.
         Prints out precision and recall.
+        WARNING: takes files ending with _test in account only!
         """
 
         tp = 0 # true positive
@@ -136,6 +165,10 @@ class Extractor:
                 article_id = article.split('/')[-1].split('.')[0]
                 print(f'Handling article {article_id}...')
 
+                if os.path.exists(f'./displacy/{self.domain}/{article_id}_eval.html'):
+                    print(f'{article_id} already evaluated...')
+                    continue
+
                 lines = file.readlines()
                 text = ' '.join(lines)
 
@@ -149,7 +182,8 @@ class Extractor:
                     tl_found += 1
 
                 doc = self.nlp(text.replace(';;', '')) # labels not necessary anymore
-                tl_spans = tuple([doc.char_span(start, end, label=label) for (start, end) in tl_positions])
+                tl_spans = tuple([doc.char_span(start, end, label=label, alignment_mode='expand') \
+                                for (start, end) in tl_positions])
 
                 self.extract_labels(doc)
 
@@ -180,7 +214,7 @@ class Extractor:
                         fp += 1
 
                 if not self.nohtml:
-                    self.generate_html(doc, f'./displacy/{article_id}_eval.html')
+                    self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_eval.html')
 
         precision = tp / (tp + fp)
         recall = tp / (tp + fn)
@@ -191,7 +225,7 @@ class Extractor:
         Generates an html file for visualizing entities in a proccessed document (.txt file).
         """
 
-        if self.task == 'evaluate':
+        if self.to_evaluate:
             ents = ['TP', 'FN', 'FP']
         elif self.domain == 'diseases':
             ents = ['DIS']
@@ -199,28 +233,35 @@ class Extractor:
             ents = ['FOOD']
         elif self.domain == 'both':
             ents = ['DIS', 'FOOD']
-        else:
-            pass
+        elif self.domain == 'relations':
+            ents = ['REL']
 
         html = displacy.render(doc, style='ent', page=True,
                              options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF',
-                                                 'DIS': '#909090', 'FOOD': '#19D9FF'},
-                             'ents': ents})
+                                                 'DIS': '#909090', 'FOOD': '#19D9FF', 'REL': '#0064FF'}, 'ents': ents})
+
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
             html_file.write(html)
 
+    def save_relations_data(self, filepath):
+        with open(filepath, 'w') as relations_file:
+            print(f'Saving relations data to {filepath}')
+            relations_file.write(self.relations_data)
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('task', help='Specifies the task to perform (possible options: predict, evaluate).')
-    parser.add_argument('domain', help='Specifies what to extract (possible options: diseases, food, relations).')
+
+    parser.add_argument('domain', help='Specifies what to extract (possible options: diseases, food, both, relations).',
+                        choices=['diseases', 'food', 'both', 'relations'])
     parser.add_argument('datapath', help='Specifies a path to directory containing .txt files.')
-    parser.add_argument('--nohtml', help='Use NOHTML=1 to disable generating html files with entities highlighted.',
+    parser.add_argument('--evaluate', help='Use --evaluate 1 to evaluate files with trailing _test.txt in name.',
                         default=0, type=int)
-    parser.add_argument('--nolabeling', help='Use NOLABELING=1 to disable generating *_pred.txt files with labeled entities \
-                        as a result of prediction', default=0, type=int)
+    parser.add_argument('--nohtml', help='Use --nohtml 1 to disable generating html files with entities highlighted.',
+                        default=0, type=int)
+
     args = parser.parse_args()
 
-    e = Extractor(args.task, args.domain, args.datapath, args.nohtml, args.nolabeling)
+    e = Extractor(args.domain, args.datapath, args.evaluate, args.nohtml)
     e.run()
     # you can use e.doc after calling e.run()
