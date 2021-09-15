@@ -216,9 +216,9 @@ class Extractor:
                 if not self.nohtml:
                     self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_eval.html')
 
-        precision = tp / (tp + fp)
-        recall = tp / (tp + fn)
-        print(f'Precision = {precision}, Recall = {recall}')
+        # precision = tp / (tp + fp)
+        # recall = tp / (tp + fn)
+        # print(f'Precision = {precision}, Recall = {recall}')
 
     def generate_html(self, doc, filepath):
         """

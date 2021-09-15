@@ -1,8 +1,4 @@
 # Snowball algorithm class
-# TODO 1
-# Dodać parametry wejściowe do algorytmu N, TAU_CL, TAU_SUPP, TAU_T, ALPHA cokolwiek znacza XD
-# TODO 2
-# Zaimplementować Single Pass Clustering
 
 import numpy as np
 import spacy
@@ -11,12 +7,13 @@ from extractor import Extractor
 
 
 class Cluster:
-    def __init__(self, left, entity1, middle, entity2, right):
+    def __init__(self, left, entity1, middle, entity2, right, text_rep):
         self.left = left
         self.entity1 = entity1
         self.middle = middle
         self.entity2 = entity2
         self.right = right
+        self.components = text_rep
 
     def __str__(self):
         return f"Whole context: ({self.left} || {self.entity1} || {self.middle} || {self.entity2} || {self.right})"
@@ -27,24 +24,18 @@ class Cluster:
         print("Right vector : ", self.right.vector)
 
     def is_entity_order_the_same(self, to_compare):
-        if self.entity1.label_ == to_compare.entity1.label_ \
-                and self.entity2.label_ == to_compare.entity2.label_:
+        if self.entity1 == to_compare.entity1 \
+                and self.entity2 == to_compare.entity2:
             return True
         return False
 
     def compute_similarity(self, to_compare):
         if self.is_entity_order_the_same(to_compare):
-            l_vec = self.left.vector / self.left.vector_norm
-            l_vec_to_compare = to_compare.left.vector / to_compare.left.vector_norm
-            l_dot = np.dot(l_vec, l_vec_to_compare)
+            l_dot = np.dot(self.left, to_compare.left)
 
-            m_vec = self.middle.vector / self.middle.vector_norm
-            m_vec_to_compare = to_compare.middle.vector / to_compare.middle.vector_norm
-            m_dot = np.dot(m_vec, m_vec_to_compare)
+            m_dot = np.dot(self.middle, to_compare.middle)
 
-            r_vec = self.right.vector / self.right.vector_norm
-            r_vec_to_compare = to_compare.right.vector / to_compare.right.vector_norm
-            r_dot = np.dot(r_vec, r_vec_to_compare)
+            r_dot = np.dot(self.right, to_compare.right)
 
             summed_similarity = l_dot + 2 * m_dot + r_dot
 
@@ -54,6 +45,12 @@ class Cluster:
         else:
             print("Summed up similarity: ", 0)
             return 0
+
+    def merge(self, to_merge):
+        self.left = self.left + to_merge.left / 2
+        self.middle = self.middle + to_merge.middle / 2
+        self.right = self.right + to_merge.right / 2
+        self.components.append(to_merge.components)
 
 
 class Snowball:
@@ -70,7 +67,7 @@ class Snowball:
 
     def tag_entities(self):
         # method used to tag important entities
-        e = Extractor('predict', 'both', self.datapath, 1, 1)
+        e = Extractor('both', self.datapath, 0, 1)
         e.run()
         return e.doc
 
@@ -81,7 +78,6 @@ class Snowball:
         # If not check if context around matches any existing rule, if yes, extract new seed tuple
         while self.number_of_iterations > 0:
             self.number_of_iterations -= 1
-            print(f"ITERATION {self.number_of_iterations}")
             for sent in self.tagged_doc.sents:
                 has_food = False
                 has_disease = False
@@ -108,67 +104,119 @@ class Snowball:
                             entities_in_order = self.select_order(match_dis, match_food)
                             is_match = self.are_in_order(ordered_keys,
                                                          [entities_in_order[0].label_, entities_in_order[1].label_])
-                            if not is_match:
-                                break
-                            else:
+                            if is_match:
                                 print(f"Tuple {seed_tuple} Matched to sentence: {sent}")
                                 start = min(match_food.start, match_dis.start)
                                 end = max(match_food.end, match_dis.end)
 
-                                context = self.tagged_doc[start - min(3, start - sent.start):end + min(3, sent.end - end)]
+                                context = self.tagged_doc[
+                                          start - min(3, start - sent.start):end + min(3, sent.end - end)]
 
                                 left_len = min(3, start - sent.start)
                                 right_len = min(3, sent.end - end)
 
-                                mid = context[left_len:len(context) - right_len]
-                                mid = self.remove_entities_from_middle_context(mid)
+                                mid_ctx = context[left_len:len(context) - right_len]
+                                mid_ctx = self.remove_entities_from_middle_context(mid_ctx)
 
-                                left = context[0:left_len]
-                                right = context[-right_len:]
+                                left_ctx = context[0:left_len]
+                                right_ctx = context[-right_len:]
+                                # Check if rigth left and middle contexts exist
+                                if len(left_ctx) == 0:
+                                    left = 0
+                                else:
+                                    left = left_ctx.vector / left_ctx.vector_norm
+                                if len(mid_ctx) == 0:
+                                    mid = 0
+                                else:
+                                    mid = mid_ctx.vector / mid_ctx.vector_norm
+                                if len(right_ctx) == 0:
+                                    right = 0
+                                else:
+                                    right = right_ctx.vector / right_ctx.vector_norm
 
-                                ctx = Cluster(left, entities_in_order[0], mid, entities_in_order[1], right)
+                                ctx = Cluster(
+                                    left,
+                                    entities_in_order[0].label_,
+                                    mid,
+                                    entities_in_order[1].label_,
+                                    right,
+                                    [(left_ctx.text, mid_ctx.text, right_ctx.text)])
                                 print(f'Appending context: {ctx}')
                                 self.rules.append(ctx)
-                                break
-                    if not is_match:
-                        # if no tuple matches tokens in the sentence, extract a rule
-                        print("Unmatched sentence: ", sent, '\n \n ')
-                        disease = None
-                        food = None
+                                # break
 
-                        for ent in sent.ents:
-                            if ent.label_ == 'DIS':
-                                disease = ent
-                            elif ent.label_ == 'FOOD':
-                                food = ent
+            self.single_pass_clustering()
+            self.drop_insufficient_clusters()
+            for sent in self.tagged_doc:
+                disease = None
+                food = None
 
-                        start = min(food.start, disease.start)
-                        end = max(food.end, disease.end)
+                for ent in sent.ents:
+                    if ent.label_ == 'DIS':
+                        disease = ent
+                    elif ent.label_ == 'FOOD':
+                        food = ent
 
-                        entities_in_order = self.select_order(disease, food)
+                if food and disease:
+                    start = min(food.start, disease.start)
+                    end = max(food.end, disease.end)
 
-                        context = self.tagged_doc[start - min(3, start - sent.start):end + min(3, sent.end - end)]
+                    entities_in_order = self.select_order(disease, food)
 
-                        left_len = min(3, start - sent.start)
-                        right_len = min(3, sent.end - end)
+                    context = self.tagged_doc[start - min(3, start - sent.start):end + min(3, sent.end - end)]
 
-                        mid = context[left_len:len(context) - right_len]
-                        mid = self.remove_entities_from_middle_context(mid)
+                    left_len = min(3, start - sent.start)
+                    right_len = min(3, sent.end - end)
 
-                        left = context[0:left_len]
-                        right = context[-right_len:]
+                    mid = context[left_len:len(context) - right_len]
+                    mid = self.remove_entities_from_middle_context(mid)
 
-                        is_similar_enough = True
-                        ctx = Cluster(left, entities_in_order[0], mid, entities_in_order[1], right)
-                        for rule in self.rules:
-                            print(f"Comparing \n{ctx} to: ")
-                            print(rule, '\n')
-                            if ctx.compute_similarity(rule) > self.tau_sim:
-                                new_tuple = {entities_in_order[0].label_: entities_in_order[0].text,
-                                             entities_in_order[1].label_: entities_in_order[1].text}
-                                if new_tuple not in self.tuples:
-                                    self.tuples.append(new_tuple)
-                                break
+                    left = context[0:left_len]
+                    right = context[-right_len:]
+
+                    if len(left_ctx) == 0:
+                        left = 0
+                    else:
+                        left = left_ctx.vector / left_ctx.vector_norm
+                    if len(mid_ctx) == 0:
+                        mid = 0
+                    else:
+                        mid = mid_ctx.vector / mid_ctx.vector_norm
+                    if len(right_ctx) == 0:
+                        right = 0
+                    else:
+                        right = right_ctx.vector / right_ctx.vector_norm
+
+                    ctx = Cluster(
+                        left,
+                        entities_in_order[0].label_,
+                        mid,
+                        entities_in_order[1].label_,
+                        right
+                        [left_ctx.text, mid_ctx.text, right_ctx.text])
+
+                    for cluster in self.rules:
+                        print(f"Comparing \n{ctx} to: ")
+                        print(rule, '\n')
+                        if ctx.compute_similarity(rule) > TAU_SIM:
+                            new_tuple = {entities_in_order[0].label_: entities_in_order[0].text,
+                                         entities_in_order[1].label_: entities_in_order[1].text}
+                            if new_tuple not in self.tuples:
+                                self.tuples.append(new_tuple)
+                            break
+
+    def single_pass_clustering(self):
+        new_rules = []
+        for cluster in self.rules:
+            if len(new_rules) == 0:
+                new_rules.append(cluster)
+                continue
+            for i, new_cluster in enumerate(new_rules):
+                if cluster.compute_similarity(new_cluster) < TAU_CL:
+                    new_rules.append(cluster)
+                else:
+                    new_rules[i].merge(cluster)
+        self.rules = new_rules
 
     def remove_entities_from_middle_context(self, mid):
         extracted_mid = []
@@ -193,6 +241,9 @@ class Snowball:
             if l1[i] != l2[i]:
                 return False
         return True
+
+    def drop_insufficient_clusters(self):
+        self.rules = [cluster for cluster in self.rules if len(rule.components) < TAU_SUPP]
 
 
 if __name__ == "__main__":
