@@ -32,7 +32,8 @@ class Extractor:
         self.to_evaluate = to_evaluate
         self.nohtml = nohtml
 
-        self.nlp = spacy.load('en_core_web_trf')
+        self.nlp = spacy.load('en_core_web_lg')
+        self.doc = None
 
     def run(self):
         if self.to_evaluate:
@@ -55,9 +56,9 @@ class Extractor:
                         on_match=dis.add_disease_ent_dep)
             matcher_dep(doc)
 
-            matcher.add('standalones', dis.standalones_patterns,
-                        on_match=dis.add_disease_ent)
-            matcher(doc)
+            # matcher.add('standalones', dis.standalones_patterns,
+            #             on_match=dis.add_disease_ent)
+            # matcher(doc)
 
         elif self.domain == 'food':
             doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
@@ -87,9 +88,9 @@ class Extractor:
 
             matcher_dep(doc)
 
-            matcher.add('standalones', dis.standalones_patterns,
-                        on_match=dis.add_disease_ent)
-            matcher(doc)
+            # matcher.add('standalones', dis.standalones_patterns,
+            #             on_match=dis.add_disease_ent)
+            # matcher(doc)
 
             matcher_dep.remove('dependencies_dis')
             matcher_dep.remove('dependencies_food')
@@ -100,14 +101,12 @@ class Extractor:
 
             food.merge_entities(doc)
 
-        self.doc = doc
-
     def predict(self):
         """
         Predicts entities.
         """
 
-        articles = glob.glob(f'{self.datapath}/*.txt')
+        articles = glob.glob(f'{self.datapath}/*_curr.txt')
 
         for article in articles:
             if 'test' in article:
@@ -125,6 +124,7 @@ class Extractor:
                 text = ' '.join(lines)
 
                 doc = self.nlp(text)
+                self.doc = doc
                 self.extract_labels(doc)
 
                 if not self.nohtml:
@@ -216,7 +216,7 @@ class Extractor:
         Generates an html file for visualizing entities in a proccessed document (.txt file).
         """
 
-        if self.evaluate:
+        if self.to_evaluate:
             ents = ['TP', 'FN', 'FP']
         elif self.domain == 'diseases':
             ents = ['DIS']
@@ -226,12 +226,11 @@ class Extractor:
             ents = ['DIS', 'FOOD']
         elif self.domain == 'relations':
             ents = ['REL']
-        else:
-            pass
 
         html = displacy.render(doc, style='ent', page=True,
                              options={'colors': {'TP': '#00FF00', 'FN': '#FF0000', 'FP': '#FF00FF',
                                                  'DIS': '#909090', 'FOOD': '#19D9FF', 'REL': '#0064FF'}, 'ents': ents})
+
         with open(filepath, 'w') as html_file:
             print(f'Saving a generated file to {filepath}')
             html_file.write(html)

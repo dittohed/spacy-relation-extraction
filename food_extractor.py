@@ -3,15 +3,19 @@ from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
 from spacy import displacy
 
+import diseases_extractor as dis
+
 import string
 
-# dodać MDS, DASH, NFI
+# TODO: fix no MDS
+
 anchors = ['consumption', 'intake', 'serving', 'consume', 'eat', 'portion', 'cup']
-keywords = ['food', 'diet', 'vegetable', 'fruit']
+keywords = ['food', 'diet', 'vegetable', 'fruit', 'meal']
+initialisms = ['MDS', 'DASH', 'NFI']
 
 def add_modifier(left_id):
     """
-    Adds modifier to a specified node.
+    Returns modifier for a specified node.
     """
 
     modifier = {
@@ -25,13 +29,13 @@ def add_modifier(left_id):
 
 def add_conj(left_id):
     """
-    Adds conjunction to a specified node.
+    Returns conjunction for a specified node.
     """
 
     conj = {
         'LEFT_ID': left_id,
         'REL_OP': '>>',
-        'RIGHT_ID': 'conj', # FIX
+        'RIGHT_ID': 'conj',
         'RIGHT_ATTRS': {'DEP': 'conj'}
     }
 
@@ -39,13 +43,13 @@ def add_conj(left_id):
 
 def add_appos(left_id):
     """
-    Adds appos to a specified node.
+    Returns appos for a specified node.
     """
 
     appos = {
     'LEFT_ID': left_id,
     'REL_OP': '>>',
-    'RIGHT_ID': 'appos', # FIX
+    'RIGHT_ID': 'appos',
     'RIGHT_ATTRS': {'DEP': 'appos'}
     }
 
@@ -53,6 +57,7 @@ def add_appos(left_id):
 
 pattern_base1 = [
     # matches consumption/intake/portion/cup/serving of [FOOD]
+    # with possible modifications (using functions defined above)
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': ['consumption', 'intake', 'portion', 'cup', 'serving']}}
@@ -73,6 +78,7 @@ pattern_base1 = [
 
 pattern_base2 = [
     # matches [FOOD] intake/consumption
+    # with possible modifications (using functions defined above)
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': ['intake', 'consumption']}}
@@ -87,6 +93,7 @@ pattern_base2 = [
 
 pattern_base3 = [
     # such pattern matches eat/consume [FOOD]
+    # with possible modifications (using functions defined above)
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': ['consume', 'consuming', 'eat', 'eating']}}
@@ -99,10 +106,20 @@ pattern_base3 = [
     }
 ]
 
-pattern_keywords = [
+pattern_base4 = [
+    # such patterns matches food / diet / vegetable / fruit / meal
+    # with possible modifications (using functions defined above)
     {
-        'RIGHT_ID': 'keyword',
+        'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
+    }
+]
+
+pattern_base5 = [
+    # such patterns matches MDS / DASH / NFI
+    {
+        'RIGHT_ID': 'anchor',
+        'RIGHT_ATTRS': {'ORTH': {'IN': initialisms}}
     }
 ]
 
@@ -128,7 +145,10 @@ dependencies_patterns = [
     pattern_base3+[add_appos('dobj'), add_modifier('appos')],
     pattern_base3+[add_appos('dobj')],
 
-    pattern_keywords
+    pattern_base4+[dis.add_modifier('anchor', 'modifier')],
+    pattern_base4,
+
+    pattern_base5
 ]
 
 def add_food_dep(matcher, doc, i, matches):

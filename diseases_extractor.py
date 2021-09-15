@@ -6,6 +6,10 @@ from spacy import displacy
 import re
 import string
 
+# TODO: analysis, zahardcode'ować initiliasmy i dodać regexp z bacter
+# Unstable angina
+# Esophageal cancer 
+
 # list of "base" words to build on
 # for example this might be sole "fever" or "yellow fever"
 keywords = [
@@ -28,19 +32,18 @@ keywords = [
     'depression',
     'neoplasm',
     'asthma',
-    'symptoms'
-]
+    'symptoms']
 
 # regexp for identifying "base" words to build on
 # for example this might be sole virus or Coronavirus
 keywords_regexp = '^.+(is|us|ism|ysm|virus|pathy|pox|ia|cocci|ae)$'
 
 # words to exclude from regexp above
-ex_regexp = (
+ex_regexp = [
     'this',
     'various',
     'prognosis',
-    'hypothesis'
+    'hypothesis',
     'analysis',
     'diagnosis',
     'status',
@@ -58,7 +61,7 @@ ex_regexp = (
     'continuous',
     'analogous',
     'criteria',
-    'consensus')
+    'consensus']
 
 # most commonly occuring initiliasms (in medical articles) to exclude
 ex_initialisms = (
@@ -76,73 +79,47 @@ ex_initialisms = (
     'DASH',
     'NFI')
 
-# modifiers modify "base" words
-modifier = {
-    'LEFT_ID': 'anchor',
-    'REL_OP': '>',
-    'RIGHT_ID': 'modifier',
-    'RIGHT_ATTRS': {'DEP': {'IN': ['amod', 'compound', 'poss', 'nmod', 'npadvmod']}}
-}
+bacter_regexp = '^.+bacter'
 
-modmodifier = {
-    'LEFT_ID': 'modifier',
-    'REL_OP': '>',
-    'RIGHT_ID': 'modmodifier',
-    'RIGHT_ATTRS': {'DEP': {'IN': ['amod', 'compound', 'poss', 'nmod', 'npadvmod']}}
-}
+def add_modifier(left_id, right_id):
+    """
+    Returns modifier for a specified node.
+    """
+
+    modifier = {
+        'LEFT_ID': left_id,
+        'REL_OP': '>',
+        'RIGHT_ID': right_id,
+        'RIGHT_ATTRS': {'DEP': {'IN': ['amod', 'compound', 'poss', 'nmod', 'npadvmod']}}
+    }
+
+    return modifier
 
 # patterns for rule-based matching
-pattern1 = [
-    # for example matches "heavy depression"
+pattern_base1 = [
+    # for example matches "depression" or "heavy depression" (with modifier appended below)
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
-    },
-    modifier
+    }
 ]
 
-pattern2 = [
-    # for example matches "bloom- associated illness"
-    {
-        'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LEMMA': {'IN': keywords}}
-    },
-    modifier,
-    modmodifier
-]
-
-pattern3 = [
-    # for example matches "Aortic Aneurysm"
+pattern_base2 = [
+    # for example matches "aunerysm" or "Aortic Aneurysm" (with modifier appended below)
     {
         'RIGHT_ID': 'anchor',
         'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
-    },
-    modifier
-]
-
-pattern4 = [
-    # for example matches "Acute Flaccid Myelitis"
-    {
-        'RIGHT_ID': 'anchor',
-        'RIGHT_ATTRS': {'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}
-    },
-    modifier,
-    modmodifier
+    }
 ]
 
 # order does matter
 dependencies_patterns = [
-    pattern2,
-    pattern4,
-    pattern1,
-    pattern3
-]
-
-# "base" words with no modifiers
-standalones_patterns = [
-    # for example matches "diarrhea"
-    [{'LEMMA': {'REGEX': keywords_regexp, 'NOT_IN': ex_regexp}}],
-    [{'LEMMA': {'IN': keywords}}]
+    pattern_base1+[add_modifier('anchor', 'modifier'), add_modifier('modifier', 'modmodifier')],
+    pattern_base2+[add_modifier('anchor', 'modifier'), add_modifier('modifier', 'modmodifier')],
+    pattern_base1+[add_modifier('anchor', 'modifier')],
+    pattern_base2+[add_modifier('anchor', 'modifier')],
+    pattern_base1,
+    pattern_base2
 ]
 
 def match_initialisms(doc):
@@ -170,20 +147,20 @@ def match_initialisms(doc):
 
     return initialisms_ents
 
-def add_disease_ent(matcher, doc, i, matches):
-    """
-    Creates entity label for current match resulting from matching standalones.
-    """
-
-    global initialisms_ents
-
-    match_id, start, end = matches[i]
-    entity = Span(doc, start, end, label='DIS')
-
-    try:
-        doc.ents += (entity,)
-    except ValueError:
-        pass
+# def add_disease_ent(matcher, doc, i, matches):
+#     """
+#     Creates entity label for current match resulting from matching standalones.
+#     """
+#
+#     global initialisms_ents
+#
+#     match_id, start, end = matches[i]
+#     entity = Span(doc, start, end, label='DIS')
+#
+#     try:
+#         doc.ents += (entity,)
+#     except ValueError:
+#         pass
 
 def add_disease_ent_dep(matcher, doc, i, matches):
     """
@@ -195,6 +172,7 @@ def add_disease_ent_dep(matcher, doc, i, matches):
     end = max(token_ids) + 1
 
     entity = Span(doc, start, end, label='DIS')
+    # print(f'Matched span: {entity.text}')
 
     try:
         doc.ents += (entity,)
