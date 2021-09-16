@@ -3,7 +3,7 @@ fish | associate | MFQ
 diet | associate | depression
 fruit | vegetable | fish | associate | depression
 diet | associate | increase | depression
-association | diet | depression
+association | diet | depression 
 relationship | diet | depression
 association | diet | depression
 association | diet | relate | depression

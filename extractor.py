@@ -28,7 +28,7 @@ class Extractor:
 
     TL_EXPRESSION = ';;.*?;;' # non-greedy regexp for identifying true labels
 
-    def __init__(self, domain, datapath, to_evaluate, nohtml):
+    def __init__(self, domain, datapath, to_evaluate, nohtml, for_snowball=False):
         self.domain = domain
         self.datapath = datapath
         self.to_evaluate = to_evaluate
@@ -36,7 +36,10 @@ class Extractor:
 
         self.nlp = spacy.load('en_core_web_lg', disable=['ner'])
         # self.nlp.max_length = 2000000
-        self.docs = [] # list of docs of processed articles (for snowball)
+
+        # snowball
+        self.for_snowball = for_snowball
+        self.sents = [] # list of sentences with both DIS and FOOD from all articles
 
     def run(self):
         if self.to_evaluate:
@@ -108,7 +111,7 @@ class Extractor:
         Predicts entities.
         """
 
-        articles = glob.glob(f'{self.datapath}/*_curr.txt')
+        articles = glob.glob(f'{self.datapath}/*.txt')
 
         for article in articles:
             if 'test.txt' in article:
@@ -132,7 +135,21 @@ class Extractor:
 
                 doc = self.nlp(text)
                 self.extract_labels(doc)
-                self.docs.append(doc)
+
+                # snowball
+                if self.for_snowball:
+                    for sent in doc.sents:
+                        has_food = False
+                        has_disease = False
+
+                        for entity in sent.ents:
+                            if entity.label_ == 'FOOD':
+                                has_food = True
+                            if entity.label_ == 'DIS':
+                                has_disease = True
+
+                        if has_food and has_disease:
+                            self.sents.append(sent.text)
 
                 if not self.nohtml:
                     self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_pred.html')

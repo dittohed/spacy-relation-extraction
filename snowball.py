@@ -1,7 +1,5 @@
-# Snowball algorithm class
-# NIE ROZRÓŻNIAMY NEGACJI
-
 import numpy as np
+import argparse
 
 import spacy
 from spacy import displacy
@@ -66,16 +64,17 @@ class Pattern:
         self.contribs += to_merge.contribs
 
 class Snowball:
-    def __init__(self, tuples, datapath, n_iterations=5, w_size=3,
-                 tau_cl=2, tau_supp=2, tau_sim=2.5, export_sents=False):
+    def __init__(self, datapath, seed_tuples, n_iterations, w_size,
+                 tau_cl, tau_supp, tau_sim, export_sents):
         """
         TODO
         """
 
-        self.nlp = spacy.load("en_core_web_lg")
+        self.nlp = spacy.load("en_core_web_lg", disable=['ner'])
+        # self.nlp.max_length = 2000000
 
-        self.seed_tuples = tuples # most common <DIS, FOOD> tuples extracted using relations_extractor
-        self.tuples = tuples # will contain all extracted tuples
+        self.seed_tuples = seed_tuples # most common <DIS, FOOD> tuples extracted using relations_extractor
+        self.tuples = seed_tuples # will contain all extracted tuples
 
         self.datapath = datapath
 
@@ -98,27 +97,11 @@ class Snowball:
         """
 
         # extracts labels for all articles
-        e = Extractor('both', self.datapath, 0, 1)
+        e = Extractor('both', self.datapath, to_evaluate=0, nohtml=1, for_snowball=True)
         e.run()
 
-        # finds sentences with both DIS and FOOD
-        sents = []
-        for doc in e.docs:
-            for sent in doc.sents:
-                has_food = False
-                has_disease = False
+        sents = ' '.join(e.sents) # new, long string with sentences containing both entitity types only
 
-                for entity in sent.ents:
-                    if entity.label_ == 'FOOD':
-                        has_food = True
-                    if entity.label_ == 'DIS':
-                        has_disease = True
-
-                if has_food and has_disease:
-                    sents.append(sent.text)
-                    continue
-
-        sents = ' '.join(sents) # new, long string with sentences containing both entitity types only
         self.doc = self.nlp(sents)
         e.extract_labels(self.doc) # extract DIS and FOOD labels once more (on account of spaCy's limitations)
 
@@ -131,12 +114,8 @@ class Snowball:
                 html_file.write(html)
 
     def run(self):
-        # actual snowball algorithm
-        # First analyze all sentences, find all containing both DIS(disease) and FOOD
-        # Check if entities in sentence match any tuple, if yes extract context and the rule
-        # If not check if context around matches any existing rule, if yes, extract new seed tuple
-
         for i in range(self.n_iterations):
+            print(f'Iteration {i+1}/{self.n_iterations}')
 
             # find seed tuples occurences (order matters)
             for seed_tuple in self.tuples:
@@ -153,6 +132,8 @@ class Snowball:
 
                     if match_dis and match_food: # if sentence contains a seed tuple
                         print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
+                        if not seed_tuple['WAS_COUNTED']:
+                            seed_tuple['N_OCCUR'] += 1
 
                         start = min(match_food.start, match_dis.start)
                         end = max(match_food.end, match_dis.end)
@@ -197,6 +178,10 @@ class Snowball:
             # self.patterns[3].l_entity = 'DIS'
             # self.patterns[3].r_entity = 'FOOD'
 
+            # disable counting for current seed tuples
+            for tuple in self.seed_tuples:
+                tuple['WAS_COUNTED'] = True
+
             self.single_pass_clustering()
             self.drop_insufficient_clusters()
 
@@ -209,6 +194,9 @@ class Snowball:
                         match_dis = ent
                     elif ent.label_ == 'FOOD':
                         match_food = ent
+
+                if match_food is None or match_dis is None:
+                    continue
 
                 start = min(match_food.start, match_dis.start)
                 end = max(match_food.end, match_dis.end)
@@ -241,7 +229,8 @@ class Snowball:
 
                     if pattern.similarity(pattern_candidate) > self.tau_sim:
                         tuple_candidate = {entities_in_order[0].label_: entities_in_order[0].text,
-                                     entities_in_order[1].label_: entities_in_order[1].text}
+                                     entities_in_order[1].label_: entities_in_order[1].text,
+                                     'N_OCCUR': 0, 'WAS_COUNTED': False}
 
                         if tuple_candidate not in self.tuples:
                             self.tuples.append(tuple_candidate)
@@ -297,44 +286,69 @@ class Snowball:
         else:
             return (ent2, ent1)
 
-    # @staticmethod
-    # def are_in_order(l1, l2):
-    #     for i in range(2):
-    #         if l1[i] != l2[i]:
-    #             return False
-    #     return True
-
     def drop_insufficient_clusters(self):
         self.patterns = [pattern for pattern in self.patterns if len(pattern.contribs) >= self.tau_supp]
 
     def get_results(self):
-        # ostatecznie pozliczać i posortować
         filepath = './snowball_data/results.txt'
+
+        # sorting by occurences or contribs
+        self.seed_tuples.sort(key=lambda d: d['N_OCCUR'], reverse=True)
+        self.tuples.sort(key=lambda d: d['N_OCCUR'], reverse=True)
+        self.patterns.sort(key=lambda p: p.contribs, reverse=True)
 
         with open(filepath, 'w') as file:
             print(f'Saving results to {filepath}')
 
             file.write('--- SEED TUPLES ---\n')
-            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}\n') for tuple in self.seed_tuples]
+            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}, N_OCCUR: {tuple["N_OCCUR"]}\n') \
+                                                                for tuple in self.seed_tuples]
 
             file.write('\n--- TUPLES ---\n')
-            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}\n') for tuple in self.tuples]
+            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}, N_OCCUR: {tuple["N_OCCUR"]}\n') \
+                                                                for tuple in self.tuples]
 
             file.write('\n--- PATTERNS ---\n')
             [file.write(str(pattern) + '\n') for pattern in self.patterns]
 
-if __name__ == "__main__":
-    snb = Snowball([
-        {'DIS': 'DASH', 'FOOD': 'accordant diet'},
-        {'DIS': 'Liver disease', 'FOOD': 'fat diary products'},
-        {'DIS': 'lung cancer', 'FOOD': 'sausage'},
-        {'FOOD': 'steak', 'DIS': 'flu'},
-        {'FOOD': 'carrot', 'DIS': 'blindness'}], './articles/relations', export_sents=True)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('datapath',
+                        help='Specifies a path to directory containing .txt files.')
+    parser.add_argument('--niterations',
+                        help='Specifies number of iterations for snowball.',
+                        default=3, type=int)
+    parser.add_argument('--wsize',
+                        help='Specifies a windows size for left and right contexts.',
+                        default=3, type=int)
+    parser.add_argument('--taucl',
+                        help='Specifies a tau_cl parameter for thresholding patterns clustering (0 to 4).',
+                        default=3, type=int)
+    parser.add_argument('--tausupp',
+                        help='Specifies a tau_supp parameter for minimal supporting tuples for a new pattern.',
+                        default=3, type=int)
+    parser.add_argument('--tau_sim',
+                        help='Specifies a tau_sim parameter for minimal similarity with pattern to extract a new tuple (0 to 4).',
+                        default=3, type=int)
+    parser.add_argument('--exportsents',
+                        help='Use --evaluate 1 to evaluate files with trailing _test.txt in name.',
+                        default=0, type=int)
+
+    args = parser.parse_args()
+
+    snb = Snowball(
+        args.datapath,
+        [
+        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
+        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
+        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False}],
+        1, # args.niterations,
+        args.wsize,
+        args.taucl,
+        args.tausupp,
+        args.tausim,
+        args.exportsents)
 
     snb.run()
     snb.get_results()
-
-    # for pattern in snb.patterns:
-    #     print(pattern)
-    # for tuple in snb.tuples:
-    #     print(tuple)
