@@ -3,6 +3,8 @@ from spacy.matcher import Matcher, DependencyMatcher
 from spacy.tokens import Span
 from spacy import displacy
 from spacy.util import filter_spans
+import collections
+
 
 association_keywords = [
     'association',
@@ -154,3 +156,11 @@ def extract_relations_data(doc, rel_doc):
             relations_data += '\n'
 
     return relations_data
+
+def format_relations_data(file_path):
+    with open(file_path) as rel_file:
+        counts = collections.Counter(l.strip() for l in rel_file)
+
+    with open(file_path, 'w') as rel_file:
+        for line, count in counts.most_common():
+            rel_file.write(f'{line} | {count}\n')

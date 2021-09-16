@@ -41,6 +41,8 @@ class Extractor:
         self.for_snowball = for_snowball
         self.sents = [] # list of sentences with both DIS and FOOD from all articles
 
+        self.relations_data_path = './relations_data/relations_data.txt'
+
     def run(self):
         if self.to_evaluate:
             self.evaluate()
@@ -158,7 +160,10 @@ class Extractor:
                     print('--- EXTRACTED RELATIONS: ---')
                     print(self.relations_data)
 
-                    self.save_relations_data(f'./relations_data/{article_id}.txt')
+                    self.save_relations_data(self.relations_data_path)
+        
+        if self.domain == 'relations':
+            rel.format_relations_data(self.relations_data_path)
 
     def evaluate(self):
         """
@@ -271,7 +276,7 @@ class Extractor:
             html_file.write(html)
 
     def save_relations_data(self, filepath):
-        with open(filepath, 'w') as relations_file:
+        with open(filepath, 'a') as relations_file:
             print(f'Saving relations data to {filepath}')
             relations_file.write(self.relations_data)
 

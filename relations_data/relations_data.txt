@@ -1,0 +1,295 @@
+association | diet | depression | 8
+association | diet | cardiovascular disease | 4
+association | food | cardiovascular disease | 3
+association | adolescent | diet | depression | 3
+association | MDS | fruit | vegetable | 3
+nordic | diet | association | MI | 3
+effect | diet | cardiovascular disease | 2
+association | diet | CAD | 2
+meat | increase | COPD | 2
+relationship | diet | depression | 2
+energy | association | MDS | 2
+diet | associate | PD | 2
+effect | alcohol | PD | 2
+effect | nordic | diet | major chronic disease | 2
+association | diet | CVD | 2
+unhealthy | diet | cause | diabetes | cardiovascular disease | CVD | link | neurodegenerative disease | 1
+increase | hypothalamus | food | 1
+cause | fructose | diet | HF | 1
+effect | hepatic steatosis | western | diet | 1
+hawthorn | ethanol | extract | chlorogenic | hyperoside | isoquercetin | rutin | quercetin | apigenin | affect | fatty acid biosynthesis | galactose metabolism | biosynthesis | proline metabolism | metabolism | glycerolipid metabolism | steroid biosynthesis | 1
+cause | glucose metabolism | diet | 1
+diet | induce liver fibrosis | increase | 1
+diet | increase | lipogenesis | 1
+hepatic steatosis | associate | diet | 1
+effect | hepatic steatosis | high | high | sucrose | diet | 1
+citrus | flavonoid | affect | 1
+effect | Prunus | diet | 1
+effect | hippocampus | different | diet | 1
+effect | hepatic steatosis | diet | 1
+effect | metabolism | diet | 1
+effect | Cudrania | tricuspidata | fruit | diet | 1
+increase | diet | induce obese mouse Cell Death Dis | 1
+link | diet | chronic disease | 1
+diet | association | coronary artery disease | 1
+effect | diet | atherosclerosis | cardiovascular disease | 1
+effect | diet | thrombosis | 1
+effect | diet | chronic disease | 1
+effect | polymorphism | diet | specific know polymorphism | 1
+diet | associate | effect | atherosclerosis | 1
+effect | mediterranean | diet | diabetes | atherosclerosis | 1
+effect | diet | carbohydrate metabolism | 1
+effect | fundamental | food | MD | 1
+diet | relationship | CVD | 1
+energy | coronaropathy | link | coronary heart disease | 1
+healthy | diet | diet | food | rich | vegetable | fruit | association | hypercholesterolemia | 1
+anti | - | oxidant | diet | increase | acute heart disease | 1
+cardiovascular disease | relationship | diet | 1
+diet | associate | heart disease | relationship | diet | coronary heart disease | 1
+legume | associate | Australia | 1
+diet | associate | affect | hypercholesterolemia | diabetes | 1
+effect | specific | nutrient | HF | 1
+fat | control | diet | association | HF | 1
+relationship | diet | acute neurological deficit | 1
+relationship | diet | atherothrombotic pathogenesis | 1
+relation | diet | cardiovascular disease | 1
+relation | diet | coronary artery disease | 1
+association | diet | acute coronary syndrome | 1
+diet | associate | necrosis | cardiovascular disease | 1
+effect | nut | diet | metabolic syndrome | 1
+effect | mediterranean | diet | coronary artery disease | 1
+effect | diet | metabolic syndrome | 1
+food | associate | COPD | 1
+diet | COPD | relation | 1
+connect | diet | specific | food | fruit | vegetable | topic | diet | COPD | 1
+association | individual | food | COPD | 1
+association | diet | COPD | 1
+basis | relation | food | 1
+association | long | term | fruit | vegetable | COPD | 1
+food | apple | pear | pepper | green | leafy | vegetable | associate | COPD | 1
+association | COPD | solid | fruit | fruit | 1
+anthocyanidin | elderly | association | isoflavone | food | COPD | 1
+association | calcium | phosphorus | iron | potassium | selenium | lung | function | measure | association | dietary | calcium | copd | 1
+association | fiber | copd | 1
+effect | fruit | g | day | COPD | 1
+association | coffee | respiratory disease | COPD | 1
+diet | cause | synthesis | 1
+n-6 | relate | chronic lung disease | chronic bronchitis | asthma | relation | chronic nonspecific lung disease | 1
+association | fish | copd | 1
+association | pufa | COPD | 1
+associate | COPD | association | whole | diet | 1
+COPD | associate | n-6 | p | relate | pufa | p | 1
+relationship | long | chain | n-3 | PUFA | fish | COPD | 1
+deleterious | food | association | cure | bacon | hot | dog | process | meat | red | meat | pulmonary | function | 1
+cure | meat | associate | increase | copd | 1
+meat | associate | COPD | 1
+effect | individual | food | nutrient | COPD | 1
+relation | diet | COPD | 1
+deleterious | effect | diet | rich | starchy | food | 1
+relate | COPD | diet | effect | diverse | food | 1
+western | diet | associate | COPD | 1
+traditional | diet | associate | COPD | cosmopolitan | diet | associate | increase | asthma | 1
+many | individual | food | characteristic | diet | fruit | vegetable | associate | COPD | 1
+diet | relationship | diet | COPD | 1
+associate | copd | effect | healthy | diet | healthy | diet | 1
+healthy | diet | healthy | diet | effect | healthy | diet | COPD | association | other chronic disease | 1
+COPD | fruit | wholegrain | red | process | meat | sugar | sweeten | drink | fruit | juice | associate | COPD | diet | 1
+diet | diet | association | diet | COPD | 1
+diet | effect | COPD | 1
+diet | associate | ventilatory defect | diet | vigorous | 1
+association | diet | respiratory disease | COPD | 1
+diet | dash | diet | healthy | base | food | associate | cause | disease | CVD | cancer | disease | respiratory disease | 1
+association | single | dietary | component | dietary | such | fruit | copd | mortality | 1
+association | dash | diet | copd | cause | COPD | 1
+base | diet | mediterranean | diet | rich | increase | base | diet | western | diet | rich | associate | increase | link | atherosclerosis | cv disorder | 1
+effect | western | diet | rich | refined | food | COPD | 1
+effect | diet | COPD | 1
+ahei-2010 | diet | associate | COPD | 1
+associate | lung | breathlessness | prevalence | chronic obstructive pulmonary disease | 1
+dietary | mineral | relation | chronic obstructive pulmonary disease | Asia | 1
+whole | grain | associate | inflammatory disease | 1
+relationship | long | chain | acid | chronic obstructive pulmonary disease | 1
+relation | individual | fatty | acid | fev1 | respiratory disease | dutch | adult | 1
+fruit | associate | prevalent asthma | 1
+relationship | diet | COPD | 1
+food | food | relate | foodborne disease | cause | disease | 1
+food | cause | poisoning | poisonous | food | foodborne disease | 1
+increase | food | poisonous | 1
+food | food | association | CVD | 1
+link | cholesterol | atherosclerosis | 1
+association | CVD | food | CVD | 1
+diet | food | CVD | association | CVD | 1
+anti | - | inflammatory | diet | association | CVD | 1
+dash | MDS | dash | MDS | associate | 1
+association | healthy | food | incident | CVD | CVD | mortality | adjust | 1
+dash | CVD | association | CVD | 1
+narrative synthesis | relation | CVD | diet | 1
+dash | diet | associate | CVD | 1
+dash | sodium | association | CAD | 1
+association | dash | CVD | 1
+CVD | association | healthy | food | incident | 1
+association | proinflammatory | diet | CVD | 1
+base | diet | link | CVD | 1
+relation | vegetarian | diet | CVD | 1
+relation | base | diet | CVD | 1
+diet | association | CVD | 1
+dash | relation | CVD | 1
+dash | MDS | associate | CVD | 1
+dash | MDS | relation | CVD | 1
+relation | dash | MDS | 1
+effect | CVD | fruit | vegetable | 1
+effect | diet | CVD | 1
+alcohol | associate | CVD | 1
+relation | diet | CVD | 1
+style | diet | associate | coronary artery disease | 1
+effect | healthy | nordic | diet | metabolic syndrome | 1
+association | fish | cerebrovascular disease | 1
+diet | associate | cause | cardiovascular disease | cancer | 1
+fish | MDS | associate | 1
+healthy | diet | associate | depression | 1
+diet | associate | increase | depression | 1
+association | healthy | diet | depression | 1
+association | diet | relate | depression | 1
+diet | association | diet | MDS | 1
+associate | diet | depression | 1
+association | diet | MDS | fruit | vegetable | 1
+energy | MDS | association | 1
+association | quality | diet | depression | 1
+association | smoking | alcohol | depression | 1
+association | fruit | vegetable | depression | 1
+effect | associate | diet | age-associate non-communicable disease | disease | neurodegenerative disease | cancer | depression | respiratory disease | 1
+depression | association | polyphenol | 1
+total | polyphenol | associate | diabetes | CVD | 1
+many | other | fruit | link | cancer | 1
+vegetable | citrus | fruit | associate | tyrosine kinase janus | apoptosis | cancer | 1
+Scopus | association | diet | 1
+oil | association | olive | oil | chd | 1
+association | alcohol | chd | 1
+CVD | association | alcohol | 1
+alcohol | link | increase | breast cancer | 1
+purple | grape | juice | associate | relate | chd | 1
+associate | ad | dash | diet | 1
+vegetable | whole | grain | fruit | fish | relate | depression | 1
+breast cancer | link | increase | carotenoid | know | antioxidant | oxidative | 1
+colon cancer | relate | vegetable | fruit | alcohol | red | process | meat | sugar | sweeten | beverage | saturate | fat | 1
+diet | associate | colorectal cancer | 1
+affect | diabetes | connect | energy | diet | 1
+process | meat | associate | increase | COPD | 1
+fruit | vegetable | ferment | milk | associate | fruit | vegetable | plus | 1
+milk | glass | day | fruit | vegetable | associate | milk | glass | day | plus | 1
+effect | alternative | diet | current | diet | unhealthy | food | cause | diet | relate | diet | relate | CVD | 1
+diet | relate | Parkinson’s disease | 1
+sugar | salt | fat | associate | increase | non-communicable disease | 1
+association | sugar | cardiovascular disease | 1
+diet | link | cardiovascular disease | 1
+associate | diet | MDS | dash | fruit | vegetable | 1
+home | cooked | meal | associate | diabetes | 1
+associate | diet | dash | MDS | fruit | vegetable | 1
+link | meal | associate | diabetes | 1
+home | cooked | meal | associate | diet | diabetes | 1
+home | cook | meal | association | diabetes | 1
+ME | food | association | diet | 1
+relate | food | IBD | 1
+effect | diet | IBD | 1
+total | fat | associate | increase | UC | 1
+fruit | rich | diet | associate | vegetable | predominant | diet | associate | UC | 1
+fiber | fruit | associate | UC | 1
+vegetable | associate | UC | fruit | associate | UC | 1
+dietary | long | chain | ω-3 | associate | UC | trans | - | unsaturated | fat | associate | increase | UC | 1
+UC | high | fiber | associate | 1
+red | wine | IBD | associate | 1
+association | alcohol | IBD | 1
+effect | fodmap | Inflamm Bowel Dis | 1
+effect | inspire | diet | disease | 1
+disease | exclusion | diet | associate | 1
+effect | smoking | Crohn’s disease | Inflamm Bowel Dis | 1
+traditional | mediterranean | diet | associate | cardiovascular disease | cancer | diabetes | 1
+high | fibre | associate | diabetes | 1
+association | soft | drink | fatty liver disease | 1
+affect | dangerous | meal | 1
+associate | diabetes | balance | diet | 1
+calorie | diet | associate | steatosis | 1
+diet | increase | link | CVD | 1
+effect | diet | disease | 1
+relate | carbohydrate | sugar | homozygous | 1
+increase | associate | diet | homozygous | 1
+pufa | associate | APOA1 polymorphism | 1
+affect | hepatic lipid metabolism | diet | 1
+diet | associate | dyslipidemia (or 1.2, 95%CI | moderate-severe US steatosis | 1
+effect | whole | enrich | hypocaloric | diet | cardiovascular disease | metabolic syndrome | 1
+association | plant | base | protein | cause | peritoneal dialysis | 1
+effect | myosteatosis | diet | 1
+component | food | relate | PD | 1
+associate | increase | PD | diet | dietary | fiber | PD | 1
+healthy | diet | associate | effect | PD | 1
+flavonoid | rich | food | tea | berry | fruit | apple | red | wine | orange | associate | PD | 1
+associate | PD | fat | 1
+milk | dairy | product | general | associate | increase | PD | 1
+diet | association | dairy | milk | PD | 1
+association | dairy | product | increase | PD | 1
+diet | affect | Asia | 1
+associate | affect | diet | sleep behavior disorder | 1
+increase | PD | PD | ketogenic | diet | other neurological disease | 1
+ketosis (due | ketogenic | diet | increase | increase | 1
+diet | relate | prodromal Parkinson's disease | 1
+dysbiosis | link | diet | 1
+diet | drive microbiota dysbiosis | associate | 1
+association | diet | Parkinson's disease | 1
+effect | neurorestorative | diet | Parkinson's disease | 1
+cause | cardiometabolic disease | relate | diet | 1
+diet | CVD | affect | CVD | 1
+chd | relate | diet | 1
+diet | relation | heart disease | 1
+link | diet | cardiometabolic disease | 1
+fat | cause | intestinal dysbiosis | 1
+heterogeneous | relationship | fat | 1
+associate | increase | chd | vegetable | 1
+diet | associate | CVD | 1
+ultra | - | process | food | diet | associate | cerebrovascular disease | 1
+relationship | diet | cardiovascular disease | 1
+diet | fat | association | fat | chd | 1
+fat | associate | chd | 1
+diet | unsaturated | fat | association | chd | 1
+relate | chd | plant | protein | chd | 1
+effect | mediterranean | diet | fat | diet | type 2 diabetes | 1
+effect | carbohydrate | diet | type 2 diabetes | 1
+effect | carbohydrate | diet | fat | diet | type 2 diabetes | 1
+relation | fish | coronary heart disease | 1
+effect | carbohydrate | high | fat | diet | control study Atherosclerosis | 1
+effect | diet | rois | 1
+western | diet | increase | diabetes | autoimmune and cardiovascular disease | increase | Alzheimer's disease | ad | 1
+effect | western‐like | diet | psychosocial | stress | cynomolgus | 1
+western | diet | increase | Alzheimer's disease | AD | 1
+association | diet | ad | 1
+association | diet | increase | endogenous | 1
+western | diet | associate | small hippocampus | 1
+link | diet | dementia | 1
+diet | effect | metabolism | hepatosteatosis | 1
+nordic | diet | association | chronic disease | 1
+association | nordic | diet | chronic disease | type 2 diabetes | 1
+association | diet | major chronic disease | 1
+regional | diet | diet | relation | chronic disease | 1
+association | nordic | diet | major chronic disease | MI | cancer | 1
+diet | disease | association | 1
+MI | sd | association | diet | 1
+association | diet | disease | 1
+association | diet | type 2 diabetes mellitus | 1
+association | nordic | diet | major chronic disease | 1
+association | nordic | diet | several different major chronic disease | 1
+nordic | diet | associate | colorectal cancer | 1
+association | nordic | diet | breast and colorectal cancer | CVD | 1
+heterogeneous | association | alcohol | 1
+association | diet | major chronic disease | MI | overall cancer | 1
+food | associate | colorectal cancer | 1
+association | food | colorectal cancer | 1
+CH | effect | diet | 1
+effect | diet | cause | CVD | MI | 1
+diet | food | diet | diet | disease | relationship | 1
+diet | CVD | diet | association | diet | CVD | 1
+diet | diet | disease | association | 1
+single nucleotide polymorphism | association | diet | 1
+effect | diet | minus | plus | sd | 1
+association | diet | MDS | 1
+diet | effect | association | diet | CVD | 1
+diet | MDS | associate | cause | CVD | 1
+diet | associate | CVD | MI | CVD | 1
