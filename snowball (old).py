@@ -86,7 +86,9 @@ class Snowball:
         # If not check if context around matches any existing rule, if yes, extract new seed tuple
         while self.number_of_iterations > 0:
             self.number_of_iterations -= 1
+
             for sent in self.tagged_doc.sents:
+                # sprawdzenie czy zdanie ma oba entity
                 has_food = False
                 has_disease = False
                 for entity in sent.ents:
@@ -94,21 +96,23 @@ class Snowball:
                         has_food = True
                     if entity.label_ == 'DIS':
                         has_disease = True
+
+                # jeżęli ma oba entity
                 if has_food and has_disease:
                     # Sentence is subject to analysis for a rule or tuple
                     is_match = False
-                    for seed_tuple in self.tuples:
+                    for seed_tuple in self.tuples: # dla każdej seed-krotki
                         # Check if seed tuple is in the sentence AND is in the correct order
                         match_dis = False
                         match_food = False
                         ordered_keys = list(seed_tuple.keys())  # Entites from seed tuple in right order
-                        for ent in sent.ents:
+                        for ent in sent.ents: # sprawdzenie, czy w zdaniu występuje seed krotka
                             if seed_tuple[ent.label_] == ent.text:
                                 if ent.label_ == 'DIS':
                                     match_dis = ent
                                 if ent.label_ == 'FOOD':
                                     match_food = ent
-                        if match_food and match_dis:
+                        if match_food and match_dis: # jeżeli w zdaniu występuje seed krotka
                             entities_in_order = self.select_order(match_dis, match_food)
                             is_match = self.are_in_order(ordered_keys,
                                                          [entities_in_order[0].label_, entities_in_order[1].label_])
@@ -118,7 +122,7 @@ class Snowball:
                                 end = max(match_food.end, match_dis.end)
 
                                 context = self.tagged_doc[
-                                          start - min(3, start - sent.start):end + min(3, sent.end - end)]
+                                              start - min(3, start - sent.start):end + min(3, sent.end - end)]
 
                                 left_len = min(3, start - sent.start)
                                 right_len = min(3, sent.end - end)

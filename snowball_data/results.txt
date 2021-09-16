@@ -1,0 +1,15 @@
+--- SEED TUPLES ---
+DIS: DASH, FOOD: accordant diet
+DIS: Liver disease, FOOD: fat diary products
+DIS: lung cancer, FOOD: sausage
+DIS: flu, FOOD: steak
+DIS: blindness, FOOD: carrot
+
+--- TUPLES ---
+DIS: DASH, FOOD: accordant diet
+DIS: Liver disease, FOOD: fat diary products
+DIS: lung cancer, FOOD: sausage
+DIS: flu, FOOD: steak
+DIS: blindness, FOOD: carrot
+
+--- PATTERNS ---

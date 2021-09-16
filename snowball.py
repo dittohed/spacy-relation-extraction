@@ -1,7 +1,10 @@
 # Snowball algorithm class
+# NIE ROZRÓŻNIAMY NEGACJI
 
 import numpy as np
+
 import spacy
+from spacy import displacy
 
 from extractor import Extractor
 
@@ -16,16 +19,17 @@ class Pattern:
     - list of text representations of contributing patterns.
     """
 
-    def __init__(self, left, l_entity, middle, r_entity, right, text_rep):
-        self.left = left
+    def __init__(self, left_vec, l_entity, middle_vec, r_entity, right_vec, text_rep):
+        self.left_vec = left_vec
         self.l_entity = l_entity
-        self.middle = middle
+        self.middle_vec = middle_vec
         self.r_entity = r_entity
-        self.right = right
+        self.right_vec = right_vec
         self.contribs = text_rep
 
-    # def __str__(self):
-    #     return f"Whole context: ({self.left} || {self.l_entity} || {self.middle} || {self.r_entity} || {self.right})"
+    def __str__(self):
+        return ''.join([f'{contrib[0]} || {self.l_entity} || {contrib[1]} || {self.r_entity} ||  {contrib[2]}\n' \
+                                                            for contrib in self.contribs])
 
     def is_entity_order_same(self, to_compare):
         """
@@ -36,16 +40,16 @@ class Pattern:
 
     def similarity(self, to_compare):
         if self.is_entity_order_same(to_compare):
-            l_dot = np.dot(self.left, to_compare.left)
-            m_dot = np.dot(self.middle, to_compare.middle)
-            r_dot = np.dot(self.right, to_compare.right)
+            l_dot = np.dot(self.left_vec, to_compare.left_vec)
+            m_dot = np.dot(self.middle_vec, to_compare.middle_vec)
+            r_dot = np.dot(self.right_vec, to_compare.right_vec)
 
             similarity = l_dot + 2 * m_dot + r_dot
 
         else:
             similarity = 0
 
-        # print("Weighted similarity: ", similarity)
+        print(f"Calculating similarity for: \n{self} \n and \n {to_compare}\n = {similarity}")
         return similarity
 
     def merge(self, to_merge):
@@ -56,15 +60,14 @@ class Pattern:
 
         n = len(self.contribs) # no. of patterns in the cluster so far
 
-        self.left = (n*self.left + to_merge.left) / (n+1)
-        self.middle = (n*self.middle + to_merge.middle) / (n+1)
-        self.right = (n*self.right + to_merge.right) / (n+1)
-        self.contribs.append(to_merge.contribs)
+        self.left_vec = (n*self.left_vec + to_merge.left_vec) / (n+1)
+        self.middle_vec = (n*self.middle_vec + to_merge.middle_vec) / (n+1)
+        self.right_vec = (n*self.right_vec + to_merge.right_vec) / (n+1)
+        self.contribs += to_merge.contribs
 
 class Snowball:
-    def __init__(self, tuples, datapath, n_iterations=1, w_size=3,
-                 tau_cl=2, tau_supp=1, tau_sim=3.5, tau_t=0.5, alpha=0.5,
-                 export_sents=False):
+    def __init__(self, tuples, datapath, n_iterations=5, w_size=3,
+                 tau_cl=2, tau_supp=2, tau_sim=2.5, export_sents=False):
         """
         TODO
         """
@@ -72,34 +75,34 @@ class Snowball:
         self.nlp = spacy.load("en_core_web_lg")
 
         self.seed_tuples = tuples # most common <DIS, FOOD> tuples extracted using relations_extractor
-        self.tuples = tuples # ???
+        self.tuples = tuples # will contain all extracted tuples
 
         self.datapath = datapath
 
         self.patterns = [] # list of Pattern objects
-        self.matches = [] # ???
 
-        self.number_of_iterations = number_of_iterations
+        self.n_iterations = n_iterations
         self.w_size = w_size
         self.tau_cl = tau_cl
         self.tau_supp = tau_supp
         self.tau_sim = tau_sim
-        self.tau_t = tau_t
-        self.alpha = alpha
 
-        self.sents = self.get_sents_crops()
+        self.export_sents = export_sents
 
-    def get_sents_crops(self):
+        self.doc = None
+        self.remove_irrel_sents()
+
+    def remove_irrel_sents(self):
         """
-        Returns a list of crops with corresponding windows size (w_size)
-        of sentences only for sentences with both DIS and FOOD.
+        Sets a doc containing tagged sentences with both DIS and FOOD only.
         """
 
+        # extracts labels for all articles
         e = Extractor('both', self.datapath, 0, 1)
         e.run()
 
+        # finds sentences with both DIS and FOOD
         sents = []
-
         for doc in e.docs:
             for sent in doc.sents:
                 has_food = False
@@ -112,11 +115,15 @@ class Snowball:
                         has_disease = True
 
                 if has_food and has_disease:
-                    sents.append(sent)
+                    sents.append(sent.text)
                     continue
 
+        sents = ' '.join(sents) # new, long string with sentences containing both entitity types only
+        self.doc = self.nlp(sents)
+        e.extract_labels(self.doc) # extract DIS and FOOD labels once more (on account of spaCy's limitations)
+
         if self.export_sents:
-            html = displacy.render(doc, style='ent', page=True,
+            html = displacy.render(self.doc, style='ent', page=True,
                             options={'colors': {'DIS': '#909090', 'FOOD': '#19D9FF'}, 'ents': ['DIS', 'FOOD']})
 
             with open('./snowball_data/sents.html', 'w') as html_file:
@@ -129,144 +136,134 @@ class Snowball:
         # Check if entities in sentence match any tuple, if yes extract context and the rule
         # If not check if context around matches any existing rule, if yes, extract new seed tuple
 
-        while self.number_of_iterations > 0:
-            self.number_of_iterations -= 1
-            for sent in self.tagged_doc.sents:
-                has_food = False
-                has_disease = False
-                for entity in sent.ents:
-                    if entity.label_ == 'FOOD':
-                        has_food = True
-                    if entity.label_ == 'DIS':
-                        has_disease = True
-                if has_food and has_disease:
-                    # Sentence is subject to analysis for a rule or tuple
-                    is_match = False
-                    for seed_tuple in self.tuples:
-                        # Check if seed tuple is in the sentence AND is in the correct order
-                        match_dis = False
-                        match_food = False
-                        ordered_keys = list(seed_tuple.keys())  # Entites from seed tuple in right order
-                        for ent in sent.ents:
-                            if seed_tuple[ent.label_] == ent.text:
-                                if ent.label_ == 'DIS':
-                                    match_dis = ent
-                                if ent.label_ == 'FOOD':
-                                    match_food = ent
-                        if match_food and match_dis:
-                            entities_in_order = self.select_order(match_dis, match_food)
-                            is_match = self.are_in_order(ordered_keys,
-                                                         [entities_in_order[0].label_, entities_in_order[1].label_])
-                            if is_match:
-                                print(f"Tuple {seed_tuple} Matched to sentence: {sent}")
-                                start = min(match_food.start, match_dis.start)
-                                end = max(match_food.end, match_dis.end)
+        for i in range(self.n_iterations):
 
-                                context = self.tagged_doc[
-                                          start - min(3, start - sent.start):end + min(3, sent.end - end)]
+            # find seed tuples occurences (order matters)
+            for seed_tuple in self.tuples:
+                for sent in self.doc.sents:
+                    match_dis = None
+                    match_food = None
 
-                                left_len = min(3, start - sent.start)
-                                right_len = min(3, sent.end - end)
+                    for ent in sent.ents: # check for particular seed tuple occurence in the sentence
+                        if seed_tuple[ent.label_] == ent.text:
+                            if ent.label_ == 'DIS':
+                                match_dis = ent
+                            if ent.label_ == 'FOOD':
+                                match_food = ent
 
-                                mid_ctx = context[left_len:len(context) - right_len]
-                                mid_ctx = self.remove_entities_from_middle_context(mid_ctx)
+                    if match_dis and match_food: # if sentence contains a seed tuple
+                        print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
 
-                                left_ctx = context[0:left_len]
-                                right_ctx = context[-right_len:]
-                                # Check if rigth left and middle contexts exist
-                                if len(left_ctx) == 0:
-                                    left = 0
-                                else:
-                                    left = left_ctx.vector / left_ctx.vector_norm
-                                if len(mid_ctx) == 0:
-                                    mid = 0
-                                else:
-                                    mid = mid_ctx.vector / mid_ctx.vector_norm
-                                if len(right_ctx) == 0:
-                                    right = 0
-                                else:
-                                    right = right_ctx.vector / right_ctx.vector_norm
+                        start = min(match_food.start, match_dis.start)
+                        end = max(match_food.end, match_dis.end)
 
-                                ctx = Cluster(
-                                    left,
-                                    entities_in_order[0].label_,
-                                    mid,
-                                    entities_in_order[1].label_,
-                                    right,
-                                    [(left_ctx.text, mid_ctx.text, right_ctx.text)])
-                                print(f'Appending context: {ctx}')
-                                self.rules.append(ctx)
-                                # break
+                        # compute contexts
+                        left_len = min(self.w_size, start - sent.start)
+                        right_len = min(self.w_size, sent.end - end)
+
+                        ctx = self.doc[start - left_len : end + right_len]
+                        left_ctx = ctx[0 : left_len]
+                        mid_ctx = ctx[left_len : len(ctx) - right_len]
+                        mid_ctx = self.remove_entities_from_middle_context(mid_ctx)
+                        right_ctx = ctx[-right_len : ]
+
+                        # calculate vector representations for contexts
+                        left_vec = self.ctx2vec(left_ctx)
+                        mid_vec = self.ctx2vec(mid_ctx)
+                        right_vec = self.ctx2vec(right_ctx)
+
+                        # get order of entities
+                        entities_in_order = self.get_ents_order(match_dis, match_food)
+
+                        pattern = Pattern(left_vec, entities_in_order[0].label_,
+                                          mid_vec, entities_in_order[1].label_,
+                                          right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
+                        print(f'Created a new pattern: \n{pattern}')
+                        self.patterns.append(pattern)
+
+            # sents = [
+            #     ('consumption of', "doesn't cause", '.'),
+            #     ('consuming', 'is the cause of', '.'),
+            #     ('yellow bike', 'blue sea', 'crazy ramsay'),
+            #     ('eating', 'causes', 'and other diseases'),
+            # ]
+            #
+            # self.patterns = [
+            #     Pattern(self.ctx2vec(self.nlp(sent[0])[:]), 'FOOD', self.ctx2vec(self.nlp(sent[1])[:]),
+            #             'DIS', self.ctx2vec(self.nlp(sent[2])[:]), [sent]) \
+            #                                 for sent in sents
+            # ]
+            #
+            # self.patterns[3].l_entity = 'DIS'
+            # self.patterns[3].r_entity = 'FOOD'
 
             self.single_pass_clustering()
             self.drop_insufficient_clusters()
 
-            for sent in self.tagged_doc:
-                disease = None
-                food = None
+            for sent in self.doc.sents:
+                match_dis = None
+                match_food = None
 
                 for ent in sent.ents:
                     if ent.label_ == 'DIS':
-                        disease = ent
+                        match_dis = ent
                     elif ent.label_ == 'FOOD':
-                        food = ent
+                        match_food = ent
 
-                if food and disease:
-                    start = min(food.start, disease.start)
-                    end = max(food.end, disease.end)
+                start = min(match_food.start, match_dis.start)
+                end = max(match_food.end, match_dis.end)
 
-                    entities_in_order = self.select_order(disease, food)
+                # compute contexts
+                left_len = min(self.w_size, start - sent.start)
+                right_len = min(self.w_size, sent.end - end)
 
-                    context = self.tagged_doc[start - min(3, start - sent.start):end + min(3, sent.end - end)]
+                ctx = self.doc[start - left_len : end + right_len]
+                left_ctx = ctx[0 : left_len]
+                mid_ctx = ctx[left_len : len(ctx) - right_len]
+                mid_ctx = self.remove_entities_from_middle_context(mid_ctx)
+                right_ctx = ctx[-right_len : ]
 
-                    left_len = min(3, start - sent.start)
-                    right_len = min(3, sent.end - end)
+                # calculate vector representations for contexts
+                left_vec = self.ctx2vec(left_ctx)
+                mid_vec = self.ctx2vec(mid_ctx)
+                right_vec = self.ctx2vec(right_ctx)
 
-                    mid = context[left_len:len(context) - right_len]
-                    mid = self.remove_entities_from_middle_context(mid)
+                # get order of entities
+                entities_in_order = self.get_ents_order(match_dis, match_food)
 
-                    left = context[0:left_len]
-                    right = context[-right_len:]
+                pattern_candidate = Pattern(left_vec, entities_in_order[0].label_,
+                                  mid_vec, entities_in_order[1].label_,
+                                  right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
+                print(f'Created a new tuple candidate: {entities_in_order}')
 
-                    if len(left_ctx) == 0:
-                        left = 0
-                    else:
-                        left = left_ctx.vector / left_ctx.vector_norm
-                    if len(mid_ctx) == 0:
-                        mid = 0
-                    else:
-                        mid = mid_ctx.vector / mid_ctx.vector_norm
-                    if len(right_ctx) == 0:
-                        right = 0
-                    else:
-                        right = right_ctx.vector / right_ctx.vector_norm
+                for i, pattern in enumerate(self.patterns):
+                    print(f"Comparing \n{pattern} to current tuple.")
 
-                    ctx = Cluster(
-                        left,
-                        entities_in_order[0].label_,
-                        mid,
-                        entities_in_order[1].label_,
-                        right
-                        [left_ctx.text, mid_ctx.text, right_ctx.text])
+                    if pattern.similarity(pattern_candidate) > self.tau_sim:
+                        tuple_candidate = {entities_in_order[0].label_: entities_in_order[0].text,
+                                     entities_in_order[1].label_: entities_in_order[1].text}
 
-                    for cluster in self.rules:
-                        print(f"Comparing \n{ctx} to: ")
-                        print(rule, '\n')
-                        if ctx.compute_similarity(rule) > TAU_SIM:
-                            new_tuple = {entities_in_order[0].label_: entities_in_order[0].text,
-                                         entities_in_order[1].label_: entities_in_order[1].text}
-                            if new_tuple not in self.tuples:
-                                self.tuples.append(new_tuple)
-                            break
+                        if tuple_candidate not in self.tuples:
+                            self.tuples.append(tuple_candidate)
+
+                        break
+
+    def ctx2vec(self, ctx):
+        """
+        Returns a vector representation for a given context (embeddings average).
+        """
+
+        if len(ctx) == 0:
+            vec = np.zeros(300, dtype='float32')
+        else:
+            vec = ctx.vector / ctx.vector_norm
+
+        return vec
 
     def single_pass_clustering(self):
         new_patterns = []
 
         for pattern in self.patterns:
-            if len(new_patterns) == 0:
-                new_patterns.append(pattern)
-                continue
-
             max_sim = 0
             max_sim_pattern = 0
             for i, new_pattern in enumerate(new_patterns):
@@ -281,7 +278,7 @@ class Snowball:
             else:
                 new_patterns.append(pattern)
 
-        self.pattern = new_patterns
+        self.patterns = new_patterns
 
     def remove_entities_from_middle_context(self, mid):
         extracted_mid = []
@@ -290,26 +287,41 @@ class Snowball:
                 pass
             else:
                 extracted_mid.append(word.text)
-        sub_doc = self.large_nlp(" ".join(extracted_mid))
+        sub_doc = self.nlp(" ".join(extracted_mid))
         return sub_doc
 
     @staticmethod
-    def select_order(ent1, ent2):
+    def get_ents_order(ent1, ent2):
         if ent1.start < ent2.start:
-            return [ent1, ent2]
+            return (ent1, ent2)
         else:
-            return [ent2, ent1]
+            return (ent2, ent1)
 
-    @staticmethod
-    def are_in_order(l1, l2):
-        for i in range(2):
-            if l1[i] != l2[i]:
-                return False
-        return True
+    # @staticmethod
+    # def are_in_order(l1, l2):
+    #     for i in range(2):
+    #         if l1[i] != l2[i]:
+    #             return False
+    #     return True
 
     def drop_insufficient_clusters(self):
-        self.patterns = [pattern for pattern in self.patterns if len(rule.contribs) < self.tau_supp]
+        self.patterns = [pattern for pattern in self.patterns if len(pattern.contribs) >= self.tau_supp]
 
+    def get_results(self):
+        # ostatecznie pozliczać i posortować
+        filepath = './snowball_data/results.txt'
+
+        with open(filepath, 'w') as file:
+            print(f'Saving results to {filepath}')
+
+            file.write('--- SEED TUPLES ---\n')
+            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}\n') for tuple in self.seed_tuples]
+
+            file.write('\n--- TUPLES ---\n')
+            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}\n') for tuple in self.tuples]
+
+            file.write('\n--- PATTERNS ---\n')
+            [file.write(str(pattern) + '\n') for pattern in self.patterns]
 
 if __name__ == "__main__":
     snb = Snowball([
@@ -317,10 +329,12 @@ if __name__ == "__main__":
         {'DIS': 'Liver disease', 'FOOD': 'fat diary products'},
         {'DIS': 'lung cancer', 'FOOD': 'sausage'},
         {'FOOD': 'steak', 'DIS': 'flu'},
-        {'FOOD': 'carrot', 'DIS': 'blindness'}
-    ], './articles/snowball', 3, 3)
+        {'FOOD': 'carrot', 'DIS': 'blindness'}], './articles/relations', export_sents=True)
+
     snb.run()
-    for rule in snb.rules:
-        print(rule)
-    for tuple in snb.tuples:
-        print(tuple)
+    snb.get_results()
+
+    # for pattern in snb.patterns:
+    #     print(pattern)
+    # for tuple in snb.tuples:
+    #     print(tuple)
