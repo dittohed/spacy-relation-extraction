@@ -34,7 +34,8 @@ class Extractor:
         self.to_evaluate = to_evaluate
         self.nohtml = nohtml
 
-        self.nlp = spacy.load('en_core_web_lg')
+        self.nlp = spacy.load('en_core_web_lg', disable=['ner'])
+        # self.nlp.max_length = 2000000
         self.docs = [] # list of docs of processed articles (for snowball)
 
     def run(self):
@@ -51,15 +52,15 @@ class Extractor:
         matcher = Matcher(self.nlp.vocab)
         matcher_dep = DependencyMatcher(self.nlp.vocab)
 
-        if self.domain == 'diseases':
-            doc.ents += dis.match_initialisms(doc)
+        doc.ents = tuple()
 
+        if self.domain == 'diseases':
             matcher_dep.add('dependencies', dis.dependencies_patterns,
                         on_match=dis.add_disease_ent_dep)
             matcher_dep(doc)
 
         elif self.domain == 'food':
-            doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('PERSON', 'ORG', 'GPE', 'DIS')])
+            # doc.ents = tuple([ent for ent in doc.ents if ent.label_ in ('DIS')])
 
             matcher_dep.add('dependencies', food.dependencies_patterns,
                         on_match=food.add_food_dep)
@@ -68,17 +69,15 @@ class Extractor:
             food.merge_entities(doc)
 
         elif self.domain == 'both':
-            doc.ents += dis.match_initialisms(doc)
-
             matcher_dep.add('dependencies_dis', dis.dependencies_patterns,
                         on_match=dis.add_disease_ent_dep)
             matcher_dep.add('dependencies_food', food.dependencies_patterns,
                         on_match=food.add_food_dep)
             matcher_dep(doc)
 
-        else:
-            doc.ents += dis.match_initialisms(doc)
+            food.merge_entities(doc)
 
+        else:
             matcher_dep.add('dependencies_dis', dis.dependencies_patterns,
                         on_match=dis.add_disease_ent_dep)
             matcher_dep.add('dependencies_food', food.dependencies_patterns,
@@ -112,19 +111,24 @@ class Extractor:
         articles = glob.glob(f'{self.datapath}/*_curr.txt')
 
         for article in articles:
-            if 'test' in article:
+            if 'test.txt' in article:
                 continue
 
             with open(article, 'r') as file:
                 article_id = article.split('/')[-1].split('.')[0]
                 print(f'Handling article {article_id}...')
 
-                if os.path.exists(f'./displacy/{self.domain}/{article_id}_pred.html'):
-                    print(f'{article_id} already predicted...')
-                    continue
+                # if os.path.exists(f'./displacy/{self.domain}/{article_id}_pred.html'):
+                #     print(f'{article_id} already predicted...')
+                #     continue
 
                 lines = file.readlines()
                 text = ' '.join(lines)
+
+                # checking for memory requirements
+                if len(text) > 1000000:
+                    print(f'Article {article_id} is too long, skipping to the next one...')
+                    continue
 
                 doc = self.nlp(text)
                 self.extract_labels(doc)
@@ -134,7 +138,7 @@ class Extractor:
                     self.generate_html(doc, f'./displacy/{self.domain}/{article_id}_pred.html')
 
                 if self.domain == 'relations':
-                    print('--- EXTRACTED RELIATIONS: ---')
+                    print('--- EXTRACTED RELATIONS: ---')
                     print(self.relations_data)
 
                     self.save_relations_data(f'./relations_data/{article_id}.txt')
@@ -171,6 +175,11 @@ class Extractor:
 
                 lines = file.readlines()
                 text = ' '.join(lines)
+
+                # checking for memory requirements
+                if len(text) > 1000000:
+                    print(f'Article {article_id} is too long, skipping to the next one...')
+                    continue
 
                 # reading true labels and creating Span objects
                 tl_found = 0

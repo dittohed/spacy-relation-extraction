@@ -7,8 +7,6 @@ import diseases_extractor as dis
 
 import string
 
-# TODO: fix no MDS
-
 anchors = ['consumption', 'intake', 'serving', 'consume', 'eat', 'portion', 'cup']
 keywords = ['food', 'diet', 'vegetable', 'fruit', 'meal']
 initialisms = ['MDS', 'DASH', 'NFI']

@@ -6,11 +6,6 @@ from spacy import displacy
 import re
 import string
 
-# TODO: analysis, zahardcode'ować initiliasmy i dodać regexp z bacter
-# Unstable angina
-# Esophageal cancer
-# It was recently determined that eating steak regularly causes flu.
-
 # list of "base" words to build on
 # for example this might be sole "fever" or "yellow fever"
 keywords = [
@@ -62,25 +57,16 @@ ex_regexp = [
     'continuous',
     'analogous',
     'criteria',
-    'consensus']
-
-# most commonly occuring initiliasms (in medical articles) to exclude
-ex_initialisms = (
-    'AND',
-    'OR',
-    'OWL',
-    'API',
-    'SPARQL',
-    'RDF',
-    '3D',
-    'MP4',
-    'USA',
-    'DNA',
-    'MDS',
-    'DASH',
-    'NFI')
+    'consensus',
+    'campus',
+    'versus']
 
 bacter_regexp = '^.+bacter'
+
+# reading initialisms.txt into a list
+with open('./initialisms.txt', 'r') as file:
+    lines = file.readlines()
+    initialisms = [line.strip() for line in lines]
 
 def add_modifier(left_id, right_id):
     """
@@ -113,40 +99,33 @@ pattern_base2 = [
     }
 ]
 
-# order does matter
+pattern_base3 = [
+    # for example matches
+    {
+        'RIGHT_ID': 'anchor',
+        'RIGHT_ATTRS': {'LEMMA': {'REGEX': bacter_regexp}}
+    }
+]
+
+pattern_base4 = [
+    # for example matches "ADHD"
+    {
+        'RIGHT_ID': 'anchor',
+        'RIGHT_ATTRS': {'ORTH': {'IN': initialisms}}
+    }
+]
+
+# order in the list does matter
 dependencies_patterns = [
     pattern_base1+[add_modifier('anchor', 'modifier'), add_modifier('modifier', 'modmodifier')],
     pattern_base2+[add_modifier('anchor', 'modifier'), add_modifier('modifier', 'modmodifier')],
     pattern_base1+[add_modifier('anchor', 'modifier')],
     pattern_base2+[add_modifier('anchor', 'modifier')],
     pattern_base1,
-    pattern_base2
+    pattern_base2,
+    pattern_base3,
+    pattern_base4
 ]
-
-def match_initialisms(doc):
-    """
-    Using a separate function on account tokenizing issues with -.
-    """
-
-    initialisms_regexp = r'\b[A-Z0-9]+-?[A-Z0-9]+\b'
-    num_regexp = r'\b[0-9]+-?[0-9]+\b'
-
-    initialisms_ents = tuple()
-    for match in re.finditer(initialisms_regexp, doc.text):
-        start, end = match.span()
-        if re.compile(num_regexp).search(doc.text[start : end]) or doc.text[start : end] in ex_initialisms:
-            continue # e.g. 4343 or 323-1233 or API was found
-
-        entity = doc.char_span(start, end, label='DIS', alignment_mode='expand')
-
-        try:
-            doc.ents += (entity,)
-        except Exception as e:
-            pass # actually, it's probably an organization
-        else:
-            initialisms_ents += (entity,)
-
-    return initialisms_ents
 
 def add_disease_ent_dep(matcher, doc, i, matches):
     """
