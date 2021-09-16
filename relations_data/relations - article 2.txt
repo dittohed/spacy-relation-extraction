@@ -1,3 +1,0 @@
-homecooke | meal | associate | bmi
-home | cook | meal | associate | bmi | diabetes
-home | cook | meal | associate | bmi
