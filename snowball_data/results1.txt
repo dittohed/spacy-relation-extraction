@@ -1,0 +1,82 @@
+# results for n_iterations=1, tau_cl=3, tau_supp=3, tau_sim=3
+
+--- SEED TUPLES ---
+DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
+DIS: depression, FOOD: diet, N_OCCUR: 19
+DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
+
+--- TUPLES ---
+DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
+DIS: depression, FOOD: diet, N_OCCUR: 19
+DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
+DIS: IBD, FOOD: food, N_OCCUR: 0
+DIS: IBD, FOOD: elimination diets, N_OCCUR: 0
+DIS: IBD, FOOD: diet, N_OCCUR: 0
+DIS: depression, FOOD: adolescent diet, N_OCCUR: 0
+DIS: depression, FOOD: diet, N_OCCUR: 0
+DIS: chronic diseases, FOOD: diet, N_OCCUR: 0
+DIS: cardiovascular diseases, FOOD: cholesterol, N_OCCUR: 0
+DIS: cardiovascular diseases, FOOD: diet, N_OCCUR: 0
+DIS: specific known polymorphisms, FOOD: diet, N_OCCUR: 0
+DIS: arteriosclerosis, FOOD: diet, N_OCCUR: 0
+DIS: atherosclerosis, FOOD: diet, N_OCCUR: 0
+DIS: hepatic steatosis, FOOD: methionine, N_OCCUR: 0
+DIS: CVD, FOOD: diet, N_OCCUR: 0
+DIS: coronaropathy, FOOD: diet, N_OCCUR: 0
+DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 0
+DIS: coronary artery disease, FOOD: diet, N_OCCUR: 0
+DIS: coronary heart disease, FOOD: diet, N_OCCUR: 0
+DIS: criticism, FOOD: diet, N_OCCUR: 0
+DIS: diabetes, FOOD: diet, N_OCCUR: 0
+DIS: fruit Emblica officinalis, FOOD: diet, N_OCCUR: 0
+DIS: cardiovascular disease, FOOD: mediterranean diet, N_OCCUR: 0
+DIS: diseases, FOOD: diet, N_OCCUR: 0
+DIS: hepatic and cardiovascular disease, FOOD: diet, N_OCCUR: 0
+DIS: non-alcoholic fatty liver disease, FOOD: diet, N_OCCUR: 0
+DIS: many diseases, FOOD: diet, N_OCCUR: 0
+DIS: hypoglycemia, FOOD: diet, N_OCCUR: 0
+DIS: CVD, FOOD: food, N_OCCUR: 0
+DIS: CVD, FOOD: proinflammatory diet, N_OCCUR: 0
+DIS: CVD, FOOD: vegetarian diets, N_OCCUR: 0
+DIS: metabolic syndrome, FOOD: healthy Nordic diet, N_OCCUR: 0
+DIS: endogenous, FOOD: diet, N_OCCUR: 0
+DIS: meta‐analysis, FOOD: diet, N_OCCUR: 0
+DIS: CVD, FOOD: healthy diet, N_OCCUR: 0
+DIS: disease, FOOD: diet, N_OCCUR: 0
+DIS: major chronic diseases, FOOD: diet, N_OCCUR: 0
+DIS: several different major chronic diseases, FOOD: Nordic diet, N_OCCUR: 0
+DIS: major chronic diseases, FOOD: Nordic diet, N_OCCUR: 0
+DIS: non-communicable diseases, FOOD: fat, N_OCCUR: 0
+DIS: PD, FOOD: diet, N_OCCUR: 0
+DIS: LPS-containing bacteria, FOOD: diet, N_OCCUR: 0
+DIS: PD, FOOD: alcohol, N_OCCUR: 0
+DIS: PD, FOOD: dairy products, N_OCCUR: 0
+DIS: prodromal Parkinson's disease, FOOD: diet, N_OCCUR: 0
+DIS: Parkinson disease, FOOD: calcium, N_OCCUR: 0
+DIS: Parkinson's disease, FOOD: neurorestorative diets, N_OCCUR: 0
+DIS: COPD, FOOD: foods, N_OCCUR: 0
+DIS: COPD, FOOD: topic diet, N_OCCUR: 0
+DIS: other chronic diseases, FOOD: healthy diet, N_OCCUR: 0
+DIS: COPD, FOOD: diet, N_OCCUR: 0
+DIS: vigorous, FOOD: diet, N_OCCUR: 0
+DIS: foodborne disease, FOOD: food, N_OCCUR: 0
+DIS: economic crisis, FOOD: diet, N_OCCUR: 0
+
+--- PATTERNS ---
+of associations between || FOOD || and || DIS ||  in adolescence are
+the associations between || FOOD || and || DIS ||  in adolescence.
+associated with both || FOOD || and || DIS ||  , as well
+on associations between || FOOD || and || DIS ||  in adolescence has
+observed associations between || FOOD || and || DIS ||  .
+investigate associations between || FOOD || and || DIS ||  in adolescents over
+an association between || FOOD || and || DIS ||  in children and
+evidence of Mediterranean || FOOD || and || DIS ||  : are individual
+evidence of Mediterranean || FOOD || and || DIS ||  : are individual
+
+association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
+of the Mediterranean || FOOD || also extended to the clinical setting of the secondary prevention of || DIS ||  .
+of the Mediterranean || FOOD || in prevention of || DIS ||  Curr.
+
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra‐virgin
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  N Engl J

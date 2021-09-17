@@ -1,0 +1,2 @@
+python snowball.py ./articles/relations --tau_cl 3.5 --tau_s
+upp 3 --tau_sim 3.25 --n_iterations 3

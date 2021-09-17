@@ -6,6 +6,9 @@ from spacy import displacy
 
 from extractor import Extractor
 
+import time ###
+TIMES = [] ###
+
 class Pattern:
     """
     Represents a pattern (or cluster of patterns), where each pattern consists of:
@@ -47,7 +50,7 @@ class Pattern:
         else:
             similarity = 0
 
-        print(f"Calculating similarity for: \n{self} \n and \n {to_compare}\n = {similarity}")
+        # print(f"Calculating similarity for: \n{self} \n and \n {to_compare}\n = {similarity}")
         return similarity
 
     def merge(self, to_merge):
@@ -73,7 +76,7 @@ class Snowball:
         self.nlp = spacy.load("en_core_web_lg", disable=['ner'])
         # self.nlp.max_length = 2000000
 
-        self.seed_tuples = seed_tuples # most common <DIS, FOOD> tuples extracted using relations_extractor
+        self.seed_tuples = seed_tuples[:] # most common <DIS, FOOD> tuples extracted using relations_extractor
         self.tuples = seed_tuples # will contain all extracted tuples
 
         self.datapath = datapath
@@ -116,6 +119,7 @@ class Snowball:
     def run(self):
         for i in range(self.n_iterations):
             print(f'Iteration {i+1}/{self.n_iterations}')
+            time_start = time.time() ###
 
             # find seed tuples occurences (order matters)
             for seed_tuple in self.tuples:
@@ -131,7 +135,7 @@ class Snowball:
                                 match_food = ent
 
                     if match_dis and match_food: # if sentence contains a seed tuple
-                        print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
+                        # print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
                         if not seed_tuple['WAS_COUNTED']:
                             seed_tuple['N_OCCUR'] += 1
 
@@ -159,24 +163,8 @@ class Snowball:
                         pattern = Pattern(left_vec, entities_in_order[0].label_,
                                           mid_vec, entities_in_order[1].label_,
                                           right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
-                        print(f'Created a new pattern: \n{pattern}')
+                        # print(f'Created a new pattern: \n{pattern}')
                         self.patterns.append(pattern)
-
-            # sents = [
-            #     ('consumption of', "doesn't cause", '.'),
-            #     ('consuming', 'is the cause of', '.'),
-            #     ('yellow bike', 'blue sea', 'crazy ramsay'),
-            #     ('eating', 'causes', 'and other diseases'),
-            # ]
-            #
-            # self.patterns = [
-            #     Pattern(self.ctx2vec(self.nlp(sent[0])[:]), 'FOOD', self.ctx2vec(self.nlp(sent[1])[:]),
-            #             'DIS', self.ctx2vec(self.nlp(sent[2])[:]), [sent]) \
-            #                                 for sent in sents
-            # ]
-            #
-            # self.patterns[3].l_entity = 'DIS'
-            # self.patterns[3].r_entity = 'FOOD'
 
             # disable counting for current seed tuples
             for tuple in self.seed_tuples:
@@ -222,20 +210,26 @@ class Snowball:
                 pattern_candidate = Pattern(left_vec, entities_in_order[0].label_,
                                   mid_vec, entities_in_order[1].label_,
                                   right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
-                print(f'Created a new tuple candidate: {entities_in_order}')
+                # print(f'Created a new tuple candidate: {entities_in_order}')
 
-                for i, pattern in enumerate(self.patterns):
-                    print(f"Comparing \n{pattern} to current tuple.")
+                for pattern in self.patterns:
+                    # print(f"Comparing \n{pattern} to current tuple.")
 
                     if pattern.similarity(pattern_candidate) > self.tau_sim:
                         tuple_candidate = {entities_in_order[0].label_: entities_in_order[0].text,
                                      entities_in_order[1].label_: entities_in_order[1].text,
                                      'N_OCCUR': 0, 'WAS_COUNTED': False}
 
-                        if tuple_candidate not in self.tuples:
+                        pair_candidate = (tuple_candidate['DIS'], tuple_candidate['FOOD'])
+                        pairs = [(tup['DIS'], tup['FOOD']) for tup in self.tuples]
+                        if pair_candidate not in pairs:
                             self.tuples.append(tuple_candidate)
 
                         break
+
+            time_stop = time.time() ###
+            print(f'Time: {time_stop - time_start}') ###
+            TIMES.append(time_stop - time_start) ###
 
     def ctx2vec(self, ctx):
         """
@@ -316,39 +310,45 @@ if __name__ == '__main__':
 
     parser.add_argument('datapath',
                         help='Specifies a path to directory containing .txt files.')
-    parser.add_argument('--niterations',
+    parser.add_argument('--n_iterations',
                         help='Specifies number of iterations for snowball.',
                         default=3, type=int)
-    parser.add_argument('--wsize',
+    parser.add_argument('--w_size',
                         help='Specifies a windows size for left and right contexts.',
                         default=3, type=int)
-    parser.add_argument('--taucl',
+    parser.add_argument('--tau_cl',
                         help='Specifies a tau_cl parameter for thresholding patterns clustering (0 to 4).',
-                        default=3, type=int)
-    parser.add_argument('--tausupp',
+                        default=3, type=float)
+    parser.add_argument('--tau_supp',
                         help='Specifies a tau_supp parameter for minimal supporting tuples for a new pattern.',
                         default=3, type=int)
     parser.add_argument('--tau_sim',
                         help='Specifies a tau_sim parameter for minimal similarity with pattern to extract a new tuple (0 to 4).',
-                        default=3, type=int)
-    parser.add_argument('--exportsents',
-                        help='Use --evaluate 1 to evaluate files with trailing _test.txt in name.',
+                        default=3, type=float)
+    parser.add_argument('--export_sents',
+                        help='Use --export_sents 1 to generate html file with processed sentences.',
                         default=0, type=int)
 
     args = parser.parse_args()
 
+    print(args)
+
     snb = Snowball(
         args.datapath,
         [
-        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
-        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
-        {'DIS': 'cancer', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False}],
-        1, # args.niterations,
-        args.wsize,
-        args.taucl,
-        args.tausupp,
-        args.tausim,
-        args.exportsents)
+        {'DIS': 'depression', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
+        {'DIS': 'cardiovascular disease', 'FOOD': 'diet', 'N_OCCUR': 0, 'WAS_COUNTED': False},
+        {'DIS': 'cardiovascular disease', 'FOOD': 'food', 'N_OCCUR': 0, 'WAS_COUNTED': False}],
+        args.n_iterations,
+        args.w_size,
+        args.tau_cl,
+        args.tau_supp,
+        args.tau_sim,
+        args.export_sents)
 
     snb.run()
     snb.get_results()
+
+    print(f'TIMES: ', TIMES) ###
+    TIMES = np.array(TIMES) ###
+    print(f'Mean: {TIMES.mean()}') ###
