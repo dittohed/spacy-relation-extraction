@@ -161,7 +161,7 @@ class Extractor:
                     print(self.relations_data)
 
                     self.save_relations_data(self.relations_data_path)
-        
+
         if self.domain == 'relations':
             rel.format_relations_data(self.relations_data_path)
 
@@ -295,4 +295,3 @@ if __name__ == '__main__':
 
     e = Extractor(args.domain, args.datapath, args.evaluate, args.nohtml)
     e.run()
-    # you can use e.doc after calling e.run()

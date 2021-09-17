@@ -6,9 +6,6 @@ from spacy import displacy
 
 from extractor import Extractor
 
-import time ###
-TIMES = [] ###
-
 class Pattern:
     """
     Represents a pattern (or cluster of patterns), where each pattern consists of:
@@ -235,10 +232,6 @@ class Snowball:
 
                         break
 
-            time_stop = time.time() ###
-            print(f'Time: {time_stop - time_start}') ###
-            TIMES.append(time_stop - time_start) ###
-
     def ctx2vec(self, ctx):
         """
         Returns a vector representation for a given context (embeddings average).
@@ -339,8 +332,6 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print(args)
-
     snb = Snowball(
         args.datapath,
         [
@@ -356,7 +347,3 @@ if __name__ == '__main__':
 
     snb.run()
     snb.get_results()
-
-    print(f'TIMES: ', TIMES) ###
-    TIMES = np.array(TIMES) ###
-    print(f'Mean: {TIMES.mean()}') ###
