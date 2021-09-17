@@ -1,17 +1,17 @@
 # results for n_iterations=2, tau_cl=3.5, tau_supp=4, tau_sim=3.5
-# TIMES:  [40.46260738372803, 57.92935919761658]
+# TIMES:  [46.21781253814697, 36.1843044757843]
 
 --- SEED TUPLES ---
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
 
 --- TUPLES ---
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
-DIS: depression, FOOD: adolescent diet, N_OCCUR: 3
-DIS: several different major chronic diseases, FOOD: Nordic diet, N_OCCUR: 1
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
+depression || adolescent diet || 3
+several different major chronic diseases || Nordic diet || 1
 
 --- PATTERNS ---
 of associations between || FOOD || and || DIS ||  in adolescence are
@@ -19,11 +19,5 @@ the associations between || FOOD || and || DIS ||  in adolescence.
 on associations between || FOOD || and || DIS ||  in adolescence has
 investigate associations between || FOOD || and || DIS ||  in adolescents over
 an association between || FOOD || and || DIS ||  in children and
-of associations between || FOOD || and || DIS ||  in adolescence are
-the associations between || FOOD || and || DIS ||  in adolescence.
-on associations between || FOOD || and || DIS ||  in adolescence has
-investigate associations between || FOOD || and || DIS ||  in adolescents over
-an association between || FOOD || and || DIS ||  in children and
-investigate associations between || FOOD || and || DIS ||  across different time
 investigate associations between || FOOD || and || DIS ||  across different time
 associations between the || FOOD || and || DIS ||  in a prospective

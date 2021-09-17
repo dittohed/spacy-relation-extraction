@@ -1,0 +1,69 @@
+# results for n_iterations=3, tau_cl=3.25, tau_supp=3, tau_sim=3.25
+# [50.744166135787964, 64.17118215560913, 83.7354691028595]
+
+--- SEED TUPLES ---
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
+
+--- TUPLES ---
+CVD || diet || 112
+cardiovascular disease || diet || 35
+depression || diet || 19
+MI || diet || 9
+cardiovascular disease || food || 7
+depression || adolescent diet || 6
+CVD || proinflammatory diet || 4
+CVD || vegetarian diets || 2
+several different major chronic diseases || Nordic diet || 2
+COPD || topic diet || 1
+IBD || food || 0
+chronic diseases || diet || 0
+cardiovascular diseases || diet || 0
+cardiovascular diseases || cholesterol || 0
+hepatic steatosis || methionine || 0
+cardiovascular disease || mediterranean diet || 0
+diseases || diet || 0
+hepatic and cardiovascular disease || diet || 0
+hypoglycemia || diet || 0
+CVD || food || 0
+AD || diet || 0
+AD || Western diets || 0
+CVD || healthy diet || 0
+major chronic diseases || diet || 0
+coronary heart disease || salt || 0
+PD || diet || 0
+PD || alcohol || 0
+Parkinson disease || calcium || 0
+Parkinson's disease || neurorestorative diets || 0
+COPD || foods || 0
+COPD || diet || 0
+foodborne disease || food || 0
+breast cancer || alcohol || 0
+
+--- PATTERNS ---
+of associations between || FOOD || and || DIS ||  in adolescence are
+the associations between || FOOD || and || DIS ||  in adolescence.
+associated with both || FOOD || and || DIS ||  , as well
+on associations between || FOOD || and || DIS ||  in adolescence has
+observed associations between || FOOD || and || DIS ||  .
+investigate associations between || FOOD || and || DIS ||  in adolescents over
+an association between || FOOD || and || DIS ||  in children and
+investigate associations between || FOOD || and || DIS ||  across different time
+prospective associations between || FOOD || and || DIS ||  to date.
+the relation between || FOOD || and || DIS ||  risk and has
+associations between the || FOOD || and || DIS ||  in a prospective
+
+associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( || DIS ||  ) mortality,
+independent effects of || FOOD || quality and genetic risk on all - cause mortality , || DIS ||  mortality, MI
+association of three || FOOD || quality indices ( RFS , HDI and ) and a genetic risk score with incidence of || DIS ||  and mortality.
+associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( ) mortality , myocardial infarction ( || DIS ||  ) and stroke
+independent effects of || FOOD || quality and genetic risk on all - cause mortality , mortality , || DIS ||  and stroke risk
+
+applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
+the applicability of || FOOD || quality indices for assessing || DIS ||  risk.
+applicability of these || FOOD || quality methodologies for examining || DIS ||  risk independent of
+
+influences, particularly || FOOD || , in the development of NAFLD as well as in the increase in cardiovascular risk , possibly suggesting common etiopathogenetic pathways linking both hepatic and || DIS ||  .
+predictive role of || FOOD || quality on risk of all - cause mortality remained after adjusting for major non - modifiable determinants of all - cause mortality , including age , sex and family history of || DIS ||  .
+an interaction between || FOOD || quality and genetic risk score for || DIS ||  .

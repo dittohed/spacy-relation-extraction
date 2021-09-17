@@ -20,10 +20,10 @@ class Pattern:
     - list of text representations of contributing patterns.
     """
 
-    def __init__(self, left_vec, l_entity, middle_vec, r_entity, right_vec, text_rep):
+    def __init__(self, left_vec, l_entity, mid_vec, r_entity, right_vec, text_rep):
         self.left_vec = left_vec
         self.l_entity = l_entity
-        self.middle_vec = middle_vec
+        self.mid_vec = mid_vec
         self.r_entity = r_entity
         self.right_vec = right_vec
         self.contribs = text_rep
@@ -42,7 +42,7 @@ class Pattern:
     def similarity(self, to_compare):
         if self.is_entity_order_same(to_compare):
             l_dot = np.dot(self.left_vec, to_compare.left_vec)
-            m_dot = np.dot(self.middle_vec, to_compare.middle_vec)
+            m_dot = np.dot(self.mid_vec, to_compare.mid_vec)
             r_dot = np.dot(self.right_vec, to_compare.right_vec)
 
             similarity = l_dot + 2 * m_dot + r_dot
@@ -62,7 +62,7 @@ class Pattern:
         n = len(self.contribs) # no. of patterns in the cluster so far
 
         self.left_vec = (n*self.left_vec + to_merge.left_vec) / (n+1)
-        self.middle_vec = (n*self.middle_vec + to_merge.middle_vec) / (n+1)
+        self.mid_vec = (n*self.mid_vec + to_merge.mid_vec) / (n+1)
         self.right_vec = (n*self.right_vec + to_merge.right_vec) / (n+1)
         self.contribs += to_merge.contribs
 
@@ -123,6 +123,9 @@ class Snowball:
 
             # find seed tuples occurences (order matters)
             for seed_tuple in self.tuples:
+                if seed_tuple['WAS_COUNTED']:
+                    continue
+
                 for sent in self.doc.sents:
                     match_dis = None
                     match_food = None
@@ -136,8 +139,7 @@ class Snowball:
 
                     if match_dis and match_food: # if sentence contains a seed tuple
                         # print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
-                        if not seed_tuple['WAS_COUNTED']:
-                            seed_tuple['N_OCCUR'] += 1
+                        seed_tuple['N_OCCUR'] += 1
 
                         start = min(match_food.start, match_dis.start)
                         end = max(match_food.end, match_dis.end)
@@ -160,11 +162,17 @@ class Snowball:
                         # get order of entities
                         entities_in_order = self.get_ents_order(match_dis, match_food)
 
-                        pattern = Pattern(left_vec, entities_in_order[0].label_,
+                        pattern_candidate = Pattern(left_vec, entities_in_order[0].label_,
                                           mid_vec, entities_in_order[1].label_,
                                           right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
                         # print(f'Created a new pattern: \n{pattern}')
-                        self.patterns.append(pattern)
+
+                        # check if already exists
+                        patterns_contribs = [pattern.contribs for pattern in self.patterns]
+                        patterns_contribs = sum(patterns_contribs, []) # create list of all contribs
+
+                        if not pattern_candidate.contribs[0] in patterns_contribs:
+                            self.patterns.append(pattern_candidate)
 
             # disable counting for current seed tuples
             for tuple in self.seed_tuples:
@@ -289,17 +297,17 @@ class Snowball:
         # sorting by occurences or contribs
         self.seed_tuples.sort(key=lambda d: d['N_OCCUR'], reverse=True)
         self.tuples.sort(key=lambda d: d['N_OCCUR'], reverse=True)
-        self.patterns.sort(key=lambda p: p.contribs, reverse=True)
+        self.patterns.sort(key=lambda p: len(p.contribs), reverse=True)
 
         with open(filepath, 'w') as file:
             print(f'Saving results to {filepath}')
 
             file.write('--- SEED TUPLES ---\n')
-            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}, N_OCCUR: {tuple["N_OCCUR"]}\n') \
+            [file.write(f'{tuple["DIS"]} || {tuple["FOOD"]} || {tuple["N_OCCUR"]}\n') \
                                                                 for tuple in self.seed_tuples]
 
             file.write('\n--- TUPLES ---\n')
-            [file.write(f'DIS: {tuple["DIS"]}, FOOD: {tuple["FOOD"]}, N_OCCUR: {tuple["N_OCCUR"]}\n') \
+            [file.write(f'{tuple["DIS"]} || {tuple["FOOD"]} || {tuple["N_OCCUR"]}\n') \
                                                                 for tuple in self.tuples]
 
             file.write('\n--- PATTERNS ---\n')

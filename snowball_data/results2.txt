@@ -1,285 +1,338 @@
 # results for n_iterations=3, tau_cl=3, tau_supp=3, tau_sim=3
-# [40.68603801727295, 469.92243814468384, 1732.9189417362213]
+# [45.08245062828064, 492.539377450943, 2028.6229665279388]
 
 --- SEED TUPLES ---
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
 
 --- TUPLES ---
-DIS: CVD, FOOD: diet, N_OCCUR: 112
-DIS: COPD, FOOD: diet, N_OCCUR: 72
-DIS: disease, FOOD: diet, N_OCCUR: 52
-DIS: PD, FOOD: diet, N_OCCUR: 48
-DIS: IBD, FOOD: diet, N_OCCUR: 42
-DIS: diabetes, FOOD: diet, N_OCCUR: 36
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: MDS, FOOD: DASH, N_OCCUR: 34
-DIS: MDS, FOOD: diet, N_OCCUR: 31
-DIS: foodborne disease, FOOD: food, N_OCCUR: 26
-DIS: CVD, FOOD: food, N_OCCUR: 20
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: chronic diseases, FOOD: diet, N_OCCUR: 18
-DIS: cardiovascular diseases, FOOD: diet, N_OCCUR: 16
-DIS: CVD, FOOD: DASH, N_OCCUR: 14
-DIS: cancer, FOOD: diet, N_OCCUR: 12
-DIS: atherosclerosis, FOOD: diet, N_OCCUR: 10
-DIS: coronary artery disease, FOOD: diet, N_OCCUR: 10
-DIS: diseases, FOOD: diet, N_OCCUR: 10
-DIS: inflammatory bowel disease, FOOD: diet, N_OCCUR: 9
-DIS: MI, FOOD: diet, N_OCCUR: 9
-DIS: COPD, FOOD: fruits, N_OCCUR: 9
-DIS: major chronic diseases, FOOD: diet, N_OCCUR: 8
-DIS: AD, FOOD: diet, N_OCCUR: 8
-DIS: disease, FOOD: food, N_OCCUR: 8
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
-DIS: MI, FOOD: Nordic diet, N_OCCUR: 7
-DIS: IBD, FOOD: food, N_OCCUR: 6
-DIS: IBD, FOOD: elimination diets, N_OCCUR: 6
-DIS: depression, FOOD: adolescent diet, N_OCCUR: 6
-DIS: coronary heart disease, FOOD: diet, N_OCCUR: 6
-DIS: major chronic diseases, FOOD: Nordic diet, N_OCCUR: 6
-DIS: PD, FOOD: alcohol, N_OCCUR: 6
-DIS: COPD, FOOD: foods, N_OCCUR: 6
-DIS: COPD, FOOD: vegetable, N_OCCUR: 6
-DIS: poisoning, FOOD: food, N_OCCUR: 6
-DIS: COPD, FOOD: fruit, N_OCCUR: 6
-DIS: MDS, FOOD: energy, N_OCCUR: 5
-DIS: MDS, FOOD: alcohol, N_OCCUR: 5
-DIS: metabolic syndrome, FOOD: diet, N_OCCUR: 5
-DIS: CVD, FOOD: DASH diet, N_OCCUR: 5
-DIS: PD, FOOD: Western diet, N_OCCUR: 5
-DIS: CVD, FOOD: proinflammatory diet, N_OCCUR: 4
-DIS: CVD, FOOD: healthy diet, N_OCCUR: 4
-DIS: LPS-containing bacteria, FOOD: diet, N_OCCUR: 4
-DIS: other chronic diseases, FOOD: healthy diet, N_OCCUR: 4
-DIS: economic crisis, FOOD: diet, N_OCCUR: 4
-DIS: SCFA-producing bacteria, FOOD: diet, N_OCCUR: 4
-DIS: COPD, FOOD: food, N_OCCUR: 4
-DIS: depression, FOOD: fruit, N_OCCUR: 4
-DIS: IBD, FOOD: alcohol, N_OCCUR: 3
-DIS: Crohn’s disease, FOOD: food, N_OCCUR: 3
-DIS: diabetes, FOOD: fat diet, N_OCCUR: 3
-DIS: metabolism, FOOD: diet, N_OCCUR: 3
-DIS: HF, FOOD: diet, N_OCCUR: 3
-DIS: metabolic syndrome, FOOD: fat diet, N_OCCUR: 3
-DIS: diabetes, FOOD: food, N_OCCUR: 3
-DIS: PD, FOOD: foods, N_OCCUR: 3
-DIS: COPD, FOOD: diets, N_OCCUR: 3
-DIS: respiratory diseases, FOOD: diet, N_OCCUR: 3
-DIS: cardiovascular diseases, FOOD: cholesterol, N_OCCUR: 2
-DIS: specific known polymorphisms, FOOD: diet, N_OCCUR: 2
-DIS: arteriosclerosis, FOOD: diet, N_OCCUR: 2
-DIS: hepatic steatosis, FOOD: methionine, N_OCCUR: 2
-DIS: coronaropathy, FOOD: diet, N_OCCUR: 2
-DIS: criticism, FOOD: diet, N_OCCUR: 2
-DIS: fruit Emblica officinalis, FOOD: diet, N_OCCUR: 2
-DIS: cardiovascular disease, FOOD: mediterranean diet, N_OCCUR: 2
-DIS: hepatic and cardiovascular disease, FOOD: diet, N_OCCUR: 2
-DIS: non-alcoholic fatty liver disease, FOOD: diet, N_OCCUR: 2
-DIS: many diseases, FOOD: diet, N_OCCUR: 2
-DIS: hypoglycemia, FOOD: diet, N_OCCUR: 2
-DIS: CVD, FOOD: vegetarian diets, N_OCCUR: 2
-DIS: metabolic syndrome, FOOD: healthy Nordic diet, N_OCCUR: 2
-DIS: endogenous, FOOD: diet, N_OCCUR: 2
-DIS: meta‐analysis, FOOD: diet, N_OCCUR: 2
-DIS: several different major chronic diseases, FOOD: Nordic diet, N_OCCUR: 2
-DIS: non-communicable diseases, FOOD: fat, N_OCCUR: 2
-DIS: PD, FOOD: dairy products, N_OCCUR: 2
-DIS: prodromal Parkinson's disease, FOOD: diet, N_OCCUR: 2
-DIS: Parkinson disease, FOOD: calcium, N_OCCUR: 2
-DIS: Parkinson's disease, FOOD: neurorestorative diets, N_OCCUR: 2
-DIS: COPD, FOOD: topic diet, N_OCCUR: 2
-DIS: vigorous, FOOD: diet, N_OCCUR: 2
-DIS: IBD, FOOD: fruits, N_OCCUR: 2
-DIS: IBD, FOOD: free diet, N_OCCUR: 2
-DIS: UC, FOOD: fruits, N_OCCUR: 2
-DIS: IBD, FOOD: fiber, N_OCCUR: 2
-DIS: depression, FOOD: healthy diet, N_OCCUR: 2
-DIS: MD, FOOD: fat diet, N_OCCUR: 2
-DIS: Atherosclerosis, FOOD: diet, N_OCCUR: 2
-DIS: CVD, FOOD: refined grains, N_OCCUR: 2
-DIS: CHD, FOOD: fat, N_OCCUR: 2
-DIS: CHD, FOOD: diets, N_OCCUR: 2
-DIS: cancer, FOOD: vegetables, N_OCCUR: 2
-DIS: CVD, FOOD: based foods, N_OCCUR: 2
-DIS: AD, FOOD: Western diet, N_OCCUR: 2
-DIS: AD, FOOD: Western diets, N_OCCUR: 2
-DIS: chronic diseases, FOOD: Nordic diet, N_OCCUR: 2
-DIS: colorectal cancer, FOOD: Nordic diet, N_OCCUR: 2
-DIS: Cancer, FOOD: diet, N_OCCUR: 2
-DIS: heart disease, FOOD: diet, N_OCCUR: 2
-DIS: coronary heart disease, FOOD: salt, N_OCCUR: 2
-DIS: PD, FOOD: milk, N_OCCUR: 2
-DIS: COPD, FOOD: refined foods, N_OCCUR: 2
-DIS: synthesis, FOOD: diet, N_OCCUR: 2
-DIS: COPD, FOOD: Western diet, N_OCCUR: 2
-DIS: similar foodborne disease, FOOD: common food, N_OCCUR: 2
-DIS: COPD, FOOD: processed meat, N_OCCUR: 2
-DIS: IBD, FOOD: high fiber diet, N_OCCUR: 1
-DIS: disease, FOOD: alcohol, N_OCCUR: 1
-DIS: UC, FOOD: predominant diet, N_OCCUR: 1
-DIS: Asia, FOOD: vegetables, N_OCCUR: 1
-DIS: UC, FOOD: trans-unsaturated fats, N_OCCUR: 1
-DIS: IBD, FOOD: fast foods, N_OCCUR: 1
-DIS: UC, FOOD: standard diet, N_OCCUR: 1
-DIS: UC, FOOD: sulfate, N_OCCUR: 1
-DIS: inflammatory bowel disease, FOOD: free diet, N_OCCUR: 1
-DIS: inflammatory bowel disease, FOOD: high fiber diet, N_OCCUR: 1
-DIS: depression, FOOD: energy, N_OCCUR: 1
-DIS: Croatia, FOOD: traditional diet, N_OCCUR: 1
-DIS: other chronic diseases, FOOD: diet, N_OCCUR: 1
-DIS: MLXIPL locus, FOOD: diet, N_OCCUR: 1
-DIS: thrombosis, FOOD: diet, N_OCCUR: 1
-DIS: several diseases, FOOD: diet, N_OCCUR: 1
-DIS: diseases, FOOD: personalized diet, N_OCCUR: 1
-DIS: metabolic, inflammatory, allergic, and autoimmune disease, FOOD: rich diets, N_OCCUR: 1
-DIS: atherosclerosis, FOOD: Mediterranean diet, N_OCCUR: 1
-DIS: consequent hyperinsulinemia, FOOD: monounsaturated acids, N_OCCUR: 1
-DIS: carbohydrate metabolism, FOOD: diets, N_OCCUR: 1
-DIS: synthesis, FOOD: rich olive oil, N_OCCUR: 1
-DIS: peripheral vascular disease, FOOD: diet, N_OCCUR: 1
-DIS: CAD, FOOD: flavonoids, N_OCCUR: 1
-DIS: Australia, FOOD: legumes, N_OCCUR: 1
-DIS: HF, FOOD: specific nutrients, N_OCCUR: 1
-DIS: HF, FOOD: fat control diet, N_OCCUR: 1
-DIS: MD, FOOD: vegetables, N_OCCUR: 1
-DIS: cardiovascular diseases, FOOD: caloric diet, N_OCCUR: 1
-DIS: cardiovascular disease, FOOD: Mediterranean diets, N_OCCUR: 1
-DIS: metabolic syndrome, FOOD: Mediterranean diet, N_OCCUR: 1
-DIS: diseases, FOOD: unhealthy diets, N_OCCUR: 1
-DIS: related metabolic diseases, FOOD: diet, N_OCCUR: 1
-DIS: steatosis, FOOD: flavanones, N_OCCUR: 1
-DIS: type 2 diabetes, FOOD: flavonols, N_OCCUR: 1
-DIS: liver disease, FOOD: alcohol, N_OCCUR: 1
-DIS: dyslipidemia, FOOD: sugar, N_OCCUR: 1
-DIS: metabolic syndrome, FOOD: oily, N_OCCUR: 1
-DIS: coronary heart disease, FOOD: olive oil, N_OCCUR: 1
-DIS: steatosis, FOOD: diet rich, N_OCCUR: 1
-DIS: hepatic and cardiovascular diseases, FOOD: rich, N_OCCUR: 1
-DIS: CHD, FOOD: diet, N_OCCUR: 1
-DIS: CVD, FOOD: large amounts, N_OCCUR: 1
-DIS: CVD, FOOD: balanced diet, N_OCCUR: 1
-DIS: cerebrovascular diseases, FOOD: diet, N_OCCUR: 1
-DIS: Lancet Diabetes, FOOD: diet, N_OCCUR: 1
-DIS: CAD, FOOD: sodium, N_OCCUR: 1
-DIS: CVD, FOOD: foods, N_OCCUR: 1
-DIS: AD, FOOD: diets, N_OCCUR: 1
-DIS: MDS, FOOD: style diet, N_OCCUR: 1
-DIS: CVD, FOOD: healthy diets, N_OCCUR: 1
-DIS: major chronic diseases, FOOD: regional diets, N_OCCUR: 1
-DIS: major chronic disease, FOOD: Nordic diet, N_OCCUR: 1
-DIS: CVD, FOOD: Nordic diet, N_OCCUR: 1
-DIS: Asia, FOOD: sodium, N_OCCUR: 1
-DIS: Indonesia, FOOD: diet, N_OCCUR: 1
-DIS: PD, FOOD: fiber diets, N_OCCUR: 1
-DIS: PD, FOOD: animal saturated, N_OCCUR: 1
-DIS: PD, FOOD: orange juice, N_OCCUR: 1
-DIS: Asia, FOOD: diet, N_OCCUR: 1
-DIS: PD dysbiosis, FOOD: Western diet, N_OCCUR: 1
-DIS: Parkinson's disease, FOOD: specific foods, N_OCCUR: 1
-DIS: Parkinson disease, FOOD: caffeine, N_OCCUR: 1
-DIS: disease, FOOD: oil diet, N_OCCUR: 1
-DIS: mellitus, FOOD: fat diet, N_OCCUR: 1
-DIS: COPD, FOOD: individual foods, N_OCCUR: 1
-DIS: COPD, FOOD: educational level, N_OCCUR: 1
-DIS: dysphagia, FOOD: diet, N_OCCUR: 1
-DIS: COPD, FOOD: green leafy vegetables, N_OCCUR: 1
-DIS: chronic respiratory disease, FOOD: wholegrain, N_OCCUR: 1
-DIS: COPD, FOOD: fiber, N_OCCUR: 1
-DIS: cancer, FOOD: pulmonary function, N_OCCUR: 1
-DIS: COPD, FOOD: cured meats, N_OCCUR: 1
-DIS: COPD, FOOD: cured meat, N_OCCUR: 1
-DIS: respiratory diseases, FOOD: based foods, N_OCCUR: 1
-DIS: COPD, FOOD: DASH diet, N_OCCUR: 1
-DIS: CV disorders, FOOD: Western diet, N_OCCUR: 1
-DIS: COPD, FOOD: containing beverages, N_OCCUR: 1
-DIS: cancer, FOOD: unhealthy diet, N_OCCUR: 1
-DIS: Mount Vesuvius, FOOD: food, N_OCCUR: 1
-DIS: parsimonious, FOOD: sweets, N_OCCUR: 1
-DIS: CVD, FOOD: total polyphenols, N_OCCUR: 1
-DIS: intestinal and extra-intestinal diseases, FOOD: diet, N_OCCUR: 1
-DIS: several inflammatory, autoimmune, and allergic diseases, FOOD: dietary fiber, N_OCCUR: 1
-DIS: CHD, FOOD: diet able, N_OCCUR: 1
-DIS: CHD, FOOD: olive oil, N_OCCUR: 1
-DIS: CHD, FOOD: moderate amount, N_OCCUR: 1
-DIS: breast cancer, FOOD: alcohol, N_OCCUR: 1
-DIS: breast cancer, FOOD: oxidative, N_OCCUR: 1
-DIS: colon cancer, FOOD: sweetened beverages, N_OCCUR: 1
-DIS: colorectal cancer, FOOD: diets, N_OCCUR: 1
-DIS: tourism, FOOD: food, N_OCCUR: 1
-DIS: economic crisis, FOOD: carbohydrate diets, N_OCCUR: 1
-DIS: precious, FOOD: food, N_OCCUR: 1
-DIS: Crohn’s disease, FOOD: diet, N_OCCUR: 0
-DIS: UC, FOOD: total fats, N_OCCUR: 0
-DIS: IBD, FOOD: specific diets, N_OCCUR: 0
-DIS: IBD, FOOD: nutrients secondary, N_OCCUR: 0
-DIS: inflammatory bowel disease, FOOD: fruit, N_OCCUR: 0
-DIS: depression, FOOD: vegetable, N_OCCUR: 0
-DIS: religious, FOOD: diet, N_OCCUR: 0
-DIS: coronary heart disease, FOOD: saturated fat, N_OCCUR: 0
-DIS: fatty liver disease, FOOD: vegetables, N_OCCUR: 0
-DIS: fatty liver disease, FOOD: soft drinks, N_OCCUR: 0
-DIS: APOA1 polymorphism, FOOD: PUFAs, N_OCCUR: 0
-DIS: coronary heart disease, FOOD: vegetable, N_OCCUR: 0
-DIS: CVD, FOOD: cholesterol, N_OCCUR: 0
-DIS: diabetes, FOOD: mediterranean diet, N_OCCUR: 0
-DIS: cancer, FOOD: mediterranean diet, N_OCCUR: 0
-DIS: MDS, FOOD: sodium, N_OCCUR: 0
-DIS: cautious, FOOD: diet, N_OCCUR: 0
-DIS: Alzheimer disease, FOOD: vegetables, N_OCCUR: 0
-DIS: MDS, FOOD: foods, N_OCCUR: 0
-DIS: cancer, FOOD: Nordic diet, N_OCCUR: 0
-DIS: cruciferous, FOOD: vegetable fats, N_OCCUR: 0
-DIS: overall cancer, FOOD: diet, N_OCCUR: 0
-DIS: CA, FOOD: food, N_OCCUR: 0
-DIS: PD, FOOD: dairy product, N_OCCUR: 0
-DIS: PD, FOOD: meat products, N_OCCUR: 0
-DIS: PD, FOOD: fiber, N_OCCUR: 0
-DIS: COPD, FOOD: niacin, N_OCCUR: 0
-DIS: COPD, FOOD: minerals, N_OCCUR: 0
-DIS: COPD, FOOD: alcohol, N_OCCUR: 0
-DIS: chronic inflammatory disease, FOOD: PUFAs, N_OCCUR: 0
-DIS: chronic nonspecific lung disease, FOOD: n-6, N_OCCUR: 0
-DIS: COPD, FOOD: fish, N_OCCUR: 0
-DIS: deleterious, FOOD: starchy foods, N_OCCUR: 0
-DIS: COPD, FOOD: red meat, N_OCCUR: 0
-DIS: depression, FOOD: polyphenol, N_OCCUR: 0
-DIS: CHD, FOOD: purple grape juice, N_OCCUR: 0
-DIS: Australia, FOOD: diets, N_OCCUR: 0
-DIS: developing diabetes, FOOD: diet, N_OCCUR: 0
+CVD || diet || 112
+COPD || diet || 72
+disease || diet || 52
+PD || diet || 48
+IBD || diet || 42
+diabetes || diet || 36
+cardiovascular disease || diet || 35
+MDS || DASH || 34
+MDS || diet || 31
+foodborne disease || food || 26
+CVD || food || 20
+depression || diet || 19
+chronic diseases || diet || 18
+cardiovascular diseases || diet || 16
+CVD || DASH || 14
+cancer || diet || 12
+atherosclerosis || diet || 10
+coronary artery disease || diet || 10
+diseases || diet || 10
+inflammatory bowel disease || diet || 9
+MI || diet || 9
+COPD || fruits || 9
+major chronic diseases || diet || 8
+AD || diet || 8
+disease || food || 8
+cardiovascular disease || food || 7
+Crohn’s disease || diet || 7
+MI || Nordic diet || 7
+IBD || food || 6
+IBD || elimination diets || 6
+depression || adolescent diet || 6
+coronary heart disease || diet || 6
+major chronic diseases || Nordic diet || 6
+PD || alcohol || 6
+COPD || foods || 6
+COPD || vegetable || 6
+poisoning || food || 6
+COPD || fruit || 6
+MDS || energy || 5
+MDS || alcohol || 5
+metabolic syndrome || diet || 5
+CVD || DASH diet || 5
+SD || diet || 5
+PD || Western diet || 5
+CVD || proinflammatory diet || 4
+CVD || healthy diet || 4
+LPS-containing bacteria || diet || 4
+other chronic diseases || healthy diet || 4
+economic crisis || diet || 4
+SCFA-producing bacteria || diet || 4
+COPD || food || 4
+COPD || alcohol || 4
+depression || fruit || 4
+IBD || alcohol || 3
+Crohn’s disease || food || 3
+diabetes || fat diet || 3
+metabolism || diet || 3
+HF || diet || 3
+metabolic syndrome || fat diet || 3
+diabetes || food || 3
+PD || foods || 3
+COPD || diets || 3
+respiratory diseases || diet || 3
+cardiovascular diseases || cholesterol || 2
+specific known polymorphisms || diet || 2
+arteriosclerosis || diet || 2
+hepatic steatosis || methionine || 2
+coronaropathy || diet || 2
+criticism || diet || 2
+fruit Emblica officinalis || diet || 2
+cardiovascular disease || mediterranean diet || 2
+hepatic and cardiovascular disease || diet || 2
+non-alcoholic fatty liver disease || diet || 2
+many diseases || diet || 2
+hypoglycemia || diet || 2
+CVD || vegetarian diets || 2
+metabolic syndrome || healthy Nordic diet || 2
+endogenous || diet || 2
+meta‐analysis || diet || 2
+several different major chronic diseases || Nordic diet || 2
+non-communicable diseases || fat || 2
+PD || dairy products || 2
+prodromal Parkinson's disease || diet || 2
+Parkinson disease || calcium || 2
+Parkinson's disease || neurorestorative diets || 2
+COPD || topic diet || 2
+vigorous || diet || 2
+IBD || fruits || 2
+IBD || free diet || 2
+UC || fruits || 2
+IBD || fiber || 2
+depression || healthy diet || 2
+religious || diet || 2
+MD || fat diet || 2
+CVD || refined grains || 2
+CHD || fat || 2
+CHD || diets || 2
+cancer || vegetables || 2
+CVD || based foods || 2
+AD || Western diet || 2
+AD || Western diets || 2
+chronic diseases || Nordic diet || 2
+cancer || Nordic diet || 2
+colorectal cancer || Nordic diet || 2
+heart disease || diet || 2
+coronary heart disease || salt || 2
+PD || milk || 2
+COPD || refined foods || 2
+COPD || Western diet || 2
+similar foodborne disease || common food || 2
+COPD || processed meat || 2
+IBD || high fiber diet || 1
+disease || alcohol || 1
+UC || total fats || 1
+UC || predominant diet || 1
+Asia || vegetables || 1
+UC || trans-unsaturated fats || 1
+IBD || fast foods || 1
+UC || standard diet || 1
+inflammatory bowel disease || free diet || 1
+inflammatory bowel disease || high fiber diet || 1
+Croatia || traditional diet || 1
+other chronic diseases || diet || 1
+MLXIPL locus || diet || 1
+thrombosis || diet || 1
+several diseases || diet || 1
+diseases || personalized diet || 1
+metabolic, inflammatory, allergic, and autoimmune disease || rich diets || 1
+atherosclerosis || Mediterranean diet || 1
+consequent hyperinsulinemia || monounsaturated acids || 1
+carbohydrate metabolism || diets || 1
+synthesis || rich olive oil || 1
+peripheral vascular disease || diet || 1
+CAD || flavonoids || 1
+HF || specific nutrients || 1
+HF || fat control diet || 1
+cardiovascular diseases || caloric diet || 1
+cardiovascular disease || Mediterranean diets || 1
+metabolic syndrome || Mediterranean diet || 1
+diseases || unhealthy diets || 1
+related metabolic diseases || diet || 1
+steatosis || flavanones || 1
+type 2 diabetes || flavonols || 1
+hypothalamus || diet || 1
+liver disease || alcohol || 1
+hepatic steatosis || fructose || 1
+dyslipidemia || sugar || 1
+metabolic syndrome || oily || 1
+coronary heart disease || olive oil || 1
+APOA1 polymorphism || PUFAs || 1
+steatosis || diet rich || 1
+hepatic and cardiovascular diseases || rich || 1
+CHD || diet || 1
+CVD || large amounts || 1
+CVD || balanced diet || 1
+cerebrovascular diseases || diet || 1
+Lancet Diabetes || diet || 1
+CAD || sodium || 1
+MDS || sodium || 1
+CVD || foods || 1
+diabetes || modified Nordic diet || 1
+cardiovascular disease || alcohol || 1
+AD || diets || 1
+MDS || style diet || 1
+CVD || healthy diets || 1
+major chronic diseases || regional diets || 1
+major chronic disease || Nordic diet || 1
+CVD || Nordic diet || 1
+overall cancer || diet || 1
+Asia || sodium || 1
+Indonesia || diet || 1
+PD || fiber diets || 1
+PD || animal saturated || 1
+PD || orange juice || 1
+Asia || diet || 1
+Parkinson's disease || specific foods || 1
+Parkinson disease || caffeine || 1
+disease || oil diet || 1
+mellitus || fat diet || 1
+COPD || individual foods || 1
+COPD || educational level || 1
+dysphagia || diet || 1
+COPD || green leafy vegetables || 1
+chronic respiratory disease || wholegrain || 1
+COPD || fiber || 1
+chronic nonspecific lung disease || n-6 || 1
+cancer || pulmonary function || 1
+COPD || cured meats || 1
+COPD || cured meat || 1
+respiratory diseases || based foods || 1
+COPD || DASH diet || 1
+COPD || healthy diets || 1
+CV disorders || Western diet || 1
+COPD || containing beverages || 1
+cancer || unhealthy diet || 1
+Mount Vesuvius || food || 1
+conspicuous || food || 1
+parsimonious || sweets || 1
+CVD || total polyphenols || 1
+intestinal and extra-intestinal diseases || diet || 1
+several inflammatory, autoimmune, and allergic diseases || dietary fiber || 1
+CHD || diet able || 1
+CHD || olive oil || 1
+breast cancer || alcohol || 1
+CHD || purple grape juice || 1
+breast cancer || oxidative || 1
+colon cancer || sweetened beverages || 1
+colorectal cancer || diets || 1
+tourism || food || 1
+economic crisis || carbohydrate diets || 1
+Australia || diets || 1
+enteritis || diet || 0
+IBD || specific diets || 0
+IBD || nutrients secondary || 0
+thromboembolism || light meals || 0
+inflammatory bowel disease || fruit || 0
+depression || vegetable || 0
+coronary heart disease || style diet || 0
+OA || virgin olive oil || 0
+coronary heart disease || energy || 0
+MD || vegetables || 0
+hypothalamus || high fat diet || 0
+fatty liver disease || vegetables || 0
+AMPK/SIRT1/PGC-1α axis || diet || 0
+citrus || flavonoid || 0
+fatty liver disease || soft drinks || 0
+fibrosis || diet rich || 0
+Atherosclerosis || diet || 0
+coronary heart disease || vegetable || 0
+CVD || cholesterol || 0
+CHD || vegetables || 0
+diabetes || mediterranean diet || 0
+cancer || mediterranean diet || 0
+cautious || diet || 0
+Alzheimer disease || vegetables || 0
+MDS || foods || 0
+MDS || sugars || 0
+cruciferous || vegetable fats || 0
+Cancer || diet || 0
+PD || dairy product || 0
+PD || meat products || 0
+PD dysbiosis || Western diet || 0
+PD || fiber || 0
+COPD || niacin || 0
+COPD || minerals || 0
+synthesis || diet || 0
+chronic inflammatory disease || PUFAs || 0
+asthma || diet || 0
+deleterious || starchy foods || 0
+COPD || red meat || 0
+depression || polyphenol || 0
+CHD || moderate amount || 0
+precious || food || 0
+developing diabetes || diet || 0
+coronary disease || alcohol || 0
 
 --- PATTERNS ---
-“healthy” || FOOD || is associated with beneficial effects relative to || DIS ||  (6)
-concluded that a || FOOD || in adulthood is associated with a reduced risk of || DIS ||  (
+association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
+of the Mediterranean || FOOD || also extended to the clinical setting of the secondary prevention of || DIS ||  .
+of the Mediterranean || FOOD || in prevention of || DIS ||  Curr.
+factors such as || FOOD || and dietary habits that appear to be critical modulators of gut microbiota , which is one of the key elements in initiation of inflammation in || DIS ||  .
+the efficacy of || FOOD || for induction and maintenance of remission in || DIS ||  .
+the importance of || FOOD || in the management of || DIS ||  .
+the link between || FOOD || and the risk of || DIS ||  .
+Evolutionary aspects of || FOOD || , the omega‐6 / omega‐3 ratio and genetic variation : nutritional implications for || DIS ||  .
+, the Mediterranean || FOOD || ( MedDiet ) , has been extensively evaluated in relation to || DIS ||  .
+for studies into || FOOD || and risk of || DIS ||  .
+, the highest || FOOD || consumption , and the highest incidence of death from || DIS ||  .
+important role of || FOOD || as risk factor for || DIS ||  .
+of the Mediterranean || FOOD || , especially on inflammation , , and || DIS ||  .
+as the Lyon || FOOD || heart study have reported the beneficial effects of Mediterranean style on the secondary prevention of the || DIS ||  .
+with the Mediterranean || FOOD || on the serum levels of fourteen metabolites that were selected for their role in influencing the expression of gene encoding enzymatic proteins that are modulated by || DIS ||  .
+from the Mediterranean || FOOD || enriched with VOO or walnuts are partly associated with its anti - inflammatory effects , as shown by the reduction of levels of inflammatory cellular and circulating molecules that have always played a key role in the development of one of the most important risk factors , such as || DIS ||  .
+influences, particularly || FOOD || , in the development of NAFLD as well as in the increase in cardiovascular risk , possibly suggesting common etiopathogenetic pathways linking both hepatic and || DIS ||  .
+predictive role of || FOOD || quality on risk of all - cause mortality remained after adjusting for major non - modifiable determinants of all - cause mortality , including age , sex and family history of || DIS ||  .
+The traditional Mediterranean || FOOD || includes very low amount of partially hydrogenated trans fatty acids that are involved in the of || DIS ||  .
+to the Mediterranean || FOOD || and death from || DIS ||  .
+studies about Mediterranean || FOOD || and its effects on || DIS ||  .
+salt and cholesterol || FOOD || ( HSCD ) could be in part reversed by the treatment with different doses of an enriched - tannins fraction of the Indian || DIS ||  .
+effects of the || FOOD || on biomarkers of vascular wall inflammation and plaque vulnerability in subjects with high risk for || DIS ||  .
+Along with the || FOOD || , some , either congenital or caused by environmental actions ( i.e. , epigenetic ) , have been implicated in the and progression of || DIS ||  .
+different selection of || FOOD || groups for among studies , and lack of differentiation between types of || DIS ||  .
+Association of Mediterranean || FOOD || with mild cognitive impairment and : a systematic review and || DIS ||  .
+of the Mediterranean || FOOD || ) may be a viable approach to blunt neuroinflammation and improve neuronal function in || DIS ||  .
+of the Mediterranean || FOOD || ) promotes the growth of and reduces || DIS ||  .
+between the Mediterranean || FOOD || and lung function with relevance to both the prevention of as well as the improvement of || DIS ||  .
+of the Mediterranean || FOOD || at a time of || DIS ||  .
+A low FODMAP || FOOD || may help in alleviating ( IBS)-like symptoms associated with || DIS ||  .
+A low FODMAP || FOOD || may help in alleviating -like symptoms associated with || DIS ||  .
+a relationship between || FOOD || , gut microbiota , and metabolic health , including obesity and || DIS ||  .
+showed that reduced || FOOD || intake led to an improvement in the glucose profile and a reduction in the risk of obesity and || DIS ||  .
+to a Mediterranean || FOOD || style may influence the potential negative relationship between elevated plasma ceramide concentrations and || DIS ||  .
+followed a Mediterranean || FOOD || style had 50–70 % lower risk of recurrent clinical events related to || DIS ||  .
+or combined with || FOOD || in increasing the risk of developing both || DIS ||  .
+This || FOOD || permanently became the subject of research into dietary approaches not only due to its ability to reduce body weight , but also because of its role in the prevention and treatment of || DIS ||  .
+this type of || FOOD || , especially in individuals that are treated with insulin , because of the potentially increased risk of and || DIS ||  .
+compounds within the || FOOD || matrix work synergistically and some specific combinations may directly protect against || DIS ||  .
+given to these || FOOD || groups makes it challenging to determine whether they drive the effect of quality scores on || DIS ||  .
+effects of a || FOOD || in individuals with || DIS ||
+ .
+that following a || FOOD || may be of particular importance for reducing risk of in individuals with high genetic risk of || DIS ||  .
+salt, and || FOOD || is associated with an increased risk of || DIS ||  .
+by which the || FOOD || - mediated effects on the microbiome may influence , and also discuss how dietary interventions may be used to prevent or treat || DIS ||  .
+to support that || FOOD || impacts ( positively or negatively ) the development of such as || DIS ||  .
+caffeine in the || FOOD || have also been consistently associated with decreased risk of || DIS ||  .
+strongly suggesting that || FOOD || impacts the development / progression of including || DIS ||  .
+of a Mediterranean || FOOD || might be a useful approach to prevent and possibly treat || DIS ||  .
+these meat and || FOOD || , but only a small fraction of the general population will develop || DIS ||  .
+of milk and || FOOD || in midlife and the future risk of || DIS ||  .
+indicates that some || FOOD || and nutrients , especially those nutraceuticals endowed with antioxidant and anti - inflammatory properties and when consumed in combinations in the form of balanced dietary patterns , are associated with better pulmonary function , less lung function decline , and reduced risk of || DIS ||  .
+and mechanisms of || FOOD || in preventing and treating || DIS ||  .
+in response to || FOOD || and improve a personalized nutrition intervention to prevent / treat || DIS ||  .
+public awareness about || FOOD || safety of plant , hand hygiene of handlers and policies about the interventions on foodborne illness were important elements preventing and controlling || DIS ||  .
+Outbreaks where || FOOD || workers have been implicated in the spread of || DIS ||  .
+the effect of || FOOD || quality scores on || DIS ||  .
+association between the || FOOD || scores and the incidence of || DIS ||  .
+effects of the || FOOD || on the onset of || DIS ||  .
+the effects of || FOOD || consumption and risk for || DIS ||  .
+Promising effects of || FOOD || on motor , cognitive , gastrointestinal dysfunction after symptom development in a mouse model of || DIS ||  .
+effect of a || FOOD || on beyond its association with || DIS ||  .
+of the AHEI-2010 || FOOD || score and its main dietary features to || DIS ||  .
+the role of || FOOD || in is clearly available , smoking cessation and the appropriate pharmacologic therapy remain key measures for the prevention and treatment of || DIS ||  .
+should refrain from || FOOD || consumption as it may worsen the symptoms of || DIS ||  .
+of CD with || FOOD || was observed from Europe but not from || DIS ||  .
+of coffee and || FOOD || intake with the risk of || DIS ||  . JAMA.
 
- 4
-not account for || FOOD || intake , also showed inverse associations with incidence of || DIS ||  (17)
-also rich in || FOOD || that contain anti - oxidant bioflavonoids and polyphenols , which are associated with decreased risk of || DIS ||  (9,
-factors, especially || FOOD || , can markedly affect microbiota community structure and composition , and thus it is expected that the intestinal microbiota in patients from the USA should be different from those living in Europe or || DIS ||  (21,
-that the Mediterranean || FOOD || - associated microbiome is characterized by a high relative abundance of that can utilize fiber as an energy source such as || DIS ||  (10,
-
-“healthy” || FOOD || , as ( and ) , , , , and , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
-  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
-in addition to || FOOD || , and lung function , || DIS ||  incidence, symptoms
-the relation between || FOOD || and lung function , || DIS ||  risk, symptoms
-“healthy” || FOOD || , as ( and ) , , , , and , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
-  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
-in addition to || FOOD || , and lung function , || DIS ||  incidence, symptoms
-the relation between || FOOD || and lung function , || DIS ||  risk, symptoms
-, such as || FOOD || ( and ) , , , , and , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
-  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
-is a rich || FOOD || source of isoflavones , with lung function and || DIS ||  prevalence was also
-association between total || FOOD || intake and lung function decline , and || DIS ||  incidence and prevalence
-
-with the Mediterranean || FOOD || has been linked with positive health outcomes , in particular the primary prevention of || DIS ||  [40]
-adherence to Mediterranean || FOOD || might prevent inflammation , which exerts a central role in the of and || DIS ||  [69,206]
-by the Mediterranean || FOOD || are determined by its action towards the main risk factors for stroke , such as inflammation , oxidative stress , endothelial dysfunction , platelet aggregation [ 256,257 ] , and || DIS ||  [258]
-the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing , , and || DIS ||  [7,8,9,10,11]
-are abundant in || FOOD || and beverages highly consumed by human population including , , tea , cocoa or wine [ 42 ] and in global are the bioactive compounds more largely associated with a reduced risk of all - cause mortality , [ 43,44,45,46 ] , || DIS ||  [36,47]
-of these two || FOOD || quality scores with severity ( according to GOLD stages ) and parameters of lung function ( FEV1 and FVC ) in 121 patients with stable || DIS ||  [155]
-with the Mediterranean || FOOD || has been linked with positive health outcomes , in particular the primary prevention of || DIS ||  [40]
-adherence to Mediterranean || FOOD || might prevent inflammation , which exerts a central role in the of and || DIS ||  [69,206]
 by the Mediterranean || FOOD || are determined by its action towards the main risk factors for stroke , such as inflammation , oxidative stress , endothelial dysfunction , platelet aggregation [ 256,257 ] , and || DIS ||  [258]
 the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing , , and || DIS ||  [7,8,9,10,11]
 are abundant in || FOOD || and beverages highly consumed by human population including , , tea , cocoa or wine [ 42 ] and in global are the bioactive compounds more largely associated with a reduced risk of all - cause mortality , [ 43,44,45,46 ] , || DIS ||  [36,47]
@@ -288,261 +341,56 @@ while vegetable- || FOOD || was associated with decreased risk for || DIS ||  [9
 fiber, with || FOOD || being the predominant source , was associated with a significant reduction in risk of CD but not || DIS ||  [9]
 of processed and || FOOD || has been shown to confer a three- to fourfold greater risk of developing || DIS ||  [14]
 no association between || FOOD || consumption and the risk of || DIS ||  [179]
-adherence to Mediterranean || FOOD || , was especially accentuated in carriers of the G - allele at || DIS ||  [27]
 of Polyphenol- || FOOD || was associated with an increasing of plasma levels of nitrites / nitrates and with a reduction of ADMA , an substance that inhibits NO || DIS ||  [113]
+a low- || FOOD || partially restored the in obese patients with || DIS ||  [158]
 
  Overnutrition and || FOOD || together with physical inactivity cause an impairment in the metabolic homeostasis that lead to the development of pathologies such as obesity , type 2 diabetes , ( ) and more recently this kind of lifestyle has also been linked to neuroinflammation and neurodegenerative || DIS ||  [1,2,3,4,5]
 in humans where || FOOD || consumption has been associated to a lower risk of || DIS ||  [43,236,237,238,239,240,241,242,243]
 showed that added || FOOD || intake was a risk factor for CV mortality even when adjusted for conventional cardiovascular risk factors such hypertension and || DIS ||  [37]
 half serving of || FOOD || fish , in order to reduce the risk of and improve the features of || DIS ||  [79]
+was shown that || FOOD || consumption was associated with higher HDL cholesterol concentration depending on || DIS ||  [150]
+women with a || FOOD || in fat , a state of chronic - low grade inflammatory arises in the placenta as well in the fetal organs , including the liver , contributing to || DIS ||  development [176
 foods in the || FOOD || was associated with higher risks of cardiovascular , coronary heart , and || DIS ||  [151]
 by fruits, || FOOD || , and some legumes and seeds [ 51,125 ] , which have been associated with a reduced risk of developing and || DIS ||  [130]
 lower fruit and || FOOD || intake [ 44 ] and with poorer antioxidant content , which was correlated with impaired lung function and risk of having || DIS ||  [35,36]
 peppers, and || FOOD || were negatively associated with the risk of || DIS ||  [54]
 Regarding individual || FOOD || items , intakes of , , , and were negatively associated with the risk of || DIS ||  [54]
 red meats and || FOOD || has been reported , in agreement with evidence of detrimental effects in , including , , and || DIS ||  [120,121]
-the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of , mainly and || DIS ||  [157,158]
+smoking and higher || FOOD || consumption is indeed associated with the highest risk of newly diagnosed || DIS ||  [125]
 healthy plant- || FOOD || and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( , and ) mortality , specifically with a 14–28 % lower risk of mortality for || DIS ||  [167]
+COPD subjects have || FOOD || with lower and intake [ 44 ] and with poorer antioxidant content , which was correlated with impaired lung function and risk of having || DIS ||  [35,36]
 and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( , and ) mortality , specifically with a 14–28 % lower risk of mortality for || DIS ||  [167]
 sedentary lifestyle, || FOOD || , excess eating , and smoking are crucial determinants of the rise of obesity , type 2 diabetes ( T2D ) , hypertension , and lipid profile alterations , all strong risk factors for , , and some forms of || DIS ||  [7,8,10,11,12,13]
-In fact, || FOOD || is a major regulator of gut microbiota composition and metabolite production , which has been related to the incidence and progression of several || DIS ||  [67,68,69]
 whole grains, || FOOD || and fish , which are staples of MedDiet , may be related to a reduction in the risk of || DIS ||  [88,116]
+diets with lower || FOOD || and intake [ 44 ] and with poorer antioxidant content , which was correlated with impaired lung function and risk of having || DIS ||  [35,36]
 whole grains, || FOOD || , nuts , and fish is associated with a reduced risk of developing || DIS ||  [161,162,163,164]
 of red and || FOOD || and and were associated with lower risk of || DIS ||  [154]
+MedDiet-like || FOOD || have been also recommended in national guidelines such as the 2015–2020 Dietary Guidelines for Americans [ 18,19 ] , American Heart Association ( AHA ) Guidelines for the prevention of stroke and transient ischemic attack [ 191 ] , AHA Guidelines on the Primary Prevention of [ 192 ] and incorporating MedDiet in healthy eating guidelines in other countries , such as || DIS ||  [32]
 
-to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , , || DIS ||  , respiratory diseases
-the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing || DIS ||  , cancer,
-of the Mediterranean || FOOD || , especially on inflammation , || DIS ||  , and cardiovascular
-adherence to Mediterranean || FOOD || might prevent inflammation , which exerts a central role in the of || DIS ||  and cardiovascular disease
-as the Mediterranean || FOOD || ( in fiber ) shaped the composition of gut microbiota so as to increase the circulating levels of anti - inflammatory SCFAs , while animal - such as the ( rich in carnitine and choline from meat , egg yolks , and high - fat dairy products ) were associated with increased levels of the pro - inflammatory TMAO , which is linked to risk of || DIS ||  , CV disorders
-the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of , mainly || DIS ||  and cancer [
-the traditional Mediterranean || FOOD || is a well - known and well - studied healthy dietary pattern and many evidences underling how this could represent a central useful tool to control cardiovascular risk factors , such as , || DIS ||  , hypertension [
-to the Mediterranean || FOOD || was associated with 21 % lower odds of being affected by one additional risk factor ( i.e. , hypertension , , || DIS ||  , and obesity
-the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of || DIS ||  , mainly CVD
-of the Mediterranean || FOOD || and endowed with anti - inflammatory , antioxidant , and beneficial metabolic properties ( , , seafood , nuts , legumes , vitamins , polyphenols , etc . ) have been associated to improved lung function and || DIS ||  prevention in several
-to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , , || DIS ||  , respiratory diseases
-the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing || DIS ||  , cancer,
-of the Mediterranean || FOOD || , especially on inflammation , || DIS ||  , and cardiovascular
-adherence to Mediterranean || FOOD || might prevent inflammation , which exerts a central role in the of || DIS ||  and cardiovascular disease
-as the Mediterranean || FOOD || ( in fiber ) shaped the composition of gut microbiota so as to increase the circulating levels of anti - inflammatory SCFAs , while animal - such as the ( rich in carnitine and choline from meat , egg yolks , and high - fat dairy products ) were associated with increased levels of the pro - inflammatory TMAO , which is linked to risk of || DIS ||  , CV disorders
-the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of , mainly || DIS ||  and cancer [
-the traditional Mediterranean || FOOD || is a well - known and well - studied healthy dietary pattern and many evidences underling how this could represent a central useful tool to control cardiovascular risk factors , such as , || DIS ||  , hypertension [
-to the Mediterranean || FOOD || was associated with 21 % lower odds of being affected by one additional risk factor ( i.e. , hypertension , , || DIS ||  , and obesity
-the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of || DIS ||  , mainly CVD
-of the Mediterranean || FOOD || and endowed with anti - inflammatory , antioxidant , and beneficial metabolic properties ( , , seafood , nuts , legumes , vitamins , polyphenols , etc . ) have been associated to improved lung function and || DIS ||  prevention in several
-that the Mediterranean || FOOD || supplemented with extra virgin olive oil , in people with high cardiovascular risk , promoted the five main functions fulfilled by HDL : cholesterol efflux and || DIS ||  , anti-
-that Traditional Mediterranean || FOOD || ( ) could have benefits on the primary prevention of heart failure ( ) , which is justified by the data obtained , the effects on || DIS ||  incidence in subjects
-to the Mediterranean || FOOD || pattern predicts the prevalence of hypertension , , || DIS ||  and obesity,
-the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing , || DIS ||  , and diabetes
-to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , || DIS ||  , depression,
-to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , , , || DIS ||  , and fragility
-
-they were not || DIS || specific , were feeding trials , did not include a || FOOD ||  quality index score
-The || DIS || is well established and validated as a measure of overall quality in US and European populations (
-
-  23
-
-  –
-
-  25
-
-  ) and has been shown to perform comparably to other || FOOD ||  quality scores in
-boys, the || DIS || was higher among girls , indicating better || FOOD ||  quality.
-
-the role of || FOOD || on || DIS ||  risk is warranted
-the effect of || FOOD || on || DIS ||  development by modulating
-effects of the || FOOD || on || DIS ||  have only been
-the evaluation of || FOOD || effect on || DIS ||  progression over time
-the effect of || FOOD || on different || DIS ||  phenotypes and to
-the role of || FOOD || on || DIS ||  risk is warranted
-the effect of || FOOD || on || DIS ||  development by modulating
-effects of the || FOOD || on || DIS ||  have only been
-the evaluation of || FOOD || effect on || DIS ||  progression over time
-the effect of || FOOD || on different || DIS ||  phenotypes and to
-The effect of || FOOD || on || DIS ||  and its components
-
-the role of || FOOD || in || DIS ||  .
-the role of || FOOD || in || DIS ||  were identified viz
-The role of || FOOD || in || DIS ||  Curr Gastroenterol Rep
-
-the relationship between || FOOD || and in adolescents (
-
-  14
-
-  ,
-
-  15
-
-  ) , reporting support for an association between a and lower levels of || DIS ||  , but based
-The poor || FOOD || quality and the nutrient deficiencies in , which are related to - specific factors such as symptoms ( e.g. , dyspnea , fatigue , anxiety , || DIS ||  , anorexia,
-
-
-
- Role of || FOOD || in the of
-
-  Diet has an important role in the of ( || DIS ||  ), both
-on role of || FOOD || in of from other prospective studies in || DIS ||  , such as
-, the Mediterranean || FOOD || ( ) is considered to be an effective strategy for the primary prevention for the development of ( || DIS ||  ), such
-an association between || FOOD || quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
-the value of || FOOD || - based dietary guidelines in preventative healthcare rather a reductionist nutrient - based approach.54
-
-  Evidence for an association between quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
-is possible that || FOOD || influences may be different across different clinical phenotypes of || DIS ||  , as some
-, changes in || FOOD || over the past few decades , with decreased consumption of , , , and , and increased consumption of and , have been invocated to contribute to the increased prevalence of || DIS ||  , including COPD
-prophylactic change in || FOOD || , especially in combination with physical activity , which would reduce the risk of developing by even a small percentage , may significantly affect the number of people who will develop || DIS ||  and, thus
-, changes in || FOOD || over the past few decades , with decreased consumption of , , , and , and increased consumption of and , have been invocated to contribute to the increased prevalence of , including || DIS ||  , mainly in
-the relationship between || FOOD || and in adolescents (
-
-  14
-
-  ,
-
-  15
-
-  ) , reporting support for an association between a and lower levels of || DIS ||  , but based
-
-
-
- Role of || FOOD || in the of
-
-  Diet has an important role in the of ( || DIS ||  ), both
-on role of || FOOD || in of from other prospective studies in || DIS ||  , such as
-, the Mediterranean || FOOD || ( ) is considered to be an effective strategy for the primary prevention for the development of ( || DIS ||  ), such
-prophylactic change in || FOOD || , especially in combination with physical activity , which would reduce the risk of developing by even a small percentage , may significantly affect the number of people who will develop || DIS ||  and, thus
-an association between || FOOD || quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
-the value of || FOOD || - based dietary guidelines in preventative healthcare rather a reductionist nutrient - based approach.54
-
-  Evidence for an association between quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
-is possible that || FOOD || influences may be different across different clinical phenotypes of || DIS ||  , as some
-association between a || FOOD || and lower levels of || DIS ||  , but based
-most of the || FOOD || consumption in many low- and middle - income countries , especially in || DIS ||  , comes from
-
-the effect of || FOOD || on the risk of || DIS ||  have been retrospective
-of the Mediterranean || FOOD || in the control of the main risk factors for the development of || DIS ||  could be in
-fat in the || FOOD || on the risk of developing || DIS ||  began [10
-The role of || FOOD || and genetics on risk of || DIS ||  is an emerging
-the effect of || FOOD || on the risk of || DIS ||  have been retrospective
-of the Mediterranean || FOOD || in the control of the main risk factors for the development of || DIS ||  could be in
-fat in the || FOOD || on the risk of developing || DIS ||  began [10
-The role of || FOOD || and genetics on risk of || DIS ||  is an emerging
-The level of || FOOD || consumption was adopted as a covariate in addition to inclusion of alcohol in the , since alcohol in the || DIS ||  was only a
-the consumption of || FOOD || , on the primary prevention of || DIS ||  have not been
-The || FOOD || is proposed as an alternative across Northern Europe , although its associations with the risk of || DIS ||  remain controversial.
-For the || FOOD || , a statistically not - significant inverse association with the onset of || DIS ||  was observed (
-
-the context of || DIS || ; in this regard , in the last decades , several studies and some randomized dietary intervention trials as the Lyon || FOOD ||  heart study have
-the prevention of || DIS || and , health policies should focus on adherence to a , as Mediterranean || FOOD ||  , supporting traditional
-genetic bases of || DIS || , in the last few years , evidence is accumulating on the complex interplay between genetic predisposition and environmental influences , particularly || FOOD ||  , in the
-majority of sporadic || DIS || appears to be associated with environmental risk factors that also affect the microbiome such as stress , || FOOD ||  , lack of
-the context of || DIS || ; in this regard , in the last decades , several studies and some randomized dietary intervention trials as the Lyon || FOOD ||  heart study have
-the prevention of || DIS || and , health policies should focus on adherence to a , as Mediterranean || FOOD ||  , supporting traditional
-genetic bases of || DIS || , in the last few years , evidence is accumulating on the complex interplay between genetic predisposition and environmental influences , particularly || FOOD ||  , in the
-majority of sporadic || DIS || appears to be associated with environmental risk factors that also affect the microbiome such as stress , || FOOD ||  , lack of
-the benefits of || DIS || , which was compared with a low - || FOOD ||  , on both
-a model of || DIS || , in particular the consumption of its , as VOO and || FOOD ||  , reduced the
-Ethnic Study of || DIS || ( MESA ) demonstrated an increased prevalence of CAC in patients with a low intake of with || FOOD ||  , especially in
-the incidence of || DIS || are related to lifestyle , especially the type of || FOOD ||  , particularly its
-and prophylaxis of || DIS || , the most important direction is the introduction of a , || FOOD ||  , while taking
-for mechanisms for || DIS || , the most likely cause is Western lifestyle factors known to affect the microbiome including stress , || FOOD ||  , lack of
-benefits of a || DIS || , composed of considered “ poor ” with a low intake of and || FOOD ||  , in combination
-the occurrence of || DIS || , which makes it necessary for the most underprivileged populations to choose low - , of empty calories but poor in nutrients ; ( iii ) the popularity of high - low - || FOOD ||  , plenty of
-
-that low FODMAP || FOOD || reduces ( IBS)-like symptoms in patients with || DIS ||  in remission,
-that higher AHEI-2010 || FOOD || score was associated with a 33 % lower risk of newly diagnosed || DIS ||  in both men
-Increased intake of || FOOD || was independently associated with an obstructive pattern of spirometry in a cross - sectional analysis in the third National Health and Nutrition Examination Survey [ 123 ] and with an increased risk of newly diagnosed || DIS ||  in both men
-
-specific to key || FOOD || - related factors associated with || DIS ||  risk.
-evidence that higher || FOOD || quality ( RFS , HDI and ) was associated with lower risk of all - cause mortality , regardless of genetic || DIS ||  risk.
-of a healthier || FOOD || , and indicators of improved cardio - metabolic health , particularly in terms of adiposity , cholesterol and || DIS ||  risk.
-of a healthier || FOOD || , and several markers of cardio - metabolic health including adiposity , cholesterol and || DIS ||  risk.
-whereas the Mediterranean || FOOD || ( including high intake of ) decreases || DIS ||  risk.
-were connected to || FOOD || , feeding behaviors , and and nutrients ( and , antioxidants , unsaturated fatty acids , meat products ) , suggesting some of the main key research categories that have been the attention focus in the and || DIS ||  risk.
-plethora of new || FOOD || quality indices has raised questions among researchers regarding the optimal choice for studies of || DIS ||  prevention.
-the plethora of || FOOD || quality indices , some studies compared the association between adherence to the above - mentioned indices and || DIS ||  and its risk
-of adhering to || FOOD || quality scores may occur through improvements in || DIS ||  risk factors,
-another area of || FOOD || that has evidence related to || DIS ||  risk.
-specific to key || FOOD || - related factors associated with || DIS ||  risk.
-plethora of new || FOOD || quality indices has raised questions among researchers regarding the optimal choice for studies of || DIS ||  prevention.
-evidence that higher || FOOD || quality ( RFS , HDI and ) was associated with lower risk of all - cause mortality , regardless of genetic || DIS ||  risk.
-of a healthier || FOOD || , and indicators of improved cardio - metabolic health , particularly in terms of adiposity , cholesterol and || DIS ||  risk.
-of a healthier || FOOD || , and several markers of cardio - metabolic health including adiposity , cholesterol and || DIS ||  risk.
-whereas the Mediterranean || FOOD || ( including high intake of ) decreases || DIS ||  risk.
-another area of || FOOD || that has evidence related to || DIS ||  risk.
-were connected to || FOOD || , feeding behaviors , and and nutrients ( and , antioxidants , unsaturated fatty acids , meat products ) , suggesting some of the main key research categories that have been the attention focus in the and || DIS ||  risk.
-between reduced saturated || FOOD || intake and reduction in || DIS ||  risk.
-Higher AHEI and || FOOD || scores and a higher modified were inversely associated with long - term || DIS ||  risk.
-consumption of a || FOOD || — high in saturated animal fats , simple sugars , and sodium — increases the risk of obesity , , and , 2 , 3 , 4 all of which increase ( || DIS ||  ) risk.
-either stress or || FOOD || that are associated with || DIS ||  risk.
-as patterns of || FOOD || intake , and approaches to rank and quantify adherence of study participants to these patterns have been developed to evaluate their association with || DIS ||  risk.
-suggest fruit and || FOOD || consumption as an important determinant of pulmonary function and || DIS ||  risk.
-and nutrients ( || FOOD || and , antioxidants , unsaturated fatty acids , meat products ) , suggesting some of the main key research categories that have been the attention focus in the and || DIS ||  risk.
-these observations suggest || FOOD || and consumption as an important determinant of pulmonary function and || DIS ||  risk.
-
-section 3 ( || FOOD || as a therapy for ) , there is no good evidence to support the use of in || DIS ||  .
-score, since || FOOD || groups are not necessarily equivalent in their associations with || DIS ||  .
-A gluten- || FOOD || ( GFD ) is not of a proven value in patients with || DIS ||  .
-A gluten- || FOOD || is not of a proven value in patients with || DIS ||  .
-driving gene- || FOOD || interaction , but also of metabolic processes , could finally provide individualized and accurate recommendations to prevent the development of || DIS ||  .
-and low- || FOOD || ) , showed no significant association between adoption of TDM enriched with EVOO or nuts and no reduction of the incidence of || DIS ||  .
-with low- || FOOD || on in the patients with || DIS ||  Chronobiol.
-incorrect diet, || FOOD || in fructose and added sugars , as well as in n-6 PUFAs and SFAs , in the development of both || DIS ||  .
-dietary components/ || FOOD || were related to risk for || DIS ||  .
-
-risk factor of || DIS || representing a potential therapeutic target ; so , microbiome could represent a possible intermediate of the effects of the Mediterranean || FOOD ||  of modulation of
-risk of developing || DIS || were divided into three arms : one that was given an indication to practice Mediterranean supplemented with extra virgin olive oil , one that was given an indication to practice Mediterranean || FOOD ||  supplemented with nuts
-risk factors of || DIS || , requires , among first steps , to follow an , as the Mediterranean || FOOD ||  that includes foods
-risk factor of || DIS || representing a potential therapeutic target ; so , microbiome could represent a possible intermediate of the effects of the Mediterranean || FOOD ||  of modulation of
-risk of developing || DIS || were divided into three arms : one that was given an indication to practice Mediterranean supplemented with extra virgin olive oil , one that was given an indication to practice Mediterranean || FOOD ||  supplemented with nuts
-risk factors of || DIS || , requires , among first steps , to follow an , as the Mediterranean || FOOD ||  that includes foods
-risk of developing || DIS || [ 62,63 ] , differently , the long term adherence to healthier plant - || FOOD ||  , through the
-lower incidence of || DIS || with MedDiet was attributable to the decrease in blood cholesterol ; however , later investigations confirmed that MedDiet is not just a || FOOD ||  to lower cholesterol
-lower risk of || DIS || has been related to dietary patterns that are higher in , legumes , , whole grains , fish , lean meats , low - fat dairy products , with moderate consumption of , as well as with reduced consumption of and/or , - || FOOD ||  , and saturated
-
-predicting biomarkers of || FOOD || and || DIS ||  .
-diet scores, || FOOD || and || DIS ||  .
-dietary pattern, || FOOD || , nutrients and lung function , and prevention and improvements of || DIS ||  .
-
-poor quality of || FOOD || , has been associated with increased risk of || DIS ||  (
-
- 8
-negative associations between || FOOD || quality and measures of mental health related to || DIS ||  (
-
- 16
-aspects of the || FOOD || thought to be associated with development of risks for a variety of || DIS ||  (79)
-association between the || FOOD || and the MedDiet with the risk of || DIS ||  (T2D,
-to the Mediterranean || FOOD || is associated with lower probability of developing || DIS ||  (16)
-, the Mediterranean || FOOD || is also rich in that contain anti - oxidant bioflavonoids and polyphenols , which are associated with decreased risk of || DIS ||  (9,
-of the Mediterranean || FOOD || and generally protective against neurodegeneration in or || DIS ||  (296)
-Western lifestyle and || FOOD || , were associated with a higher prevalence of || DIS ||  (OR =
-the relationship of || FOOD || with lung function and risk and outcomes of || DIS ||  (Table 1
-poor quality of || FOOD || , has been associated with increased risk of || DIS ||  (
-
- 8
-negative associations between || FOOD || quality and measures of mental health related to || DIS ||  (
-
- 16
-aspects of the || FOOD || thought to be associated with development of risks for a variety of || DIS ||  (79)
-association between the || FOOD || and the MedDiet with the risk of || DIS ||  (T2D,
-to the Mediterranean || FOOD || is associated with lower probability of developing || DIS ||  (16)
-, the Mediterranean || FOOD || is also rich in that contain anti - oxidant bioflavonoids and polyphenols , which are associated with decreased risk of || DIS ||  (9,
-of the Mediterranean || FOOD || and generally protective against neurodegeneration in or || DIS ||  (296)
-Western lifestyle and || FOOD || , were associated with a higher prevalence of || DIS ||  (OR =
-the relationship of || FOOD || with lung function and risk and outcomes of || DIS ||  (Table 1
-high intakes of || FOOD || and , shown to have an adverse effect on || DIS ||  (82)
-compliance to the || FOOD || , the highest compliance was associated with a 20 % reduction in the risk of || DIS ||  (93)
-adhering to the || FOOD || in reducing inflammation at the 24 - y follow - up in women from the Nurses ’ Health Study , with no previous history of || DIS ||  (76)
-effects of the || FOOD || are due not only to reductions in BP but also to improvements in inflammatory biomarkers , which are suggested to reduce || DIS ||  events (94
-The || FOOD || is among the greatest risk factors for developing such as || DIS ||  (8,
-high quantities of || FOOD || fat has been widely reported to be associated with increased risk of developing || DIS ||  (14,
-high consumption of || FOOD || and possibly dairy products in general are associated with increased risk for || DIS ||  (47–49)
-
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || with cardiovascular || DIS ||  incidence and mortality
-of the Mediterranean || FOOD || as primary prevention tool against cardiovascular events , such as stroke , atrial fibrillation , || DIS ||  , and myocardial
+	Patients with || DIS || should receive adequate calories , proteins and fats in their || FOOD ||  .
+the development of || DIS || , in fact it is clear that intake and some specific components modify enteric microbiota inducing changes that may be responsible of some effects exerted by Mediterranean || FOOD ||  .
+affect obesity and || DIS || as it is being increasingly recognized as a key factor connecting genes , environment , and the immune system with a role in homeostasis and intake from the || FOOD ||  .
+be related to || DIS || , as discussed in previous paragraphs , the “ prudent ” and the “ Western ” patterns reflect the possible combinatory effects of these but highly correlated || FOOD ||  .
+increasing incidence of || DIS || in developing countries parallels the westernization of , which includes an increased intake of in fat and and a lesser intake of and || FOOD ||  .
+of acute severe || DIS || , if patients have the ability to eat with no other contraindications to oral intake , a || FOOD ||  is recommended.
+Patients with || DIS || should receive adequate calories , proteins , and fats in their || FOOD ||  .
+In patients with || DIS || without overt risk of obstruction , the restriction of dietary fiber is unnecessary , but all patients should be appropriately monitored for their tolerance to || FOOD ||  intake.
+molecules, and || DIS || and how these advantages of the MeDi are maintained in comparison of a low - || FOOD ||  .
+molecules, and || DIS || ; moreover , accumulating data report that these advantages of the Mediterranean are maintained also in comparison of a low - || FOOD ||  .
+With regard to || DIS || , results from a recent study suggest that differences in dietary intake and choices are becoming less noticeable in rural versus urban parts and are less geographically dependent with “ ” taking place instead of a “ || FOOD ||  ”.
+vascular inflammation, || DIS || , and foam cell formation through a modulation of the expression of pro - atherosclerotic genes , also , the content of antioxidants represents one of the elements that is responsible of the benefits of Mediterranean || FOOD ||  .
+the differences in || DIS || mortality rates between the 16 - country cohort from northern to southern countries and also from Japan to the peculiar dietary patterns of each country of the participants and , in particular , it showed the important role of the intake of and || FOOD ||  .
+risk of developing || DIS || were divided into three arms : one that was given an indication to practice Mediterranean supplemented with extra virgin olive oil , one that was given an indication to practice Mediterranean supplemented with nuts , and , finally , a control group that was supposed to practice a hypo - || FOOD ||  .
+high risk for || DIS || were assigned to a control group or to one of two || FOOD ||  .
+the risk of || DIS || and any of the || FOOD ||  .
+applied score was || DIS || ( Figure 1 ) , but it is essential to recognize that there is no one or standard definition of the Mediterranean || FOOD ||  .
+in the traditional || DIS || but not in || FOOD ||  .
+associations.9 The || DIS || is a - based and nutrient - based score designed to reflect adherence to a Mediterranean || FOOD ||  .
+clinical trials in || DIS || patients to test this model for beneficial effects of Mediterranean high || FOOD ||  .
+Dietary factors in || DIS || : the role of groups and || FOOD ||  .
+year incidence of || DIS || for ( apples , pears ) than for other types of || FOOD ||  .
+cases of a || DIS || resulting from the ingestion of a || FOOD ||  .
+more cases of || DIS || resulting from the ingestion of a || FOOD ||  .
 
 of associations between || FOOD || and || DIS ||  in adolescence are
 the associations between || FOOD || and || DIS ||  in adolescence.
@@ -551,39 +399,9 @@ on associations between || FOOD || and || DIS ||  in adolescence has
 observed associations between || FOOD || and || DIS ||  .
 investigate associations between || FOOD || and || DIS ||  in adolescents over
 an association between || FOOD || and || DIS ||  in children and
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
-of associations between || FOOD || and || DIS ||  in adolescence are
-the associations between || FOOD || and || DIS ||  in adolescence.
-associated with both || FOOD || and || DIS ||  , as well
-on associations between || FOOD || and || DIS ||  in adolescence has
-observed associations between || FOOD || and || DIS ||  .
-investigate associations between || FOOD || and || DIS ||  in adolescents over
-an association between || FOOD || and || DIS ||  in children and
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
 evidence of Mediterranean || FOOD || and || DIS ||  : are individual
 investigate associations between || FOOD || and || DIS ||  across different time
 prospective associations between || FOOD || and || DIS ||  to date.
-investigate associations between || FOOD || and || DIS ||  across different time
-the study of || FOOD || and || DIS ||  , and 3
-investigate association between || FOOD || and || DIS ||  incidence and mortality.4
-association between a || FOOD || and || DIS ||  mortality (20
-the relation between || FOOD || and || DIS ||  risk and has
-associations between the || FOOD || and || DIS ||  in a prospective
-focus in the || FOOD || and || DIS ||  risk.
-to the Mediterranean || FOOD || and || DIS ||  physical activity.
-of associations between || FOOD || and || DIS ||  in adolescence are
-the associations between || FOOD || and || DIS ||  in adolescence.
-associated with both || FOOD || and || DIS ||  , as well
-on associations between || FOOD || and || DIS ||  in adolescence has
-observed associations between || FOOD || and || DIS ||  .
-investigate associations between || FOOD || and || DIS ||  in adolescents over
-an association between || FOOD || and || DIS ||  in children and
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
-investigate associations between || FOOD || and || DIS ||  across different time
-prospective associations between || FOOD || and || DIS ||  to date.
-investigate associations between || FOOD || and || DIS ||  across different time
 the study of || FOOD || and || DIS ||  , and 3
 investigate association between || FOOD || and || DIS ||  incidence and mortality.4
 association between a || FOOD || and || DIS ||  mortality (20
@@ -594,411 +412,200 @@ to the Mediterranean || FOOD || and || DIS ||  physical activity.
 to plant- || FOOD || and || DIS ||  and its risks
 reported associations between || FOOD || and or fish and || DIS ||  have typically neglected
 
-of a priori || FOOD || quality scores to || DIS ||  Risk—A
-application of predefined || FOOD || quality scores to || DIS ||  outcomes, based
-between the different || FOOD || quality scores and individual || DIS ||  outcomes is outside
-the association between || FOOD || quality and || DIS ||  risk is unclear
-of a priori || FOOD || quality scores to || DIS ||  Risk—A
-application of predefined || FOOD || quality scores to || DIS ||  outcomes, based
-of adhering to || FOOD || quality scores may occur through improvements in || DIS ||  risk factors,
-between the different || FOOD || quality scores and individual || DIS ||  outcomes is outside
-the association between || FOOD || quality and || DIS ||  risk is unclear
-
-of a healthier || FOOD || , namely score , || DIS ||  , plasma vitamin
-time education, || FOOD || score , || DIS ||  , vitamin C
-diet, namely || FOOD || score , || DIS ||  , plasma vitamin
-
-molecules, and || DIS || ; moreover , accumulating data report that these advantages of the Mediterranean || FOOD ||  are maintained also
-as i.e., || DIS || , high blood pressure , and ( as declared by the respondents , based on their knowledge ) and not undergoing a certain || FOOD ||  program, were
-bacteria, high || DIS || ) ; therefore , dietary interventions such as the Mediterranean ( or components of the Mediterranean || FOOD ||  ) may be
-molecules, and || DIS || ; moreover , accumulating data report that these advantages of the Mediterranean || FOOD ||  are maintained also
-as i.e., || DIS || , high blood pressure , and ( as declared by the respondents , based on their knowledge ) and not undergoing a certain || FOOD ||  program, were
-bacteria, high || DIS || ) ; therefore , dietary interventions such as the Mediterranean ( or components of the Mediterranean || FOOD ||  ) may be
-prevalent T2D, || DIS || , stroke , or were excluded , as well as those with missing follow - up time , those with missing information on || FOOD ||  , and those
-pressure, and || DIS || ( as declared by the respondents , based on their knowledge ) and not undergoing a certain || FOOD ||  program, were
-stroke, or || DIS || were excluded , as well as those with missing follow - up time , those with missing information on || FOOD ||  , and those
-
-indices for assessing || FOOD || – || DIS ||  relationships.
-internationally to assess || FOOD || – || DIS ||  internationally to assess diet–disease
-the topic regarding || FOOD || – || DIS ||  relation.
-indices for assessing || FOOD || – || DIS ||  relationships.
-internationally to assess || FOOD || – || DIS ||  internationally to assess diet–disease
-the topic regarding || FOOD || – || DIS ||  relation.
-
-independent effects of || FOOD || quality and genetic risk on all - cause mortality , || DIS ||  mortality, MI
-association of three || FOOD || quality indices ( RFS , HDI and ) and a genetic risk score with incidence of || DIS ||  and mortality.
-associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( ) mortality , myocardial infarction ( || DIS ||  ) and stroke
-independent effects of || FOOD || quality and genetic risk on all - cause mortality , mortality , || DIS ||  and stroke risk
-such as the || FOOD || ( rich in carnitine and choline from meat , egg yolks , and high - fat dairy products ) were associated with increased levels of the pro - inflammatory TMAO , which is linked to risk of , || DIS ||  , and mortality
-
-increasing incidence of || DIS || in developing countries parallels the westernization of || FOOD ||  , which includes
-increasing incidence of || DIS || in developing countries parallels the westernization of , which includes an increased intake of in fat and and a lesser intake of || FOOD ||  and fruits.
-reduction in coronary || DIS || mortality , thus highlighting the existence of a significant negative relationship between a high adherence to the Mediterranean || FOOD ||  and death from
-
-impact of a || FOOD || enriched with whole grain on surrogate markers of || DIS ||  such as blood
-of the MeDi || FOOD || style on several cardiovascular risk factors , such as body mass index , waist circumference , blood lipids , blood pressure , inflammatory markers and adhesion molecules , and || DIS ||  and how these
-of effect of || FOOD || on lung function is estimated to be comparable to that of chronic smoking [ 51 ] , underscoring that healthy dietary approaches may have a great impact jointly on || DIS ||  development and the
-impact of a || FOOD || enriched with whole grain on surrogate markers of || DIS ||  such as blood
+specific to key || FOOD || - related factors associated with || DIS ||  risk.
+evidence that higher || FOOD || quality ( RFS , HDI and ) was associated with lower risk of all - cause mortality , regardless of genetic || DIS ||  risk.
+of a healthier || FOOD || , and indicators of improved cardio - metabolic health , particularly in terms of adiposity , cholesterol and || DIS ||  risk.
+of a healthier || FOOD || , and several markers of cardio - metabolic health including adiposity , cholesterol and || DIS ||  risk.
+whereas the Mediterranean || FOOD || ( including high intake of ) decreases || DIS ||  risk.
+were connected to || FOOD || , feeding behaviors , and and nutrients ( and , antioxidants , unsaturated fatty acids , meat products ) , suggesting some of the main key research categories that have been the attention focus in the and || DIS ||  risk.
+plethora of new || FOOD || quality indices has raised questions among researchers regarding the optimal choice for studies of || DIS ||  prevention.
 the plethora of || FOOD || quality indices , some studies compared the association between adherence to the above - mentioned indices and || DIS ||  and its risk
-of the MeDi || FOOD || style on several cardiovascular risk factors , such as body mass index , waist circumference , blood lipids , blood pressure , inflammatory markers and adhesion molecules , and || DIS ||  and how these
-the impact of || FOOD || on outcomes , such as lung function ( FEV1 , FVC , FEV1 / FVC ) , symptoms , incidence , prevalence or severity of || DIS ||  , and its
-of effect of || FOOD || on lung function is estimated to be comparable to that of chronic smoking [ 51 ] , underscoring that healthy dietary approaches may have a great impact jointly on || DIS ||  development and the
-The || FOOD || showed a statistically non - significant inverse association with incidence of || DIS ||  in the overall
-effects of the || FOOD || , rich in , saturated fat , meat , and sugar , on lung function and the risk of , and , by contrast , the ability of specific dietary factors and , mostly the / Mediterranean - loaded by plant - and healthy fats , to preserve lung function and prevent || DIS ||  or its evolution
-the interactions of || FOOD || and dietary factors with lung function and || DIS ||  development and progression
+of adhering to || FOOD || quality scores may occur through improvements in || DIS ||  risk factors,
+another area of || FOOD || that has evidence related to || DIS ||  risk.
+The intake of || FOOD || of this macroelement resulted in an increase in the total plasma cholesterol concentration , one of the first || DIS ||  risk factors identified
+between reduced saturated || FOOD || intake and reduction in || DIS ||  risk.
+Higher AHEI and || FOOD || scores and a higher modified were inversely associated with long - term || DIS ||  risk.
+consumption of a || FOOD || — high in saturated animal fats , simple sugars , and sodium — increases the risk of obesity , , and , 2 , 3 , 4 all of which increase ( || DIS ||  ) risk.
+microbiome and the || FOOD || is associated with increased risk for whereas the Mediterranean ( including high intake of ) decreases || DIS ||  risk.
+as patterns of || FOOD || intake , and approaches to rank and quantify adherence of study participants to these patterns have been developed to evaluate their association with || DIS ||  risk.
+suggest fruit and || FOOD || consumption as an important determinant of pulmonary function and || DIS ||  risk.
+and nutrients ( || FOOD || and , antioxidants , unsaturated fatty acids , meat products ) , suggesting some of the main key research categories that have been the attention focus in the and || DIS ||  risk.
+these observations suggest || FOOD || and consumption as an important determinant of pulmonary function and || DIS ||  risk.
+
+aspects of the || FOOD || thought to be associated with development of risks for a variety of || DIS ||  (79)
+to the three || FOOD || scores and the incidence of || DIS ||  (T2D,
+association between the || FOOD || and the MedDiet with the risk of || DIS ||  (T2D,
+to the Mediterranean || FOOD || is associated with lower probability of developing || DIS ||  (16)
+A || FOOD || study in Greece also found association of and consumption with || DIS ||  (50)
+a correlation between || FOOD || and in patients studies support a role for and possibly dairy products in || DIS ||  risk (47
+of the Mediterranean || FOOD || and generally protective against neurodegeneration in or || DIS ||  (296)
+the relationship of || FOOD || with lung function and risk and outcomes of || DIS ||  (Table 1
+
+
+
+ Role of || FOOD || in the of
+
+  Diet has an important role in the of ( ) , both ( ) and || DIS ||  (CD)
+
+ Role of || FOOD || in the of || DIS ||
+ 1)
+
+
+
+ Role of || FOOD || in the of
+
+  Diet has an important role in the of || DIS ||  (IBD)
+compliance to the || FOOD || , the highest compliance was associated with a 20 % reduction in the risk of || DIS ||  (93)
+adhering to the || FOOD || in reducing inflammation at the 24 - y follow - up in women from the Nurses ’ Health Study , with no previous history of || DIS ||  (76)
+effects of the || FOOD || are due not only to reductions in BP but also to improvements in inflammatory biomarkers , which are suggested to reduce || DIS ||  events (94
+The || FOOD || is among the greatest risk factors for developing such as || DIS ||  (8,
+
+the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing || DIS ||  , cancer,
+as the Mediterranean || FOOD || ( in fiber ) shaped the composition of gut microbiota so as to increase the circulating levels of anti - inflammatory SCFAs , while animal - such as the ( rich in carnitine and choline from meat , egg yolks , and high - fat dairy products ) were associated with increased levels of the pro - inflammatory TMAO , which is linked to risk of || DIS ||  , CV disorders
+, the Mediterranean || FOOD || ( ) is considered to be an effective strategy for the primary prevention for the development of ( || DIS ||  ), such
+the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of , mainly || DIS ||  and cancer [
+and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
+that the Mediterranean || FOOD || is not free from and some researchers have exposed || DIS ||  and doubts.
+the traditional Mediterranean || FOOD || is a well - known and well - studied healthy dietary pattern and many evidences underling how this could represent a central useful tool to control cardiovascular risk factors , such as , || DIS ||  , hypertension [
+to the Mediterranean || FOOD || was associated with 21 % lower odds of being affected by one additional risk factor ( i.e. , hypertension , , || DIS ||  , and obesity
+the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of || DIS ||  , mainly CVD
+, the Mediterranean || FOOD || is also rich in that contain anti - oxidant bioflavonoids and polyphenols , which are associated with decreased risk of || DIS ||  (9,
+that the Mediterranean || FOOD || supplemented with extra virgin olive oil , in people with high cardiovascular risk , promoted the five main functions fulfilled by HDL : cholesterol efflux and || DIS ||  , anti-
+that Traditional Mediterranean || FOOD || ( ) could have benefits on the primary prevention of heart failure ( ) , which is justified by the data obtained , the effects on || DIS ||  incidence in subjects
+the traditional Mediterranean || FOOD || has been consistently associated with a reduced risk of developing , || DIS ||  , and diabetes
+to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , || DIS ||  , depression,
+
+dietary intake of || FOOD || , polyunsaturated fatty acids ( PUFAs ) , ω-6 fatty acids , and meat was associated with an increased risk of both CD and || DIS ||  .
+the effects of || FOOD || on , hypertension , lipid profile , and thus on || DIS ||  .
+the effect of || FOOD || that are enriched with fats and carbohydrates on || DIS ||  .
+impact of this || FOOD || ’ consumption in NAFLD or liver || DIS ||  .
+different aspects of || FOOD || quality , for example , being based on intakes for only ( eg , Recommended Food Score , RFS ) , a combination of and nutrients from dietary guidelines ( eg , Healthy Diet Indicator , HDI ) or a dietary pattern identified as healthful ( eg , Mediterranean Diet Score , || DIS ||  ).
+of whether the || FOOD || quality index is based on intakes of ( ie , RFS ) , and from guidelines ( ie , HDI ) or a identified as ( ie , || DIS ||  ).
+that AHEI and || FOOD || scores have more components in common ( e.g. , sugar - sweetened beverages , red and processed meat , and intake ) than they have with modified || DIS ||  .
+and effects of || FOOD || consumption on || DIS ||
+ .
+consumption of the || FOOD || ( low , high ) ; therefore , dietary interventions such as the Mediterranean ( or components of the Mediterranean ) may be a viable approach to blunt neuroinflammation and improve neuronal function in || DIS ||  .
+by consumption of || FOOD || [ 9 ] , with clinical symptoms , such as nausea , vomiting , abdominal pain , , other gastrointestinal symptoms or nerve symptoms of || DIS ||  .
+the contrary, || FOOD || that include higher amounts of red / processed meats , sugars ( i.e. , deserts , sugar - sweetened beverages , and sweets ) , potatoes and French fries , are associated with a higher risk of || DIS ||  .
+with globalization of || FOOD || production and consumption , as well as spreading of urbanization , technology , and || DIS ||  .
+
+section 3 ( || FOOD || as a therapy for ) , there is no good evidence to support the use of in || DIS ||  .
+score, since || FOOD || groups are not necessarily equivalent in their associations with || DIS ||  .
+A gluten- || FOOD || ( GFD ) is not of a proven value in patients with || DIS ||  .
+low or a || FOOD || for patients with || DIS ||  .
+A gluten- || FOOD || is not of a proven value in patients with || DIS ||  .
+Adjustment for total || FOOD || intake as a covariate was not included in associations between and depressive symptoms , since adjustment for total energy was already included in the || DIS ||  .
+driving gene- || FOOD || interaction , but also of metabolic processes , could finally provide individualized and accurate recommendations to prevent the development of || DIS ||  .
+to define a || FOOD || as possible preventive tool and for managing || DIS ||  .
+and low- || FOOD || ) , showed no significant association between adoption of TDM enriched with EVOO or nuts and no reduction of the incidence of || DIS ||  .
+with low- || FOOD || on in the patients with || DIS ||  Chronobiol.
+meat, and || FOOD || intake ) than they have with modified || DIS ||  .
 
 higher consumption of || FOOD || was associated with decreased risk of both || DIS ||  and CD [
 high intake of || FOOD || may be associated with an increased risk for || DIS ||  [13].3.
 increased intake of || FOOD || , might lead to a reduction in insulin resistance and || DIS ||  [78,79]
 adequate consumption of || FOOD || ( 23 g / day ) in the CV risk has already been recognized at the end of the last century by the Food and Drug Administration , addressing olive oil as a qualified dressing able to decrease the risk of || DIS ||  [82]
 the consumption of || FOOD || [ 31 ] and an increase in the prevalence of ( T2DM ) and || DIS ||  [32,33]
-smoking and higher || FOOD || consumption is indeed associated with the highest risk of newly diagnosed || DIS ||  [125]
-COPD subjects have || FOOD || with lower and intake [ 44 ] and with poorer antioxidant content , which was correlated with impaired lung function and risk of having || DIS ||  [35,36]
+high intakes of || FOOD || and , shown to have an adverse effect on || DIS ||  (82)
+the intake of || FOOD || PUFA was positively related to the incidence of ( defined as chronic productive cough , , emphysema , and ) , but no relation between n-3 PUFA intake and the incidence of || DIS ||  was observed [
 high intake of || FOOD || , total flavonoids ( specifically flavanones and dihydroflavonols ) , and stilbenes was associated with a reduced risk of in elderly persons at high risk of || DIS ||  [44]
-shown that high || FOOD || intake promotes modifications of gut microbiota in both rodents and humans , with decreased Firmicutes and increased Bacteroidetes , which produces high levels of SCFAs , related with || DIS ||  [76]
-diets with lower || FOOD || and intake [ 44 ] and with poorer antioxidant content , which was correlated with impaired lung function and risk of having || DIS ||  [35,36]
+the consumption of || FOOD || ( without alcohol ) was associated with an improvement in endothelial function measured as flow - mediated vasodilation of the brachial artery , which was related to a reduction in the susceptibility of LDL oxidation in 15 || DIS ||  patients [140
 high intake of || FOOD || and , and low intake of and and and were associated with lower risk of || DIS ||  [154]
 the consumption of || FOOD || was associated with an 8 % increased risk of developing || DIS ||  [165]
 
-direct pathway between || FOOD || quality and || DIS ||  .
-between measures of || FOOD || quality and || DIS ||  in adolescence.
-the effect of || FOOD || quality scores on || DIS ||  .
-direct pathway between || FOOD || quality and || DIS ||  .
-between measures of || FOOD || quality and || DIS ||  in adolescence.
-the effect of || FOOD || quality scores on || DIS ||  .
-an interaction between || FOOD || quality and genetic risk score for || DIS ||  .
-
-different facets of || FOOD || consumption ( lifetime , at the time of enrolment into the study ) for the risk of || DIS ||  (after adjustment
-different aspects of || FOOD || quality , for example , being based on intakes for only ( eg , Recommended Food Score , RFS ) , a combination of and nutrients from dietary guidelines ( eg , Healthy Diet Indicator , HDI ) or a dietary pattern identified as healthful ( eg , Mediterranean Diet Score , || DIS ||  ).
-of whether the || FOOD || quality index is based on intakes of ( ie , RFS ) , and from guidelines ( ie , HDI ) or a identified as ( ie , || DIS ||  ).
-a priori defined || FOOD || scores and the four different outcomes considered ( T2D , , stroke , and || DIS ||  ).
-
-derive a Mediterranean || FOOD || score ( || DIS ||  ) and daily
-using a Mediterranean || FOOD || score ( || DIS ||  )(
 
 
-A Mediterranean || FOOD || score ( || DIS ||  ) was calculated
 
-both nutrients and || FOOD || groups known to act synergistically and shown to provide protective benefit against development of || DIS ||  , while accounting
-integrating diverse healthy || FOOD || / nutrients , such as the MedDiet , has moderately significant evidence of being similarly protective for cognitive deterioration , , and || DIS ||  integrating diverse healthy foods/nutrients, such as the MedDiet, has moderately significant evidence of being similarly protective for cognitive deterioration, AD, and PD
+ Role of || FOOD || in the of
+
+  Diet has an important role in the of ( || DIS ||  ), both
+on role of || FOOD || in of from other prospective studies in || DIS ||  , such as
+prophylactic change in || FOOD || , especially in combination with physical activity , which would reduce the risk of developing by even a small percentage , may significantly affect the number of people who will develop || DIS ||  and, thus
+an association between || FOOD || quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
+the value of || FOOD || - based dietary guidelines in preventative healthcare rather a reductionist nutrient - based approach.54
+
+  Evidence for an association between quality indices and risk is mixed.5 7 11 14 32 55–57 Confirming our findings , large - scale studies in the UK population have shown independent associations between and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
+is possible that || FOOD || influences may be different across different clinical phenotypes of || DIS ||  , as some
+association between a || FOOD || and lower levels of || DIS ||  , but based
+independent associations between || FOOD || and lifestyles and low genetic risk in reducing risk of || DIS ||  , with mixed
+most of the || FOOD || consumption in many low- and middle - income countries , especially in || DIS ||  , comes from
+
+“healthy” || FOOD || , as ( and ) , , , , and , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
+  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
+in addition to || FOOD || , and lung function , || DIS ||  incidence, symptoms
+the relation between || FOOD || and lung function , || DIS ||  risk, symptoms
+, such as || FOOD || ( and ) , , , , and , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
+  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
+is a rich || FOOD || source of isoflavones , with lung function and || DIS ||  prevalence was also
+association between total || FOOD || intake and lung function decline , and || DIS ||  incidence and prevalence
+products, and || FOOD || , was associated with higher lung function and less decline over time , less emphysema and emphysema progression , greater 6 - minute walk and St. George ’s Respiratory Questionnaire ( SGRQ ) scores , and lower levels of inflammatory markers ( C - reactive protein , white blood cells , surfactant protein D , total neutrophils ) Vitamin D
+  Limited evidence also supports a direct correlation between vitamin D levels , which mainly depend on sun exposure in addition to , and lung function , || DIS ||  incidence, symptoms
+such as the || FOOD || ( rich in carnitine and choline from meat , egg yolks , and high - fat dairy products ) were associated with increased levels of the pro - inflammatory TMAO , which is linked to risk of , || DIS ||  , and mortality
+
+“healthy” || FOOD || is associated with beneficial effects relative to || DIS ||  (6)
+concluded that a || FOOD || in adulthood is associated with a reduced risk of || DIS ||  (
+
+ 4
+not account for || FOOD || intake , also showed inverse associations with incidence of || DIS ||  (17)
+also rich in || FOOD || that contain anti - oxidant bioflavonoids and polyphenols , which are associated with decreased risk of || DIS ||  (9,
+high quantities of || FOOD || fat has been widely reported to be associated with increased risk of developing || DIS ||  (14,
+high consumption of || FOOD || and possibly dairy products in general are associated with increased risk for || DIS ||  (47–49)
+factors, especially || FOOD || , can markedly affect microbiota community structure and composition , and thus it is expected that the intestinal microbiota in patients from the USA should be different from those living in Europe or || DIS ||  (21,
+that the Mediterranean || FOOD || - associated microbiome is characterized by a high relative abundance of that can utilize fiber as an energy source such as || DIS ||  (10,
+
+the effect of || FOOD || on the risk of || DIS ||  have been retrospective
+of the Mediterranean || FOOD || in the control of the main risk factors for the development of || DIS ||  could be in
+fat in the || FOOD || on the risk of developing || DIS ||  began [10
+The role of || FOOD || and genetics on risk of || DIS ||  is an emerging
+The level of || FOOD || consumption was adopted as a covariate in addition to inclusion of alcohol in the , since alcohol in the || DIS ||  was only a
+the consumption of || FOOD || , on the primary prevention of || DIS ||  have not been
+The || FOOD || is proposed as an alternative across Northern Europe , although its associations with the risk of || DIS ||  remain controversial.
+
+associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( || DIS ||  ) mortality,
+independent effects of || FOOD || quality and genetic risk on all - cause mortality , || DIS ||  mortality, MI
+association of three || FOOD || quality indices ( RFS , HDI and ) and a genetic risk score with incidence of || DIS ||  and mortality.
+Association recommended the || FOOD || in their Guidelines on Lifestyle Management to Reduce Cardiovascular Risk , with a strong level of evidence for reducing || DIS ||  risk (95
+
+ Association of || FOOD || with cardiovascular risk factors among type 2 || DIS ||  patients: a
+associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( ) mortality , myocardial infarction ( || DIS ||  ) and stroke
+independent effects of || FOOD || quality and genetic risk on all - cause mortality , mortality , || DIS ||  and stroke risk
+
+of the MeDi || FOOD || style on several cardiovascular risk factors , such as body mass index , waist circumference , blood lipids , blood pressure , inflammatory markers and adhesion molecules , and || DIS ||  and how these
+the impact of || FOOD || on outcomes , such as lung function ( FEV1 , FVC , FEV1 / FVC ) , symptoms , incidence , prevalence or severity of || DIS ||  , and its
+of effect of || FOOD || on lung function is estimated to be comparable to that of chronic smoking [ 51 ] , underscoring that healthy dietary approaches may have a great impact jointly on || DIS ||  development and the
+higher intake of || FOOD || fosters oxidative stress and hepatic insulin resistance [ 13 ] , which , along with intrahepatic fat accumulation , promote the development of || DIS ||  and cardiometabolic events
+effects of the || FOOD || , rich in , saturated fat , meat , and sugar , on lung function and the risk of , and , by contrast , the ability of specific dietary factors and , mostly the / Mediterranean - loaded by plant - and healthy fats , to preserve lung function and prevent || DIS ||  or its evolution
 dietary factors and || FOOD || , mostly the / Mediterranean - loaded by plant - and healthy fats , to preserve lung function and prevent || DIS ||  or its evolution
+the interactions of || FOOD || and dietary factors with lung function and || DIS ||  development and progression
 
-between diet and || DIS || have not used comprehensive measures of dietary intake , meaning that measures of || FOOD ||  quality could not
-diet scores with || DIS || after adjustment for confounders (
-
-  17
-
-  ,
-
-  18
-
-  ) , while one study found prospective associations of healthy and unhealthy || FOOD ||  scores with a
-observed with increased || DIS || severity , mostly stage 4 , and a one - unit increase of the Mediterranean || FOOD ||  score was significantly
-between diet and || DIS || have not used comprehensive measures of dietary intake , meaning that measures of || FOOD ||  quality could not
-diet scores with || DIS || after adjustment for confounders (
-
-  17
-
-  ,
-
-  18
-
-  ) , while one study found prospective associations of healthy and unhealthy || FOOD ||  scores with a
-observed with increased || DIS || severity , mostly stage 4 , and a one - unit increase of the Mediterranean || FOOD ||  score was significantly
-In patients with || DIS || , a prospective cohort study of 191 patients revealed that high intake of and , , , and or || FOOD ||  increased the likelihood
-between diet and || DIS || have not used comprehensive measures of dietary intake , meaning that measures of quality could not incorporate adjustment for misreporting or adjust for confounding by reported || FOOD ||  intake, as
-
-associations of Mediterranean || FOOD || , physical activity and their combination with || DIS ||  : The Seguimiento
-to the Mediterranean || FOOD || could mitigate the adverse consequences of obesity on || DIS ||  : the SUN
-diet, Mediterranean || FOOD || , and the risk of || DIS ||  : the EPIC
-diet, Mediterranean || FOOD || , and the risk of || DIS ||  : the EPIC
-to a Mediterranean || FOOD || and risk of || DIS ||  : A systematic
-associations of Mediterranean || FOOD || , physical activity and their combination with || DIS ||  : The Seguimiento
-to the Mediterranean || FOOD || could mitigate the adverse consequences of obesity on || DIS ||  : the SUN
-diet, Mediterranean || FOOD || , and the risk of || DIS ||  : the EPIC
-diet, Mediterranean || FOOD || , and the risk of || DIS ||  : the EPIC
-to a Mediterranean || FOOD || and risk of || DIS ||  : A systematic
-Adherence to Mediterranean || FOOD || and risk of || DIS ||  : an updated
-Adherence to Mediterranean || FOOD || and risk of || DIS ||  :
-
-association between the || FOOD || and the risk of breast and || DIS ||  or CVD was
-association between the || FOOD || and the risk of breast and or || DIS ||  was observed [
-specific association between || FOOD || consumption and the risk of || DIS ||  (101,460 participants
-
-association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
-of the Mediterranean || FOOD || also extended to the clinical setting of the secondary prevention of || DIS ||  .
-of the Mediterranean || FOOD || in prevention of || DIS ||  Curr.
-association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
-of the Mediterranean || FOOD || also extended to the clinical setting of the secondary prevention of || DIS ||  .
-of the Mediterranean || FOOD || in prevention of || DIS ||  Curr.
-factors such as || FOOD || and dietary habits that appear to be critical modulators of gut microbiota , which is one of the key elements in initiation of inflammation in || DIS ||  .
-the efficacy of || FOOD || for induction and maintenance of remission in || DIS ||  .
-the importance of || FOOD || in the management of || DIS ||  .
-the link between || FOOD || and the risk of || DIS ||  .
-Evolutionary aspects of || FOOD || , the omega‐6 / omega‐3 ratio and genetic variation : nutritional implications for || DIS ||  .
-, the Mediterranean || FOOD || ( MedDiet ) , has been extensively evaluated in relation to || DIS ||  .
-for studies into || FOOD || and risk of || DIS ||  .
-, the highest || FOOD || consumption , and the highest incidence of death from || DIS ||  .
-important role of || FOOD || as risk factor for || DIS ||  .
-of the Mediterranean || FOOD || , especially on inflammation , , and || DIS ||  .
-as the Lyon || FOOD || heart study have reported the beneficial effects of Mediterranean style on the secondary prevention of the || DIS ||  .
-with the Mediterranean || FOOD || on the serum levels of fourteen metabolites that were selected for their role in influencing the expression of gene encoding enzymatic proteins that are modulated by || DIS ||  .
-from the Mediterranean || FOOD || enriched with VOO or walnuts are partly associated with its anti - inflammatory effects , as shown by the reduction of levels of inflammatory cellular and circulating molecules that have always played a key role in the development of one of the most important risk factors , such as || DIS ||  .
-influences, particularly || FOOD || , in the development of NAFLD as well as in the increase in cardiovascular risk , possibly suggesting common etiopathogenetic pathways linking both hepatic and || DIS ||  .
-predictive role of || FOOD || quality on risk of all - cause mortality remained after adjusting for major non - modifiable determinants of all - cause mortality , including age , sex and family history of || DIS ||  .
-The traditional Mediterranean || FOOD || includes very low amount of partially hydrogenated trans fatty acids that are involved in the of || DIS ||  .
-to the Mediterranean || FOOD || and death from || DIS ||  .
-that the Mediterranean || FOOD || is not free from and some researchers have exposed || DIS ||  and doubts.
-studies about Mediterranean || FOOD || and its effects on || DIS ||  .
-salt and cholesterol || FOOD || ( HSCD ) could be in part reversed by the treatment with different doses of an enriched - tannins fraction of the Indian || DIS ||  .
-Association of Mediterranean || FOOD || with mild cognitive impairment and : a systematic review and || DIS ||  .
-of the Mediterranean || FOOD || ) may be a viable approach to blunt neuroinflammation and improve neuronal function in || DIS ||  .
-of a Mediterranean || FOOD || might be a useful approach to prevent and possibly treat || DIS ||  .
-of the Mediterranean || FOOD || ) promotes the growth of and reduces || DIS ||  .
-between the Mediterranean || FOOD || and lung function with relevance to both the prevention of as well as the improvement of || DIS ||  .
-of the Mediterranean || FOOD || at a time of || DIS ||  .
-A low FODMAP || FOOD || may help in alleviating ( IBS)-like symptoms associated with || DIS ||  .
-A low FODMAP || FOOD || may help in alleviating -like symptoms associated with || DIS ||  .
-a relationship between || FOOD || , gut microbiota , and metabolic health , including obesity and || DIS ||  .
-showed that reduced || FOOD || intake led to an improvement in the glucose profile and a reduction in the risk of obesity and || DIS ||  .
-to a Mediterranean || FOOD || style may influence the potential negative relationship between elevated plasma ceramide concentrations and || DIS ||  .
-followed a Mediterranean || FOOD || style had 50–70 % lower risk of recurrent clinical events related to || DIS ||  .
-effects of the || FOOD || on biomarkers of vascular wall inflammation and plaque vulnerability in subjects with high risk for || DIS ||  .
-or combined with || FOOD || in increasing the risk of developing both || DIS ||  .
-Along with the || FOOD || , some , either congenital or caused by environmental actions ( i.e. , epigenetic ) , have been implicated in the and progression of || DIS ||  .
-This || FOOD || permanently became the subject of research into dietary approaches not only due to its ability to reduce body weight , but also because of its role in the prevention and treatment of || DIS ||  .
-this type of || FOOD || , especially in individuals that are treated with insulin , because of the potentially increased risk of and || DIS ||  .
-different selection of || FOOD || groups for among studies , and lack of differentiation between types of || DIS ||  .
-compounds within the || FOOD || matrix work synergistically and some specific combinations may directly protect against || DIS ||  .
-given to these || FOOD || groups makes it challenging to determine whether they drive the effect of quality scores on || DIS ||  .
-effects of a || FOOD || in individuals with || DIS ||
- .
-that following a || FOOD || may be of particular importance for reducing risk of in individuals with high genetic risk of || DIS ||  .
-association between the || FOOD || scores and the incidence of || DIS ||  .
-effects of the || FOOD || on the onset of || DIS ||  .
-salt, and || FOOD || is associated with an increased risk of || DIS ||  .
-by which the || FOOD || - mediated effects on the microbiome may influence , and also discuss how dietary interventions may be used to prevent or treat || DIS ||  .
-to support that || FOOD || impacts ( positively or negatively ) the development of such as || DIS ||  .
-caffeine in the || FOOD || have also been consistently associated with decreased risk of || DIS ||  .
-strongly suggesting that || FOOD || impacts the development / progression of including || DIS ||  .
-the effects of || FOOD || consumption and risk for || DIS ||  .
-these meat and || FOOD || , but only a small fraction of the general population will develop || DIS ||  .
-of milk and || FOOD || in midlife and the future risk of || DIS ||  .
-Promising effects of || FOOD || on motor , cognitive , gastrointestinal dysfunction after symptom development in a mouse model of || DIS ||  .
-indicates that some || FOOD || and nutrients , especially those nutraceuticals endowed with antioxidant and anti - inflammatory properties and when consumed in combinations in the form of balanced dietary patterns , are associated with better pulmonary function , less lung function decline , and reduced risk of || DIS ||  .
-effect of a || FOOD || on beyond its association with || DIS ||  .
-of the AHEI-2010 || FOOD || score and its main dietary features to || DIS ||  .
-and mechanisms of || FOOD || in preventing and treating || DIS ||  .
-in response to || FOOD || and improve a personalized nutrition intervention to prevent / treat || DIS ||  .
-the role of || FOOD || in is clearly available , smoking cessation and the appropriate pharmacologic therapy remain key measures for the prevention and treatment of || DIS ||  .
-public awareness about || FOOD || safety of plant , hand hygiene of handlers and policies about the interventions on foodborne illness were important elements preventing and controlling || DIS ||  .
-Outbreaks where || FOOD || workers have been implicated in the spread of || DIS ||  .
-association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
-of the Mediterranean || FOOD || also extended to the clinical setting of the secondary prevention of || DIS ||  .
-factors such as || FOOD || and dietary habits that appear to be critical modulators of gut microbiota , which is one of the key elements in initiation of inflammation in || DIS ||  .
-the efficacy of || FOOD || for induction and maintenance of remission in || DIS ||  .
-A low FODMAP || FOOD || may help in alleviating ( IBS)-like symptoms associated with || DIS ||  .
-the importance of || FOOD || in the management of || DIS ||  .
-A low FODMAP || FOOD || may help in alleviating -like symptoms associated with || DIS ||  .
-the link between || FOOD || and the risk of || DIS ||  .
-Evolutionary aspects of || FOOD || , the omega‐6 / omega‐3 ratio and genetic variation : nutritional implications for || DIS ||  .
-, the Mediterranean || FOOD || ( MedDiet ) , has been extensively evaluated in relation to || DIS ||  .
-for studies into || FOOD || and risk of || DIS ||  .
-, the highest || FOOD || consumption , and the highest incidence of death from || DIS ||  .
-important role of || FOOD || as risk factor for || DIS ||  .
-of the Mediterranean || FOOD || , especially on inflammation , , and || DIS ||  .
-as the Lyon || FOOD || heart study have reported the beneficial effects of Mediterranean style on the secondary prevention of the || DIS ||  .
-with the Mediterranean || FOOD || on the serum levels of fourteen metabolites that were selected for their role in influencing the expression of gene encoding enzymatic proteins that are modulated by || DIS ||  .
-from the Mediterranean || FOOD || enriched with VOO or walnuts are partly associated with its anti - inflammatory effects , as shown by the reduction of levels of inflammatory cellular and circulating molecules that have always played a key role in the development of one of the most important risk factors , such as || DIS ||  .
-showed that reduced || FOOD || intake led to an improvement in the glucose profile and a reduction in the risk of obesity and || DIS ||  .
-to a Mediterranean || FOOD || style may influence the potential negative relationship between elevated plasma ceramide concentrations and || DIS ||  .
-influences, particularly || FOOD || , in the development of NAFLD as well as in the increase in cardiovascular risk , possibly suggesting common etiopathogenetic pathways linking both hepatic and || DIS ||  .
-predictive role of || FOOD || quality on risk of all - cause mortality remained after adjusting for major non - modifiable determinants of all - cause mortality , including age , sex and family history of || DIS ||  .
-The traditional Mediterranean || FOOD || includes very low amount of partially hydrogenated trans fatty acids that are involved in the of || DIS ||  .
-followed a Mediterranean || FOOD || style had 50–70 % lower risk of recurrent clinical events related to || DIS ||  .
-to the Mediterranean || FOOD || and death from || DIS ||  .
-that the Mediterranean || FOOD || is not free from and some researchers have exposed || DIS ||  and doubts.
-studies about Mediterranean || FOOD || and its effects on || DIS ||  .
-salt and cholesterol || FOOD || ( HSCD ) could be in part reversed by the treatment with different doses of an enriched - tannins fraction of the Indian || DIS ||  .
-effects of the || FOOD || on biomarkers of vascular wall inflammation and plaque vulnerability in subjects with high risk for || DIS ||  .
-or combined with || FOOD || in increasing the risk of developing both || DIS ||  .
-This || FOOD || permanently became the subject of research into dietary approaches not only due to its ability to reduce body weight , but also because of its role in the prevention and treatment of || DIS ||  .
-Association of Mediterranean || FOOD || with mild cognitive impairment and : a systematic review and || DIS ||  .
-of the Mediterranean || FOOD || ) may be a viable approach to blunt neuroinflammation and improve neuronal function in || DIS ||  .
-of a Mediterranean || FOOD || might be a useful approach to prevent and possibly treat || DIS ||  .
-of the Mediterranean || FOOD || ) promotes the growth of and reduces || DIS ||  .
-between the Mediterranean || FOOD || and lung function with relevance to both the prevention of as well as the improvement of || DIS ||  .
-of the Mediterranean || FOOD || at a time of || DIS ||  .
-
-applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
-the applicability of || FOOD || quality indices for assessing || DIS ||  risk.
-applicability of these || FOOD || quality methodologies for examining || DIS ||  risk independent of
-applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
-applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
-the applicability of || FOOD || quality indices for assessing || DIS ||  risk.
-applicability of these || FOOD || quality methodologies for examining || DIS ||  risk independent of
-applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
-
-and supervision of || FOOD || safety , are needed to prevent || DIS ||  outbreaks in these
-of temperature of || FOOD || ready for consumption ; cooking temperature ; and thawing relates directly to and are the main cause of || DIS ||  outbreaks [15–17
-ten kinds of || FOOD || were found to be related to foodborne || DIS ||  outbreaks.
-and supervision of || FOOD || safety , are needed to prevent outbreaks in these months in which foodborne || DIS ||  outbreaks occurred frequently
-
-and risk of || DIS || events ( and stroke ) according to each || FOOD ||  quality index separately
-lower risk of || DIS || mortality , and stroke , suggesting the applicability of the || FOOD ||  quality indices may
-CVD mortality, || DIS || and stroke , suggesting the applicability of the || FOOD ||  quality indices may
-
-and risk of || DIS || : Systematic review and meta - analysis BMJ 2013 347 f6879 10.1136/ International group - based || FOOD ||  quality and risk
-and risk of || DIS || : Systematic review and meta - analysis BMJ 2013 347 f6879 10.1136/ International || FOOD ||  group-based
-and risk of || DIS || : a systematic review and meta - analysis Public Health Nutr 2015 18 7 1292 1299 10.1017 Schwingshackl L , Schwedhelm C , Galbete C , Hoffmann G. Adherence to Mediterranean || FOOD ||  and risk of
-and risk of || DIS || : Systematic review and meta - analysis BMJ 2013 347 f6879 10.1136/ International group - based || FOOD ||  quality and risk
-and risk of || DIS || : Systematic review and meta - analysis BMJ 2013 347 f6879 10.1136/ International || FOOD ||  group-based
-and risk of || DIS || : a systematic review and meta - analysis Public Health Nutr 2015 18 7 1292 1299 10.1017 Schwingshackl L , Schwedhelm C , Galbete C , Hoffmann G. Adherence to Mediterranean || FOOD ||  and risk of
-
-adherence to Mediterranean || FOOD || and reduction of || DIS ||  , it will
-adherence to the || FOOD || was associated with lower risk for total stroke , T2D , and || DIS ||  , the latter
-recommends the daily || FOOD || intake to be less than 2 g of sodium per day ( 5 g of salt per day ) in adults ( ≥16 years ) , in order to reduce blood pressure and risks of , stroke , and || DIS ||  , and the
-
-according to each || FOOD || quality index separately ( RFS , HDI and || DIS ||  ).
-association of three || FOOD || quality indices ( RFS , HDI and || DIS ||  ) and a
-evidence that higher || FOOD || quality ( RFS , HDI and || DIS ||  ) was associated
-
-a relationship between || FOOD || , gut microbiota , and metabolic health , including obesity and || DIS ||  .
-Along with the || FOOD || , some , either congenital or caused by environmental actions ( i.e. , epigenetic ) , have been implicated in the and progression of || DIS ||  .
-this type of || FOOD || , especially in individuals that are treated with insulin , because of the potentially increased risk of and || DIS ||  .
-different selection of || FOOD || groups for among studies , and lack of differentiation between types of || DIS ||  .
-compounds within the || FOOD || matrix work synergistically and some specific combinations may directly protect against || DIS ||  .
-given to these || FOOD || groups makes it challenging to determine whether they drive the effect of quality scores on || DIS ||  .
-effects of a || FOOD || in individuals with || DIS ||
- .
-that following a || FOOD || may be of particular importance for reducing risk of in individuals with high genetic risk of || DIS ||  .
-association between the || FOOD || scores and the incidence of || DIS ||  .
-effects of the || FOOD || on the onset of || DIS ||  .
-salt, and || FOOD || is associated with an increased risk of || DIS ||  .
-by which the || FOOD || - mediated effects on the microbiome may influence , and also discuss how dietary interventions may be used to prevent or treat || DIS ||  .
-to support that || FOOD || impacts ( positively or negatively ) the development of such as || DIS ||  .
-caffeine in the || FOOD || have also been consistently associated with decreased risk of || DIS ||  .
-strongly suggesting that || FOOD || impacts the development / progression of including || DIS ||  .
-the effects of || FOOD || consumption and risk for || DIS ||  .
-these meat and || FOOD || , but only a small fraction of the general population will develop || DIS ||  .
-of milk and || FOOD || in midlife and the future risk of || DIS ||  .
-Promising effects of || FOOD || on motor , cognitive , gastrointestinal dysfunction after symptom development in a mouse model of || DIS ||  .
-indicates that some || FOOD || and nutrients , especially those nutraceuticals endowed with antioxidant and anti - inflammatory properties and when consumed in combinations in the form of balanced dietary patterns , are associated with better pulmonary function , less lung function decline , and reduced risk of || DIS ||  .
-effect of a || FOOD || on beyond its association with || DIS ||  .
-of the AHEI-2010 || FOOD || score and its main dietary features to || DIS ||  .
-and mechanisms of || FOOD || in preventing and treating || DIS ||  .
-in response to || FOOD || and improve a personalized nutrition intervention to prevent / treat || DIS ||  .
-the role of || FOOD || in is clearly available , smoking cessation and the appropriate pharmacologic therapy remain key measures for the prevention and treatment of || DIS ||  .
-public awareness about || FOOD || safety of plant , hand hygiene of handlers and policies about the interventions on foodborne illness were important elements preventing and controlling || DIS ||  .
-Outbreaks where || FOOD || workers have been implicated in the spread of || DIS ||  .
-low or a || FOOD || for patients with || DIS ||  .
-should refrain from || FOOD || consumption as it may worsen the symptoms of || DIS ||  .
-of CD with || FOOD || was observed from Europe but not from || DIS ||  .
-low or a || FOOD || for patients with || DIS ||  .
-Personal view: || FOOD || for thought — western lifestyle and susceptibility to || DIS ||  .
-to define a || FOOD || as possible preventive tool and for managing || DIS ||  .
-the effects of || FOOD || on , hypertension , lipid profile , and thus on || DIS ||  .
-the effect of || FOOD || that are enriched with fats and carbohydrates on || DIS ||  .
-impact of this || FOOD || ’ consumption in NAFLD or liver || DIS ||  .
-hepatocytes without excessive || FOOD || consumption and after exclusion of all other causes of || DIS ||  .
-that AHEI and || FOOD || scores have more components in common ( e.g. , sugar - sweetened beverages , red and processed meat , and intake ) than they have with modified || DIS ||  .
+interventions versus other || FOOD || interventions on long - term weight change in adults : A systematic review and meta - analysis || DIS ||  Endocrinol.
 Adherence to Mediterranean‐type || FOOD || reduces circulating biomarkers of risk 17 and is associated with decreased risk of , 4 cognitive impairment , 8 and || DIS ||  .
 help determine how || FOOD || and psychosocial stress influence risk for such as || DIS ||  .
 observations suggest that || FOOD || may alter neural networks in ways that promote overeating and obesity , an important risk factor for || DIS ||  .
+an interaction between || FOOD || quality and genetic risk score for || DIS ||  .
 efforts to reduce || FOOD || intake still need to be undertaken in order to avoid risks of elevated blood pressure , , stroke , and || DIS ||  .
-consumption of the || FOOD || ( low , high ) ; therefore , dietary interventions such as the Mediterranean ( or components of the Mediterranean ) may be a viable approach to blunt neuroinflammation and improve neuronal function in || DIS ||  .
-of coffee and || FOOD || intake with the risk of || DIS ||  . JAMA.
-by consumption of || FOOD || [ 9 ] , with clinical symptoms , such as nausea , vomiting , abdominal pain , , other gastrointestinal symptoms or nerve symptoms of || DIS ||  .
-, as moderate || FOOD || intake is as well linked to an increased risk of drowning , violence , and injuries from car accidents and falls , and with a higher risk of || DIS ||  .
-the contrary, || FOOD || that include higher amounts of red / processed meats , sugars ( i.e. , deserts , sugar - sweetened beverages , and sweets ) , potatoes and French fries , are associated with a higher risk of || DIS ||  .
-with globalization of || FOOD || production and consumption , as well as spreading of urbanization , technology , and || DIS ||  .
+dietary components/ || FOOD || were related to risk for || DIS ||  .
 
-a priori defined || FOOD || scores and the four different outcomes considered ( T2D , || DIS ||  , stroke,
-to the three || FOOD || scores and the incidence of ( T2D , || DIS ||  , stroke,
-association between the || FOOD || and the MedDiet with the risk of ( type 2 diabetes ( T2D ) , myocardial infarction ( || DIS ||  ), stroke
-association between the || FOOD || and the MedDiet with the risk of ( T2D , myocardial infarction ( || DIS ||  ), stroke
-a light or || FOOD || of alcohol ( 5–25 g / day for women and 10–50 g / day for men ) , reported to be associated with a lower risk of total mortality , T2D , || DIS ||  , stroke,
-
-a low- || FOOD || partially restored the in obese patients with || DIS ||  [158]
-women with a || FOOD || in fat , a state of chronic - low grade inflammatory arises in the placenta as well in the fetal organs , including the liver , contributing to || DIS ||  development [176
-adherence to the || FOOD || and risk [ 168 ] , and adherence to the healthy Dutch dietary guideline and the risk of all - cause mortality and || DIS ||  development [169
-
-With regard to || FOOD || consumption and || DIS ||  , there does
-effect of moderate || FOOD || consumption and || DIS ||  incidence (39
-of dairy and || FOOD || consumption with || DIS ||  (50)
-
-The poor || FOOD || quality and the nutrient deficiencies in , which are related to || DIS ||  -specific factors
-and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and || DIS ||  -specific (
-The poor || FOOD || quality and the nutrient deficiencies in || DIS ||  , which are
-The poor || FOOD || quality and the nutrient deficiencies in , which are related to - specific factors such as symptoms ( e.g. , dyspnea , fatigue , anxiety , || DIS ||  , anorexia,
-The poor || FOOD || quality and the nutrient deficiencies in , which are related to || DIS ||  -specific factors
-and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and || DIS ||  -specific (
-The poor || FOOD || quality and the nutrient deficiencies in || DIS ||  , which are
-The poor || FOOD || quality and the nutrient deficiencies in , which are related to - specific factors such as symptoms ( e.g. , dyspnea , fatigue , anxiety , , , , loss of taste , poor dentition , || DIS ||  , poor chewing
-
-The Mediterranean || FOOD || was reported to present an inverse association with the incidence of || DIS ||  in Southern Europe
-The Mediterranean || FOOD || could partly change the incidence of || DIS ||  due to the
-and the Mediterranean || FOOD || has recently been shown to have a role in improving risk factors associated with || DIS ||  and
-between the Mediterranean || FOOD || and lung function with relevance to both the prevention of || DIS ||  as well as
-
-Suspicious || FOOD || , contributing outbreak factors and specific causative hazard are the most crucial elements of || DIS ||  outbreaks.
-public awareness about || FOOD || safety of plants is an important elements of preventing and controlling future || DIS ||  outbreak.
-propaganda knowledge about || FOOD || safety might be helpful for us to control || DIS ||  outbreaks.
-Suspicious || FOOD || , contributing outbreak factors and specific causative hazard are the most crucial elements of || DIS ||  outbreaks.
-public awareness about || FOOD || safety of plants is an important elements of preventing and controlling future || DIS ||  outbreak.
-propaganda knowledge about || FOOD || safety might be helpful for us to control || DIS ||  outbreaks.
-
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra‐virgin
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  N Engl J
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra‐virgin
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  N Engl J
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra‐virgin
-Primary prevention of || DIS || with a Mediterranean || FOOD ||  N Engl J
-
-Overall || FOOD || quality was assessed using two scores , and || DIS ||  .
-Adjustment for total || FOOD || intake as a covariate was not included in associations between and depressive symptoms , since adjustment for total energy was already included in the || DIS ||  .
-to improve the || FOOD || quality , especially in || DIS ||  .
-
-Cardiovascular disease ( || DIS || ) is the first cause of death and disability worldwide , and || FOOD ||  is one of
-NAFLD and cardiovascular || DIS || , understanding the interaction between metabolic alterations , genetics , and || FOOD ||  , is essential
-cardiovascular diseases and || DIS || , health policies should focus on adherence to a || FOOD ||  , as Mediterranean
 Cardiovascular disease ( || DIS || ) is the first cause of death and disability worldwide , and || FOOD ||  is one of
 NAFLD and cardiovascular || DIS || , understanding the interaction between metabolic alterations , genetics , and || FOOD ||  , is essential
 cardiovascular diseases and || DIS || , health policies should focus on adherence to a || FOOD ||  , as Mediterranean
 cardiovascular diseases and || DIS || , health policies should focus on adherence to a , as Mediterranean || FOOD ||  , supporting traditional
 lung function and || DIS || , in most studies , the confounding bias is tackled by performing the adjustment for multiple confounding factors known to influence pulmonary function or dietary behavior , including age , gender , BMI , physical activity , intake of or , intake , || FOOD ||  , and most
+respiratory health and || DIS || , as well as many other aspects of health , would be to recommend ( along with physical exercise ) a characterized by high consumption of , , , and , intake of || FOOD ||  (preferably wine
 
-Adherence to Mediterranean || FOOD || , high - sensitive C - reactive protein , and severity of || DIS ||  : Contemporary data
-Adherence to Mediterranean || FOOD || , high - sensitive C - reactive protein , and severity of || DIS ||  : contemporary data
-Adherence to Mediterranean || FOOD || , high - sensitive C - reactive protein , and severity of : Contemporary data from the INTERCATH cohort || DIS ||  2018 275 256
+the role of || FOOD || on || DIS ||  risk is warranted
+the effect of || FOOD || on || DIS ||  development by modulating
+effects of the || FOOD || on || DIS ||  have only been
+the evaluation of || FOOD || effect on || DIS ||  progression over time
+the effect of || FOOD || on different || DIS ||  phenotypes and to
+The effect of || FOOD || on || DIS ||  and its components
 
-AF
- Higher || FOOD || quality is associated with decreased risk of all - cause , || DIS ||  , and cancer
-and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
-healthy plant- || FOOD || and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
-stop hypertension ( || FOOD || ) score , and the healthy indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
-and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( , || DIS ||  and respiratory disease
-
-A || FOOD || study in Greece also found association of and consumption with || DIS ||  (50)
-a correlation between || FOOD || and in patients studies support a role for and possibly dairy products in || DIS ||  risk (47
-A higher AHEI-2010 || FOOD || score was associated with lower || DIS ||  risk (for
-A || FOOD || study in Greece also found association of and consumption with || DIS ||  (50)
-a correlation between || FOOD || and in patients studies support a role for and possibly dairy products in || DIS ||  risk (47
-A higher AHEI-2010 || FOOD || score was associated with lower || DIS ||  risk (for
-Association recommended the || FOOD || in their Guidelines on Lifestyle Management to Reduce Cardiovascular Risk , with a strong level of evidence for reducing || DIS ||  risk (95
-a role for || FOOD || and possibly dairy products in || DIS ||  risk (47
-
-, the Mediterranean || FOOD || ( ) is considered to be an effective strategy for the primary prevention for the development of || DIS ||  (CVD)
-associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , || DIS ||  (CVD)
-associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( || DIS ||  ) mortality,
-to the three || FOOD || scores and the incidence of || DIS ||  (T2D,
-, the Mediterranean || FOOD || ( ) is considered to be an effective strategy for the primary prevention for the development of || DIS ||  (CVD)
-associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , || DIS ||  (CVD)
-associations of three || FOOD || quality indices and a polygenic risk score with incidence of all - cause mortality , ( || DIS ||  ) mortality,
-to the three || FOOD || scores and the incidence of || DIS ||  (T2D,
+molecules, and || DIS || ; moreover , accumulating data report that these advantages of the Mediterranean || FOOD ||  are maintained also
+as i.e., || DIS || , high blood pressure , and ( as declared by the respondents , based on their knowledge ) and not undergoing a certain || FOOD ||  program, were
+bacteria, high || DIS || ) ; therefore , dietary interventions such as the Mediterranean ( or components of the Mediterranean || FOOD ||  ) may be
+prevalent T2D, || DIS || , stroke , or were excluded , as well as those with missing follow - up time , those with missing information on || FOOD ||  , and those
+pressure, and || DIS || ( as declared by the respondents , based on their knowledge ) and not undergoing a certain || FOOD ||  program, were
+stroke, or || DIS || were excluded , as well as those with missing follow - up time , those with missing information on || FOOD ||  , and those
 
 , changes in || FOOD || over the past few decades , with decreased consumption of , , , and , and increased consumption of and , have been invocated to contribute to the increased prevalence of || DIS ||  , including COPD
 , changes in || FOOD || over the past few decades , with decreased consumption of , , , and , and increased consumption of and , have been invocated to contribute to the increased prevalence of , including || DIS ||  , mainly in
@@ -1007,50 +614,184 @@ of processed and || FOOD || , have been invocated to contribute to the increased
 , rich in || FOOD || , saturated fat , meat , and sugar , on lung function and the risk of , and , by contrast , the ability of specific dietary factors and , mostly the / Mediterranean - loaded by plant - and healthy fats , to preserve lung function and prevent || DIS ||  or its evolution
 decreased consumption of || FOOD || , , , and , and increased consumption of and , have been invocated to contribute to the increased prevalence of , including || DIS ||  , mainly in
 
+genetic bases of || DIS || , in the last few years , evidence is accumulating on the complex interplay between genetic predisposition and environmental influences , particularly || FOOD ||  , in the
+majority of sporadic || DIS || appears to be associated with environmental risk factors that also affect the microbiome such as stress , || FOOD ||  , lack of
+the incidence of || DIS || are related to lifestyle , especially the type of || FOOD ||  , particularly its
+and prophylaxis of || DIS || , the most important direction is the introduction of a , || FOOD ||  , while taking
+benefits of a || DIS || , composed of considered “ poor ” with a low intake of and || FOOD ||  , in combination
+the occurrence of || DIS || , which makes it necessary for the most underprivileged populations to choose low - , of empty calories but poor in nutrients ; ( iii ) the popularity of high - low - || FOOD ||  , plenty of
+
+the prevention of || DIS || and , health policies should focus on adherence to a , as Mediterranean || FOOD ||  , supporting traditional
+risk of developing || DIS || were divided into three arms : one that was given an indication to practice Mediterranean supplemented with extra virgin olive oil , one that was given an indication to practice Mediterranean || FOOD ||  supplemented with nuts
+risk factors of || DIS || , requires , among first steps , to follow an , as the Mediterranean || FOOD ||  that includes foods
+risk of developing || DIS || [ 62,63 ] , differently , the long term adherence to healthier plant - || FOOD ||  , through the
+the benefits of || DIS || , which was compared with a low - || FOOD ||  , on both
+
+of the Mediterranean || FOOD || , especially on inflammation , || DIS ||  , and cardiovascular
+adherence to Mediterranean || FOOD || might prevent inflammation , which exerts a central role in the of || DIS ||  and cardiovascular disease
+of the Mediterranean || FOOD || and endowed with anti - inflammatory , antioxidant , and beneficial metabolic properties ( , , seafood , nuts , legumes , vitamins , polyphenols , etc . ) have been associated to improved lung function and || DIS ||  prevention in several
+to the Mediterranean || FOOD || pattern predicts the prevalence of hypertension , , || DIS ||  and obesity,
+to the Mediterranean || FOOD || in reference to the prevention / management of , such as , , , , || DIS ||  , and fragility
+
+that low FODMAP || FOOD || reduces ( IBS)-like symptoms in patients with || DIS ||  in remission,
+that higher AHEI-2010 || FOOD || score was associated with a 33 % lower risk of newly diagnosed || DIS ||  in both men
+A higher AHEI-2010 || FOOD || score was associated with lower || DIS ||  risk (for
+Increased intake of || FOOD || was independently associated with an obstructive pattern of spirometry in a cross - sectional analysis in the third National Health and Nutrition Examination Survey [ 123 ] and with an increased risk of newly diagnosed || DIS ||  in both men
+
+The poor || FOOD || quality and the nutrient deficiencies in , which are related to || DIS ||  -specific factors
+and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and || DIS ||  -specific (
+The poor || FOOD || quality and the nutrient deficiencies in || DIS ||  , which are
+The poor || FOOD || quality and the nutrient deficiencies in , which are related to - specific factors such as symptoms ( e.g. , dyspnea , fatigue , anxiety , , , , loss of taste , poor dentition , || DIS ||  , poor chewing
+
+and supervision of || FOOD || safety , are needed to prevent || DIS ||  outbreaks in these
+of temperature of || FOOD || ready for consumption ; cooking temperature ; and thawing relates directly to and are the main cause of || DIS ||  outbreaks [15–17
+ten kinds of || FOOD || were found to be related to foodborne || DIS ||  outbreaks.
+and supervision of || FOOD || safety , are needed to prevent outbreaks in these months in which foodborne || DIS ||  outbreaks occurred frequently
+
+hepatocytes without excessive || FOOD || consumption and after exclusion of all other causes of || DIS ||  .
+incorrect diet, || FOOD || in fructose and added sugars , as well as in n-6 PUFAs and SFAs , in the development of both || DIS ||  .
+dietary pattern, || FOOD || , nutrients and lung function , and prevention and improvements of || DIS ||  .
+, as moderate || FOOD || intake is as well linked to an increased risk of drowning , violence , and injuries from car accidents and falls , and with a higher risk of || DIS ||  .
+
+
+
+ Associations between || FOOD || , psychosocial stress , and , including ( || DIS ||  ), have
+association between the || FOOD || and the MedDiet with the risk of ( type 2 diabetes ( T2D ) , myocardial infarction ( ) , stroke , and || DIS ||  ) in the
+association between the || FOOD || and the MedDiet with the risk of ( T2D , myocardial infarction ( ) , stroke , and || DIS ||  ) in the
+to the three || FOOD || scores and the incidence of ( T2D , , stroke , and || DIS ||  ) in the
+
+a priori defined || FOOD || scores and the four different outcomes considered ( T2D , || DIS ||  , stroke,
+to the three || FOOD || scores and the incidence of ( T2D , || DIS ||  , stroke,
+association between the || FOOD || and the MedDiet with the risk of ( type 2 diabetes ( T2D ) , myocardial infarction ( || DIS ||  ), stroke
+association between the || FOOD || and the MedDiet with the risk of ( T2D , myocardial infarction ( || DIS ||  ), stroke
+
   Fruit and || FOOD || consumption and risk of || DIS ||  :
 of fruit and || FOOD || intake on oxidative stress and inflammation in || DIS ||  :
 A. Fruit and || FOOD || consumption and risk of || DIS ||  :
    Effect of || FOOD || and intake on oxidative stress and inflammation in || DIS ||  :
 
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  supplemented with extra‐virgin
+Primary prevention of || DIS || with a Mediterranean || FOOD ||  N Engl J
 
- Changes in || FOOD || quality scores and risk of || DIS ||  among US men
-Changes in || FOOD || quality scores and risk of || DIS ||  among US men
-group-based || FOOD || quality and risk of || DIS ||  in men and
-group–based || FOOD || quality and risk of || DIS ||  in men and
+application of predefined || FOOD || quality scores to || DIS ||  outcomes, based
+between the different || FOOD || quality scores and individual || DIS ||  outcomes is outside
+the association between || FOOD || quality and || DIS ||  risk is unclear
 
- Changes in || FOOD || quality scores and risk of || DIS ||  among US men
-Changes in || FOOD || quality scores and risk of || DIS ||  among US men
+applicability of different || FOOD || quality methodologies for examining || DIS ||  risk independent of
+the applicability of || FOOD || quality indices for assessing || DIS ||  risk.
+applicability of these || FOOD || quality methodologies for examining || DIS ||  risk independent of
+
+indices for assessing || FOOD || – || DIS ||  relationships.
+internationally to assess || FOOD || – || DIS ||  internationally to assess diet–disease
+the topic regarding || FOOD || – || DIS ||  relation.
+
+Suspicious || FOOD || , contributing outbreak factors and specific causative hazard are the most crucial elements of || DIS ||  outbreaks.
+public awareness about || FOOD || safety of plants is an important elements of preventing and controlling future || DIS ||  outbreak.
+propaganda knowledge about || FOOD || safety might be helpful for us to control || DIS ||  outbreaks.
+
+increasing incidence of || DIS || in developing countries parallels the westernization of || FOOD ||  , which includes
+increasing incidence of || DIS || in developing countries parallels the westernization of , which includes an increased intake of in fat and and a lesser intake of || FOOD ||  and fruits.
+reduction in coronary || DIS || mortality , thus highlighting the existence of a significant negative relationship between a high adherence to the Mediterranean || FOOD ||  and death from
+
+the role of || FOOD || in || DIS ||  .
+the role of || FOOD || in || DIS ||  were identified viz
+The role of || FOOD || in || DIS ||  Curr Gastroenterol Rep
+
+bowel disease, || DIS || , , , , Crohn ’s , || FOOD ||  , enteral feeding
+Crohn disease, || DIS || , Crohn ’s , || FOOD ||  , enteral feeding
+’s colitis, || DIS || , , , , , Crohn ’s , || FOOD ||  , enteral feeding
+
+diet, Mediterranean || FOOD || , and the risk of || DIS ||  : the EPIC
+to a Mediterranean || FOOD || and risk of || DIS ||  : A systematic
+Adherence to Mediterranean || FOOD || and risk of || DIS ||  :
+
+adherence to Mediterranean || FOOD || and reduction of || DIS ||  , it will
+adherence to the || FOOD || was associated with lower risk for total stroke , T2D , and || DIS ||  , the latter
+recommends the daily || FOOD || intake to be less than 2 g of sodium per day ( 5 g of salt per day ) in adults ( ≥16 years ) , in order to reduce blood pressure and risks of , stroke , and || DIS ||  , and the
+
+protective relation between || DIS || outcomes and each || FOOD ||  quality score reviewed
+associations with combined || DIS || outcomes , researchers should be in the pooling of studies for analytical assessment based on the heterogeneity in the calculation and application of seemingly similar || FOOD ||  quality scores.
+The || DIS || is well established and validated as a measure of overall quality in US and European populations (
+
+  23
+
+  –
+
+  25
+
+  ) and has been shown to perform comparably to other || FOOD ||  quality scores in
+
+and risk of || DIS || events ( and stroke ) according to each || FOOD ||  quality index separately
+lower risk of || DIS || mortality , and stroke , suggesting the applicability of the || FOOD ||  quality indices may
+CVD mortality, || DIS || and stroke , suggesting the applicability of the || FOOD ||  quality indices may
+
+The Mediterranean || FOOD || was reported to present an inverse association with the incidence of || DIS ||  in Southern Europe
+The Mediterranean || FOOD || could partly change the incidence of || DIS ||  due to the
+between the Mediterranean || FOOD || and lung function with relevance to both the prevention of || DIS ||  as well as
+
 group-based || FOOD || quality and risk of || DIS ||  in men and
 group–based || FOOD || quality and risk of || DIS ||  in men and
 cohort, the || FOOD || showed a possible beneficial effect on in the overall population and for stroke in men , while both scores reflecting the MedDiet conferred lower risk of T2D in the overall population and of || DIS ||  in women.
 
-	Patients with || DIS || should receive adequate calories , proteins and fats in their || FOOD ||  .
-the development of || DIS || , in fact it is clear that intake and some specific components modify enteric microbiota inducing changes that may be responsible of some effects exerted by Mediterranean || FOOD ||  .
-affect obesity and || DIS || as it is being increasingly recognized as a key factor connecting genes , environment , and the immune system with a role in homeostasis and intake from the || FOOD ||  .
-be related to || DIS || , as discussed in previous paragraphs , the “ prudent ” and the “ Western ” patterns reflect the possible combinatory effects of these but highly correlated || FOOD ||  .
-	Patients with || DIS || should receive adequate calories , proteins and fats in their || FOOD ||  .
-the development of || DIS || , in fact it is clear that intake and some specific components modify enteric microbiota inducing changes that may be responsible of some effects exerted by Mediterranean || FOOD ||  .
-affect obesity and || DIS || as it is being increasingly recognized as a key factor connecting genes , environment , and the immune system with a role in homeostasis and intake from the || FOOD ||  .
-be related to || DIS || , as discussed in previous paragraphs , the “ prudent ” and the “ Western ” patterns reflect the possible combinatory effects of these but highly correlated || FOOD ||  .
-increasing incidence of || DIS || in developing countries parallels the westernization of , which includes an increased intake of in fat and and a lesser intake of and || FOOD ||  .
-of acute severe || DIS || , if patients have the ability to eat with no other contraindications to oral intake , a || FOOD ||  is recommended.
-Patients with || DIS || should receive adequate calories , proteins , and fats in their || FOOD ||  .
-In patients with || DIS || without overt risk of obstruction , the restriction of dietary fiber is unnecessary , but all patients should be appropriately monitored for their tolerance to || FOOD ||  intake.
-applied score was || DIS || ( Figure 1 ) , but it is essential to recognize that there is no one or standard definition of the Mediterranean || FOOD ||  .
-molecules, and || DIS || and how these advantages of the MeDi are maintained in comparison of a low - || FOOD ||  .
-molecules, and || DIS || ; moreover , accumulating data report that these advantages of the Mediterranean are maintained also in comparison of a low - || FOOD ||  .
-With regard to || DIS || , results from a recent study suggest that differences in dietary intake and choices are becoming less noticeable in rural versus urban parts and are less geographically dependent with “ ” taking place instead of a “ || FOOD ||  ”.
-vascular inflammation, || DIS || , and foam cell formation through a modulation of the expression of pro - atherosclerotic genes , also , the content of antioxidants represents one of the elements that is responsible of the benefits of Mediterranean || FOOD ||  .
-the differences in || DIS || mortality rates between the 16 - country cohort from northern to southern countries and also from Japan to the peculiar dietary patterns of each country of the participants and , in particular , it showed the important role of the intake of and || FOOD ||  .
-risk of developing || DIS || were divided into three arms : one that was given an indication to practice Mediterranean supplemented with extra virgin olive oil , one that was given an indication to practice Mediterranean supplemented with nuts , and , finally , a control group that was supposed to practice a hypo - || FOOD ||  .
-high risk for || DIS || were assigned to a control group or to one of two || FOOD ||  .
-the risk of || DIS || and any of the || FOOD ||  .
-in the traditional || DIS || but not in || FOOD ||  .
-associations.9 The || DIS || is a - based and nutrient - based score designed to reflect adherence to a Mediterranean || FOOD ||  .
-clinical trials in || DIS || patients to test this model for beneficial effects of Mediterranean high || FOOD ||  .
-Dietary factors in || DIS || : the role of groups and || FOOD ||  .
-type 2 diabetes || DIS || development in ApoE2Ki mice on a high - || FOOD ||  .
-year incidence of || DIS || for ( apples , pears ) than for other types of || FOOD ||  .
-cases of a || DIS || resulting from the ingestion of a || FOOD ||  .
-more cases of || DIS || resulting from the ingestion of a || FOOD ||  .
-of MedDiet on || DIS || risk have been linked to the reduction in circulating estrogenic levels and to the increased intake of , which are known antioxidants lowering || FOOD ||  stress.
+both nutrients and || FOOD || groups known to act synergistically and shown to provide protective benefit against development of || DIS ||  , while accounting
+integrating diverse healthy || FOOD || / nutrients , such as the MedDiet , has moderately significant evidence of being similarly protective for cognitive deterioration , , and || DIS ||  integrating diverse healthy foods/nutrients, such as the MedDiet, has moderately significant evidence of being similarly protective for cognitive deterioration, AD, and PD
+nutrients of the || FOOD || , such as polyphenols and PUFAs , against visceral adiposity and related inflammation / oxidative stress , mitochondrial dysfunction , as well as insulin resistance [ 172 ] , thus potentially providing the opportunity to favorably manage the risk associated with metabolic derangements observed in some patients with || DIS ||  (obesity and/or
+
+With regard to || FOOD || consumption and || DIS ||  , there does
+effect of moderate || FOOD || consumption and || DIS ||  incidence (39
+of dairy and || FOOD || consumption with || DIS ||  (50)
+
+Western lifestyle and || FOOD || , were associated with a higher prevalence of || DIS ||  (OR =
+, whereas trans || FOOD || intake was associated with an elevated risk of || DIS ||  (RR =
+, whereas a || FOOD || was associated with higher prevalence of || DIS ||  (OR =
+
+While total || FOOD || intake was higher among boys , the || DIS ||  was higher among
+. observed that || FOOD || lower in carbohydrates and higher in protein and fat were not associated with an increased risk of in women and , when the source of the protein or fat was , the risk of || DIS ||  was moderately reduced
+subjects with low || FOOD || consumption ( 1–30 g / day ) had higher levels of FEV1 , lower prevalence of symptoms [ 51 ] , and a decreased risk of || DIS ||  compared to nonconsumers
+
+is a Mediterranean || FOOD || that has been revised in the light of modernity and well - being , but it also allows for the various cultural and || DIS ||  traditions and different
+of the Mediterranean || FOOD || each country has its own dietary habits influenced by socio - cultural , || DIS ||  , and economic
+and the Mediterranean || FOOD || has recently been shown to have a role in improving risk factors associated with || DIS ||  and
+
+adherence to Mediterranean || FOOD || , was especially accentuated in carriers of the G - allele at || DIS ||  [27]
+the traditional Mediterranean || FOOD || as one of the healthiest dietary patterns , being protective against incidence and mortality of , mainly and || DIS ||  [157,158]
+adherence to the || FOOD || and risk [ 168 ] , and adherence to the healthy Dutch dietary guideline and the risk of all - cause mortality and || DIS ||  development [169
+
+In || FOOD || - induced obese mice , quercetin supplementation reduced the levels of inflammatory cytokines and activation markers in the || DIS ||  [291]
+In fact, || FOOD || is a major regulator of gut microbiota composition and metabolite production , which has been related to the incidence and progression of several || DIS ||  [67,68,69]
+shown that high || FOOD || intake promotes modifications of gut microbiota in both rodents and humans , with decreased Firmicutes and increased Bacteroidetes , which produces high levels of SCFAs , related with || DIS ||  [76]
+
+derive a Mediterranean || FOOD || score ( || DIS ||  ) and daily
+using a Mediterranean || FOOD || score ( || DIS ||  )(
+
+
+A Mediterranean || FOOD || score ( || DIS ||  ) was calculated
+
+of a healthier || FOOD || , namely score , || DIS ||  , plasma vitamin
+time education, || FOOD || score , || DIS ||  , vitamin C
+diet, namely || FOOD || score , || DIS ||  , plasma vitamin
+
+according to each || FOOD || quality index separately ( RFS , HDI and || DIS ||  ).
+association of three || FOOD || quality indices ( RFS , HDI and || DIS ||  ) and a
+evidence that higher || FOOD || quality ( RFS , HDI and || DIS ||  ) was associated
+
+healthy plant- || FOOD || and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
+stop hypertension ( || FOOD || ) score , and the healthy indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( || DIS ||  , cancer and
+and the healthy || FOOD || indicator ( HDI ) , and based on plant - and fish , was associated with a substantially lower risk of 17 - year all - cause and - specific ( , || DIS ||  and respiratory disease
+
+rely only on || FOOD || may overlook the importance of the intercorrelation of nutrients such as calcium and magnesium with || DIS ||  outcomes.
+either stress or || FOOD || that are associated with || DIS ||  risk.
+
+
+ Information on || FOOD || and beverage intakes from the Oxford WebQ were used to calculate three quality indices : the RFS , which is based on intakes of only,26 and the HDI , which scores intakes of a of and from guidelines,27 and the , representing patterns identified as healthful.28 These indices were selected as they represent three contrasting quality methodologies that have been applied internationally to assess – || DIS ||
+
+ Information on food and beverage intakes from the Oxford WebQ were used to calculate three diet quality indices: the RFS, which is based on intakes of encouraged foods only,26 and the HDI, which scores intakes of a combination of foods and nutrients from dietary guidelines,27 and the MDS, representing dietary patterns identified as healthful.28 These indices were selected as they represent three contrasting diet quality methodologies that have been applied internationally to assess diet–disease
+
+The || FOOD || showed a statistically non - significant inverse association with incidence of || DIS ||  in the overall
+For the || FOOD || , a statistically not - significant inverse association with the onset of || DIS ||  was observed (
+The || FOOD || showed an inverse but not - statistically significant association with || DIS ||  risk in the
+
+association between the || FOOD || and the risk of breast and || DIS ||  or CVD was
+association between the || FOOD || and the risk of breast and or || DIS ||  was observed [
+specific association between || FOOD || consumption and the risk of || DIS ||  (101,460 participants

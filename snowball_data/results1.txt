@@ -1,66 +1,65 @@
 # results for n_iterations=1, tau_cl=3, tau_supp=3, tau_sim=3
+# [42.40269660949707]
 
 --- SEED TUPLES ---
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
 
 --- TUPLES ---
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 35
-DIS: depression, FOOD: diet, N_OCCUR: 19
-DIS: cardiovascular disease, FOOD: food, N_OCCUR: 7
-DIS: IBD, FOOD: food, N_OCCUR: 0
-DIS: IBD, FOOD: elimination diets, N_OCCUR: 0
-DIS: IBD, FOOD: diet, N_OCCUR: 0
-DIS: depression, FOOD: adolescent diet, N_OCCUR: 0
-DIS: depression, FOOD: diet, N_OCCUR: 0
-DIS: chronic diseases, FOOD: diet, N_OCCUR: 0
-DIS: cardiovascular diseases, FOOD: cholesterol, N_OCCUR: 0
-DIS: cardiovascular diseases, FOOD: diet, N_OCCUR: 0
-DIS: specific known polymorphisms, FOOD: diet, N_OCCUR: 0
-DIS: arteriosclerosis, FOOD: diet, N_OCCUR: 0
-DIS: atherosclerosis, FOOD: diet, N_OCCUR: 0
-DIS: hepatic steatosis, FOOD: methionine, N_OCCUR: 0
-DIS: CVD, FOOD: diet, N_OCCUR: 0
-DIS: coronaropathy, FOOD: diet, N_OCCUR: 0
-DIS: cardiovascular disease, FOOD: diet, N_OCCUR: 0
-DIS: coronary artery disease, FOOD: diet, N_OCCUR: 0
-DIS: coronary heart disease, FOOD: diet, N_OCCUR: 0
-DIS: criticism, FOOD: diet, N_OCCUR: 0
-DIS: diabetes, FOOD: diet, N_OCCUR: 0
-DIS: fruit Emblica officinalis, FOOD: diet, N_OCCUR: 0
-DIS: cardiovascular disease, FOOD: mediterranean diet, N_OCCUR: 0
-DIS: diseases, FOOD: diet, N_OCCUR: 0
-DIS: hepatic and cardiovascular disease, FOOD: diet, N_OCCUR: 0
-DIS: non-alcoholic fatty liver disease, FOOD: diet, N_OCCUR: 0
-DIS: many diseases, FOOD: diet, N_OCCUR: 0
-DIS: hypoglycemia, FOOD: diet, N_OCCUR: 0
-DIS: CVD, FOOD: food, N_OCCUR: 0
-DIS: CVD, FOOD: proinflammatory diet, N_OCCUR: 0
-DIS: CVD, FOOD: vegetarian diets, N_OCCUR: 0
-DIS: metabolic syndrome, FOOD: healthy Nordic diet, N_OCCUR: 0
-DIS: endogenous, FOOD: diet, N_OCCUR: 0
-DIS: meta‐analysis, FOOD: diet, N_OCCUR: 0
-DIS: CVD, FOOD: healthy diet, N_OCCUR: 0
-DIS: disease, FOOD: diet, N_OCCUR: 0
-DIS: major chronic diseases, FOOD: diet, N_OCCUR: 0
-DIS: several different major chronic diseases, FOOD: Nordic diet, N_OCCUR: 0
-DIS: major chronic diseases, FOOD: Nordic diet, N_OCCUR: 0
-DIS: non-communicable diseases, FOOD: fat, N_OCCUR: 0
-DIS: PD, FOOD: diet, N_OCCUR: 0
-DIS: LPS-containing bacteria, FOOD: diet, N_OCCUR: 0
-DIS: PD, FOOD: alcohol, N_OCCUR: 0
-DIS: PD, FOOD: dairy products, N_OCCUR: 0
-DIS: prodromal Parkinson's disease, FOOD: diet, N_OCCUR: 0
-DIS: Parkinson disease, FOOD: calcium, N_OCCUR: 0
-DIS: Parkinson's disease, FOOD: neurorestorative diets, N_OCCUR: 0
-DIS: COPD, FOOD: foods, N_OCCUR: 0
-DIS: COPD, FOOD: topic diet, N_OCCUR: 0
-DIS: other chronic diseases, FOOD: healthy diet, N_OCCUR: 0
-DIS: COPD, FOOD: diet, N_OCCUR: 0
-DIS: vigorous, FOOD: diet, N_OCCUR: 0
-DIS: foodborne disease, FOOD: food, N_OCCUR: 0
-DIS: economic crisis, FOOD: diet, N_OCCUR: 0
+cardiovascular disease || diet || 35
+depression || diet || 19
+cardiovascular disease || food || 7
+IBD || food || 0
+IBD || elimination diets || 0
+IBD || diet || 0
+depression || adolescent diet || 0
+chronic diseases || diet || 0
+cardiovascular diseases || cholesterol || 0
+cardiovascular diseases || diet || 0
+specific known polymorphisms || diet || 0
+arteriosclerosis || diet || 0
+atherosclerosis || diet || 0
+hepatic steatosis || methionine || 0
+CVD || diet || 0
+coronaropathy || diet || 0
+coronary artery disease || diet || 0
+coronary heart disease || diet || 0
+criticism || diet || 0
+diabetes || diet || 0
+fruit Emblica officinalis || diet || 0
+cardiovascular disease || mediterranean diet || 0
+diseases || diet || 0
+hepatic and cardiovascular disease || diet || 0
+non-alcoholic fatty liver disease || diet || 0
+many diseases || diet || 0
+hypoglycemia || diet || 0
+CVD || food || 0
+CVD || proinflammatory diet || 0
+CVD || vegetarian diets || 0
+metabolic syndrome || healthy Nordic diet || 0
+endogenous || diet || 0
+meta‐analysis || diet || 0
+CVD || healthy diet || 0
+disease || diet || 0
+major chronic diseases || diet || 0
+several different major chronic diseases || Nordic diet || 0
+major chronic diseases || Nordic diet || 0
+non-communicable diseases || fat || 0
+PD || diet || 0
+LPS-containing bacteria || diet || 0
+PD || alcohol || 0
+PD || dairy products || 0
+prodromal Parkinson's disease || diet || 0
+Parkinson disease || calcium || 0
+Parkinson's disease || neurorestorative diets || 0
+COPD || foods || 0
+COPD || topic diet || 0
+other chronic diseases || healthy diet || 0
+COPD || diet || 0
+vigorous || diet || 0
+foodborne disease || food || 0
+economic crisis || diet || 0
 
 --- PATTERNS ---
 of associations between || FOOD || and || DIS ||  in adolescence are
@@ -70,7 +69,6 @@ on associations between || FOOD || and || DIS ||  in adolescence has
 observed associations between || FOOD || and || DIS ||  .
 investigate associations between || FOOD || and || DIS ||  in adolescents over
 an association between || FOOD || and || DIS ||  in children and
-evidence of Mediterranean || FOOD || and || DIS ||  : are individual
 evidence of Mediterranean || FOOD || and || DIS ||  : are individual
 
 association between Mediterranean || FOOD || and severity of , although this eating pattern has been widely studied in the context of || DIS ||  .
