@@ -132,7 +132,6 @@ def add_relations_ent_dep(matcher, doc, i, matches):
     try:
         # chose longer spans when overlap occurs as relations will be longer than food / disease
         doc.ents = filter_spans(spans)
-        #doc.ents += (entity,)
     except Exception as e:
         pass
 

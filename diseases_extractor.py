@@ -137,7 +137,6 @@ def add_disease_ent_dep(matcher, doc, i, matches):
     end = max(token_ids) + 1
 
     entity = Span(doc, start, end, label='DIS')
-    # print(f'Matched span: {entity.text}')
 
     try:
         doc.ents += (entity,)

@@ -47,8 +47,7 @@ class Pattern:
         else:
             similarity = 0
 
-        # print(f"Calculating similarity for: \n{self} \n and \n {to_compare}\n = {similarity}")
-        return similarity
+        return abs(similarity)
 
     def merge(self, to_merge):
         """
@@ -67,7 +66,8 @@ class Snowball:
     def __init__(self, datapath, seed_tuples, n_iterations, w_size,
                  tau_cl, tau_supp, tau_sim, export_sents):
         """
-        TODO
+        Class wrapper for snowball algorithm.
+        You may find parameters description and default values under if __name__ == '__main__'.
         """
 
         self.nlp = spacy.load("en_core_web_lg", disable=['ner'])
@@ -116,7 +116,6 @@ class Snowball:
     def run(self):
         for i in range(self.n_iterations):
             print(f'Iteration {i+1}/{self.n_iterations}')
-            time_start = time.time() ###
 
             # find seed tuples occurences (order matters)
             for seed_tuple in self.tuples:
@@ -135,7 +134,6 @@ class Snowball:
                                 match_food = ent
 
                     if match_dis and match_food: # if sentence contains a seed tuple
-                        # print(f'Tuple: {seed_tuple.values} matched to sentence: {sent.text}')
                         seed_tuple['N_OCCUR'] += 1
 
                         start = min(match_food.start, match_dis.start)
@@ -162,7 +160,6 @@ class Snowball:
                         pattern_candidate = Pattern(left_vec, entities_in_order[0].label_,
                                           mid_vec, entities_in_order[1].label_,
                                           right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
-                        # print(f'Created a new pattern: \n{pattern}')
 
                         # check if already exists
                         patterns_contribs = [pattern.contribs for pattern in self.patterns]
@@ -215,10 +212,8 @@ class Snowball:
                 pattern_candidate = Pattern(left_vec, entities_in_order[0].label_,
                                   mid_vec, entities_in_order[1].label_,
                                   right_vec, [(left_ctx.text, mid_ctx.text, right_ctx.text)])
-                # print(f'Created a new tuple candidate: {entities_in_order}')
 
                 for pattern in self.patterns:
-                    # print(f"Comparing \n{pattern} to current tuple.")
 
                     if pattern.similarity(pattern_candidate) > self.tau_sim:
                         tuple_candidate = {entities_in_order[0].label_: entities_in_order[0].text,
@@ -310,7 +305,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('datapath',
-                        help='Specifies a path to directory containing .txt files.')
+                        help='Specifies a path to directory containing .txt articles.')
     parser.add_argument('--n_iterations',
                         help='Specifies number of iterations for snowball.',
                         default=3, type=int)
@@ -318,14 +313,15 @@ if __name__ == '__main__':
                         help='Specifies a windows size for left and right contexts.',
                         default=3, type=int)
     parser.add_argument('--tau_cl',
-                        help='Specifies a tau_cl parameter for thresholding patterns clustering (0 to 4).',
-                        default=3, type=float)
+                        help='Specifies a tau_cl parameter for thresholding patterns clustering (type 0.0 to 4.0).',
+                        default=3.25, type=float)
     parser.add_argument('--tau_supp',
                         help='Specifies a tau_supp parameter for minimal supporting tuples for a new pattern.',
                         default=3, type=int)
     parser.add_argument('--tau_sim',
-                        help='Specifies a tau_sim parameter for minimal similarity with pattern to extract a new tuple (0 to 4).',
-                        default=3, type=float)
+                        help='Specifies a tau_sim parameter for minimal similarity with any pattern to extract a new tuple \
+                        (type 0.0 to 4.0).',
+                        default=3.25, type=float)
     parser.add_argument('--export_sents',
                         help='Use --export_sents 1 to generate html file with processed sentences.',
                         default=0, type=int)
