@@ -1,7 +1,7 @@
 ## Table of contents
-* [General info] (#general-info)
-* [Technologies] (#technologies)
-* [Usage guide] (#usage-guide)
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Usage guide](#usage-guide)
 
 ## General info
 This projects implements a variation of [Snowball algorithm](http://www.mathcs.emory.edu/~eugene/papers/dl00.pdf) for **food-diseases relations extraction**, which **uses both food and diseases entities rule-based extractors** implemented using spaCy.
