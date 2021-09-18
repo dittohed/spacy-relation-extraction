@@ -23,7 +23,7 @@ Implemented with:
 
 ## Usage guide
 ### Food, diseases and relations rule-based extractors
-Extract both food and disease entities from .txt files in `artices/food` directory (generated HTML files will be put into `displacy/both`):
+Extract both food and disease entities from .txt files in `articles/food` directory (generated HTML files will be put into `displacy/both`):
 
 `python extractor.py both ./articles/food`
 
